@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="AIAssistantResource" format=3 uid="uid://cw3r373ksov5e"]
+
+[ext_resource type="Resource" uid="uid://c0xq2vafep0gu" path="res://addons/ai_assistant_hub/llm_providers/ollama.tres" id="1_wmu8k"]
+[ext_resource type="Script" uid="uid://bo3x4ar3opgi6" path="res://addons/ai_assistant_hub/quick_prompts/ai_quick_prompt_resource.gd" id="2_d7b6o"]
+[ext_resource type="Script" uid="uid://fqe7jx27x0vb" path="res://addons/ai_assistant_hub/assistants/ai_assistant_resource.gd" id="3_cor7a"]
+
+[sub_resource type="Resource" id="Resource_wv3hb"]
+script = ExtResource("2_d7b6o")
+action_name = "Explain Code"
+action_prompt = "Explain this code to me concisely:
+```gdscript
+{CODE}
+```"
+metadata/_custom_type_script = "uid://bo3x4ar3opgi6"
+
+[sub_resource type="Resource" id="Resource_odvsl"]
+script = ExtResource("2_d7b6o")
+action_name = "Code Review"
+action_prompt = "Review this code:
+```gdscript
+{CODE}
+```"
+metadata/_custom_type_script = "uid://bo3x4ar3opgi6"
+
+[resource]
+script = ExtResource("3_cor7a")
+type_name = "Coder"
+ai_model = "qwen3:8b"
+llm_provider = ExtResource("1_wmu8k")
+quick_prompts = Array[ExtResource("2_d7b6o")]([SubResource("Resource_wv3hb"), SubResource("Resource_odvsl")])
