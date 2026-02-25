@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://7m4ndyvaa54y"]
+
+[ext_resource type="Script" uid="uid://dtfaywflx7qxw" path="res://scenes/player.gd" id="1_3vyb7"]
+[ext_resource type="SpriteFrames" uid="uid://ct7gjh2br2lal" path="res://resources/frames_player_default.tres" id="2_g2els"]
+
+[node name="Player" type="Node2D" unique_id=2038235005]
+script = ExtResource("1_3vyb7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1293545604]
+sprite_frames = ExtResource("2_g2els")
+animation = &"idle_down"
+centered = false
