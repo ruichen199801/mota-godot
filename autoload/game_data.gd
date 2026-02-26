@@ -1,5 +1,14 @@
 extends Node
 
+enum CellType {
+	WALL,
+	ENEMY,
+	DOOR,
+	ITEM,
+	STAIR,
+	NPC,
+}
+
 const CELL_SIZE := 32
 const GRID_WIDTH := 11
 const GRID_HEIGHT := 11
@@ -7,7 +16,7 @@ const GRID_HEIGHT := 11
 var player_grid_pos: Vector2i = Vector2i(5, 5)
 
 # Key: cell coordinate, e.g. Vector2i(1, 1)
-# Value: a dict with info about what's in the cell, or null, e.g. { "type": "enemy", "node": <Enemy#123> }
+# Value: cell type, or null, e.g. WALL
 var grid: Dictionary = {}
 
 

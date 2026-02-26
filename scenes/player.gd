@@ -1,64 +1,82 @@
 extends Node2D
 
+@onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+
 var is_moving := false
-const MOVE_TIME := 0.1
-
-
-func _ready() -> void:
-	# Place player at starting grid position
-	position = GameData.grid_to_world(GameData.player_grid_pos)
-	print("Player ready at grid ", GameData.player_grid_pos, 
-		" world ", position)
+var facing := Vector2i.DOWN
+const MOVE_TIME := 0.15
 		
 		
-# https://forum.godotengine.org/t/difference-between-input-and-unhandled-input-functions/6995
-func _unhandled_input(event: InputEvent) -> void:
+func _process(_delta: float) -> void:
 	if is_moving:
 		return
 		
-	var dir := Vector2i.ZERO
-	if event.is_action_pressed("move_up"):
-		dir = Vector2i.UP
-	elif event.is_action_pressed("move_down"):
-		dir = Vector2i.DOWN
-	elif event.is_action_pressed("move_left"):
-		dir = Vector2i.LEFT
-	elif event.is_action_pressed("move_right"):
-		dir = Vector2i.RIGHT
-	
+	var dir := _get_direction()
 	if dir != Vector2i.ZERO:
-		try_move(dir)
+		_try_move(dir)
 		
 		
-# TODO: Refactor using event bus
-func try_move(dir: Vector2i) -> void:
+func _try_move(dir: Vector2i) -> void:
+	facing = dir
 	var target := GameData.player_grid_pos + dir
 	
 	# Boundary check
 	if not GameData.is_in_bounds(target):
-		print("Blocked: out of bounds ", target)
+		_play_idle()
 		return
 		
 	# Wall check
 	var cell = GameData.get_cell(target)
-	if cell != null and cell["type"] == "wall":
-		print("Blocked: wall at ", target)
+	if cell != null and cell == GameData.CellType.WALL:
+		_play_idle()
 		return
 		
 	# Move
-	do_move(target)
+	_do_move(target)
 	
 	
-func do_move(target: Vector2i) -> void:
+func _do_move(target: Vector2i) -> void:
 	GameData.player_grid_pos = target
 	is_moving = true
+	_play_walk()
 	
 	# Handle move animation
 	var tween := create_tween()
 	tween.tween_property(self, "position", 
 		GameData.grid_to_world(target), MOVE_TIME)
-	tween.finished.connect(
-		func(): is_moving = false
-	)
+	tween.finished.connect(_on_move_finished)
 	
-	print("Moved to ", target)
+	
+func _on_move_finished() -> void:
+	is_moving = false
+	if _get_direction() == Vector2i.ZERO:
+		_play_idle()
+
+
+func _get_direction() -> Vector2i:
+	if Input.is_action_pressed("move_up"):
+		return Vector2i.UP
+	elif Input.is_action_pressed("move_down"):
+		return Vector2i.DOWN
+	elif Input.is_action_pressed("move_left"):
+		return Vector2i.LEFT
+	elif Input.is_action_pressed("move_right"):
+		return Vector2i.RIGHT
+	else:
+		return Vector2i.ZERO
+	
+	
+func _play_walk() -> void:
+	match facing:
+		Vector2i.UP: anim.play("walk_up")
+		Vector2i.DOWN: anim.play("walk_down")
+		Vector2i.LEFT: anim.play("walk_left")
+		Vector2i.RIGHT: anim.play("walk_right")
+
+
+func _play_idle() -> void:
+	match facing:
+		Vector2i.UP: anim.play("idle_up")
+		Vector2i.DOWN: anim.play("idle_down")
+		Vector2i.LEFT: anim.play("idle_left")
+		Vector2i.RIGHT: anim.play("idle_right")
