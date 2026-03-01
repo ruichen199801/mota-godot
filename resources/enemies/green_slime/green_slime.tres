@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dgycbud154adj"]
+
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://resources/data/enemy_data.gd" id="1_ilv3w"]
+[ext_resource type="SpriteFrames" uid="uid://gb1ab001a3u3" path="res://resources/enemies/green_slime/green_slime_frames.tres" id="1_kfisv"]
+
+[resource]
+script = ExtResource("1_ilv3w")
+enemy_name = "Green Slime"
+frames = ExtResource("1_kfisv")
+hp = 50
+atk = 20
+def = 1
+gold_drop = 1
+xp_drop = 1
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

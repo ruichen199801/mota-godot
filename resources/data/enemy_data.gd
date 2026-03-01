@@ -1,0 +1,17 @@
+class_name EnemyData 
+extends Resource
+
+@export var enemy_name: String
+@export var frames: SpriteFrames
+var texture: Texture2D: get = _get_texture
+@export var hp: int
+@export var atk: int
+@export var def: int
+@export var gold_drop: int
+@export var xp_drop: int
+
+func _get_texture() -> Texture2D:
+	if frames == null:
+		return null
+	var first_anim = frames.get_animation_names()[0]
+	return frames.get_frame_texture(first_anim, 0)

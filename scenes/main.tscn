@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://b3stdisbq408"]
 
 [ext_resource type="Script" uid="uid://bl1se8eyduf57" path="res://scenes/main.gd" id="1_0wfyh"]
-[ext_resource type="PackedScene" uid="uid://7m4ndyvaa54y" path="res://scenes/player.tscn" id="2_sugp2"]
+[ext_resource type="PackedScene" uid="uid://7m4ndyvaa54y" path="res://scenes/player/player.tscn" id="2_sugp2"]
+[ext_resource type="Script" uid="uid://2nh3ua1ddiv4" path="res://scenes/player/move_resolver.gd" id="3_sugp2"]
 
 [node name="Main" type="Node2D" unique_id=1276187132]
 script = ExtResource("1_0wfyh")
@@ -9,6 +10,12 @@ script = ExtResource("1_0wfyh")
 [node name="FloorContainer" type="Node2D" parent="." unique_id=624141229]
 
 [node name="Player" parent="." unique_id=2038235005 instance=ExtResource("2_sugp2")]
+z_index = 3
+
+[node name="MoveResolver" type="Node" parent="." unique_id=1647733805]
+script = ExtResource("3_sugp2")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1432553056]
 position = Vector2(176, 176)
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1192008611]

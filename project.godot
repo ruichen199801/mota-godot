@@ -17,7 +17,8 @@ config/icon="uid://bxw5pcooyj2k8"
 
 [autoload]
 
-GameData="*uid://cnh3hjjnc63h1"
+FloorManager="*uid://cnh3hjjnc63h1"
+EventBus="*uid://l1wxig1rn7i"
 
 [display]
 
