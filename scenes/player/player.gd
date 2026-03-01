@@ -2,12 +2,15 @@ extends Node2D
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
+var data: PlayerData
+
 var grid_pos: Vector2i
 var facing := Vector2i.DOWN
 var is_busy := false
-var data = PlayerData
+var retry_timer := 0.0 
 
-const MOVE_TIME := 0.15
+const MOVE_TIME := 0.12
+const RETRY_DELAY := 0.15
 
 
 func init(start_pos: Vector2i) -> void:
@@ -29,6 +32,11 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if is_busy:
+		return
+		
+	# Throttle re-request after player is blocked
+	if retry_timer > 0:
+		retry_timer -= _delta
 		return
 		
 	var dir := _get_direction()
@@ -58,6 +66,7 @@ func _on_move_resolved(target_pos: Vector2i, approved: bool) -> void:
 		_do_move(target_pos)
 	else:
 		is_busy = false
+		retry_timer = RETRY_DELAY
 		_play_idle()
 	
 	
