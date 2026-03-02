@@ -1,7 +1,36 @@
 [gd_scene format=3 uid="uid://b8q5gbuqf4x6h"]
 
 [ext_resource type="Theme" uid="uid://bocaa5wajr1kd" path="res://resources/hud_theme.tres" id="1_cgeww"]
+[ext_resource type="FontFile" uid="uid://cokudok3b6nm7" path="res://assets/fonts/OpenSans-SemiBoldItalic.ttf" id="3_0bx4p"]
 [ext_resource type="Texture2D" uid="uid://bw2505uv4eaqv" path="res://assets/images/ground.png" id="3_c45xl"]
+[ext_resource type="Texture2D" uid="uid://bxw5pcooyj2k8" path="res://assets/images/player0.png" id="3_mgtrf"]
+[ext_resource type="Texture2D" uid="uid://bfs7h2gg5i60f" path="res://assets/images/keyY.png" id="4_0bx4p"]
+[ext_resource type="FontFile" uid="uid://da1f3rfg3lq41" path="res://assets/fonts/DFBuDingW12-Regular.ttf" id="6_v7mo4"]
+[ext_resource type="Texture2D" uid="uid://dpad4pcf863r3" path="res://assets/images/keyB.png" id="7_mq0y1"]
+[ext_resource type="Texture2D" uid="uid://qhd3xmr4b2jt" path="res://assets/images/keyR.png" id="8_go0ap"]
+[ext_resource type="Texture2D" uid="uid://p7drk4m3ocdq" path="res://assets/images/gold.png" id="9_go0ap"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mgtrf"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n56i7"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0.6, 0.8, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="FontVariation" id="FontVariation_n56i7"]
+base_font = ExtResource("6_v7mo4")
+variation_transform = Transform2D(1.6, 0, 0, 1, 0, 0)
+
+[sub_resource type="FontVariation" id="FontVariation_mq0y1"]
+variation_embolden = 0.3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c45xl"]
 
@@ -18,15 +47,8 @@ mouse_filter = 2
 theme = ExtResource("1_cgeww")
 metadata/_edit_lock_ = true
 
-[node name="StatsPanel" type="Panel" parent="." unique_id=1589557582]
-layout_mode = 1
-offset_left = 32.0
-offset_top = 32.0
-offset_right = 160.0
-offset_bottom = 224.0
-mouse_filter = 2
-
-[node name="GroundBG" type="TextureRect" parent="StatsPanel" unique_id=1562139124]
+[node name="OuterBorder" type="Panel" parent="." unique_id=339348651]
+z_index = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -34,22 +56,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("3_c45xl")
-stretch_mode = 1
 
-[node name="KeysPanel" type="Panel" parent="." unique_id=2028069127]
+[node name="LeftSection" type="Panel" parent="." unique_id=725464121]
+custom_minimum_size = Vector2(150, 416)
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 32.0
-offset_top = -160.0
-offset_right = 160.0
-offset_bottom = -32.0
-grow_vertical = 0
+offset_right = 150.0
+offset_bottom = 416.0
 mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mgtrf")
 
-[node name="GroundBG" type="TextureRect" parent="KeysPanel" unique_id=1740446677]
+[node name="LeftMargin" type="MarginContainer" parent="LeftSection" unique_id=1256165730]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -57,8 +73,351 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="LeftVBox" type="VBoxContainer" parent="LeftSection/LeftMargin" unique_id=980380223]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 6
+
+[node name="PlayerBorder" type="PanelContainer" parent="LeftSection/LeftMargin/LeftVBox" unique_id=1771523435]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="PlayerBackground" type="TextureRect" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder" unique_id=1562139124]
+layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("3_c45xl")
 stretch_mode = 1
+
+[node name="PlayerMargin" type="MarginContainer" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder" unique_id=687437471]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="PlayerVBox" type="VBoxContainer" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin" unique_id=1302316959]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="IconStateSection" type="HBoxContainer" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox" unique_id=1577521695]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="PlayerIcon" type="TextureRect" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox/IconStateSection" unique_id=992499305]
+custom_minimum_size = Vector2(40, 32)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("3_mgtrf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="StateVBox" type="VBoxContainer" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox/IconStateSection" unique_id=377437345]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 2
+
+[node name="StateTitle" type="Label" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox/IconStateSection/StateVBox" unique_id=961849898]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "状态："
+vertical_alignment = 1
+
+[node name="StateBox" type="Panel" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox/IconStateSection/StateVBox" unique_id=1161914373]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_n56i7")
+
+[node name="StateValue" type="Label" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox/IconStateSection/StateVBox/StateBox" unique_id=2128822481]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "正常"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StatsSection" type="GridContainer" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox" unique_id=644718181]
+layout_mode = 2
+mouse_filter = 2
+columns = 2
+
+[node name="LevelLabel" type="Label" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox/StatsSection" unique_id=1865541114]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "等级："
+vertical_alignment = 1
+
+[node name="LevelValue" type="Label" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox/StatsSection" unique_id=1960423276]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_0bx4p")
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HPLabel" type="Label" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox/StatsSection" unique_id=2014419264]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "体力："
+vertical_alignment = 1
+
+[node name="HPValue" type="Label" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox/StatsSection" unique_id=1854396257]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_0bx4p")
+text = "900"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ATKLabel" type="Label" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox/StatsSection" unique_id=401360794]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "攻击力："
+vertical_alignment = 1
+
+[node name="ATKValue" type="Label" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox/StatsSection" unique_id=1959910666]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_0bx4p")
+text = "60"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DEFLabel" type="Label" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox/StatsSection" unique_id=1600183609]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "防御力："
+vertical_alignment = 1
+
+[node name="DEFValue" type="Label" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox/StatsSection" unique_id=664494434]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_0bx4p")
+text = "57"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CRITLabel" type="Label" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox/StatsSection" unique_id=1935376871]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "暴击："
+vertical_alignment = 1
+
+[node name="CRITValue" type="Label" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox/StatsSection" unique_id=563872984]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_0bx4p")
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AGILabel" type="Label" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox/StatsSection" unique_id=1243799186]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "敏捷："
+vertical_alignment = 1
+
+[node name="AGIValue" type="Label" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox/StatsSection" unique_id=1519349894]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_0bx4p")
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="XPLabel" type="Label" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox/StatsSection" unique_id=390864273]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "经验值："
+vertical_alignment = 1
+
+[node name="XPValue" type="Label" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox/StatsSection" unique_id=1881204902]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_0bx4p")
+text = "69"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeysBorder" type="PanelContainer" parent="LeftSection/LeftMargin/LeftVBox" unique_id=143979450]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="KeysBackground" type="TextureRect" parent="LeftSection/LeftMargin/LeftVBox/KeysBorder" unique_id=738504990]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_c45xl")
+stretch_mode = 1
+
+[node name="KeysMargin" type="MarginContainer" parent="LeftSection/LeftMargin/LeftVBox/KeysBorder" unique_id=1186626516]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="KeysSection" type="GridContainer" parent="LeftSection/LeftMargin/LeftVBox/KeysBorder/KeysMargin" unique_id=1540010436]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/h_separation = 14
+theme_override_constants/v_separation = 2
+columns = 3
+
+[node name="YellowKeyIcon" type="TextureRect" parent="LeftSection/LeftMargin/LeftVBox/KeysBorder/KeysMargin/KeysSection" unique_id=1022562537]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+texture = ExtResource("4_0bx4p")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="YellowKeyX" type="Label" parent="LeftSection/LeftMargin/LeftVBox/KeysBorder/KeysMargin/KeysSection" unique_id=955824624]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_n56i7")
+theme_override_font_sizes/font_size = 18
+text = "X"
+vertical_alignment = 1
+
+[node name="YellowKeyValue" type="Label" parent="LeftSection/LeftMargin/LeftVBox/KeysBorder/KeysMargin/KeysSection" unique_id=1267987644]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = SubResource("FontVariation_mq0y1")
+theme_override_font_sizes/font_size = 16
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BlueKeyIcon" type="TextureRect" parent="LeftSection/LeftMargin/LeftVBox/KeysBorder/KeysMargin/KeysSection" unique_id=2021529703]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+texture = ExtResource("7_mq0y1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BlueKeyX" type="Label" parent="LeftSection/LeftMargin/LeftVBox/KeysBorder/KeysMargin/KeysSection" unique_id=535510626]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = SubResource("FontVariation_n56i7")
+theme_override_font_sizes/font_size = 18
+text = "X"
+vertical_alignment = 1
+
+[node name="BlueKeyValue" type="Label" parent="LeftSection/LeftMargin/LeftVBox/KeysBorder/KeysMargin/KeysSection" unique_id=1979010430]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = SubResource("FontVariation_mq0y1")
+theme_override_font_sizes/font_size = 16
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RedKeyIcon" type="TextureRect" parent="LeftSection/LeftMargin/LeftVBox/KeysBorder/KeysMargin/KeysSection" unique_id=469304334]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+texture = ExtResource("8_go0ap")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RedKeyX" type="Label" parent="LeftSection/LeftMargin/LeftVBox/KeysBorder/KeysMargin/KeysSection" unique_id=992119169]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = SubResource("FontVariation_n56i7")
+theme_override_font_sizes/font_size = 18
+text = "X"
+vertical_alignment = 1
+
+[node name="RedKeyValue" type="Label" parent="LeftSection/LeftMargin/LeftVBox/KeysBorder/KeysMargin/KeysSection" unique_id=1339019425]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = SubResource("FontVariation_mq0y1")
+theme_override_font_sizes/font_size = 16
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GoldIcon" type="TextureRect" parent="LeftSection/LeftMargin/LeftVBox/KeysBorder/KeysMargin/KeysSection" unique_id=1337258810]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+texture = ExtResource("9_go0ap")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="GoldX" type="Label" parent="LeftSection/LeftMargin/LeftVBox/KeysBorder/KeysMargin/KeysSection" unique_id=583499943]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = SubResource("FontVariation_n56i7")
+theme_override_font_sizes/font_size = 18
+text = "X"
+vertical_alignment = 1
+
+[node name="GoldValue" type="Label" parent="LeftSection/LeftMargin/LeftVBox/KeysBorder/KeysMargin/KeysSection" unique_id=2100485272]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = SubResource("FontVariation_mq0y1")
+theme_override_font_sizes/font_size = 16
+text = "42"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionsBorder" type="PanelContainer" parent="LeftSection/LeftMargin/LeftVBox" unique_id=429210527]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="OptionsBackground" type="TextureRect" parent="LeftSection/LeftMargin/LeftVBox/OptionsBorder" unique_id=37086237]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_c45xl")
+stretch_mode = 1
+
+[node name="OptionsMargin" type="MarginContainer" parent="LeftSection/LeftMargin/LeftVBox/OptionsBorder" unique_id=417213007]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="OptionsSection" type="GridContainer" parent="LeftSection/LeftMargin/LeftVBox/OptionsBorder/OptionsMargin" unique_id=1145160173]
+layout_mode = 2
+mouse_filter = 2
+columns = 2
+
+[node name="SaveButton" type="Button" parent="LeftSection/LeftMargin/LeftVBox/OptionsBorder/OptionsMargin/OptionsSection" unique_id=255631642]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "存档"
+
+[node name="LoadButton" type="Button" parent="LeftSection/LeftMargin/LeftVBox/OptionsBorder/OptionsMargin/OptionsSection" unique_id=1685975735]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "读档"
+
+[node name="ItemsButton" type="Button" parent="LeftSection/LeftMargin/LeftVBox/OptionsBorder/OptionsMargin/OptionsSection" unique_id=48367595]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "物品"
+
+[node name="SettingsButton" type="Button" parent="LeftSection/LeftMargin/LeftVBox/OptionsBorder/OptionsMargin/OptionsSection" unique_id=1198801649]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "设置"
+
+[node name="VerticalDivider" type="ColorRect" parent="." unique_id=250928548]
+layout_mode = 1
+offset_left = 150.0
+offset_right = 152.0
+offset_bottom = 416.0
+mouse_filter = 2
+color = Color(0, 0.6, 0.8, 1)
 
 [node name="FloorTitle" type="Panel" parent="." unique_id=762002199]
 layout_mode = 1
@@ -67,12 +426,12 @@ anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 32.0
 offset_right = 128.0
-offset_bottom = 30.0
+offset_bottom = 32.0
 grow_horizontal = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_c45xl")
 
-[node name="GroundBG" type="TextureRect" parent="FloorTitle" unique_id=1795107372]
+[node name="TitleBackground" type="TextureRect" parent="FloorTitle" unique_id=1795107372]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
