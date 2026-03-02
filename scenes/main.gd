@@ -1,7 +1,7 @@
 extends Node2D
 
-@onready var floor_container: Node2D = $FloorContainer
-@onready var player: Node2D = $Player
+@onready var floor_container: Node2D = $GameArea/FloorContainer
+@onready var player: Node2D = $GameArea/Player
 @onready var move_resolver: Node = $MoveResolver
 
 
@@ -9,6 +9,7 @@ func _ready() -> void:
 	move_resolver.player = player
 	
 	player.init(Vector2i(5, 5))
+	print("Player spawned at %s" % player.grid_pos)
 	
 	_load_all_floors()
 	FloorManager.switch_to_floor(0)

@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://da1f3rfg3lq41" path="res://assets/fonts/DFBuDingW12-Regular.ttf" id="2_0wfyh"]
 [ext_resource type="Texture2D" uid="uid://bkjksjcfennes" path="res://assets/sprites/items.png" id="2_sugp2"]
 [ext_resource type="Texture2D" uid="uid://dnvwi3i11qp0u" path="res://assets/sprites/player.png" id="3_jyhfs"]
-[ext_resource type="StyleBox" uid="uid://dw4ih6o1o2cqm" path="res://resources/border_stylebox.tres" id="4_tefeu"]
+[ext_resource type="StyleBox" uid="uid://dw4ih6o1o2cqm" path="res://resources/hud_stylebox.tres" id="4_tefeu"]
 [ext_resource type="FontFile" uid="uid://cokudok3b6nm7" path="res://assets/fonts/OpenSans-SemiBoldItalic.ttf" id="6_tefeu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0wfyh"]

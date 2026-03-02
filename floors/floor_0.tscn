@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://owj0r7uotabx"]
 
 [ext_resource type="Script" uid="uid://doupmspvj5m2v" path="res://floors/floor_setup.gd" id="1_54fiq"]
-[ext_resource type="TileSet" uid="uid://di6pm00t0x4tx" path="res://resources/tileset.tres" id="1_y2o10"]
+[ext_resource type="TileSet" uid="uid://di6pm00t0x4tx" path="res://resources/floor_tileset.tres" id="1_y2o10"]
 [ext_resource type="PackedScene" uid="uid://b678t3khc1li4" path="res://entities/enemy_entity.tscn" id="3_tannq"]
 [ext_resource type="Resource" uid="uid://dgycbud154adj" path="res://resources/enemies/green_slime/green_slime.tres" id="4_r3rnu"]
 

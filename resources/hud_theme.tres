@@ -1,0 +1,45 @@
+[gd_resource type="Theme" format=3 uid="uid://bocaa5wajr1kd"]
+
+[ext_resource type="FontFile" uid="uid://cokudok3b6nm7" path="res://assets/fonts/OpenSans-SemiBoldItalic.ttf" id="1_7amdl"]
+[ext_resource type="FontFile" uid="uid://da1f3rfg3lq41" path="res://assets/fonts/DFBuDingW12-Regular.ttf" id="1_o5cxf"]
+[ext_resource type="StyleBox" uid="uid://dw4ih6o1o2cqm" path="res://resources/hud_stylebox.tres" id="2_4e07a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7amdl"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4e07a"]
+
+[resource]
+default_font = ExtResource("1_o5cxf")
+default_font_size = 16
+NumberLabel/colors/font_color = Color(1, 1, 1, 1)
+NumberLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+NumberLabel/colors/font_shadow_color = Color(0, 0, 0, 0)
+NumberLabel/constants/line_spacing = 3
+NumberLabel/constants/outline_size = 0
+NumberLabel/constants/shadow_offset_x = 1
+NumberLabel/constants/shadow_offset_y = 1
+NumberLabel/constants/shadow_outline_size = 1
+NumberLabel/font_sizes/font_size = 16
+NumberLabel/fonts/font = ExtResource("1_7amdl")
+NumberLabel/styles/focus = SubResource("StyleBoxFlat_7amdl")
+NumberLabel/styles/normal = SubResource("StyleBoxEmpty_4e07a")
+Panel/styles/panel = ExtResource("2_4e07a")
