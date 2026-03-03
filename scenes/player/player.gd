@@ -3,6 +3,7 @@ extends Node2D
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
 var data: PlayerData
+var icon: Texture2D: get = get_icon
 
 var grid_pos: Vector2i
 var facing := Vector2i.DOWN
@@ -11,10 +12,12 @@ var retry_timer := 0.0
 
 const MOVE_TIME := 0.12
 const RETRY_DELAY := 0.15
+const DEFAULT_TEMPLATE := preload("res://resources/player/default_player.tres")
 
 
-func init(start_pos: Vector2i) -> void:
-	var template: PlayerData = preload("res://resources/player/default_player.tres")
+func init(start_pos: Vector2i, template: PlayerData = null) -> void:
+	if template == null:
+		template = DEFAULT_TEMPLATE
 	data = template.duplicate()
 	place_at(start_pos)
 	
@@ -98,3 +101,9 @@ func _play_idle() -> void:
 		Vector2i.DOWN: anim.play("idle_down")
 		Vector2i.LEFT: anim.play("idle_left")
 		Vector2i.RIGHT: anim.play("idle_right")
+		
+
+func get_icon() -> Texture2D:
+	if anim and anim.sprite_frames:
+		return anim.sprite_frames.get_frame_texture("idle_down", 0)
+	return null

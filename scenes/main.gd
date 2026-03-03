@@ -3,18 +3,19 @@ extends Node2D
 @onready var floor_container: Node2D = $GameArea/FloorContainer
 @onready var player: Node2D = $GameArea/Player
 @onready var move_resolver: Node = $MoveResolver
+@onready var hud: Control = $UILayer/HUD
 
 
 func _ready() -> void:
 	move_resolver.player = player
-	
 	player.init(Vector2i(5, 5))
-	print("Player spawned at %s" % player.grid_pos)
 	
 	_load_all_floors()
-	FloorManager.switch_to_floor(0)
+	_switch_to_floor(0)
 	
 	EventBus.floor_change_requested.connect(_on_floor_change)
+	
+	hud.bind_player(player.data, player.get_icon())
 
 
 func _load_all_floors() -> void:
@@ -32,5 +33,11 @@ func _load_all_floors() -> void:
 
 
 func _on_floor_change(floor_id: int, spawn_pos: Vector2i) -> void:
-	FloorManager.switch_to_floor(floor_id)
+	_switch_to_floor(floor_id)
 	player.place_at(spawn_pos)
+	
+
+func _switch_to_floor(floor_id: int) -> void:
+	FloorManager.switch_to_floor(floor_id)
+	hud.set_floor_display(floor_id)
+	EventBus.floor_switched.emit(floor_id)
