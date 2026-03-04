@@ -13,9 +13,9 @@ func _ready() -> void:
 	_load_all_floors()
 	_switch_to_floor(0)
 	
-	EventBus.floor_change_requested.connect(_on_floor_change)
-	
 	hud.bind_player(player.data, player.get_icon())
+	
+	EventBus.floor_change_requested.connect(_on_floor_change)
 
 
 func _load_all_floors() -> void:

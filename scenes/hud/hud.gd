@@ -37,27 +37,25 @@ func _ready() -> void:
 	items_button.pressed.connect(items_requested.emit)
 	settings_button.pressed.connect(settings_requested.emit)
 	
-	EventBus.player_stats_changed.connect(refresh_stats)
-	EventBus.player_keys_or_gold_changed.connect(refresh_keys_or_gold)
-	EventBus.player_state_changed.connect(refresh_state)
-	
 	
 func bind_player(data: PlayerData, icon: Texture2D) -> void:
 	player_data = data
+	player_data.changed.connect(_refresh_hud_data)
+	
 	if icon:
 		player_icon.texture = icon
-	refresh_all()
+		
+	_refresh_hud_data()
 	
 
-func refresh_all() -> void:
+func set_floor_display(floor_id: int) -> void:
+	floor_label.text = "主塔   %dF" % floor_id
+	
+	
+func _refresh_hud_data() -> void:
 	if player_data == null:
 		return
-	refresh_stats()
-	refresh_keys_or_gold()
-	refresh_state()
-
-
-func refresh_stats() -> void:
+		
 	level_value.text = str(player_data.level)
 	hp_value.text = str(player_data.hp)
 	atk_value.text = str(player_data.atk)
@@ -65,18 +63,10 @@ func refresh_stats() -> void:
 	crit_value.text = str(player_data.crit)
 	agi_value.text = str(player_data.agi)
 	xp_value.text = str(player_data.xp)
-
-
-func refresh_keys_or_gold() -> void:
+	
 	yellow_key_value.text = str(player_data.yellow_keys)
 	blue_key_value.text = str(player_data.blue_keys)
 	red_key_value.text = str(player_data.red_keys)
 	gold_value.text = str(player_data.gold)
 	
-	
-func refresh_state() -> void:
 	state_value.text = player_data.get_state_name()
-	
-	
-func set_floor_display(floor_id: int) -> void:
-	floor_label.text = "主塔   %dF" % floor_id

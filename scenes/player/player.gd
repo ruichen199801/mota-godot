@@ -33,7 +33,7 @@ func _ready() -> void:
 	EventBus.move_resolved.connect(_on_move_resolved)
 
 
-func _process(_delta: float) -> void:
+func _process(_delta: float) -> void:	
 	if is_busy:
 		return
 		
