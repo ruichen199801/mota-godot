@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ubv3jnibyiks"]
+
+[ext_resource type="Script" uid="uid://dxwluh7g7egfu" path="res://entities/stair_entity.gd" id="1_ntvu7"]
+[ext_resource type="Texture2D" uid="uid://bvg2hpxffihl5" path="res://assets/images/stair_down.png" id="2_ntvu7"]
+
+[node name="StairDownEntity" type="Node2D" unique_id=1587493218]
+script = ExtResource("1_ntvu7")
+stair_direction = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=297794206]
+texture = ExtResource("2_ntvu7")
+centered = false

@@ -8,36 +8,50 @@ extends Node2D
 
 func _ready() -> void:
 	move_resolver.player = player
-	player.init(Vector2i(5, 5))
+	player.init(FloorManager.START_POS)
 	
 	_load_all_floors()
-	_switch_to_floor(0)
+	_switch_to_floor(FloorManager.START_FLOOR_ID)
 	
 	hud.bind_player(player.data, player.get_icon())
-	
 	EventBus.floor_change_requested.connect(_on_floor_change)
 
 
 func _load_all_floors() -> void:
-	for i in range(0, FloorManager.TOTAL_FLOORS):
-		var path := "res://floors/floor_%d.tscn" % i
-		var scene: PackedScene = load(path)
-		if scene == null:
-			push_error("Missing floor scene: " + path)
-			continue
+	for floor_type in FloorManager.FLOOR_RANGES:
+		var bounds: Array = FloorManager.FLOOR_RANGES[floor_type]
+		for floor_num in range(bounds[0], bounds[1] + 1):
+			var floor_id := FloorManager.create_floor_id(floor_type, floor_num)
+			var path := FloorManager.get_floor_scene_path(floor_id)
 			
-		var floor_node: Node2D = scene.instantiate()
-		floor_container.add_child(floor_node)
-		var floor_grid: Dictionary = floor_node.setup()
-		FloorManager.add_floor(i, floor_node, floor_grid)
+			if not ResourceLoader.exists(path):
+				continue
+				
+			var scene: PackedScene = load(path)
+			var floor_node: Node2D = scene.instantiate()
+			floor_container.add_child(floor_node)
+			var floor_grid: Dictionary = floor_node.setup()
+			FloorManager.add_floor(floor_id, floor_node, floor_grid)
 
 
-func _on_floor_change(floor_id: int, spawn_pos: Vector2i) -> void:
+func _on_floor_change(floor_id: String, spawn_pos: Vector2i) -> void:
 	_switch_to_floor(floor_id)
+	
+	if not FloorManager.is_in_bounds(spawn_pos):
+		push_error("Player spawn pos %s out of bounds on floor %s" % [spawn_pos, floor_id])
+		return
+	
+	var entity := FloorManager.get_entity(spawn_pos)
+	if entity != null:
+		push_error("Player spawn pos %s blocked by %s on floor %s" % [
+			spawn_pos, entity.name, floor_id
+		])
+		return
+	
 	player.place_at(spawn_pos)
 	
 
-func _switch_to_floor(floor_id: int) -> void:
+func _switch_to_floor(floor_id: String) -> void:
 	FloorManager.switch_to_floor(floor_id)
 	hud.set_floor_display(floor_id)
 	EventBus.floor_switched.emit(floor_id)

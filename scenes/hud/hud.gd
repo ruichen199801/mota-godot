@@ -48,8 +48,8 @@ func bind_player(data: PlayerData, icon: Texture2D) -> void:
 	_refresh_hud_data()
 	
 
-func set_floor_display(floor_id: int) -> void:
-	floor_label.text = "主塔   %dF" % floor_id
+func set_floor_display(floor_id: String) -> void:
+	floor_label.text = FloorManager.get_floor_name(floor_id)
 	
 	
 func _refresh_hud_data() -> void:

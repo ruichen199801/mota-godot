@@ -4,11 +4,11 @@
 [ext_resource type="Script" uid="uid://cf3kxr3fsqne6" path="res://scenes/hud/hud.gd" id="2_nhd55"]
 [ext_resource type="FontFile" uid="uid://cokudok3b6nm7" path="res://assets/fonts/OpenSans-SemiBoldItalic.ttf" id="3_0bx4p"]
 [ext_resource type="Texture2D" uid="uid://bw2505uv4eaqv" path="res://assets/images/ground.png" id="3_c45xl"]
-[ext_resource type="Texture2D" uid="uid://bxw5pcooyj2k8" path="res://assets/images/player0.png" id="3_mgtrf"]
-[ext_resource type="Texture2D" uid="uid://bfs7h2gg5i60f" path="res://assets/images/keyY.png" id="4_0bx4p"]
+[ext_resource type="Texture2D" uid="uid://bxw5pcooyj2k8" path="res://assets/images/player_0.png" id="3_mgtrf"]
+[ext_resource type="Texture2D" uid="uid://bfs7h2gg5i60f" path="res://assets/images/key_yellow.png" id="4_0bx4p"]
 [ext_resource type="FontFile" uid="uid://da1f3rfg3lq41" path="res://assets/fonts/DFBuDingW12-Regular.ttf" id="6_v7mo4"]
-[ext_resource type="Texture2D" uid="uid://dpad4pcf863r3" path="res://assets/images/keyB.png" id="7_mq0y1"]
-[ext_resource type="Texture2D" uid="uid://qhd3xmr4b2jt" path="res://assets/images/keyR.png" id="8_go0ap"]
+[ext_resource type="Texture2D" uid="uid://dpad4pcf863r3" path="res://assets/images/key_blue.png" id="7_mq0y1"]
+[ext_resource type="Texture2D" uid="uid://qhd3xmr4b2jt" path="res://assets/images/key_red.png" id="8_go0ap"]
 [ext_resource type="Texture2D" uid="uid://p7drk4m3ocdq" path="res://assets/images/gold.png" id="9_go0ap"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mgtrf"]
@@ -36,6 +36,7 @@ variation_embolden = 0.3
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c45xl"]
 
 [sub_resource type="SystemFont" id="SystemFont_c45xl"]
+subpixel_positioning = 0
 
 [node name="HUD" type="Control" unique_id=477131612]
 layout_mode = 3

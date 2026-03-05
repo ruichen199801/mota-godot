@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpad4pcf863r3"
-path="res://.godot/imported/keyB.png-63b0c063c3ab93b78337e3efe7e263de.ctex"
+uid="uid://dbv3xyht562jx"
+path="res://.godot/imported/cross.png-30ced71a763af2cea3117fc20c973969.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/keyB.png"
-dest_files=["res://.godot/imported/keyB.png-63b0c063c3ab93b78337e3efe7e263de.ctex"]
+source_file="res://assets/images/cross.png"
+dest_files=["res://.godot/imported/cross.png-30ced71a763af2cea3117fc20c973969.ctex"]
 
 [params]
 

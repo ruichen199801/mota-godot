@@ -1,7 +1,5 @@
 extends Node2D
 
-@export var floor_id: int
-
 @onready var walls_tilemap: TileMapLayer = $Walls
 @onready var entities_node: Node2D = $Entities
 

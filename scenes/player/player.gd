@@ -33,7 +33,7 @@ func _ready() -> void:
 	EventBus.move_resolved.connect(_on_move_resolved)
 
 
-func _process(_delta: float) -> void:	
+func _process(_delta: float) -> void:
 	if is_busy:
 		return
 		
@@ -82,8 +82,7 @@ func _do_move(target: Vector2i) -> void:
 		FloorManager.grid_to_world(target), MOVE_TIME)
 	tween.finished.connect(func():
 		is_busy = false
-		if _get_direction() == Vector2i.ZERO:
-			_play_idle()
+		_play_idle()
 	)
 
 

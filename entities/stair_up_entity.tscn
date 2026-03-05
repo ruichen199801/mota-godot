@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cbmf85d67vidj"]
+
+[ext_resource type="Script" uid="uid://dxwluh7g7egfu" path="res://entities/stair_entity.gd" id="1_s4cbr"]
+[ext_resource type="Texture2D" uid="uid://btqm6txsr631b" path="res://assets/images/stair_up.png" id="2_7n15h"]
+
+[node name="StairUpEntity" type="Node2D" unique_id=1587493218]
+script = ExtResource("1_s4cbr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=297794206]
+texture = ExtResource("2_7n15h")
+centered = false
