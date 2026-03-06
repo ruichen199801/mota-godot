@@ -13,13 +13,12 @@ func _on_move_requested(direction: Vector2i) -> void:
 		return
 		
 	var target: Vector2i = player.grid_pos + direction
+	var entity: TileEntity = FloorManager.get_entity(target)
 	
 	# Boundary check
-	if not FloorManager.is_in_bounds(target):
+	if entity == null and not FloorManager.is_in_bounds(target):
 		EventBus.move_resolved.emit(target, false)
 		return
-		
-	var entity: TileEntity = FloorManager.get_entity(target)
 	
 	# Empty ground
 	if entity == null:

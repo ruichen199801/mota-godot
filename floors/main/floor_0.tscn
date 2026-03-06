@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://b678t3khc1li4" path="res://entities/enemy_entity.tscn" id="3_wsiys"]
 [ext_resource type="Resource" uid="uid://dgycbud154adj" path="res://resources/enemies/green_slime/green_slime.tres" id="4_qm6t4"]
 [ext_resource type="PackedScene" uid="uid://cbmf85d67vidj" path="res://entities/stair_up_entity.tscn" id="5_ruu8h"]
+[ext_resource type="PackedScene" uid="uid://bp13ks4wpt6ea" path="res://entities/door_entity.tscn" id="6_wsiys"]
+[ext_resource type="PackedScene" uid="uid://po6tanfhlyd6" path="res://entities/lava_entity.tscn" id="7_qm6t4"]
 
 [node name="Floor0" type="Node2D" unique_id=1806746235]
 script = ExtResource("1_b0ara")
@@ -15,7 +17,7 @@ tile_set = ExtResource("2_ruu8h")
 
 [node name="Walls" type="TileMapLayer" parent="." unique_id=1108185961]
 z_index = 1
-tile_map_data = PackedByteArray("AAAAAAAAAAADAAAAAAABAAAAAAADAAAAAAACAAAAAAADAAAAAAADAAAAAAADAAAAAAAEAAAAAAADAAAAAAAFAAAAAAADAAAAAAAGAAAAAAADAAAAAAAHAAAAAAADAAAAAAAIAAAAAAADAAAAAAAJAAAAAAADAAAAAAAKAAAAAAADAAAAAAAAAAEAAAADAAAAAAAAAAIAAAADAAAAAAAAAAMAAAADAAAAAAAAAAQAAAADAAAAAAAAAAUAAAADAAAAAAAAAAYAAAADAAAAAAAAAAcAAAADAAAAAAAKAAEAAAADAAAAAAAKAAIAAAADAAAAAAAKAAMAAAADAAAAAAAKAAQAAAADAAAAAAAKAAUAAAADAAAAAAAKAAYAAAADAAAAAAAKAAcAAAADAAAAAAAKAAgAAAADAAAAAAAKAAkAAAADAAAAAAAKAAoAAAADAAAAAAAJAAoAAAADAAAAAAAIAAoAAAADAAAAAAAHAAoAAAADAAAAAAAGAAoAAAADAAAAAAAFAAoAAAADAAAAAAAEAAoAAAADAAAAAAADAAoAAAADAAAAAAACAAoAAAADAAAAAAABAAoAAAADAAAAAAAAAAoAAAADAAAAAAAAAAkAAAADAAAAAAAAAAgAAAADAAAAAAACAAEAAAADAAAAAAAEAAEAAAADAAAAAAAGAAEAAAADAAAAAAAIAAEAAAADAAAAAAACAAMAAAADAAAAAAAEAAMAAAADAAAAAAAGAAMAAAADAAAAAAAIAAMAAAADAAAAAAACAAcAAAADAAAAAAACAAkAAAADAAAAAAAEAAcAAAADAAAAAAAEAAkAAAADAAAAAAAGAAcAAAADAAAAAAAGAAkAAAADAAAAAAAIAAcAAAADAAAAAAAIAAkAAAADAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAAADAAAAAAABAAAAAAADAAAAAAACAAAAAAADAAAAAAADAAAAAAADAAAAAAAFAAAAAAADAAAAAAAGAAAAAAADAAAAAAAHAAAAAAADAAAAAAAIAAAAAAADAAAAAAAJAAAAAAADAAAAAAAKAAAAAAADAAAAAAAAAAEAAAADAAAAAAAAAAIAAAADAAAAAAAAAAMAAAADAAAAAAAAAAQAAAADAAAAAAAAAAUAAAADAAAAAAAAAAYAAAADAAAAAAAAAAcAAAADAAAAAAAKAAEAAAADAAAAAAAKAAIAAAADAAAAAAAKAAMAAAADAAAAAAAKAAQAAAADAAAAAAAKAAUAAAADAAAAAAAKAAYAAAADAAAAAAAKAAcAAAADAAAAAAAKAAgAAAADAAAAAAAKAAkAAAADAAAAAAAKAAoAAAADAAAAAAAJAAoAAAADAAAAAAAIAAoAAAADAAAAAAAHAAoAAAADAAAAAAAGAAoAAAADAAAAAAAFAAoAAAADAAAAAAAEAAoAAAADAAAAAAADAAoAAAADAAAAAAACAAoAAAADAAAAAAABAAoAAAADAAAAAAAAAAoAAAADAAAAAAAAAAkAAAADAAAAAAAAAAgAAAADAAAAAAA=")
 tile_set = ExtResource("2_ruu8h")
 
 [node name="Entities" type="Node2D" parent="." unique_id=1047835971]
@@ -29,3 +31,31 @@ data = ExtResource("4_qm6t4")
 position = Vector2(224, 160)
 dest_floor_id = "main_1"
 dest_pos = Vector2i(1, 2)
+
+[node name="YellowDoor" parent="Entities" unique_id=2056068635 instance=ExtResource("6_wsiys")]
+position = Vector2(96, 192)
+
+[node name="BlueDoor" parent="Entities" unique_id=71356506 instance=ExtResource("6_wsiys")]
+position = Vector2(96, 224)
+door_type = 1
+
+[node name="RedDoor" parent="Entities" unique_id=1469873506 instance=ExtResource("6_wsiys")]
+position = Vector2(96, 256)
+door_type = 2
+
+[node name="IronDoor" parent="Entities" unique_id=1961861989 instance=ExtResource("6_wsiys")]
+position = Vector2(160, 224)
+door_type = 3
+
+[node name="LogicDoor" parent="Entities" unique_id=513795609 instance=ExtResource("6_wsiys")]
+position = Vector2(160, 256)
+door_type = 4
+
+[node name="Lava1" parent="Entities" unique_id=650906143 instance=ExtResource("7_qm6t4")]
+position = Vector2(64, 128)
+
+[node name="Lava2" parent="Entities" unique_id=1119014776 instance=ExtResource("7_qm6t4")]
+position = Vector2(96, 128)
+
+[node name="Lava3" parent="Entities" unique_id=1666038089 instance=ExtResource("7_qm6t4")]
+position = Vector2(128, 128)

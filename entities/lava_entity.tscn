@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://po6tanfhlyd6"]
+
+[ext_resource type="SpriteFrames" uid="uid://jmqwbbk2hl1v" path="res://resources/lava_frames.tres" id="1_rmlh6"]
+[ext_resource type="Script" uid="uid://bs6efp75dxrb0" path="res://entities/lava_entity.gd" id="1_ylch3"]
+
+[node name="LavaEntity" type="Node2D" unique_id=650906143]
+script = ExtResource("1_ylch3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1739193223]
+sprite_frames = ExtResource("1_rmlh6")
+autoplay = "default"
+centered = false
