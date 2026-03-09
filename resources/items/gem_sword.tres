@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://7ebeobu3c3vx"]
+
+[ext_resource type="Script" uid="uid://6cgvhhds7l2r" path="res://data/effects/stat_effect.gd" id="1_gfmlc"]
+[ext_resource type="Texture2D" uid="uid://drhaqcfvhiiiv" path="res://assets/images/sword_3.png" id="2_gfmlc"]
+[ext_resource type="Script" uid="uid://x7y7v7vypehe" path="res://data/item_data.gd" id="3_jwswv"]
+
+[sub_resource type="Resource" id="Resource_3ostf"]
+script = ExtResource("1_gfmlc")
+atk = 30
+atk_crit = 30
+metadata/_custom_type_script = "uid://6cgvhhds7l2r"
+
+[resource]
+script = ExtResource("3_jwswv")
+item_id = "gem_sword"
+item_name = "宝石剑"
+description = "攻击力+30，攻击临界值+30"
+icon = ExtResource("2_gfmlc")
+effect = SubResource("Resource_3ostf")
+metadata/_custom_type_script = "uid://x7y7v7vypehe"

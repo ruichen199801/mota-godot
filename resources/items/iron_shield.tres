@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bgoksh5q4b60k"]
+
+[ext_resource type="Script" uid="uid://6cgvhhds7l2r" path="res://data/effects/stat_effect.gd" id="1_6ysxb"]
+[ext_resource type="Texture2D" uid="uid://dtewv01xhbqqd" path="res://assets/images/shield_2.png" id="2_6ysxb"]
+[ext_resource type="Script" uid="uid://x7y7v7vypehe" path="res://data/item_data.gd" id="3_y6g3v"]
+
+[sub_resource type="Resource" id="Resource_drw6s"]
+script = ExtResource("1_6ysxb")
+def = 13
+def_crit = 5
+metadata/_custom_type_script = "uid://6cgvhhds7l2r"
+
+[resource]
+script = ExtResource("3_y6g3v")
+item_id = "iron_shield"
+item_name = "铁盾"
+description = "防御力+13，防御临界值+5"
+icon = ExtResource("2_6ysxb")
+effect = SubResource("Resource_drw6s")
+metadata/_custom_type_script = "uid://x7y7v7vypehe"

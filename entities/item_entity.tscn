@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d2gnobmc7j4xv"]
+
+[ext_resource type="Script" uid="uid://nvejewdejo4w" path="res://entities/item_entity.gd" id="1_2n0ly"]
+[ext_resource type="Texture2D" uid="uid://uhnbrtmvn3do" path="res://assets/images/potion_red.png" id="2_r7n1h"]
+
+[node name="ItemEntity" type="Node2D" unique_id=1365116579]
+script = ExtResource("1_2n0ly")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=951461027]
+texture = ExtResource("2_r7n1h")
+centered = false

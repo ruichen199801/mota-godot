@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dgycbud154adj"]
 
-[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://resources/data/enemy_data.gd" id="1_ilv3w"]
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_ilv3w"]
 [ext_resource type="SpriteFrames" uid="uid://gb1ab001a3u3" path="res://resources/enemies/green_slime/green_slime_frames.tres" id="1_kfisv"]
 
 [resource]

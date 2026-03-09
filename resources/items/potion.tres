@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dew2n4qxuoylg"]
+
+[ext_resource type="Script" uid="uid://x7y7v7vypehe" path="res://data/item_data.gd" id="1_h3xj8"]
+[ext_resource type="Script" uid="uid://6cgvhhds7l2r" path="res://data/effects/stat_effect.gd" id="1_ijm2k"]
+[ext_resource type="Texture2D" uid="uid://uhnbrtmvn3do" path="res://assets/images/potion_red.png" id="2_66frb"]
+
+[sub_resource type="Resource" id="Resource_ubybq"]
+script = ExtResource("1_ijm2k")
+hp = 150
+metadata/_custom_type_script = "uid://6cgvhhds7l2r"
+
+[resource]
+script = ExtResource("1_h3xj8")
+item_id = "potion"
+item_name = "药剂"
+description = "体力+150"
+icon = ExtResource("2_66frb")
+effect = SubResource("Resource_ubybq")
+metadata/_custom_type_script = "uid://x7y7v7vypehe"

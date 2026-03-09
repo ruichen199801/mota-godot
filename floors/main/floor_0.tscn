@@ -7,6 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://cbmf85d67vidj" path="res://entities/stair_up_entity.tscn" id="5_ruu8h"]
 [ext_resource type="PackedScene" uid="uid://bp13ks4wpt6ea" path="res://entities/door_entity.tscn" id="6_wsiys"]
 [ext_resource type="PackedScene" uid="uid://po6tanfhlyd6" path="res://entities/lava_entity.tscn" id="7_qm6t4"]
+[ext_resource type="PackedScene" uid="uid://d2gnobmc7j4xv" path="res://entities/item_entity.tscn" id="8_2p8vk"]
+[ext_resource type="Resource" uid="uid://dew2n4qxuoylg" path="res://resources/items/potion.tres" id="10_8qnd4"]
+[ext_resource type="Resource" uid="uid://crv72j1mbl8sh" path="res://resources/items/greater_potion.tres" id="11_5r5jn"]
+[ext_resource type="Resource" uid="uid://cfidvljhgwc06" path="res://resources/items/magic_key.tres" id="12_cc1qs"]
 
 [node name="Floor0" type="Node2D" unique_id=1806746235]
 script = ExtResource("1_b0ara")
@@ -59,3 +63,15 @@ position = Vector2(96, 128)
 
 [node name="Lava3" parent="Entities" unique_id=1666038089 instance=ExtResource("7_qm6t4")]
 position = Vector2(128, 128)
+
+[node name="Potion" parent="Entities" unique_id=1048197284 instance=ExtResource("8_2p8vk")]
+position = Vector2(96, 32)
+data = ExtResource("10_8qnd4")
+
+[node name="GreaterPotion" parent="Entities" unique_id=1564028092 instance=ExtResource("8_2p8vk")]
+position = Vector2(128, 32)
+data = ExtResource("11_5r5jn")
+
+[node name="MagicKey" parent="Entities" unique_id=580952642 instance=ExtResource("8_2p8vk")]
+position = Vector2(160, 32)
+data = ExtResource("12_cc1qs")

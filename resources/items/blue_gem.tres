@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://b5tvr5hwiubg"]
+
+[ext_resource type="Script" uid="uid://6cgvhhds7l2r" path="res://data/effects/stat_effect.gd" id="1_2eyix"]
+[ext_resource type="Texture2D" uid="uid://b23txj7niedtc" path="res://assets/images/gem_blue.png" id="2_2eyix"]
+[ext_resource type="Script" uid="uid://x7y7v7vypehe" path="res://data/item_data.gd" id="3_x3vly"]
+
+[sub_resource type="Resource" id="Resource_t1onq"]
+script = ExtResource("1_2eyix")
+def = 2
+metadata/_custom_type_script = "uid://6cgvhhds7l2r"
+
+[resource]
+script = ExtResource("3_x3vly")
+item_id = "blue_gem"
+item_name = "蓝宝石"
+description = "防御力+2"
+icon = ExtResource("2_2eyix")
+effect = SubResource("Resource_t1onq")
+metadata/_custom_type_script = "uid://x7y7v7vypehe"

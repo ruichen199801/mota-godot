@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://d46fpmp66mlp"]
+
+[ext_resource type="Script" uid="uid://x7y7v7vypehe" path="res://data/item_data.gd" id="1_kf2ad"]
+[ext_resource type="Script" uid="uid://bryk0if03oscl" path="res://data/effects/fire_wine_effect.gd" id="1_r2iac"]
+[ext_resource type="Texture2D" uid="uid://deu3gxm68tbo7" path="res://assets/images/wine_red.png" id="2_j63fg"]
+
+[sub_resource type="Resource" id="Resource_jvn51"]
+script = ExtResource("1_r2iac")
+metadata/_custom_type_script = "uid://bryk0if03oscl"
+
+[resource]
+script = ExtResource("1_kf2ad")
+item_id = "fire_wine"
+item_name = "火酒"
+description = "使勇者从衰弱状态进入正常状态"
+icon = ExtResource("2_j63fg")
+effect = SubResource("Resource_jvn51")
+metadata/_custom_type_script = "uid://x7y7v7vypehe"

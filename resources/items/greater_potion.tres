@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://crv72j1mbl8sh"]
+
+[ext_resource type="Script" uid="uid://x7y7v7vypehe" path="res://data/item_data.gd" id="1_4skax"]
+[ext_resource type="Script" uid="uid://6cgvhhds7l2r" path="res://data/effects/stat_effect.gd" id="1_mhwf3"]
+[ext_resource type="Texture2D" uid="uid://bko44awbowgbs" path="res://assets/images/potion_blue.png" id="2_bot1r"]
+
+[sub_resource type="Resource" id="Resource_nkq10"]
+script = ExtResource("1_mhwf3")
+hp = 400
+metadata/_custom_type_script = "uid://6cgvhhds7l2r"
+
+[resource]
+script = ExtResource("1_4skax")
+item_id = "greater_potion"
+item_name = "高级药剂"
+description = "体力+400"
+icon = ExtResource("2_bot1r")
+effect = SubResource("Resource_nkq10")
+metadata/_custom_type_script = "uid://x7y7v7vypehe"

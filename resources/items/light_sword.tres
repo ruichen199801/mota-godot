@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cl45kg8ytwi31"]
+
+[ext_resource type="Script" uid="uid://6cgvhhds7l2r" path="res://data/effects/stat_effect.gd" id="1_xida5"]
+[ext_resource type="Texture2D" uid="uid://dit76ielbe56u" path="res://assets/images/sword_4.png" id="2_xida5"]
+[ext_resource type="Script" uid="uid://x7y7v7vypehe" path="res://data/item_data.gd" id="3_kvnne"]
+
+[sub_resource type="Resource" id="Resource_3ostf"]
+script = ExtResource("1_xida5")
+atk = 40
+atk_crit = 40
+metadata/_custom_type_script = "uid://6cgvhhds7l2r"
+
+[resource]
+script = ExtResource("3_kvnne")
+item_id = "light_sword"
+item_name = "灵光剑"
+description = "攻击力+40，攻击临界值+40"
+icon = ExtResource("2_xida5")
+effect = SubResource("Resource_3ostf")
+metadata/_custom_type_script = "uid://x7y7v7vypehe"

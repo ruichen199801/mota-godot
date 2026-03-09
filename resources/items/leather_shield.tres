@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://d30dnyolr3fx0"]
+
+[ext_resource type="Script" uid="uid://x7y7v7vypehe" path="res://data/item_data.gd" id="1_4pep6"]
+[ext_resource type="Script" uid="uid://6cgvhhds7l2r" path="res://data/effects/stat_effect.gd" id="1_fq02c"]
+[ext_resource type="Texture2D" uid="uid://bu8060w6kw2wt" path="res://assets/images/shield_1.png" id="2_0joeq"]
+
+[sub_resource type="Resource" id="Resource_drw6s"]
+script = ExtResource("1_fq02c")
+def = 7
+def_crit = 5
+metadata/_custom_type_script = "uid://6cgvhhds7l2r"
+
+[resource]
+script = ExtResource("1_4pep6")
+item_id = "leather_shield"
+item_name = "皮革之盾"
+description = "防御力+7，防御临界值+5"
+icon = ExtResource("2_0joeq")
+effect = SubResource("Resource_drw6s")
+metadata/_custom_type_script = "uid://x7y7v7vypehe"
