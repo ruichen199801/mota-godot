@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brpbsx67xe3pe"
-path="res://.godot/imported/seal_tyrant.png-86d7f6eb178b7c700d488487da08cdb2.ctex"
+uid="uid://d1gvt5u5ht6xr"
+path="res://.godot/imported/door_yellow.png-1cf51d8b181b2fcb495298038cee546b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/seal_tyrant.png"
-dest_files=["res://.godot/imported/seal_tyrant.png-86d7f6eb178b7c700d488487da08cdb2.ctex"]
+source_file="res://assets/images/door_yellow.png"
+dest_files=["res://.godot/imported/door_yellow.png-1cf51d8b181b2fcb495298038cee546b.ctex"]
 
 [params]
 

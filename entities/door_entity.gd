@@ -27,8 +27,7 @@ func is_async() -> bool:
 	
 func on_block(pd: PlayerData) -> void:
 	if not _can_open(pd):
-		return
-		
+		return	
 	_consume_key(pd)
 	anim.play()
 	await anim.animation_finished
@@ -41,7 +40,7 @@ func _can_open(pd: PlayerData) -> bool:
 		DoorType.BLUE: return pd.blue_keys > 0
 		DoorType.RED: return pd.red_keys > 0
 		DoorType.IRON: return true
-		DoorType.LOGIC: return false # TODO: Check special item
+		DoorType.LOGIC: return pd.get_item_uses("gem_pickaxe") > 0
 	return false
 	
 
@@ -50,3 +49,4 @@ func _consume_key(pd: PlayerData) -> void:
 		DoorType.YELLOW: pd.yellow_keys -= 1
 		DoorType.BLUE: pd.blue_keys -= 1
 		DoorType.RED: pd.red_keys -= 1
+		DoorType.LOGIC: pd.use_item("gem_pickaxe")

@@ -8,9 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://bp13ks4wpt6ea" path="res://entities/door_entity.tscn" id="6_wsiys"]
 [ext_resource type="PackedScene" uid="uid://po6tanfhlyd6" path="res://entities/lava_entity.tscn" id="7_qm6t4"]
 [ext_resource type="PackedScene" uid="uid://d2gnobmc7j4xv" path="res://entities/item_entity.tscn" id="8_2p8vk"]
+[ext_resource type="Resource" uid="uid://cyvfa5e6d26l0" path="res://resources/items/wing_of_speed.tres" id="9_cc1qs"]
+[ext_resource type="Resource" uid="uid://c16o21mruyxm4" path="res://resources/items/gem_pickaxe.tres" id="9_vx8v0"]
 [ext_resource type="Resource" uid="uid://dew2n4qxuoylg" path="res://resources/items/potion.tres" id="10_8qnd4"]
 [ext_resource type="Resource" uid="uid://crv72j1mbl8sh" path="res://resources/items/greater_potion.tres" id="11_5r5jn"]
 [ext_resource type="Resource" uid="uid://cfidvljhgwc06" path="res://resources/items/magic_key.tres" id="12_cc1qs"]
+[ext_resource type="Resource" uid="uid://bvtnhkvtamdxv" path="res://resources/items/ice_amulet.tres" id="13_q4xqp"]
 
 [node name="Floor0" type="Node2D" unique_id=1806746235]
 script = ExtResource("1_b0ara")
@@ -21,7 +24,7 @@ tile_set = ExtResource("2_ruu8h")
 
 [node name="Walls" type="TileMapLayer" parent="." unique_id=1108185961]
 z_index = 1
-tile_map_data = PackedByteArray("AAAAAAAAAAADAAAAAAABAAAAAAADAAAAAAACAAAAAAADAAAAAAADAAAAAAADAAAAAAAFAAAAAAADAAAAAAAGAAAAAAADAAAAAAAHAAAAAAADAAAAAAAIAAAAAAADAAAAAAAJAAAAAAADAAAAAAAKAAAAAAADAAAAAAAAAAEAAAADAAAAAAAAAAIAAAADAAAAAAAAAAMAAAADAAAAAAAAAAQAAAADAAAAAAAAAAUAAAADAAAAAAAAAAYAAAADAAAAAAAAAAcAAAADAAAAAAAKAAEAAAADAAAAAAAKAAIAAAADAAAAAAAKAAMAAAADAAAAAAAKAAQAAAADAAAAAAAKAAUAAAADAAAAAAAKAAYAAAADAAAAAAAKAAcAAAADAAAAAAAKAAgAAAADAAAAAAAKAAkAAAADAAAAAAAKAAoAAAADAAAAAAAJAAoAAAADAAAAAAAIAAoAAAADAAAAAAAHAAoAAAADAAAAAAAGAAoAAAADAAAAAAAFAAoAAAADAAAAAAAEAAoAAAADAAAAAAADAAoAAAADAAAAAAACAAoAAAADAAAAAAABAAoAAAADAAAAAAAAAAoAAAADAAAAAAAAAAkAAAADAAAAAAAAAAgAAAADAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAAADAAAAAAABAAAAAAADAAAAAAACAAAAAAADAAAAAAADAAAAAAADAAAAAAAFAAAAAAADAAAAAAAGAAAAAAADAAAAAAAHAAAAAAADAAAAAAAIAAAAAAADAAAAAAAJAAAAAAADAAAAAAAKAAAAAAADAAAAAAAAAAEAAAADAAAAAAAAAAIAAAADAAAAAAAAAAMAAAADAAAAAAAAAAQAAAADAAAAAAAAAAUAAAADAAAAAAAAAAYAAAADAAAAAAAAAAcAAAADAAAAAAAKAAEAAAADAAAAAAAKAAIAAAADAAAAAAAKAAMAAAADAAAAAAAKAAQAAAADAAAAAAAKAAUAAAADAAAAAAAKAAYAAAADAAAAAAAKAAcAAAADAAAAAAAKAAgAAAADAAAAAAAKAAkAAAADAAAAAAAKAAoAAAADAAAAAAAJAAoAAAADAAAAAAAIAAoAAAADAAAAAAAHAAoAAAADAAAAAAAGAAoAAAADAAAAAAAFAAoAAAADAAAAAAAEAAoAAAADAAAAAAADAAoAAAADAAAAAAACAAoAAAADAAAAAAABAAoAAAADAAAAAAAAAAoAAAADAAAAAAAAAAkAAAADAAAAAAAAAAgAAAADAAAAAAAEAAAAAAADAAAAAAA=")
 tile_set = ExtResource("2_ruu8h")
 
 [node name="Entities" type="Node2D" parent="." unique_id=1047835971]
@@ -55,6 +58,18 @@ door_type = 3
 position = Vector2(160, 256)
 door_type = 4
 
+[node name="LogicDoor2" parent="Entities" unique_id=1678666728 instance=ExtResource("6_wsiys")]
+position = Vector2(192, 256)
+door_type = 4
+
+[node name="LogicDoor3" parent="Entities" unique_id=197143820 instance=ExtResource("6_wsiys")]
+position = Vector2(224, 256)
+door_type = 4
+
+[node name="LogicDoor4" parent="Entities" unique_id=540463460 instance=ExtResource("6_wsiys")]
+position = Vector2(256, 256)
+door_type = 4
+
 [node name="Lava1" parent="Entities" unique_id=650906143 instance=ExtResource("7_qm6t4")]
 position = Vector2(64, 128)
 
@@ -63,6 +78,26 @@ position = Vector2(96, 128)
 
 [node name="Lava3" parent="Entities" unique_id=1666038089 instance=ExtResource("7_qm6t4")]
 position = Vector2(128, 128)
+
+[node name="GemPickaxe" parent="Entities" unique_id=1365116579 instance=ExtResource("8_2p8vk")]
+position = Vector2(224, 32)
+data = ExtResource("9_vx8v0")
+
+[node name="GemPickaxe2" parent="Entities" unique_id=865575001 instance=ExtResource("8_2p8vk")]
+position = Vector2(256, 32)
+data = ExtResource("9_vx8v0")
+
+[node name="GemPickaxe3" parent="Entities" unique_id=775644589 instance=ExtResource("8_2p8vk")]
+position = Vector2(224, 64)
+data = ExtResource("9_vx8v0")
+
+[node name="GemPickaxe4" parent="Entities" unique_id=1515628967 instance=ExtResource("8_2p8vk")]
+position = Vector2(256, 64)
+data = ExtResource("9_vx8v0")
+
+[node name="WingOfSpeed" parent="Entities" unique_id=604224740 instance=ExtResource("8_2p8vk")]
+position = Vector2(64, 32)
+data = ExtResource("9_cc1qs")
 
 [node name="Potion" parent="Entities" unique_id=1048197284 instance=ExtResource("8_2p8vk")]
 position = Vector2(96, 32)
@@ -75,3 +110,7 @@ data = ExtResource("11_5r5jn")
 [node name="MagicKey" parent="Entities" unique_id=580952642 instance=ExtResource("8_2p8vk")]
 position = Vector2(160, 32)
 data = ExtResource("12_cc1qs")
+
+[node name="IceAmulet" parent="Entities" unique_id=1717134478 instance=ExtResource("8_2p8vk")]
+position = Vector2(192, 32)
+data = ExtResource("13_q4xqp")

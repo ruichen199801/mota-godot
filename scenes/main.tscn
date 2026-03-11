@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://6nb215onucv5" path="res://assets/images/wall.png" id="2_tbgi4"]
 [ext_resource type="Script" uid="uid://2nh3ua1ddiv4" path="res://scenes/player/move_resolver.gd" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://b8q5gbuqf4x6h" path="res://scenes/hud/hud.tscn" id="4_jyhfs"]
+[ext_resource type="Script" uid="uid://scaneo5pci73" path="res://scenes/player/active_item_handler.gd" id="5_tefeu"]
 
 [node name="Main" type="Node2D" unique_id=1276187132]
 script = ExtResource("1_0wfyh")
@@ -32,6 +33,9 @@ z_index = 3
 
 [node name="MoveResolver" type="Node" parent="." unique_id=1647733805]
 script = ExtResource("3_sugp2")
+
+[node name="ActiveItemHandler" type="Node" parent="." unique_id=1024116116]
+script = ExtResource("5_tefeu")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1432553056]
 position = Vector2(288, 208)

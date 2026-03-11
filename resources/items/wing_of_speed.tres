@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cyvfa5e6d26l0"]
+
+[ext_resource type="Script" uid="uid://6cgvhhds7l2r" path="res://data/effects/stat_effect.gd" id="1_edrps"]
+[ext_resource type="Script" uid="uid://x7y7v7vypehe" path="res://data/item_data.gd" id="1_iltai"]
+[ext_resource type="Texture2D" uid="uid://1t1nq1qeeac8" path="res://assets/images/wing_agi_1.png" id="2_yiw5c"]
+[ext_resource type="Texture2D" uid="uid://b3v68eclw72fb" path="res://assets/images/wing_agi_2.png" id="3_v2vex"]
+
+[sub_resource type="Resource" id="Resource_aafsk"]
+script = ExtResource("1_edrps")
+agi = 3
+metadata/_custom_type_script = "uid://6cgvhhds7l2r"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rsou4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yiw5c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_v2vex")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_iltai")
+item_id = "wing_of_speed"
+item_name = "加速之翼"
+description = "敏捷+3"
+frames = SubResource("SpriteFrames_rsou4")
+effect = SubResource("Resource_aafsk")
+metadata/_custom_type_script = "uid://x7y7v7vypehe"

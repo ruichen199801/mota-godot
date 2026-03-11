@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://b7f3l0sv7pe4i"]
+
+[ext_resource type="Script" uid="uid://x7y7v7vypehe" path="res://data/item_data.gd" id="1_tklv3"]
+
+[resource]
+script = ExtResource("1_tklv3")
+item_id = "mind_mirror"
+item_name = "心镜"
+description = "按L键可查看怪物能力"
+item_type = 2
+metadata/_custom_type_script = "uid://x7y7v7vypehe"

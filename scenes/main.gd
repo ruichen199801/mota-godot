@@ -3,11 +3,13 @@ extends Node2D
 @onready var floor_container: Node2D = $GameArea/FloorContainer
 @onready var player: Node2D = $GameArea/Player
 @onready var move_resolver: Node = $MoveResolver
+@onready var active_item_handler: Node = $ActiveItemHandler
 @onready var hud: Control = $UILayer/HUD
 
 
 func _ready() -> void:
 	move_resolver.player = player
+	active_item_handler.player = player
 	player.init(FloorManager.START_POS)
 	
 	_load_all_floors()
@@ -42,7 +44,7 @@ func _on_floor_change(floor_id: String, spawn_pos: Vector2i) -> void:
 		return
 	
 	var entity := FloorManager.get_entity(spawn_pos)
-	if entity != null:
+	if entity != null and not entity.can_spawn_on():
 		push_error("Player spawn pos %s blocked by %s on floor %s" % [
 			spawn_pos, entity.name, floor_id
 		])

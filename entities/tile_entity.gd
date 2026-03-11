@@ -10,6 +10,10 @@ var grid_pos: Vector2i
 
 func is_blocking(_player_data: PlayerData) -> bool:
 	return true
+	
+
+func can_spawn_on() -> bool:
+	return false
 
 
 func on_block(_player_data: PlayerData) -> void:

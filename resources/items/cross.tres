@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://clpmukkfspi0d"]
+
+[ext_resource type="Script" uid="uid://x7y7v7vypehe" path="res://data/item_data.gd" id="1_0urg2"]
+[ext_resource type="Texture2D" uid="uid://dbv3xyht562jx" path="res://assets/images/cross.png" id="1_bp6iw"]
+
+[resource]
+script = ExtResource("1_0urg2")
+item_id = "cross"
+item_name = "十字架"
+description = "体力为0时可使体力+2000"
+icon = ExtResource("1_bp6iw")
+item_type = 2
+metadata/_custom_type_script = "uid://x7y7v7vypehe"

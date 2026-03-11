@@ -9,3 +9,7 @@ script = ExtResource("1_2n0ly")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=951461027]
 texture = ExtResource("2_r7n1h")
 centered = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2076489634]
+visible = false
+centered = false

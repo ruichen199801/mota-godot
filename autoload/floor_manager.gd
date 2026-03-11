@@ -22,6 +22,7 @@ const FLOOR_RANGES := { # floor_type -> floor_range
 var floors: Dictionary = {} # floor_id -> FloorData
 var grid: Dictionary = {} # Vector2i -> TileEntity
 var current_floor_id: String = ""
+var visited_floors: Array[String] = []
 
 # --- Entity methods ---
 
@@ -46,6 +47,20 @@ func is_in_bounds(pos: Vector2i) -> bool:
 	
 func grid_to_world(cell: Vector2i) -> Vector2:
 	return Vector2(cell * CELL_SIZE)
+
+
+func spawn_entity(scene: PackedScene, pos: Vector2i) -> TileEntity:
+	var entity: TileEntity = scene.instantiate()
+	entity.position = grid_to_world(pos)
+	entity.grid_pos = pos
+	
+	var old_entity := get_entity(pos)
+	if old_entity:
+		old_entity.remove_from_grid()
+	
+	set_entity(pos, entity)
+	floors[current_floor_id].node.get_node("Entities").add_child(entity)
+	return entity
 	
 # --- Floor methods ---
 
@@ -58,6 +73,7 @@ func add_floor(floor_id: String, node: Node2D, floor_grid: Dictionary) -> void:
 func switch_to_floor(floor_id: String) -> void:
 	if floor_id not in floors:
 		push_error("Floor id %s does not exist" % floor_id)
+		return
 		
 	# Save current
 	if current_floor_id in floors:
@@ -70,6 +86,9 @@ func switch_to_floor(floor_id: String) -> void:
 	grid = floors[floor_id].grid
 	floors[floor_id].node.visible = true
 	print("Switched to floor %s: %d cells" % [floor_id, grid.size()])
+	
+	if floor_id not in visited_floors:
+		visited_floors.append(floor_id)
 	
 # --- Floor ID methods ---
 

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://41tscolgmqor"]
+
+[ext_resource type="Texture2D" uid="uid://d1gvt5u5ht6xr" path="res://assets/images/door_yellow.png" id="1_all87"]
+[ext_resource type="Script" uid="uid://x7y7v7vypehe" path="res://data/item_data.gd" id="1_bjp33"]
+
+[resource]
+script = ExtResource("1_bjp33")
+item_id = "anywhere_door"
+item_name = "随意门"
+description = "按T键可将面前一格的地形变为黄门"
+icon = ExtResource("1_all87")
+item_type = 1
+metadata/_custom_type_script = "uid://x7y7v7vypehe"

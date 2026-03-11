@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cb0tq43capmvq"]
+
+[ext_resource type="Script" uid="uid://x7y7v7vypehe" path="res://data/item_data.gd" id="1_h78mm"]
+
+[resource]
+script = ExtResource("1_h78mm")
+item_id = "golden_feather"
+item_name = "黄金色羽根"
+description = "按F键可传送至到达过的楼层楼梯口"
+item_type = 2
+metadata/_custom_type_script = "uid://x7y7v7vypehe"

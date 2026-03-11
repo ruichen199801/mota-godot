@@ -26,6 +26,9 @@ const STATE_NAMES := {
 @export var hp: int = 1000:
 	set(v):
 		hp = v
+		if hp <= 0 and has_item("cross"):
+			hp = 2000
+			remove_item("cross")
 		emit_changed()
 		
 @export var atk: int = 10:
@@ -100,7 +103,7 @@ func add_to_inventory(item: ItemData, uses: int = -1) -> void:
 	if item.item_id in inventory and uses > 0:
 		inventory[item.item_id].uses += uses
 	else:
-		inventory[item.item_id].uses = InventorySlot.new(item, uses)
+		inventory[item.item_id] = InventorySlot.new(item, uses)
 	emit_changed()
 
 
@@ -108,17 +111,17 @@ func has_item(item_id: String) -> bool:
 	return item_id in inventory
 
 
+## Consumes one use of a consumable item. 
+## e.g. anywhere door x5 -> x4
+## Permanent items (-1 uses) always return true, never consumed.
 func use_item(item_id: String) -> bool:
 	if item_id not in inventory:
 		return false
-	
 	var slot: InventorySlot = inventory[item_id]
 	if slot.uses == -1:
 		return true 
 	if slot.uses <= 0:
 		return false
-		
-	# TODO: Add logic to actually apply the effect of the consumable item
 	slot.uses -= 1
 	if slot.uses == 0:
 		inventory.erase(item_id)
@@ -126,6 +129,16 @@ func use_item(item_id: String) -> bool:
 	return true
 
 
+## Removes (usually permanent) item entirely regardless of remaining uses.
+## e.g. cross triggers after hp <= 0 -> gone
+func remove_item(item_id: String) -> bool:
+	if item_id not in inventory:
+		return false
+	inventory.erase(item_id)
+	emit_changed()
+	return true
+
+	
 func get_item_data(item_id: String) -> ItemData:
 	if item_id in inventory:
 		return inventory[item_id].data

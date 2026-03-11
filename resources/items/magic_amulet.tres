@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dnlrskbxcvot6"]
+
+[ext_resource type="Script" uid="uid://x7y7v7vypehe" path="res://data/item_data.gd" id="1_qa64w"]
+
+[resource]
+script = ExtResource("1_qa64w")
+item_id = "magic_amulet"
+item_name = "魔法护符"
+description = "可使魔法系怪物防御力下降"
+item_type = 2
+metadata/_custom_type_script = "uid://x7y7v7vypehe"

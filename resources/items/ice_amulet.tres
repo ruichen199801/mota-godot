@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bvtnhkvtamdxv"]
+
+[ext_resource type="Texture2D" uid="uid://bklf0g2xk43u6" path="res://assets/images/ice_amulet.png" id="1_bxh8r"]
+[ext_resource type="Script" uid="uid://x7y7v7vypehe" path="res://data/item_data.gd" id="1_olr4w"]
+
+[resource]
+script = ExtResource("1_olr4w")
+item_id = "ice_amulet"
+item_name = "冰之护符"
+description = "可将熔岩化为平地"
+icon = ExtResource("1_bxh8r")
+item_type = 2
+metadata/_custom_type_script = "uid://x7y7v7vypehe"

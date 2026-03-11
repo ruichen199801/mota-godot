@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c16o21mruyxm4"]
+
+[ext_resource type="Texture2D" uid="uid://ble1ayn01nlw1" path="res://assets/images/pickaxe_item.png" id="1_8l2f5"]
+[ext_resource type="Script" uid="uid://x7y7v7vypehe" path="res://data/item_data.gd" id="1_mwaeq"]
+
+[resource]
+script = ExtResource("1_mwaeq")
+item_id = "gem_pickaxe"
+item_name = "宝石锄头"
+icon = ExtResource("1_8l2f5")
+item_type = 1
+metadata/_custom_type_script = "uid://x7y7v7vypehe"
