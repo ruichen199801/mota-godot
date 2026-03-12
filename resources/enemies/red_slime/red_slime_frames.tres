@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://cp0etotc3774a"]
+
+[ext_resource type="Texture2D" uid="uid://kl4sckt34c4c" path="res://assets/sprites/enemies.png" id="1_crc1u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rsqg"]
+atlas = ExtResource("1_crc1u")
+region = Rect2(128, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlqep"]
+atlas = ExtResource("1_crc1u")
+region = Rect2(160, 256, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rsqg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mlqep")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]

@@ -26,13 +26,14 @@ func _use_anywhere_door(pd: PlayerData) -> void:
 	var target: Vector2i = player.grid_pos + player.facing
 	var entity := FloorManager.get_entity(target)
 	
-	# Can place on: empty ground, lava, or certain walls
+	# Can place on: empty ground, lava, or replaceable walls
 	var can_place := false
 	if entity == null and FloorManager.is_in_bounds(target):
 		can_place = true
 	elif entity is LavaEntity:
 		can_place = true
-	# TODO: Add specific wall types
+	elif entity is WallEntity and entity.replaceable:
+		can_place = true
 	
 	if can_place:
 		pd.use_item("anywhere_door")

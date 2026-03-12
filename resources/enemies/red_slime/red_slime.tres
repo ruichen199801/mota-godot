@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://bsnuhn75qr0pd"]
+
+[ext_resource type="SpriteFrames" uid="uid://cp0etotc3774a" path="res://resources/enemies/red_slime/red_slime_frames.tres" id="1_glbnf"]
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_ugg1t"]
+
+[resource]
+script = ExtResource("1_ugg1t")
+enemy_id = "red_slime"
+enemy_name = "红色史莱姆"
+frames = ExtResource("1_glbnf")
+hp = 50
+atk = 20
+def = 4
+gold_drop = 2
+xp_drop = 1
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

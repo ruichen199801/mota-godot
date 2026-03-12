@@ -4,6 +4,7 @@
 [ext_resource type="TileSet" uid="uid://di6pm00t0x4tx" path="res://resources/floor_tileset.tres" id="2_ruu8h"]
 [ext_resource type="PackedScene" uid="uid://b678t3khc1li4" path="res://entities/enemy_entity.tscn" id="3_wsiys"]
 [ext_resource type="Resource" uid="uid://dgycbud154adj" path="res://resources/enemies/green_slime/green_slime.tres" id="4_qm6t4"]
+[ext_resource type="Resource" uid="uid://bsnuhn75qr0pd" path="res://resources/enemies/red_slime/red_slime.tres" id="5_fkqoe"]
 [ext_resource type="PackedScene" uid="uid://cbmf85d67vidj" path="res://entities/stair_up_entity.tscn" id="5_ruu8h"]
 [ext_resource type="PackedScene" uid="uid://bp13ks4wpt6ea" path="res://entities/door_entity.tscn" id="6_wsiys"]
 [ext_resource type="PackedScene" uid="uid://po6tanfhlyd6" path="res://entities/lava_entity.tscn" id="7_qm6t4"]
@@ -14,6 +15,9 @@
 [ext_resource type="Resource" uid="uid://crv72j1mbl8sh" path="res://resources/items/greater_potion.tres" id="11_5r5jn"]
 [ext_resource type="Resource" uid="uid://cfidvljhgwc06" path="res://resources/items/magic_key.tres" id="12_cc1qs"]
 [ext_resource type="Resource" uid="uid://bvtnhkvtamdxv" path="res://resources/items/ice_amulet.tres" id="13_q4xqp"]
+[ext_resource type="Resource" uid="uid://41tscolgmqor" path="res://resources/items/anywhere_door.tres" id="15_my178"]
+[ext_resource type="Resource" uid="uid://clpmukkfspi0d" path="res://resources/items/cross.tres" id="16_ki1wk"]
+[ext_resource type="Resource" uid="uid://ct8qok27qfe0j" path="res://resources/items/divine_sword_token.tres" id="18_pdykn"]
 
 [node name="Floor0" type="Node2D" unique_id=1806746235]
 script = ExtResource("1_b0ara")
@@ -24,7 +28,7 @@ tile_set = ExtResource("2_ruu8h")
 
 [node name="Walls" type="TileMapLayer" parent="." unique_id=1108185961]
 z_index = 1
-tile_map_data = PackedByteArray("AAAAAAAAAAADAAAAAAABAAAAAAADAAAAAAACAAAAAAADAAAAAAADAAAAAAADAAAAAAAFAAAAAAADAAAAAAAGAAAAAAADAAAAAAAHAAAAAAADAAAAAAAIAAAAAAADAAAAAAAJAAAAAAADAAAAAAAKAAAAAAADAAAAAAAAAAEAAAADAAAAAAAAAAIAAAADAAAAAAAAAAMAAAADAAAAAAAAAAQAAAADAAAAAAAAAAUAAAADAAAAAAAAAAYAAAADAAAAAAAAAAcAAAADAAAAAAAKAAEAAAADAAAAAAAKAAIAAAADAAAAAAAKAAMAAAADAAAAAAAKAAQAAAADAAAAAAAKAAUAAAADAAAAAAAKAAYAAAADAAAAAAAKAAcAAAADAAAAAAAKAAgAAAADAAAAAAAKAAkAAAADAAAAAAAKAAoAAAADAAAAAAAJAAoAAAADAAAAAAAIAAoAAAADAAAAAAAHAAoAAAADAAAAAAAGAAoAAAADAAAAAAAFAAoAAAADAAAAAAAEAAoAAAADAAAAAAADAAoAAAADAAAAAAACAAoAAAADAAAAAAABAAoAAAADAAAAAAAAAAoAAAADAAAAAAAAAAkAAAADAAAAAAAAAAgAAAADAAAAAAAEAAAAAAADAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAAADAAAAAAABAAAAAAADAAAAAAACAAAAAAADAAAAAAADAAAAAAADAAAAAAAFAAAAAAADAAAAAAAGAAAAAAADAAAAAAAHAAAAAAADAAAAAAAIAAAAAAADAAAAAAAJAAAAAAADAAAAAAAKAAAAAAADAAAAAAAAAAEAAAADAAAAAAAAAAIAAAADAAAAAAAAAAMAAAADAAAAAAAAAAQAAAADAAAAAAAAAAUAAAADAAAAAAAAAAYAAAADAAAAAAAAAAcAAAADAAAAAAAKAAEAAAADAAAAAAAKAAIAAAADAAAAAAAKAAMAAAADAAAAAAAKAAQAAAADAAAAAAAKAAcAAAADAAAAAAAKAAgAAAADAAAAAAAKAAkAAAADAAAAAAAKAAoAAAADAAAAAAAJAAoAAAADAAAAAAAIAAoAAAADAAAAAAAHAAoAAAADAAAAAAAGAAoAAAADAAAAAAAFAAoAAAADAAAAAAAEAAoAAAADAAAAAAADAAoAAAADAAAAAAACAAoAAAADAAAAAAABAAoAAAADAAAAAAAAAAoAAAADAAAAAAAAAAkAAAADAAAAAAAAAAgAAAADAAAAAAAEAAAAAAADAAAAAAAKAAYAAAADAAAAAQAKAAUAAAADAAAAAQA=")
 tile_set = ExtResource("2_ruu8h")
 
 [node name="Entities" type="Node2D" parent="." unique_id=1047835971]
@@ -34,10 +38,34 @@ z_index = 2
 position = Vector2(64, 64)
 data = ExtResource("4_qm6t4")
 
+[node name="RedSlime" parent="Entities" unique_id=1001661391 instance=ExtResource("3_wsiys")]
+position = Vector2(96, 64)
+data = ExtResource("5_fkqoe")
+
+[node name="RedSlime2" parent="Entities" unique_id=1398625109 instance=ExtResource("3_wsiys")]
+position = Vector2(128, 64)
+data = ExtResource("5_fkqoe")
+
+[node name="RedSlime3" parent="Entities" unique_id=688165202 instance=ExtResource("3_wsiys")]
+position = Vector2(160, 64)
+data = ExtResource("5_fkqoe")
+
+[node name="RedSlime4" parent="Entities" unique_id=1313182926 instance=ExtResource("3_wsiys")]
+position = Vector2(96, 96)
+data = ExtResource("5_fkqoe")
+
+[node name="RedSlime5" parent="Entities" unique_id=1898365272 instance=ExtResource("3_wsiys")]
+position = Vector2(128, 96)
+data = ExtResource("5_fkqoe")
+
+[node name="RedSlime6" parent="Entities" unique_id=1492615565 instance=ExtResource("3_wsiys")]
+position = Vector2(160, 96)
+data = ExtResource("5_fkqoe")
+
 [node name="StairUp" parent="Entities" unique_id=1587493218 instance=ExtResource("5_ruu8h")]
 position = Vector2(224, 160)
 dest_floor_id = "main_1"
-dest_pos = Vector2i(1, 2)
+dest_pos = Vector2i(1, 1)
 
 [node name="YellowDoor" parent="Entities" unique_id=2056068635 instance=ExtResource("6_wsiys")]
 position = Vector2(96, 192)
@@ -114,3 +142,15 @@ data = ExtResource("12_cc1qs")
 [node name="IceAmulet" parent="Entities" unique_id=1717134478 instance=ExtResource("8_2p8vk")]
 position = Vector2(192, 32)
 data = ExtResource("13_q4xqp")
+
+[node name="AnywhereDoor" parent="Entities" unique_id=2028102346 instance=ExtResource("8_2p8vk")]
+position = Vector2(288, 96)
+data = ExtResource("15_my178")
+
+[node name="Cross" parent="Entities" unique_id=936985581 instance=ExtResource("8_2p8vk")]
+position = Vector2(256, 96)
+data = ExtResource("16_ki1wk")
+
+[node name="DivineSwordToken" parent="Entities" unique_id=1386192706 instance=ExtResource("8_2p8vk")]
+position = Vector2(224, 96)
+data = ExtResource("18_pdykn")

@@ -1,6 +1,7 @@
 class_name EnemyData 
 extends Resource
 
+@export var enemy_id: String
 @export var enemy_name: String
 @export var frames: SpriteFrames
 @export var hp: int

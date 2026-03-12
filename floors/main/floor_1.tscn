@@ -28,4 +28,4 @@ data = ExtResource("4_o5ddk")
 [node name="StairDown" parent="Entities" unique_id=1587493218 instance=ExtResource("5_jb7uo")]
 position = Vector2(32, 32)
 dest_floor_id = "main_0"
-dest_pos = Vector2i(5, 5)
+dest_pos = Vector2i(7, 5)

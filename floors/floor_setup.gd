@@ -5,6 +5,8 @@ extends Node2D
 
 var wall_scene: PackedScene = preload("res://entities/wall_entity.tscn")
 
+const REPLACEABLE_ALT_ID: int = 1
+
 
 func setup() -> Dictionary:
 	var floor_grid: Dictionary = {}
@@ -30,11 +32,16 @@ func setup() -> Dictionary:
 	for cell in walls_tilemap.get_used_cells():
 		if cell in floor_grid:
 			continue
-			
+				
 		var wall: WallEntity = wall_scene.instantiate()
 		wall.position = Vector2(cell * FloorManager.CELL_SIZE)
 		wall.grid_pos = cell
 		wall.visible = false
+		wall.source_tilemap = walls_tilemap
+		
+		var alt_id := walls_tilemap.get_cell_alternative_tile(cell)
+		wall.replaceable = (alt_id == REPLACEABLE_ALT_ID)
+		
 		entities_node.add_child(wall)
 		floor_grid[cell] = wall
 	
