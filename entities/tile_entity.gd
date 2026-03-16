@@ -6,6 +6,7 @@ var grid_pos: Vector2i
 # Multi-cell entities
 @export var cell_size: Vector2i = Vector2i(1, 1)
 @export var interact_offset: Vector2i = Vector2i(0, 0)
+@export var interact_facing: Vector2i = Vector2i.ZERO # default to any direction
 
 
 func is_blocking(_player_data: PlayerData) -> bool:
@@ -46,5 +47,9 @@ func get_interact_cell() -> Vector2i:
 	return grid_pos + interact_offset
 	
 	
-func is_interact_cell(cell: Vector2i) -> bool:
-	return cell == get_interact_cell()
+func is_interact_cell(cell: Vector2i, direction: Vector2i = Vector2i.ZERO) -> bool:
+	if cell != get_interact_cell():
+		return false
+	if interact_facing == Vector2i.ZERO:
+		return true
+	return direction == -interact_facing

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c52blxvwvflo8"]
+
+[ext_resource type="Script" uid="uid://dwsmvhagdaq00" path="res://entities/shop_entity.gd" id="1_afq5i"]
+[ext_resource type="SpriteFrames" uid="uid://cegvlfjje8u6q" path="res://resources/shops/gold_shop_frames.tres" id="2_x2cpi"]
+
+[node name="ShopEntity" type="Node2D" unique_id=338677699]
+script = ExtResource("1_afq5i")
+cell_size = Vector2i(3, 1)
+interact_offset = Vector2i(1, 0)
+interact_facing = Vector2i(0, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=72440855]
+sprite_frames = ExtResource("2_x2cpi")
+centered = false

@@ -7,6 +7,8 @@ extends Resource
 @export var hp: int
 @export var atk: int
 @export var def: int
+@export var crit: int
+@export var agi: int
 @export var gold_drop: int
 @export var xp_drop: int
 

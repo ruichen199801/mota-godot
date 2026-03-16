@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ShopOptionData" format=3 uid="uid://cxuvxw3x0ijs2"]
+
+[ext_resource type="Script" uid="uid://vork0ooj1wrk" path="res://data/shop_option_data.gd" id="1_0wipe"]
+
+[resource]
+script = ExtResource("1_0wipe")
+label = "增加6点防御力"
+def = 6
+metadata/_custom_type_script = "uid://vork0ooj1wrk"

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ShopData" format=3 uid="uid://ca1mi7813a70a"]
+
+[ext_resource type="SpriteFrames" uid="uid://cegvlfjje8u6q" path="res://resources/shops/gold_shop_frames.tres" id="1_fowtr"]
+[ext_resource type="Script" uid="uid://vork0ooj1wrk" path="res://data/shop_option_data.gd" id="2_l370n"]
+[ext_resource type="Resource" uid="uid://c1l4474m02pf7" path="res://resources/shops/gold2_hp.tres" id="3_fowtr"]
+[ext_resource type="Resource" uid="uid://djhtooucawcmr" path="res://resources/shops/gold2_atk.tres" id="4_l370n"]
+[ext_resource type="Resource" uid="uid://cxuvxw3x0ijs2" path="res://resources/shops/gold2_def.tres" id="5_8wedf"]
+[ext_resource type="Script" uid="uid://bp71c1h0gvdw" path="res://data/shop_data.gd" id="6_mb36d"]
+
+[resource]
+script = ExtResource("6_mb36d")
+shop_id = "gold_shop_2"
+shop_name = "贪婪之神"
+frames = ExtResource("1_fowtr")
+base_cost = 50
+cost_increase = 2
+options = Array[ExtResource("2_l370n")]([ExtResource("3_fowtr"), ExtResource("4_l370n"), ExtResource("5_8wedf")])
+metadata/_custom_type_script = "uid://bp71c1h0gvdw"

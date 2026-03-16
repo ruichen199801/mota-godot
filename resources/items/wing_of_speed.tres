@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://6cgvhhds7l2r" path="res://data/effects/stat_effect.gd" id="1_edrps"]
 [ext_resource type="Script" uid="uid://x7y7v7vypehe" path="res://data/item_data.gd" id="1_iltai"]
-[ext_resource type="SpriteFrames" uid="uid://bagwhxiill5s8" path="res://resources/wing_of_speed_frames.tres" id="2_aafsk"]
+[ext_resource type="SpriteFrames" uid="uid://bagwhxiill5s8" path="res://resources/items/wing_of_speed_frames.tres" id="2_aafsk"]
 
 [sub_resource type="Resource" id="Resource_aafsk"]
 script = ExtResource("1_edrps")

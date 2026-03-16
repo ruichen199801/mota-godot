@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ShopOptionData" format=3 uid="uid://b6c1idqhk4ol7"]
+
+[ext_resource type="Script" uid="uid://vork0ooj1wrk" path="res://data/shop_option_data.gd" id="1_h4tss"]
+
+[resource]
+script = ExtResource("1_h4tss")
+label = "增加2点防御力"
+fixed_cost = 20
+def = 2
+metadata/_custom_type_script = "uid://vork0ooj1wrk"

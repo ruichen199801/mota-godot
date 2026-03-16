@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ShopData" format=3 uid="uid://gp0dhknrc1b4"]
+
+[ext_resource type="SpriteFrames" uid="uid://fdr21ykmdbmt" path="res://resources/shops/xp_shop_frames.tres" id="1_lwmxm"]
+[ext_resource type="Script" uid="uid://vork0ooj1wrk" path="res://data/shop_option_data.gd" id="2_ypanv"]
+[ext_resource type="Resource" uid="uid://wft6p60u3im6" path="res://resources/shops/xp1_level.tres" id="3_ypanv"]
+[ext_resource type="Resource" uid="uid://umomwg1tirqq" path="res://resources/shops/xp1_atk.tres" id="4_w3yjl"]
+[ext_resource type="Resource" uid="uid://b6c1idqhk4ol7" path="res://resources/shops/xp1_def.tres" id="5_a5ry2"]
+[ext_resource type="Script" uid="uid://bp71c1h0gvdw" path="res://data/shop_data.gd" id="6_sgtlc"]
+
+[resource]
+script = ExtResource("6_sgtlc")
+shop_id = "xp_shop_1"
+shop_name = "战斗之神"
+currency = 1
+frames = ExtResource("1_lwmxm")
+is_fixed_cost = true
+options = Array[ExtResource("2_ypanv")]([ExtResource("3_ypanv"), ExtResource("4_w3yjl"), ExtResource("5_a5ry2")])
+metadata/_custom_type_script = "uid://bp71c1h0gvdw"

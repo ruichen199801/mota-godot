@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ShopOptionData" format=3 uid="uid://d3rkovixa5x0s"]
+
+[ext_resource type="Script" uid="uid://vork0ooj1wrk" path="res://data/shop_option_data.gd" id="1_jxt2e"]
+
+[resource]
+script = ExtResource("1_jxt2e")
+label = "提升3个等级"
+fixed_cost = 190
+level = 3
+hp = 750
+atk = 9
+def = 9
+metadata/_custom_type_script = "uid://vork0ooj1wrk"

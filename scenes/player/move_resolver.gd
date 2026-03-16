@@ -26,7 +26,7 @@ func _on_move_requested(direction: Vector2i) -> void:
 		return
 		
 	# Non-interact cells: always block silently
-	if not entity.is_interact_cell(target):
+	if not entity.is_interact_cell(target, direction):
 		EventBus.move_resolved.emit(target, false)
 		return
 		

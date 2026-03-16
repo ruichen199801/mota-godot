@@ -35,19 +35,18 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if is_busy:
-		return
-		
-	# Throttle re-request after player is blocked
-	if retry_timer > 0:
+		return	
+	if retry_timer > 0: # throttle re-request after player is blocked
 		retry_timer -= _delta
 		return
 		
 	var dir := _get_direction()
 	if dir == Vector2i.ZERO:
 		return
-	
+		
 	facing = dir
 	is_busy = true
+	_play_idle()
 	EventBus.move_requested.emit(dir)
 	
 	

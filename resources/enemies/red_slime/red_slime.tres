@@ -11,6 +11,7 @@ frames = ExtResource("1_glbnf")
 hp = 50
 atk = 20
 def = 4
+crit = 1
 gold_drop = 2
 xp_drop = 1
 metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

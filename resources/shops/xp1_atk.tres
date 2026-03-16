@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ShopOptionData" format=3 uid="uid://umomwg1tirqq"]
+
+[ext_resource type="Script" uid="uid://vork0ooj1wrk" path="res://data/shop_option_data.gd" id="1_qo0nt"]
+
+[resource]
+script = ExtResource("1_qo0nt")
+label = "增加1点攻击力"
+fixed_cost = 20
+atk = 1
+metadata/_custom_type_script = "uid://vork0ooj1wrk"

@@ -411,6 +411,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
+focus_mode = 0
 text = "存档"
 
 [node name="LoadButton" type="Button" parent="LeftSection/LeftMargin/LeftVBox/OptionsBorder/OptionsMargin/OptionsSection" unique_id=1685975735]
@@ -418,6 +419,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
+focus_mode = 0
 text = "读档"
 
 [node name="ItemsButton" type="Button" parent="LeftSection/LeftMargin/LeftVBox/OptionsBorder/OptionsMargin/OptionsSection" unique_id=48367595]
@@ -425,6 +427,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
+focus_mode = 0
 text = "物品"
 
 [node name="SettingsButton" type="Button" parent="LeftSection/LeftMargin/LeftVBox/OptionsBorder/OptionsMargin/OptionsSection" unique_id=1198801649]
@@ -432,6 +435,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
+focus_mode = 0
 text = "设置"
 
 [node name="VerticalDivider" type="ColorRect" parent="." unique_id=250928548]
