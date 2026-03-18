@@ -5,6 +5,7 @@ enum CurrencyType { GOLD, XP }
 
 @export var shop_id: String
 @export var shop_name: String
+@export var description: String
 @export var currency: CurrencyType
 @export var frames: SpriteFrames
 

@@ -1,0 +1,90 @@
+[gd_resource type="Theme" format=3 uid="uid://bocaa5wajr1kd"]
+
+[ext_resource type="FontFile" uid="uid://dm1lrh1p7e6yb" path="res://assets/fonts/HuangYinQi-Regular.ttf" id="2_f8kr5"]
+[ext_resource type="FontFile" uid="uid://da1f3rfg3lq41" path="res://assets/fonts/DFBuDingW12-Regular.ttf" id="3_btemj"]
+[ext_resource type="StyleBox" uid="uid://dw4ih6o1o2cqm" path="res://resources/base_stylebox.tres" id="3_f8kr5"]
+[ext_resource type="FontFile" uid="uid://cokudok3b6nm7" path="res://assets/fonts/OpenSans-SemiBoldItalic.ttf" id="4_f8kr5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7amdl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4e07a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hyew6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t8lbb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6yak4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gpds0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c7far"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f5bl8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pfrcd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a27df"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dq38a"]
+
+[sub_resource type="SystemFont" id="SystemFont_f8kr5"]
+
+[sub_resource type="FontVariation" id="FontVariation_btemj"]
+base_font = SubResource("SystemFont_f8kr5")
+variation_embolden = 0.3
+
+[sub_resource type="SystemFont" id="SystemFont_btemj"]
+
+[resource]
+default_font = ExtResource("3_btemj")
+default_font_size = 14
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_disabled_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/colors/icon_disabled_color = Color(0, 0, 0, 1)
+Button/colors/icon_focus_color = Color(0, 0, 0, 1)
+Button/colors/icon_hover_color = Color(0, 0, 0, 1)
+Button/colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/icon_normal_color = Color(0, 0, 0, 1)
+Button/colors/icon_pressed_color = Color(0, 0, 0, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 0
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/styles/disabled = SubResource("StyleBoxEmpty_7amdl")
+Button/styles/disabled_mirrored = SubResource("StyleBoxEmpty_4e07a")
+Button/styles/focus = SubResource("StyleBoxEmpty_hyew6")
+Button/styles/hover = SubResource("StyleBoxEmpty_t8lbb")
+Button/styles/hover_mirrored = SubResource("StyleBoxEmpty_6yak4")
+Button/styles/hover_pressed = SubResource("StyleBoxEmpty_gpds0")
+Button/styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_c7far")
+Button/styles/normal = SubResource("StyleBoxEmpty_f5bl8")
+Button/styles/normal_mirrored = SubResource("StyleBoxEmpty_pfrcd")
+Button/styles/pressed = SubResource("StyleBoxEmpty_a27df")
+Button/styles/pressed_mirrored = SubResource("StyleBoxEmpty_dq38a")
+HudKeysLabel/base_type = &"Label"
+HudKeysLabel/font_sizes/font_size = 16
+HudKeysLabel/fonts/font = SubResource("FontVariation_btemj")
+HudStatsLabel/base_type = &"Label"
+HudStatsLabel/fonts/font = ExtResource("4_f8kr5")
+Label/fonts/font = ExtResource("3_btemj")
+MarginContainer/constants/margin_bottom = 6
+MarginContainer/constants/margin_left = 6
+MarginContainer/constants/margin_right = 6
+MarginContainer/constants/margin_top = 6
+Panel/styles/panel = ExtResource("3_f8kr5")
+PanelContainer/styles/panel = ExtResource("3_f8kr5")
+ShopLabel/base_type = &"Label"
+ShopLabel/fonts/font = ExtResource("2_f8kr5")
+ShopRichTextLabel/base_type = &"RichTextLabel"
+ShopRichTextLabel/fonts/bold_font = ExtResource("2_f8kr5")
+ShopRichTextLabel/fonts/bold_italics_font = ExtResource("2_f8kr5")
+ShopRichTextLabel/fonts/italics_font = ExtResource("2_f8kr5")
+ShopRichTextLabel/fonts/mono_font = ExtResource("2_f8kr5")
+ShopRichTextLabel/fonts/normal_font = ExtResource("2_f8kr5")
+SystemLabel/base_type = &"Label"
+SystemLabel/fonts/font = SubResource("SystemFont_btemj")

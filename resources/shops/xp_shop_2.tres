@@ -11,6 +11,7 @@
 script = ExtResource("6_i25ga")
 shop_id = "xp_shop_2"
 shop_name = "战斗之神"
+description = "我们又见面了，这次我可以令你的经验化作更多力量！"
 currency = 1
 frames = ExtResource("1_neukj")
 is_fixed_cost = true

@@ -11,6 +11,7 @@
 script = ExtResource("6_sgtlc")
 shop_id = "xp_shop_1"
 shop_name = "战斗之神"
+description = "可怜的勇者啊！我可以将你累积得来的经验化作你的力量！"
 currency = 1
 frames = ExtResource("1_lwmxm")
 is_fixed_cost = true

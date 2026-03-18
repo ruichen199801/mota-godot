@@ -2,6 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://cvpxu0bd2ts0f" path="res://assets/sprites/shops.png" id="1_gg8hb"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_gg8hb"]
+atlas = ExtResource("1_gg8hb")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wi0nh"]
+atlas = ExtResource("1_gg8hb")
+region = Rect2(128, 32, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_nfdlp"]
 atlas = ExtResource("1_gg8hb")
 region = Rect2(0, 32, 96, 32)
@@ -12,6 +20,17 @@ region = Rect2(96, 32, 96, 32)
 
 [resource]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gg8hb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wi0nh")
+}],
+"loop": true,
+"name": &"avatar",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nfdlp")

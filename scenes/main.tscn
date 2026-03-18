@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://2nh3ua1ddiv4" path="res://scenes/player/move_resolver.gd" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://b8q5gbuqf4x6h" path="res://scenes/hud/hud.tscn" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://scaneo5pci73" path="res://scenes/player/active_item_handler.gd" id="5_tefeu"]
+[ext_resource type="PackedScene" uid="uid://cgubgbm1kf8mj" path="res://scenes/shop/shop_ui.tscn" id="7_o6xl0"]
 
 [node name="Main" type="Node2D" unique_id=1276187132]
 script = ExtResource("1_0wfyh")
@@ -43,3 +44,6 @@ position = Vector2(288, 208)
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=1192008611]
 
 [node name="HUD" parent="UILayer" unique_id=477131612 instance=ExtResource("4_jyhfs")]
+
+[node name="ShopUI" parent="UILayer" unique_id=1644778655 instance=ExtResource("7_o6xl0")]
+metadata/_edit_lock_ = true

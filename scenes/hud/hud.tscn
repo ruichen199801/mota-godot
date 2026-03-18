@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://b8q5gbuqf4x6h"]
 
-[ext_resource type="Theme" uid="uid://bocaa5wajr1kd" path="res://resources/hud_theme.tres" id="1_cgeww"]
+[ext_resource type="Theme" uid="uid://bocaa5wajr1kd" path="res://resources/base_theme.tres" id="1_cgeww"]
 [ext_resource type="Script" uid="uid://cf3kxr3fsqne6" path="res://scenes/hud/hud.gd" id="2_nhd55"]
-[ext_resource type="FontFile" uid="uid://cokudok3b6nm7" path="res://assets/fonts/OpenSans-SemiBoldItalic.ttf" id="3_0bx4p"]
 [ext_resource type="Texture2D" uid="uid://bw2505uv4eaqv" path="res://assets/images/ground.png" id="3_c45xl"]
 [ext_resource type="Texture2D" uid="uid://bxw5pcooyj2k8" path="res://assets/images/player_0.png" id="3_mgtrf"]
 [ext_resource type="Texture2D" uid="uid://bfs7h2gg5i60f" path="res://assets/images/key_yellow.png" id="4_0bx4p"]
@@ -30,13 +29,7 @@ corner_radius_bottom_left = 1
 base_font = ExtResource("6_v7mo4")
 variation_transform = Transform2D(1.6, 0, 0, 1, 0, 0)
 
-[sub_resource type="FontVariation" id="FontVariation_mq0y1"]
-variation_embolden = 0.3
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c45xl"]
-
-[sub_resource type="SystemFont" id="SystemFont_c45xl"]
-subpixel_positioning = 0
 
 [node name="HUD" type="Control" unique_id=477131612]
 layout_mode = 3
@@ -161,7 +154,7 @@ vertical_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource("3_0bx4p")
+theme_type_variation = &"HudStatsLabel"
 text = "3"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -176,7 +169,7 @@ vertical_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource("3_0bx4p")
+theme_type_variation = &"HudStatsLabel"
 text = "900"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -191,7 +184,7 @@ vertical_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource("3_0bx4p")
+theme_type_variation = &"HudStatsLabel"
 text = "60"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -206,7 +199,7 @@ vertical_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource("3_0bx4p")
+theme_type_variation = &"HudStatsLabel"
 text = "57"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -221,7 +214,7 @@ vertical_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource("3_0bx4p")
+theme_type_variation = &"HudStatsLabel"
 text = "5"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -236,7 +229,7 @@ vertical_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource("3_0bx4p")
+theme_type_variation = &"HudStatsLabel"
 text = "2"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -251,7 +244,7 @@ vertical_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource("3_0bx4p")
+theme_type_variation = &"HudStatsLabel"
 text = "69"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -298,8 +291,7 @@ vertical_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_fonts/font = SubResource("FontVariation_mq0y1")
-theme_override_font_sizes/font_size = 16
+theme_type_variation = &"HudKeysLabel"
 text = "3"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -325,8 +317,7 @@ vertical_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_fonts/font = SubResource("FontVariation_mq0y1")
-theme_override_font_sizes/font_size = 16
+theme_type_variation = &"HudKeysLabel"
 text = "2"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -352,8 +343,7 @@ vertical_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_fonts/font = SubResource("FontVariation_mq0y1")
-theme_override_font_sizes/font_size = 16
+theme_type_variation = &"HudKeysLabel"
 text = "3"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -379,8 +369,7 @@ vertical_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_fonts/font = SubResource("FontVariation_mq0y1")
-theme_override_font_sizes/font_size = 16
+theme_type_variation = &"HudKeysLabel"
 text = "42"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -477,7 +466,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = SubResource("SystemFont_c45xl")
+theme_type_variation = &"SystemLabel"
 text = "主塔   入口"
 horizontal_alignment = 1
 vertical_alignment = 1
