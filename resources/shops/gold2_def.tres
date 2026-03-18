@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_0wipe")
-label = "增加6点防御力"
+label = "增加[font=res://assets/fonts/system_font.tres][font_size=14]6[/font_size][/font]点防御力"
 def = 6
 metadata/_custom_type_script = "uid://vork0ooj1wrk"

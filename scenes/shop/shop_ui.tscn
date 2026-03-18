@@ -21,40 +21,33 @@ mouse_filter = 2
 theme = ExtResource("1_gk7bq")
 script = ExtResource("1_380ce")
 
-[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1772195976]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="ShopBorder" type="PanelContainer" parent="." unique_id=1413718946]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 63.0
+offset_right = 284.0
+offset_bottom = 289.0
 mouse_filter = 2
 
-[node name="ShopBorder" type="PanelContainer" parent="CenterContainer" unique_id=1413718946]
-layout_mode = 2
-mouse_filter = 2
-
-[node name="ShopBackground" type="TextureRect" parent="CenterContainer/ShopBorder" unique_id=405406634]
-show_behind_parent = true
-z_index = -1
+[node name="ShopBackground" type="TextureRect" parent="ShopBorder" unique_id=405406634]
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("3_8cucq")
 stretch_mode = 1
 
-[node name="ContentVBox" type="VBoxContainer" parent="CenterContainer/ShopBorder" unique_id=2132367662]
+[node name="ContentVBox" type="VBoxContainer" parent="ShopBorder" unique_id=2132367662]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="UpperMargin" type="MarginContainer" parent="CenterContainer/ShopBorder/ContentVBox" unique_id=759495476]
+[node name="UpperMargin" type="MarginContainer" parent="ShopBorder/ContentVBox" unique_id=759495476]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="UpperVBox" type="VBoxContainer" parent="CenterContainer/ShopBorder/ContentVBox/UpperMargin" unique_id=1479907496]
+[node name="UpperVBox" type="VBoxContainer" parent="ShopBorder/ContentVBox/UpperMargin" unique_id=1479907496]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="TitleLabel" type="Label" parent="CenterContainer/ShopBorder/ContentVBox/UpperMargin/UpperVBox" unique_id=1735751781]
+[node name="TitleLabel" type="Label" parent="ShopBorder/ContentVBox/UpperMargin/UpperVBox" unique_id=1735751781]
 unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"ShopLabel"
@@ -63,24 +56,24 @@ text = "贪婪之神"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="UpperSection" type="HBoxContainer" parent="CenterContainer/ShopBorder/ContentVBox/UpperMargin/UpperVBox" unique_id=512574235]
+[node name="UpperSection" type="HBoxContainer" parent="ShopBorder/ContentVBox/UpperMargin/UpperVBox" unique_id=512574235]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="AvatarBorder" type="PanelContainer" parent="CenterContainer/ShopBorder/ContentVBox/UpperMargin/UpperVBox/UpperSection" unique_id=789833326]
+[node name="AvatarBorder" type="PanelContainer" parent="ShopBorder/ContentVBox/UpperMargin/UpperVBox/UpperSection" unique_id=789833326]
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 size_flags_vertical = 0
 mouse_filter = 2
 
-[node name="AvatarSprite" type="AnimatedSprite2D" parent="CenterContainer/ShopBorder/ContentVBox/UpperMargin/UpperVBox/UpperSection/AvatarBorder" unique_id=1813282062]
+[node name="AvatarSprite" type="AnimatedSprite2D" parent="ShopBorder/ContentVBox/UpperMargin/UpperVBox/UpperSection/AvatarBorder" unique_id=1813282062]
 unique_name_in_owner = true
 position = Vector2(2, 2)
 sprite_frames = ExtResource("4_i3qau")
 animation = &"avatar"
 centered = false
 
-[node name="DescriptionLabel" type="RichTextLabel" parent="CenterContainer/ShopBorder/ContentVBox/UpperMargin/UpperVBox/UpperSection" unique_id=2094491218]
+[node name="DescriptionLabel" type="RichTextLabel" parent="ShopBorder/ContentVBox/UpperMargin/UpperVBox/UpperSection" unique_id=2094491218]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
@@ -93,30 +86,29 @@ text = "人类啊！如果你愿意给我 [font=res://assets/fonts/system_font.t
 fit_content = true
 scroll_active = false
 
-[node name="Divider" type="ColorRect" parent="CenterContainer/ShopBorder/ContentVBox" unique_id=228339935]
+[node name="Divider" type="ColorRect" parent="ShopBorder/ContentVBox" unique_id=228339935]
 custom_minimum_size = Vector2(0, 2)
 layout_mode = 2
 mouse_filter = 2
 color = Color(0, 0.6, 0.8, 1)
 
-[node name="LowerMargin" type="MarginContainer" parent="CenterContainer/ShopBorder/ContentVBox" unique_id=225587100]
+[node name="LowerMargin" type="MarginContainer" parent="ShopBorder/ContentVBox" unique_id=225587100]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="OptionsContainer" type="VBoxContainer" parent="CenterContainer/ShopBorder/ContentVBox/LowerMargin" unique_id=1456426439]
-unique_name_in_owner = true
+[node name="OptionsContainer" type="VBoxContainer" parent="ShopBorder/ContentVBox/LowerMargin" unique_id=1456426439]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
 theme_override_constants/separation = 10
 
-[node name="Option1" type="HBoxContainer" parent="CenterContainer/ShopBorder/ContentVBox/LowerMargin/OptionsContainer" unique_id=918072571]
+[node name="Option1" type="HBoxContainer" parent="ShopBorder/ContentVBox/LowerMargin/OptionsContainer" unique_id=918072571]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 0
 
-[node name="Arrow1" type="TextureRect" parent="CenterContainer/ShopBorder/ContentVBox/LowerMargin/OptionsContainer/Option1" unique_id=113730071]
+[node name="Arrow1" type="TextureRect" parent="ShopBorder/ContentVBox/LowerMargin/OptionsContainer/Option1" unique_id=113730071]
 unique_name_in_owner = true
 texture_filter = 2
 custom_minimum_size = Vector2(14, 14)
@@ -127,7 +119,7 @@ texture = ExtResource("6_m4vnt")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="OptionLabel1" type="RichTextLabel" parent="CenterContainer/ShopBorder/ContentVBox/LowerMargin/OptionsContainer/Option1" unique_id=1046818594]
+[node name="OptionLabel1" type="RichTextLabel" parent="ShopBorder/ContentVBox/LowerMargin/OptionsContainer/Option1" unique_id=1046818594]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
@@ -141,7 +133,7 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CostHint1" type="Label" parent="CenterContainer/ShopBorder/ContentVBox/LowerMargin/OptionsContainer/Option1" unique_id=1614448644]
+[node name="CostHint1" type="Label" parent="ShopBorder/ContentVBox/LowerMargin/OptionsContainer/Option1" unique_id=1614448644]
 unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"SystemLabel"
@@ -149,12 +141,12 @@ theme_override_colors/font_color = Color(0.23137255, 0.69411767, 0.2627451, 1)
 theme_override_font_sizes/font_size = 8
 text = "(Exp 70)"
 
-[node name="Option2" type="HBoxContainer" parent="CenterContainer/ShopBorder/ContentVBox/LowerMargin/OptionsContainer" unique_id=1426512231]
+[node name="Option2" type="HBoxContainer" parent="ShopBorder/ContentVBox/LowerMargin/OptionsContainer" unique_id=1426512231]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 0
 
-[node name="Arrow2" type="TextureRect" parent="CenterContainer/ShopBorder/ContentVBox/LowerMargin/OptionsContainer/Option2" unique_id=642039192]
+[node name="Arrow2" type="TextureRect" parent="ShopBorder/ContentVBox/LowerMargin/OptionsContainer/Option2" unique_id=642039192]
 unique_name_in_owner = true
 texture_filter = 2
 custom_minimum_size = Vector2(14, 14)
@@ -165,7 +157,7 @@ texture = ExtResource("6_m4vnt")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="OptionLabel2" type="RichTextLabel" parent="CenterContainer/ShopBorder/ContentVBox/LowerMargin/OptionsContainer/Option2" unique_id=631508228]
+[node name="OptionLabel2" type="RichTextLabel" parent="ShopBorder/ContentVBox/LowerMargin/OptionsContainer/Option2" unique_id=631508228]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
@@ -179,7 +171,7 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CostHint2" type="Label" parent="CenterContainer/ShopBorder/ContentVBox/LowerMargin/OptionsContainer/Option2" unique_id=1088283246]
+[node name="CostHint2" type="Label" parent="ShopBorder/ContentVBox/LowerMargin/OptionsContainer/Option2" unique_id=1088283246]
 unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"SystemLabel"
@@ -187,12 +179,12 @@ theme_override_colors/font_color = Color(0.23137255, 0.69411767, 0.2627451, 1)
 theme_override_font_sizes/font_size = 8
 text = "(Exp 20)"
 
-[node name="Option3" type="HBoxContainer" parent="CenterContainer/ShopBorder/ContentVBox/LowerMargin/OptionsContainer" unique_id=81092369]
+[node name="Option3" type="HBoxContainer" parent="ShopBorder/ContentVBox/LowerMargin/OptionsContainer" unique_id=81092369]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 0
 
-[node name="Arrow3" type="TextureRect" parent="CenterContainer/ShopBorder/ContentVBox/LowerMargin/OptionsContainer/Option3" unique_id=1274349101]
+[node name="Arrow3" type="TextureRect" parent="ShopBorder/ContentVBox/LowerMargin/OptionsContainer/Option3" unique_id=1274349101]
 unique_name_in_owner = true
 texture_filter = 2
 custom_minimum_size = Vector2(14, 14)
@@ -203,7 +195,7 @@ texture = ExtResource("6_m4vnt")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="OptionLabel3" type="RichTextLabel" parent="CenterContainer/ShopBorder/ContentVBox/LowerMargin/OptionsContainer/Option3" unique_id=234519115]
+[node name="OptionLabel3" type="RichTextLabel" parent="ShopBorder/ContentVBox/LowerMargin/OptionsContainer/Option3" unique_id=234519115]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
@@ -217,7 +209,7 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CostHint3" type="Label" parent="CenterContainer/ShopBorder/ContentVBox/LowerMargin/OptionsContainer/Option3" unique_id=604329264]
+[node name="CostHint3" type="Label" parent="ShopBorder/ContentVBox/LowerMargin/OptionsContainer/Option3" unique_id=604329264]
 unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"SystemLabel"
@@ -225,11 +217,12 @@ theme_override_colors/font_color = Color(0.23137255, 0.69411767, 0.2627451, 1)
 theme_override_font_sizes/font_size = 8
 text = "(Exp 20)"
 
-[node name="LeaveOption" type="HBoxContainer" parent="CenterContainer/ShopBorder/ContentVBox/LowerMargin/OptionsContainer" unique_id=858482462]
+[node name="LeaveOption" type="HBoxContainer" parent="ShopBorder/ContentVBox/LowerMargin/OptionsContainer" unique_id=858482462]
+unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 0
 
-[node name="ArrowLeave" type="TextureRect" parent="CenterContainer/ShopBorder/ContentVBox/LowerMargin/OptionsContainer/LeaveOption" unique_id=797162845]
+[node name="ArrowLeave" type="TextureRect" parent="ShopBorder/ContentVBox/LowerMargin/OptionsContainer/LeaveOption" unique_id=797162845]
 unique_name_in_owner = true
 texture_filter = 2
 custom_minimum_size = Vector2(14, 14)
@@ -240,7 +233,8 @@ texture = ExtResource("6_m4vnt")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="LeaveLabel" type="Label" parent="CenterContainer/ShopBorder/ContentVBox/LowerMargin/OptionsContainer/LeaveOption" unique_id=1219607063]
+[node name="LeaveLabel" type="Label" parent="ShopBorder/ContentVBox/LowerMargin/OptionsContainer/LeaveOption" unique_id=1219607063]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 theme_type_variation = &"ShopLabel"
