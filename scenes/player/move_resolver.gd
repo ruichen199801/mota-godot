@@ -40,7 +40,7 @@ func _on_move_requested(direction: Vector2i) -> void:
 			is_resolving = false
 		else:
 			entity.on_block(pd)
-		print("Player blocked by %s" % entity.get_script().get_global_name())
+			print("Player blocked by %s" % entity.get_script().get_global_name())
 		EventBus.move_resolved.emit(target, false)
 	else:
 		if entity.is_async():

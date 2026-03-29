@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_ilv3w"]
 [ext_resource type="SpriteFrames" uid="uid://gb1ab001a3u3" path="res://resources/enemies/green_slime/green_slime_frames.tres" id="1_kfisv"]
+[ext_resource type="SpriteFrames" uid="uid://h7752g7ici7w" path="res://resources/battle_animations/punch_frames.tres" id="2_23r2u"]
 
 [resource]
 script = ExtResource("1_ilv3w")
@@ -13,4 +14,5 @@ atk = 18
 def = 1
 gold_drop = 1
 xp_drop = 1
+hit_frames = ExtResource("2_23r2u")
 metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

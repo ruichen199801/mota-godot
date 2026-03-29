@@ -13,6 +13,8 @@ const STATE_NAMES := {
 	State.WEAKENED: "衰弱",
 }
 
+@export var hit_frames: SpriteFrames
+
 @export var state: State = State.NORMAL:
 	set(v):
 		state = v

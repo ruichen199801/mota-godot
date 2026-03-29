@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://ubv3jnibyiks" path="res://entities/stair_down_entity.tscn" id="5_jb7uo"]
 [ext_resource type="PackedScene" uid="uid://c52blxvwvflo8" path="res://entities/shop_entity.tscn" id="6_o5ddk"]
 [ext_resource type="Resource" uid="uid://t7nekbirmv3y" path="res://resources/shops/gold_shop_1.tres" id="7_nki1m"]
+[ext_resource type="Resource" uid="uid://b14ja7qmm3gln" path="res://resources/shops/xp_shop_2.tres" id="8_33nwr"]
 [ext_resource type="Resource" uid="uid://gp0dhknrc1b4" path="res://resources/shops/xp_shop_1.tres" id="8_nki1m"]
+[ext_resource type="Resource" uid="uid://ca1mi7813a70a" path="res://resources/shops/gold_shop_2.tres" id="8_telvf"]
 
 [node name="Floor0" type="Node2D" unique_id=1806746235]
 script = ExtResource("1_w8oah")
@@ -36,9 +38,15 @@ dest_pos = Vector2i(7, 5)
 [node name="GoldShop1" parent="Entities" unique_id=338677699 instance=ExtResource("6_o5ddk")]
 position = Vector2(128, 128)
 data = ExtResource("7_nki1m")
-interact_facing = Vector2i(0, 1)
+
+[node name="GoldShop2" parent="Entities" unique_id=234826648 instance=ExtResource("6_o5ddk")]
+position = Vector2(224, 128)
+data = ExtResource("8_telvf")
 
 [node name="XpShop1" parent="Entities" unique_id=1191910855 instance=ExtResource("6_o5ddk")]
 position = Vector2(128, 248)
 data = ExtResource("8_nki1m")
-interact_facing = Vector2i(0, 1)
+
+[node name="XpShop2" parent="Entities" unique_id=632798153 instance=ExtResource("6_o5ddk")]
+position = Vector2(224, 248)
+data = ExtResource("8_33nwr")

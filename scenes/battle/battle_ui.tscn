@@ -1,0 +1,431 @@
+[gd_scene format=3 uid="uid://0t6sx8oyodxo"]
+
+[ext_resource type="Script" uid="uid://bir4r56yskw5h" path="res://scenes/battle/battle_ui.gd" id="1_d43ay"]
+[ext_resource type="Theme" uid="uid://bocaa5wajr1kd" path="res://resources/base_theme.tres" id="2_8xn5s"]
+[ext_resource type="Texture2D" uid="uid://bw2505uv4eaqv" path="res://assets/images/ground.png" id="3_elpkr"]
+[ext_resource type="Texture2D" uid="uid://bxw5pcooyj2k8" path="res://assets/images/player_0.png" id="3_ib2kh"]
+[ext_resource type="SpriteFrames" uid="uid://gb1ab001a3u3" path="res://resources/enemies/green_slime/green_slime_frames.tres" id="4_bgiko"]
+[ext_resource type="SpriteFrames" uid="uid://h7752g7ici7w" path="res://resources/battle_animations/punch_frames.tres" id="5_keo60"]
+
+[node name="BattleUI" type="Control" unique_id=1226879282]
+z_index = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 192.0
+offset_top = 32.0
+offset_right = -32.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_8xn5s")
+script = ExtResource("1_d43ay")
+
+[node name="BattleBorder" type="PanelContainer" parent="." unique_id=1404966384]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(380, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -190.0
+offset_top = -75.5
+offset_right = 190.0
+offset_bottom = 75.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BattleBackground" type="TextureRect" parent="BattleBorder" unique_id=1819990102]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_elpkr")
+stretch_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="BattleBorder" unique_id=547209770]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="MainVBox" type="VBoxContainer" parent="BattleBorder/MarginContainer" unique_id=827053239]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TopRow" type="HBoxContainer" parent="BattleBorder/MarginContainer/MainVBox" unique_id=1513080103]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="EnemyColumn" type="VBoxContainer" parent="BattleBorder/MarginContainer/MainVBox/TopRow" unique_id=887586486]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="EnemyNameLabel" type="Label" parent="BattleBorder/MarginContainer/MainVBox/TopRow/EnemyColumn" unique_id=983279128]
+unique_name_in_owner = true
+layout_mode = 2
+text = "绿色史莱姆"
+vertical_alignment = 1
+
+[node name="EnemySide" type="HBoxContainer" parent="BattleBorder/MarginContainer/MainVBox/TopRow/EnemyColumn" unique_id=835001222]
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="EnemyAvatarBorder" type="PanelContainer" parent="BattleBorder/MarginContainer/MainVBox/TopRow/EnemyColumn/EnemySide" unique_id=1590329348]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 2
+
+[node name="EnemySprite" type="AnimatedSprite2D" parent="BattleBorder/MarginContainer/MainVBox/TopRow/EnemyColumn/EnemySide/EnemyAvatarBorder" unique_id=267090882]
+unique_name_in_owner = true
+position = Vector2(2, 2)
+sprite_frames = ExtResource("4_bgiko")
+animation = &"idle"
+centered = false
+
+[node name="EnemyHitEffect" type="AnimatedSprite2D" parent="BattleBorder/MarginContainer/MainVBox/TopRow/EnemyColumn/EnemySide/EnemyAvatarBorder" unique_id=454707642]
+unique_name_in_owner = true
+visible = false
+position = Vector2(18, 18)
+sprite_frames = ExtResource("5_keo60")
+animation = &"hit"
+
+[node name="EnemyMissLabel" type="Label" parent="BattleBorder/MarginContainer/MainVBox/TopRow/EnemyColumn/EnemySide/EnemyAvatarBorder" unique_id=1676906829]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "MISS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnemyStats" type="GridContainer" parent="BattleBorder/MarginContainer/MainVBox/TopRow/EnemyColumn/EnemySide" unique_id=1343325393]
+layout_mode = 2
+mouse_filter = 2
+columns = 2
+
+[node name="EnemyHPLabel" type="Label" parent="BattleBorder/MarginContainer/MainVBox/TopRow/EnemyColumn/EnemySide/EnemyStats" unique_id=1614144513]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "体力:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnemyHPValue" type="Label" parent="BattleBorder/MarginContainer/MainVBox/TopRow/EnemyColumn/EnemySide/EnemyStats" unique_id=1265531956]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SystemLabel"
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnemyATKLabel" type="Label" parent="BattleBorder/MarginContainer/MainVBox/TopRow/EnemyColumn/EnemySide/EnemyStats" unique_id=1122343830]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "攻击力:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnemyATKValue" type="Label" parent="BattleBorder/MarginContainer/MainVBox/TopRow/EnemyColumn/EnemySide/EnemyStats" unique_id=2100622026]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SystemLabel"
+text = "20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnemyDEFLabel" type="Label" parent="BattleBorder/MarginContainer/MainVBox/TopRow/EnemyColumn/EnemySide/EnemyStats" unique_id=2102017258]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "防御力:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnemyDEFValue" type="Label" parent="BattleBorder/MarginContainer/MainVBox/TopRow/EnemyColumn/EnemySide/EnemyStats" unique_id=1809903819]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SystemLabel"
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnemyCRITLabel" type="Label" parent="BattleBorder/MarginContainer/MainVBox/TopRow/EnemyColumn/EnemySide/EnemyStats" unique_id=1650489447]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "暴击:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnemyCRITValue" type="Label" parent="BattleBorder/MarginContainer/MainVBox/TopRow/EnemyColumn/EnemySide/EnemyStats" unique_id=303470448]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SystemLabel"
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnemyAGILabel" type="Label" parent="BattleBorder/MarginContainer/MainVBox/TopRow/EnemyColumn/EnemySide/EnemyStats" unique_id=1022009267]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "敏捷:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnemyAGIValue" type="Label" parent="BattleBorder/MarginContainer/MainVBox/TopRow/EnemyColumn/EnemySide/EnemyStats" unique_id=1441323648]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SystemLabel"
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSLabel" type="Label" parent="BattleBorder/MarginContainer/MainVBox/TopRow" unique_id=1749166743]
+custom_minimum_size = Vector2(40, 100)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 18
+text = "VS"
+horizontal_alignment = 1
+
+[node name="PlayerColumn" type="VBoxContainer" parent="BattleBorder/MarginContainer/MainVBox/TopRow" unique_id=1867534978]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="PlayerNameLabel" type="Label" parent="BattleBorder/MarginContainer/MainVBox/TopRow/PlayerColumn" unique_id=805348008]
+unique_name_in_owner = true
+layout_mode = 2
+text = "勇者"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="PlayerSide" type="HBoxContainer" parent="BattleBorder/MarginContainer/MainVBox/TopRow/PlayerColumn" unique_id=888344544]
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="PlayerStats" type="GridContainer" parent="BattleBorder/MarginContainer/MainVBox/TopRow/PlayerColumn/PlayerSide" unique_id=541420619]
+layout_mode = 2
+mouse_filter = 2
+columns = 2
+
+[node name="PlayerHPValue" type="Label" parent="BattleBorder/MarginContainer/MainVBox/TopRow/PlayerColumn/PlayerSide/PlayerStats" unique_id=938698727]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SystemLabel"
+text = "796"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerHPLabel" type="Label" parent="BattleBorder/MarginContainer/MainVBox/TopRow/PlayerColumn/PlayerSide/PlayerStats" unique_id=1400848367]
+layout_mode = 2
+size_flags_horizontal = 2
+text = ":体力"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerATKValue" type="Label" parent="BattleBorder/MarginContainer/MainVBox/TopRow/PlayerColumn/PlayerSide/PlayerStats" unique_id=1340211724]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SystemLabel"
+text = "14"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerATKLabel" type="Label" parent="BattleBorder/MarginContainer/MainVBox/TopRow/PlayerColumn/PlayerSide/PlayerStats" unique_id=18705238]
+layout_mode = 2
+size_flags_horizontal = 2
+text = ":攻击力"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerDEFValue" type="Label" parent="BattleBorder/MarginContainer/MainVBox/TopRow/PlayerColumn/PlayerSide/PlayerStats" unique_id=1083010107]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SystemLabel"
+text = "14"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerDEFLabel" type="Label" parent="BattleBorder/MarginContainer/MainVBox/TopRow/PlayerColumn/PlayerSide/PlayerStats" unique_id=1360018536]
+layout_mode = 2
+size_flags_horizontal = 2
+text = ":防御力"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerCRITValue" type="Label" parent="BattleBorder/MarginContainer/MainVBox/TopRow/PlayerColumn/PlayerSide/PlayerStats" unique_id=2036842130]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SystemLabel"
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerCRITLabel" type="Label" parent="BattleBorder/MarginContainer/MainVBox/TopRow/PlayerColumn/PlayerSide/PlayerStats" unique_id=1340583807]
+layout_mode = 2
+size_flags_horizontal = 2
+text = ":暴击"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerAGIValue" type="Label" parent="BattleBorder/MarginContainer/MainVBox/TopRow/PlayerColumn/PlayerSide/PlayerStats" unique_id=1491262311]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SystemLabel"
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerAGILabel" type="Label" parent="BattleBorder/MarginContainer/MainVBox/TopRow/PlayerColumn/PlayerSide/PlayerStats" unique_id=1079563281]
+layout_mode = 2
+size_flags_horizontal = 2
+text = ":敏捷"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerAvatarBorder" type="PanelContainer" parent="BattleBorder/MarginContainer/MainVBox/TopRow/PlayerColumn/PlayerSide" unique_id=524230706]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 2
+
+[node name="PlayerIcon" type="TextureRect" parent="BattleBorder/MarginContainer/MainVBox/TopRow/PlayerColumn/PlayerSide/PlayerAvatarBorder" unique_id=379134923]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_ib2kh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PlayerHitEffect" type="AnimatedSprite2D" parent="BattleBorder/MarginContainer/MainVBox/TopRow/PlayerColumn/PlayerSide/PlayerAvatarBorder" unique_id=1645127031]
+unique_name_in_owner = true
+visible = false
+position = Vector2(18, 18)
+sprite_frames = ExtResource("5_keo60")
+animation = &"hit"
+
+[node name="PlayerMissLabel" type="Label" parent="BattleBorder/MarginContainer/MainVBox/TopRow/PlayerColumn/PlayerSide/PlayerAvatarBorder" unique_id=582801298]
+unique_name_in_owner = true
+visible = false
+z_index = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "MISS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResultBorder" type="PanelContainer" parent="." unique_id=1154518957]
+unique_name_in_owner = true
+clip_contents = true
+custom_minimum_size = Vector2(380, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -190.0
+offset_top = 250.0
+offset_right = 190.0
+offset_bottom = 286.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="ResultBackground" type="TextureRect" parent="ResultBorder" unique_id=920968758]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_elpkr")
+stretch_mode = 1
+
+[node name="ResultHBox" type="HBoxContainer" parent="ResultBorder" unique_id=1815143880]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ResultWinLabel" type="Label" parent="ResultBorder/ResultHBox" unique_id=1612080724]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "胜利！!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResultXPLabel" type="RichTextLabel" parent="ResultBorder/ResultHBox" unique_id=544057345]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_filter = 2
+bbcode_enabled = true
+text = "经验值：[font=res://assets/fonts/system_font.tres]1[/font]"
+
+[node name="ResultGoldLabel" type="RichTextLabel" parent="ResultBorder/ResultHBox" unique_id=419526436]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_filter = 2
+bbcode_enabled = true
+text = "金币：[font=res://assets/fonts/system_font.tres]2[/font]"
+
+[node name="RetreatHintLabel" type="RichTextLabel" parent="." unique_id=1023574480]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 307.0
+offset_top = 224.0
+offset_right = 360.0
+offset_bottom = 245.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(1, 0.9490196, 0, 1)
+bbcode_enabled = true
+text = "撤退[font=res://assets/fonts/system_font.tres](Q)[/font]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DismissHintLabel" type="Label" parent="." unique_id=234389828]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 307.0
+offset_top = 224.0
+offset_right = 360.0
+offset_bottom = 245.0
+theme_type_variation = &"SystemLabel"
+text = "-Enter-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOverLabel" type="Label" parent="." unique_id=274940153]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 84.0
+offset_top = 199.0
+offset_right = 269.0
+offset_bottom = 239.83334
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "GAME OVER"

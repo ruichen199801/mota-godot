@@ -15,3 +15,7 @@ signal mind_mirror_requested
 # Shop events
 signal shop_opened(shop_entity: ShopEntity)
 signal shop_closed
+
+# Battle events
+signal battle_requested(enemy_entity: EnemyEntity, player_data: PlayerData)
+signal battle_finished

@@ -1,7 +1,10 @@
 [gd_resource type="Resource" script_class="PlayerData" format=3 uid="uid://cixxbbicb7lvf"]
 
 [ext_resource type="Script" uid="uid://dcraad5e7txrk" path="res://data/player_data.gd" id="1_0lln2"]
+[ext_resource type="SpriteFrames" uid="uid://h7752g7ici7w" path="res://resources/battle_animations/punch_frames.tres" id="1_clh8d"]
 
 [resource]
 script = ExtResource("1_0lln2")
+hit_frames = ExtResource("1_clh8d")
+hp = 1
 metadata/_custom_type_script = "uid://dcraad5e7txrk"

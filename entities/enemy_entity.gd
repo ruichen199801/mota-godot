@@ -11,9 +11,13 @@ func _ready() -> void:
 		anim.play("idle")
 
 
-func on_block(_player_data: PlayerData) -> void:
-	# TODO: Implement battle system
-	pass
+func is_async() -> bool:
+	return true
+
+
+func on_block(player_data: PlayerData) -> void:
+	EventBus.battle_requested.emit(self, player_data)
+	await EventBus.battle_finished
 
 
 func replace_with(new_data: EnemyData) -> void:

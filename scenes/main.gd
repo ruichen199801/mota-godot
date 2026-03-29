@@ -4,13 +4,17 @@ extends Node2D
 @onready var player: Node2D = $GameArea/Player
 @onready var move_resolver: Node = $MoveResolver
 @onready var active_item_handler: Node = $ActiveItemHandler
+@onready var battle_handler: Node = $BattleHandler
 @onready var hud: Control = $UILayer/HUD
 @onready var shop_ui: ShopUI = $UILayer/ShopUI
+@onready var battle_ui: BattleUI = $UILayer/BattleUI
 
 
 func _ready() -> void:
 	move_resolver.player = player
 	active_item_handler.player = player
+	battle_handler.player = player
+	battle_handler.battle_ui = battle_ui
 	player.init(FloorManager.START_POS)
 	
 	_load_all_floors()

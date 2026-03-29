@@ -22,11 +22,18 @@ theme = ExtResource("1_gk7bq")
 script = ExtResource("1_380ce")
 
 [node name="ShopBorder" type="PanelContainer" parent="." unique_id=1413718946]
-layout_mode = 0
-offset_left = 68.0
-offset_top = 63.0
-offset_right = 284.0
-offset_bottom = 289.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -108.0
+offset_top = -113.0
+offset_right = 108.0
+offset_bottom = 113.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 
 [node name="ShopBackground" type="TextureRect" parent="ShopBorder" unique_id=405406634]

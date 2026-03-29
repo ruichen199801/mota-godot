@@ -11,6 +11,7 @@ extends Resource
 @export var agi: int
 @export var gold_drop: int
 @export var xp_drop: int
+@export var hit_frames: SpriteFrames
 
 var icon: Texture2D: get = _get_icon
 
