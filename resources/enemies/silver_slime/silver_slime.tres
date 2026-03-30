@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://c56k6gbops3o3"]
+
+[ext_resource type="SpriteFrames" uid="uid://dg8wr8y0ko64a" path="res://resources/enemies/silver_slime/silver_slime_frames.tres" id="1_bv257"]
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_xgjiq"]
+[ext_resource type="SpriteFrames" uid="uid://h7752g7ici7w" path="res://resources/battle_animations/punch_frames.tres" id="2_qjq0r"]
+
+[resource]
+script = ExtResource("1_xgjiq")
+enemy_id = "silver_slime"
+enemy_name = "白银史莱姆"
+frames = ExtResource("1_bv257")
+hp = 10
+atk = 1
+def = 8000
+crit = 15
+agi = 9
+hit_frames = ExtResource("2_qjq0r")
+atk_times = 2
+adaptive_atk = 250
+ability_description = "多段攻击 特殊战斗"
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

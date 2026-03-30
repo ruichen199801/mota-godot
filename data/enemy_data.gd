@@ -13,6 +13,20 @@ extends Resource
 @export var xp_drop: int
 @export var hit_frames: SpriteFrames
 
+@export_group("Special Abilities")
+@export var atk_times: int = 1
+@export var poison_chance: int = 0
+@export var weaken_chance: int = 0
+# Ignore player defense entirely
+@export var ignore_def: bool = false
+# When player atk > enemy atk, enemy atk becomes player atk
+@export var mirror_atk: bool = false
+# When player atk > enemy def, enemy def becomes player atk - 1
+@export var harden: bool = false
+# enemy atk = player def + this value, ignores base atk
+@export var adaptive_atk: int = 0
+@export var ability_description: String = "没有"
+
 var icon: Texture2D: get = _get_icon
 
 

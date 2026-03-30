@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccbm8kiq0ti7v"
-path="res://.godot/imported/punch.png-4a89cbed375c52e4a8a123c849b6b923.ctex"
+uid="uid://cj88fy716d6o3"
+path="res://.godot/imported/bite.png-55b1b4fd9c83009ec48af47b479d04d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/animations/punch.png"
-dest_files=["res://.godot/imported/punch.png-4a89cbed375c52e4a8a123c849b6b923.ctex"]
+source_file="res://assets/animations/bite.png"
+dest_files=["res://.godot/imported/bite.png-55b1b4fd9c83009ec48af47b479d04d0.ctex"]
 
 [params]
 

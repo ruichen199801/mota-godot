@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dnakl8frw6e6r"]
+
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_kl0ts"]
+[ext_resource type="SpriteFrames" uid="uid://dbyuqgq8bxs5f" path="res://resources/enemies/royal_guard_knight/royal_guard_knight_frames.tres" id="1_yvayw"]
+[ext_resource type="SpriteFrames" uid="uid://ds3cafv3yeb8q" path="res://resources/battle_animations/slash_frames.tres" id="2_0ipb1"]
+
+[resource]
+script = ExtResource("1_kl0ts")
+enemy_id = "royal_guard_knight"
+enemy_name = "近卫骑士"
+frames = ExtResource("1_yvayw")
+hp = 992
+atk = 737
+def = 677
+crit = 50
+agi = 4
+gold_drop = 124
+xp_drop = 13
+hit_frames = ExtResource("2_0ipb1")
+mirror_atk = true
+ability_description = "必杀剑"
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

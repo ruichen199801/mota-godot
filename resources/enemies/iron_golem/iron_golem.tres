@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://blpkfouhjsrp3"]
+
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_0qpra"]
+[ext_resource type="SpriteFrames" uid="uid://dyhckrsbvfma5" path="res://resources/enemies/iron_golem/iron_golem_frames.tres" id="1_6tj5v"]
+[ext_resource type="SpriteFrames" uid="uid://h7752g7ici7w" path="res://resources/battle_animations/punch_frames.tres" id="2_ee04e"]
+
+[resource]
+script = ExtResource("1_0qpra")
+enemy_id = "iron_golem"
+enemy_name = "铁怪"
+frames = ExtResource("1_6tj5v")
+hp = 50
+atk = 600
+def = 990
+crit = 2
+gold_drop = 132
+xp_drop = 14
+hit_frames = ExtResource("2_ee04e")
+harden = true
+ability_description = "变硬"
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

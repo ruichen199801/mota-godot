@@ -6,5 +6,4 @@
 [resource]
 script = ExtResource("1_0lln2")
 hit_frames = ExtResource("1_clh8d")
-hp = 1
 metadata/_custom_type_script = "uid://dcraad5e7txrk"

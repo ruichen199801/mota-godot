@@ -37,7 +37,8 @@ enum BattleUIState {
 @onready var player_crit_value: Label = %PlayerCRITValue
 @onready var player_agi_value: Label = %PlayerAGIValue
 
-@onready var result_border: PanelContainer = %ResultBorder
+@onready var result_border: Panel = %ResultBorder
+@onready var result_content: Control = %ResultContent
 @onready var result_xp_label: RichTextLabel = %ResultXPLabel
 @onready var result_gold_label: RichTextLabel = %ResultGoldLabel
 
@@ -75,7 +76,8 @@ func _unhandled_input(event: InputEvent) -> void:
 				get_viewport().set_input_as_handled()
 	
 
-func show_battle(player_data: PlayerData, enemy_data: EnemyData, player_icon: Texture2D) -> void:
+func show_battle(player_data: PlayerData, enemy_data: EnemyData, player_icon: Texture2D, 
+				enemy_atk: int, enemy_def: int) -> void:
 	_reset_battle_effects()
 
 	enemy_name_label.text = enemy_data.enemy_name
@@ -83,8 +85,8 @@ func show_battle(player_data: PlayerData, enemy_data: EnemyData, player_icon: Te
 		enemy_sprite.sprite_frames = enemy_data.frames
 		enemy_sprite.play("idle")
 	enemy_hp_value.text = str(enemy_data.hp)
-	enemy_atk_value.text = str(enemy_data.atk)
-	enemy_def_value.text = str(enemy_data.def)
+	enemy_atk_value.text = str(enemy_atk)
+	enemy_def_value.text = str(enemy_def)
 	enemy_crit_value.text = str(enemy_data.crit)
 	enemy_agi_value.text = str(enemy_data.agi)
 
@@ -173,13 +175,15 @@ func show_result(xp: int, gold: int) -> void:
 	result_xp_label.text = _styled_result("经验值：", xp)
 	result_gold_label.text = _styled_result("金币：", gold)
 
+	result_content.visible = false
+	result_border.size.y = true
 	result_border.visible = true
-	result_border.clip_contents = true
-	result_border.custom_minimum_size.y = 0
 
 	var tween := create_tween()
-	tween.tween_property(result_border, "custom_minimum_size:y", RESULT_HEIGHT, RESULT_EXTEND_DURATION)
+	tween.tween_property(result_border, "size:y", RESULT_HEIGHT, RESULT_EXTEND_DURATION)
 	await tween.finished
+	
+	result_content.visible = true
 	
 	
 func wait_for_dismiss() -> void:
@@ -199,7 +203,8 @@ func _reset_battle_effects() -> void:
 	player_hit_effect.visible = false
 	player_miss_label.visible = false
 	result_border.visible = false
-	result_border.custom_minimum_size.y = 0
+	result_border.size.y = 0
+	result_content.visible = false
 	retreat_hint_label.visible = false
 	dismiss_hint_label.visible = false
 	game_over_label.visible = false

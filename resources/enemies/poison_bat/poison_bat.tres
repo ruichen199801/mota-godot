@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://cfey4lh27ys0t"]
+
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_d8kak"]
+[ext_resource type="SpriteFrames" uid="uid://d4lbhgkfw65yx" path="res://resources/enemies/poison_bat/poison_bat_frames.tres" id="1_oexnn"]
+[ext_resource type="SpriteFrames" uid="uid://dy1v6q2riou4l" path="res://resources/battle_animations/bite_frames.tres" id="2_xe3un"]
+
+[resource]
+script = ExtResource("1_d8kak")
+enemy_id = "poison_bat"
+enemy_name = "毒蝙蝠"
+frames = ExtResource("1_oexnn")
+hp = 1091
+atk = 971
+def = 950
+crit = 8
+agi = 5
+gold_drop = 150
+xp_drop = 16
+hit_frames = ExtResource("2_xe3un")
+atk_times = 2
+poison_chance = 12
+ability_description = "毒攻击 多段攻击"
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

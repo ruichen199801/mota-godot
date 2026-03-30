@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccbm8kiq0ti7v"
-path="res://.godot/imported/punch.png-4a89cbed375c52e4a8a123c849b6b923.ctex"
+uid="uid://dg5wriur846jl"
+path="res://.godot/imported/slash_crit.png-67e265ebf1cdf9a73d9c4510bd19323b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/animations/punch.png"
-dest_files=["res://.godot/imported/punch.png-4a89cbed375c52e4a8a123c849b6b923.ctex"]
+source_file="res://assets/animations/slash_crit.png"
+dest_files=["res://.godot/imported/slash_crit.png-67e265ebf1cdf9a73d9c4510bd19323b.ctex"]
 
 [params]
 

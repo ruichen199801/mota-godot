@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://b6a8ij3no162s"]
+
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_0chyp"]
+[ext_resource type="SpriteFrames" uid="uid://ny81ru1oyy3k" path="res://resources/enemies/bat/bat_frames.tres" id="1_v6kic"]
+[ext_resource type="SpriteFrames" uid="uid://dy1v6q2riou4l" path="res://resources/battle_animations/bite_frames.tres" id="2_411ep"]
+
+[resource]
+script = ExtResource("1_0chyp")
+enemy_id = "bat"
+enemy_name = "蝙蝠"
+frames = ExtResource("1_v6kic")
+hp = 55
+atk = 32
+def = 2
+crit = 4
+agi = 4
+gold_drop = 3
+xp_drop = 1
+hit_frames = ExtResource("2_411ep")
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

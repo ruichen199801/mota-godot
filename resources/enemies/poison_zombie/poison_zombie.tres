@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://6mxs5f5iwql8"]
+
+[ext_resource type="SpriteFrames" uid="uid://7wbp5ve1twci" path="res://resources/enemies/poison_zombie/poison_zombie_frames.tres" id="1_7g58r"]
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_mtnt1"]
+[ext_resource type="SpriteFrames" uid="uid://dy1v6q2riou4l" path="res://resources/battle_animations/bite_frames.tres" id="2_e0hah"]
+
+[resource]
+script = ExtResource("1_mtnt1")
+enemy_id = "poison_zombie"
+enemy_name = "毒丧尸"
+frames = ExtResource("1_7g58r")
+hp = 1310
+atk = 1083
+def = 951
+crit = 4
+agi = 2
+gold_drop = 152
+xp_drop = 16
+hit_frames = ExtResource("2_e0hah")
+poison_chance = 14
+ability_description = "毒攻击"
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

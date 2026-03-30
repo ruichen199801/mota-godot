@@ -338,7 +338,7 @@ text = "MISS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ResultBorder" type="PanelContainer" parent="." unique_id=1154518957]
+[node name="ResultBorder" type="Panel" parent="." unique_id=1199652933]
 unique_name_in_owner = true
 clip_contents = true
 custom_minimum_size = Vector2(380, 0)
@@ -353,17 +353,46 @@ offset_bottom = 286.0
 grow_horizontal = 2
 mouse_filter = 2
 
-[node name="ResultBackground" type="TextureRect" parent="ResultBorder" unique_id=920968758]
-layout_mode = 2
+[node name="ResultContent" type="Control" parent="ResultBorder" unique_id=1903225892]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ResultBackground" type="TextureRect" parent="ResultBorder/ResultContent" unique_id=920968758]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("3_elpkr")
+expand_mode = 1
 stretch_mode = 1
 
-[node name="ResultHBox" type="HBoxContainer" parent="ResultBorder" unique_id=1815143880]
-layout_mode = 2
+[node name="ResultHBox" type="HBoxContainer" parent="ResultBorder/ResultContent" unique_id=1815143880]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 
-[node name="ResultWinLabel" type="Label" parent="ResultBorder/ResultHBox" unique_id=1612080724]
+[node name="ResultWinLabel" type="Label" parent="ResultBorder/ResultContent/ResultHBox" unique_id=1612080724]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
@@ -371,7 +400,7 @@ text = "胜利！!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ResultXPLabel" type="RichTextLabel" parent="ResultBorder/ResultHBox" unique_id=544057345]
+[node name="ResultXPLabel" type="RichTextLabel" parent="ResultBorder/ResultContent/ResultHBox" unique_id=544057345]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
@@ -381,7 +410,7 @@ mouse_filter = 2
 bbcode_enabled = true
 text = "经验值：[font=res://assets/fonts/system_font.tres]1[/font]"
 
-[node name="ResultGoldLabel" type="RichTextLabel" parent="ResultBorder/ResultHBox" unique_id=419526436]
+[node name="ResultGoldLabel" type="RichTextLabel" parent="ResultBorder/ResultContent/ResultHBox" unique_id=419526436]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2

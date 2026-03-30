@@ -53,6 +53,11 @@ const STATE_NAMES := {
 		agi = v
 		emit_changed()
 
+@export var atk_times: int = 1:
+	set(v):
+		atk_times = v
+		emit_changed()
+
 @export var xp: int = 0:
 	set(v):
 		xp = v
