@@ -22,6 +22,7 @@
 [ext_resource type="Resource" uid="uid://41tscolgmqor" path="res://resources/items/anywhere_door.tres" id="15_my178"]
 [ext_resource type="Resource" uid="uid://clpmukkfspi0d" path="res://resources/items/cross.tres" id="16_ki1wk"]
 [ext_resource type="Resource" uid="uid://ct8qok27qfe0j" path="res://resources/items/divine_sword_token.tres" id="18_pdykn"]
+[ext_resource type="Resource" uid="uid://cl45kg8ytwi31" path="res://resources/items/light_sword.tres" id="20_t8fqy"]
 
 [node name="Floor0" type="Node2D" unique_id=1806746235]
 script = ExtResource("1_b0ara")
@@ -150,6 +151,10 @@ data = ExtResource("12_cc1qs")
 [node name="IceAmulet" parent="Entities" unique_id=1717134478 instance=ExtResource("8_2p8vk")]
 position = Vector2(192, 32)
 data = ExtResource("13_q4xqp")
+
+[node name="LightSword" parent="Entities" unique_id=851814371 instance=ExtResource("8_2p8vk")]
+position = Vector2(192, 64)
+data = ExtResource("20_t8fqy")
 
 [node name="AnywhereDoor" parent="Entities" unique_id=2028102346 instance=ExtResource("8_2p8vk")]
 position = Vector2(288, 96)

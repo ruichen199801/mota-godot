@@ -22,6 +22,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("2_8xn5s")
 script = ExtResource("1_d43ay")
+metadata/_edit_vertical_guides_ = [66.0]
 
 [node name="BattleBorder" type="PanelContainer" parent="." unique_id=1404966384]
 unique_name_in_owner = true
@@ -78,32 +79,48 @@ size_flags_horizontal = 0
 mouse_filter = 2
 theme_override_constants/separation = 10
 
-[node name="EnemyAvatarBorder" type="PanelContainer" parent="BattleBorder/MarginContainer/MainVBox/TopRow/EnemyColumn/EnemySide" unique_id=1590329348]
+[node name="EnemyAvatarArea" type="Control" parent="BattleBorder/MarginContainer/MainVBox/TopRow/EnemyColumn/EnemySide" unique_id=2120427913]
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 2
+
+[node name="EnemyAvatarBorder" type="PanelContainer" parent="BattleBorder/MarginContainer/MainVBox/TopRow/EnemyColumn/EnemySide/EnemyAvatarArea" unique_id=1590329348]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 mouse_filter = 2
 
-[node name="EnemySprite" type="AnimatedSprite2D" parent="BattleBorder/MarginContainer/MainVBox/TopRow/EnemyColumn/EnemySide/EnemyAvatarBorder" unique_id=267090882]
+[node name="EnemySprite" type="AnimatedSprite2D" parent="BattleBorder/MarginContainer/MainVBox/TopRow/EnemyColumn/EnemySide/EnemyAvatarArea/EnemyAvatarBorder" unique_id=267090882]
 unique_name_in_owner = true
 position = Vector2(2, 2)
 sprite_frames = ExtResource("4_bgiko")
 animation = &"idle"
 centered = false
 
-[node name="EnemyHitEffect" type="AnimatedSprite2D" parent="BattleBorder/MarginContainer/MainVBox/TopRow/EnemyColumn/EnemySide/EnemyAvatarBorder" unique_id=454707642]
+[node name="EnemyHitEffect" type="AnimatedSprite2D" parent="BattleBorder/MarginContainer/MainVBox/TopRow/EnemyColumn/EnemySide/EnemyAvatarArea/EnemyAvatarBorder" unique_id=454707642]
 unique_name_in_owner = true
 visible = false
 position = Vector2(18, 18)
 sprite_frames = ExtResource("5_keo60")
 animation = &"hit"
 
-[node name="EnemyMissLabel" type="Label" parent="BattleBorder/MarginContainer/MainVBox/TopRow/EnemyColumn/EnemySide/EnemyAvatarBorder" unique_id=1676906829]
+[node name="EnemyMissLabel" type="Label" parent="BattleBorder/MarginContainer/MainVBox/TopRow/EnemyColumn/EnemySide/EnemyAvatarArea" unique_id=1676906829]
 unique_name_in_owner = true
 visible = false
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
 text = "MISS"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -305,14 +322,23 @@ text = ":敏捷"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PlayerAvatarBorder" type="PanelContainer" parent="BattleBorder/MarginContainer/MainVBox/TopRow/PlayerColumn/PlayerSide" unique_id=524230706]
+[node name="PlayerAvatarArea" type="Control" parent="BattleBorder/MarginContainer/MainVBox/TopRow/PlayerColumn/PlayerSide" unique_id=527301620]
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
+size_flags_vertical = 0
+
+[node name="PlayerAvatarBorder" type="PanelContainer" parent="BattleBorder/MarginContainer/MainVBox/TopRow/PlayerColumn/PlayerSide/PlayerAvatarArea" unique_id=524230706]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 mouse_filter = 2
 
-[node name="PlayerIcon" type="TextureRect" parent="BattleBorder/MarginContainer/MainVBox/TopRow/PlayerColumn/PlayerSide/PlayerAvatarBorder" unique_id=379134923]
+[node name="PlayerIcon" type="TextureRect" parent="BattleBorder/MarginContainer/MainVBox/TopRow/PlayerColumn/PlayerSide/PlayerAvatarArea/PlayerAvatarBorder" unique_id=379134923]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
@@ -321,19 +347,25 @@ texture = ExtResource("3_ib2kh")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="PlayerHitEffect" type="AnimatedSprite2D" parent="BattleBorder/MarginContainer/MainVBox/TopRow/PlayerColumn/PlayerSide/PlayerAvatarBorder" unique_id=1645127031]
+[node name="PlayerHitEffect" type="AnimatedSprite2D" parent="BattleBorder/MarginContainer/MainVBox/TopRow/PlayerColumn/PlayerSide/PlayerAvatarArea/PlayerAvatarBorder" unique_id=1645127031]
 unique_name_in_owner = true
 visible = false
 position = Vector2(18, 18)
 sprite_frames = ExtResource("5_keo60")
 animation = &"hit"
 
-[node name="PlayerMissLabel" type="Label" parent="BattleBorder/MarginContainer/MainVBox/TopRow/PlayerColumn/PlayerSide/PlayerAvatarBorder" unique_id=582801298]
+[node name="PlayerMissLabel" type="Label" parent="BattleBorder/MarginContainer/MainVBox/TopRow/PlayerColumn/PlayerSide/PlayerAvatarArea" unique_id=582801298]
 unique_name_in_owner = true
 visible = false
 z_index = 1
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
 text = "MISS"
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -14,6 +14,8 @@ const STATE_NAMES := {
 }
 
 @export var hit_frames: SpriteFrames
+# Replace default hit effect with this after picking up any sword item
+@export var sword_hit_frames: SpriteFrames
 
 @export var state: State = State.NORMAL:
 	set(v):
@@ -110,7 +112,7 @@ func add_to_inventory(item: ItemData, uses: int = -1) -> void:
 	if item.item_id in inventory and uses > 0:
 		inventory[item.item_id].uses += uses
 	else:
-		inventory[item.item_id] = InventorySlot.new(item, uses)
+		inventory[item.item_id] = InventorySlot.new(item, uses)	
 	emit_changed()
 
 

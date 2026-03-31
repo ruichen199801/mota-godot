@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dcraad5e7txrk" path="res://data/player_data.gd" id="1_0lln2"]
 [ext_resource type="SpriteFrames" uid="uid://h7752g7ici7w" path="res://resources/battle_animations/punch_frames.tres" id="1_clh8d"]
+[ext_resource type="SpriteFrames" uid="uid://ds3cafv3yeb8q" path="res://resources/battle_animations/slash_frames.tres" id="3_rw5d8"]
 
 [resource]
 script = ExtResource("1_0lln2")
 hit_frames = ExtResource("1_clh8d")
+sword_hit_frames = ExtResource("3_rw5d8")
 metadata/_custom_type_script = "uid://dcraad5e7txrk"
