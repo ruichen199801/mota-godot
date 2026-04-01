@@ -23,8 +23,10 @@ extends Resource
 @export var mirror_atk: bool = false
 # When player atk > enemy def, enemy def becomes player atk - 1
 @export var harden: bool = false
-# enemy atk = player def + this value, ignores base atk
+# Enemy atk = player def + this value, ignores base atk
 @export var adaptive_atk: int = 0
+# Spawns a new enemy at the same cell on death
+@export var next_enemy: EnemyData
 @export var ability_description: String = "没有"
 
 var icon: Texture2D: get = _get_icon

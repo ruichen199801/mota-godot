@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://c4illtgd8ltxk"]
+
+[ext_resource type="SpriteFrames" uid="uid://c1x2vmitgd2fp" path="res://resources/enemies/spirit_warrior/spirit_warrior_frames.tres" id="1_6dine"]
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_r43ub"]
+[ext_resource type="SpriteFrames" uid="uid://ds3cafv3yeb8q" path="res://resources/battle_animations/slash_frames.tres" id="2_qxxkk"]
+[ext_resource type="Resource" uid="uid://dqn8b5mevldvw" path="res://resources/enemies/spirit_skeleton_soldier/spirit_skeleton_soldier.tres" id="3_trehj"]
+
+[resource]
+script = ExtResource("1_r43ub")
+enemy_id = "spirit_warrior"
+enemy_name = "灵武士"
+frames = ExtResource("1_6dine")
+hp = 1060
+atk = 1118
+def = 1030
+crit = 5
+agi = 5
+gold_drop = 100
+xp_drop = 11
+hit_frames = ExtResource("2_qxxkk")
+next_enemy = ExtResource("3_trehj")
+ability_description = "再生能力"
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

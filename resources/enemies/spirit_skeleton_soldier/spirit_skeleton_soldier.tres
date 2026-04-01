@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dqn8b5mevldvw"]
+
+[ext_resource type="SpriteFrames" uid="uid://ddprebup37pxx" path="res://resources/enemies/spirit_skeleton_soldier/spirit_skeleton_soldier_frames.tres" id="1_i6nrw"]
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_p1j4y"]
+[ext_resource type="SpriteFrames" uid="uid://ds3cafv3yeb8q" path="res://resources/battle_animations/slash_frames.tres" id="2_5o1ub"]
+[ext_resource type="Resource" uid="uid://drkyk4j3v0tml" path="res://resources/enemies/spirit_skeleton/spirit_skeleton.tres" id="3_5o1ub"]
+
+[resource]
+script = ExtResource("1_p1j4y")
+enemy_id = "spirit_skeleton_soldier"
+enemy_name = "灵骷髅兵"
+frames = ExtResource("1_i6nrw")
+hp = 800
+atk = 602
+def = 560
+crit = 5
+agi = 4
+gold_drop = 30
+xp_drop = 4
+hit_frames = ExtResource("2_5o1ub")
+next_enemy = ExtResource("3_5o1ub")
+ability_description = "再生能力"
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

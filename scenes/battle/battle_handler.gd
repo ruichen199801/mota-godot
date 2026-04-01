@@ -204,7 +204,15 @@ func _apply_battle_result(result: BattleResult) -> void:
 			_player_data.hp = _player_hp
 			_player_data.gold += _enemy_data.gold_drop
 			_player_data.xp += _enemy_data.xp_drop
+			
+			var pos := _enemy_entity.grid_pos
 			_enemy_entity.remove_from_grid()
+			
+			if _enemy_data.next_enemy:
+				var enemy_scene: PackedScene = preload("res://entities/enemy_entity.tscn")
+				var enemy: EnemyEntity = FloorManager.spawn_entity(enemy_scene, pos)
+				enemy.data = _enemy_data.next_enemy
+				
 			print("Battle won, gained %d gold, %d exp" % [_enemy_data.gold_drop, _enemy_data.xp_drop])
 			
 		BattleResult.LOSE:

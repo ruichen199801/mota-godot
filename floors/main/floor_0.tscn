@@ -15,8 +15,11 @@
 [ext_resource type="PackedScene" uid="uid://d2gnobmc7j4xv" path="res://entities/item_entity.tscn" id="8_2p8vk"]
 [ext_resource type="Resource" uid="uid://cyvfa5e6d26l0" path="res://resources/items/wing_of_speed.tres" id="9_cc1qs"]
 [ext_resource type="Resource" uid="uid://c16o21mruyxm4" path="res://resources/items/gem_pickaxe.tres" id="9_vx8v0"]
+[ext_resource type="Resource" uid="uid://drkyk4j3v0tml" path="res://resources/enemies/spirit_skeleton/spirit_skeleton.tres" id="10_2gtno"]
 [ext_resource type="Resource" uid="uid://dew2n4qxuoylg" path="res://resources/items/potion.tres" id="10_8qnd4"]
 [ext_resource type="Resource" uid="uid://crv72j1mbl8sh" path="res://resources/items/greater_potion.tres" id="11_5r5jn"]
+[ext_resource type="Resource" uid="uid://dqn8b5mevldvw" path="res://resources/enemies/spirit_skeleton_soldier/spirit_skeleton_soldier.tres" id="11_f4ax8"]
+[ext_resource type="Resource" uid="uid://c4illtgd8ltxk" path="res://resources/enemies/spirit_warrior/spirit_warrior.tres" id="12_1icpw"]
 [ext_resource type="Resource" uid="uid://cfidvljhgwc06" path="res://resources/items/magic_key.tres" id="12_cc1qs"]
 [ext_resource type="Resource" uid="uid://bvtnhkvtamdxv" path="res://resources/items/ice_amulet.tres" id="13_q4xqp"]
 [ext_resource type="Resource" uid="uid://41tscolgmqor" path="res://resources/items/anywhere_door.tres" id="15_my178"]
@@ -72,6 +75,18 @@ data = ExtResource("6_tjnbp")
 [node name="Bat" parent="Entities" unique_id=1492615565 instance=ExtResource("3_wsiys")]
 position = Vector2(160, 96)
 data = ExtResource("6_6c5lk")
+
+[node name="SpiritSkeleton" parent="Entities" unique_id=988048283 instance=ExtResource("3_wsiys")]
+position = Vector2(288, 224)
+data = ExtResource("10_2gtno")
+
+[node name="SpiritSkeletonSoldier" parent="Entities" unique_id=1862118355 instance=ExtResource("3_wsiys")]
+position = Vector2(288, 192)
+data = ExtResource("11_f4ax8")
+
+[node name="SpiritWarrior" parent="Entities" unique_id=571879175 instance=ExtResource("3_wsiys")]
+position = Vector2(288, 160)
+data = ExtResource("12_1icpw")
 
 [node name="StairUp" parent="Entities" unique_id=1587493218 instance=ExtResource("5_ruu8h")]
 position = Vector2(224, 160)
