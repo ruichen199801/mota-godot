@@ -22,7 +22,7 @@ func _on_move_requested(direction: Vector2i) -> void:
 	
 	# Empty ground
 	if entity == null:
-		EventBus.move_resolved.emit(target, true)
+		_approve_move(target)
 		return
 		
 	# Non-interact cells: always block silently
@@ -49,4 +49,9 @@ func _on_move_requested(direction: Vector2i) -> void:
 			is_resolving = false
 		else:
 			entity.on_enter(pd)
-		EventBus.move_resolved.emit(target, true)
+		_approve_move(target)
+
+
+func _approve_move(target: Vector2i) -> void:
+	player.data.apply_poison()
+	EventBus.move_resolved.emit(target, true)

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://s2cjd6eshpri"]
+
+[ext_resource type="Script" uid="uid://6cgvhhds7l2r" path="res://data/effects/stat_effect.gd" id="1_s02hi"]
+[ext_resource type="Texture2D" uid="uid://brpbsx67xe3pe" path="res://assets/images/emblem_overload.png" id="2_h0mme"]
+[ext_resource type="Script" uid="uid://x7y7v7vypehe" path="res://data/item_data.gd" id="3_58rk8"]
+
+[sub_resource type="Resource" id="Resource_ggksk"]
+script = ExtResource("1_s02hi")
+atk = 15
+def = 15
+metadata/_custom_type_script = "uid://6cgvhhds7l2r"
+
+[resource]
+script = ExtResource("3_58rk8")
+item_id = "overload_emblem"
+item_name = "镶有黑珍珠的章"
+icon = ExtResource("2_h0mme")
+item_type = 2
+effect = SubResource("Resource_ggksk")
+metadata/_custom_type_script = "uid://x7y7v7vypehe"

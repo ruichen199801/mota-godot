@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brpbsx67xe3pe"
-path="res://.godot/imported/seal_overload.png-8c72acf00eaab75fa69cef64b1d11d6b.ctex"
+uid="uid://4x0is0csxo2d"
+path="res://.godot/imported/emblem_hero.png-ca7f10c8807b678239414915ceadb2bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/seal_overload.png"
-dest_files=["res://.godot/imported/seal_overload.png-8c72acf00eaab75fa69cef64b1d11d6b.ctex"]
+source_file="res://assets/images/emblem_hero.png"
+dest_files=["res://.godot/imported/emblem_hero.png-ca7f10c8807b678239414915ceadb2bb.ctex"]
 
 [params]
 

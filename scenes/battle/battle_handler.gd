@@ -183,12 +183,17 @@ func _resolve_attack(atk: int, def: int,
 func _update_player_state(result: AttackResult) -> void:
 	if result.dodged:
 		return
+	
+	# Do not update state if player is already in a debuff state
+	if _player_data.state != PlayerData.State.NORMAL:
+		return
 		
-	if _enemy_data.poison_chance > 0 and not _player_data.is_poisoned():
+	if _enemy_data.poison_chance > 0:
 		if randi() % 100 < _enemy_data.poison_chance:
 			_player_data.state = PlayerData.State.POISONED
+			return
 			
-	if _enemy_data.weaken_chance > 0 and not _player_data.is_weakened():
+	if _enemy_data.weaken_chance > 0:
 		if randi() % 100 < _enemy_data.weaken_chance:
 			_player_data.state = PlayerData.State.WEAKENED
 

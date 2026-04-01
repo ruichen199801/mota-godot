@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://tp8wow2qrfg8"
-path="res://.godot/imported/seal_sage.png-69300295a23ce48b29c833c3990985df.ctex"
+path="res://.godot/imported/emblem_sage.png-a8d8d6b86d3a185d1ff413b918b89ce7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/seal_sage.png"
-dest_files=["res://.godot/imported/seal_sage.png-69300295a23ce48b29c833c3990985df.ctex"]
+source_file="res://assets/images/emblem_sage.png"
+dest_files=["res://.godot/imported/emblem_sage.png-a8d8d6b86d3a185d1ff413b918b89ce7.ctex"]
 
 [params]
 

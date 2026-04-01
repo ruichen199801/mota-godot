@@ -13,13 +13,29 @@ const STATE_NAMES := {
 	State.WEAKENED: "衰弱",
 }
 
+const POISON_DAMAGE := 5
+
+var _weaken_debuffs := {
+	"atk": 0,
+	"def": 0,
+	"agi": 0
+}
+
 @export var hit_frames: SpriteFrames
 # Replace default hit effect with this after picking up any sword item
 @export var sword_hit_frames: SpriteFrames
 
 @export var state: State = State.NORMAL:
 	set(v):
+		if state == v:
+			emit_changed()
+			return
+		var old_state := state
 		state = v
+		if old_state == State.WEAKENED:
+			_restore_weaken()
+		if v == State.WEAKENED:
+			_apply_weaken()
 		emit_changed()
 
 @export var level: int = 1:
@@ -171,3 +187,28 @@ func is_poisoned() -> bool:
 
 func is_weakened() -> bool:
 	return state == State.WEAKENED
+
+
+func apply_poison() -> void:
+	if state == State.POISONED:
+		hp -= POISON_DAMAGE
+
+
+func _apply_weaken() -> void:
+	_weaken_debuffs.atk = atk / 2
+	_weaken_debuffs.def = def / 2
+	_weaken_debuffs.agi = agi / 2
+	atk -= _weaken_debuffs.atk
+	def -= _weaken_debuffs.def
+	agi -= _weaken_debuffs.agi
+
+
+func _restore_weaken() -> void:
+	atk += _weaken_debuffs.atk
+	def += _weaken_debuffs.def
+	agi += _weaken_debuffs.agi
+	_weaken_debuffs = {
+		"atk": 0,
+		"def": 0,
+		"agi": 0
+	}

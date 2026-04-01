@@ -326,6 +326,7 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 size_flags_vertical = 0
+mouse_filter = 2
 
 [node name="PlayerAvatarBorder" type="PanelContainer" parent="BattleBorder/MarginContainer/MainVBox/TopRow/PlayerColumn/PlayerSide/PlayerAvatarArea" unique_id=524230706]
 layout_mode = 1

@@ -21,6 +21,8 @@
 [ext_resource type="Resource" uid="uid://bvtnhkvtamdxv" path="res://resources/items/ice_amulet.tres" id="13_q4xqp"]
 [ext_resource type="Resource" uid="uid://41tscolgmqor" path="res://resources/items/anywhere_door.tres" id="15_my178"]
 [ext_resource type="Resource" uid="uid://clpmukkfspi0d" path="res://resources/items/cross.tres" id="16_ki1wk"]
+[ext_resource type="Resource" uid="uid://d46fpmp66mlp" path="res://resources/items/fire_wine.tres" id="17_rau4n"]
+[ext_resource type="Resource" uid="uid://3gcce6ftuade" path="res://resources/items/antidote.tres" id="18_2gtno"]
 [ext_resource type="Resource" uid="uid://ct8qok27qfe0j" path="res://resources/items/divine_sword_token.tres" id="18_pdykn"]
 [ext_resource type="Resource" uid="uid://cl45kg8ytwi31" path="res://resources/items/light_sword.tres" id="20_t8fqy"]
 
@@ -139,6 +141,14 @@ data = ExtResource("9_cc1qs")
 [node name="Potion" parent="Entities" unique_id=1048197284 instance=ExtResource("8_2p8vk")]
 position = Vector2(96, 32)
 data = ExtResource("10_8qnd4")
+
+[node name="FireWine" parent="Entities" unique_id=341659336 instance=ExtResource("8_2p8vk")]
+position = Vector2(256, 128)
+data = ExtResource("17_rau4n")
+
+[node name="Antidote" parent="Entities" unique_id=1763801833 instance=ExtResource("8_2p8vk")]
+position = Vector2(288, 128)
+data = ExtResource("18_2gtno")
 
 [node name="GreaterPotion" parent="Entities" unique_id=1564028092 instance=ExtResource("8_2p8vk")]
 position = Vector2(128, 32)
