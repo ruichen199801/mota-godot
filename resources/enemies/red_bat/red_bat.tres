@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://qc6aroo647jm"]
+
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_8xds1"]
+[ext_resource type="SpriteFrames" uid="uid://bcoec0sx2xrc2" path="res://resources/enemies/red_bat/red_bat_frames.tres" id="1_p0y7n"]
+[ext_resource type="SpriteFrames" uid="uid://dy1v6q2riou4l" path="res://resources/battle_animations/bite_frames.tres" id="2_ywshq"]
+
+[resource]
+script = ExtResource("1_8xds1")
+enemy_id = "red_bat"
+enemy_name = "红蝙蝠"
+frames = ExtResource("1_p0y7n")
+hp = 210
+atk = 185
+def = 70
+crit = 5
+agi = 4
+gold_drop = 24
+xp_drop = 3
+hit_frames = ExtResource("2_ywshq")
+atk_times = 3
+ability_description = "多段攻击"
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

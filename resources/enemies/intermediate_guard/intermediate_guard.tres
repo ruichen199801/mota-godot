@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://bspc3jh7haujg"]
+
+[ext_resource type="SpriteFrames" uid="uid://4xsk2d4g8wia" path="res://resources/enemies/intermediate_guard/intermediate_guard_frames.tres" id="1_0sn63"]
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_qfn5q"]
+[ext_resource type="SpriteFrames" uid="uid://h7752g7ici7w" path="res://resources/battle_animations/punch_frames.tres" id="2_y288w"]
+
+[resource]
+script = ExtResource("1_qfn5q")
+enemy_id = "intermediate_guard"
+enemy_name = "中级守卫"
+frames = ExtResource("1_0sn63")
+hp = 775
+atk = 220
+def = 310
+crit = 5
+agi = 3
+gold_drop = 63
+xp_drop = 7
+hit_frames = ExtResource("2_y288w")
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://3f7h4cjt5eqc"]
+
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_f7ipr"]
+[ext_resource type="SpriteFrames" uid="uid://clbdvoginhlsh" path="res://resources/enemies/mercury_man/mercury_man_frames.tres" id="1_ut40q"]
+[ext_resource type="SpriteFrames" uid="uid://h7752g7ici7w" path="res://resources/battle_animations/punch_frames.tres" id="2_bu1c8"]
+
+[resource]
+script = ExtResource("1_f7ipr")
+enemy_id = "mercury_man"
+enemy_name = "水银人"
+frames = ExtResource("1_ut40q")
+hp = 810
+atk = 802
+def = 753
+crit = 4
+agi = 50
+gold_drop = 140
+xp_drop = 15
+hit_frames = ExtResource("2_bu1c8")
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

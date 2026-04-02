@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://bf0jksikbblts"]
+
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_4t7y5"]
+[ext_resource type="SpriteFrames" uid="uid://dkrn8cylin1t2" path="res://resources/enemies/giant_bat/giant_bat_frames.tres" id="1_111r2"]
+[ext_resource type="SpriteFrames" uid="uid://dy1v6q2riou4l" path="res://resources/battle_animations/bite_frames.tres" id="2_3u7op"]
+
+[resource]
+script = ExtResource("1_4t7y5")
+enemy_id = "giant_bat"
+enemy_name = "大蝙蝠"
+frames = ExtResource("1_111r2")
+hp = 66
+atk = 55
+def = 12
+crit = 5
+agi = 4
+gold_drop = 6
+xp_drop = 1
+hit_frames = ExtResource("2_3u7op")
+atk_times = 2
+ability_description = "多段攻击"
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

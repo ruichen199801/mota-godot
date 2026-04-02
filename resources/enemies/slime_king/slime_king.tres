@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://j84j2hjdrmb4"]
+
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_mgth4"]
+[ext_resource type="SpriteFrames" uid="uid://bl6buu4bmko8w" path="res://resources/enemies/slime_king/slime_king_frames.tres" id="1_ybnjg"]
+[ext_resource type="SpriteFrames" uid="uid://h7752g7ici7w" path="res://resources/battle_animations/punch_frames.tres" id="2_s1mvq"]
+
+[resource]
+script = ExtResource("1_mgth4")
+enemy_id = "slime_king"
+enemy_name = "史莱姆王"
+frames = ExtResource("1_ybnjg")
+hp = 172
+atk = 130
+def = 60
+crit = 6
+agi = 2
+gold_drop = 19
+xp_drop = 2
+hit_frames = ExtResource("2_s1mvq")
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

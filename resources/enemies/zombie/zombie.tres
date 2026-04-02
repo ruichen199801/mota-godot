@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://ci34bb5piualn"]
+
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_50jfk"]
+[ext_resource type="SpriteFrames" uid="uid://dig4xp87tqvq2" path="res://resources/enemies/zombie/zombie_frames.tres" id="1_s0dyt"]
+[ext_resource type="SpriteFrames" uid="uid://dy1v6q2riou4l" path="res://resources/battle_animations/bite_frames.tres" id="2_oia1h"]
+
+[resource]
+script = ExtResource("1_50jfk")
+enemy_id = "zombie"
+enemy_name = "丧尸"
+frames = ExtResource("1_s0dyt")
+hp = 190
+atk = 90
+def = 33
+crit = 4
+agi = 2
+gold_drop = 15
+xp_drop = 2
+hit_frames = ExtResource("2_oia1h")
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

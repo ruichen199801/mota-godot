@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://7nbr0u1stj3b"]
+
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_17lyn"]
+[ext_resource type="SpriteFrames" uid="uid://ce3x28xkmtf2t" path="res://resources/enemies/guard/guard_frames.tres" id="1_gkvg4"]
+[ext_resource type="SpriteFrames" uid="uid://h7752g7ici7w" path="res://resources/battle_animations/punch_frames.tres" id="2_ydbs8"]
+
+[resource]
+script = ExtResource("1_17lyn")
+enemy_id = "guard"
+enemy_name = "守卫"
+frames = ExtResource("1_gkvg4")
+hp = 85
+atk = 40
+def = 55
+crit = 5
+agi = 3
+gold_drop = 6
+xp_drop = 1
+hit_frames = ExtResource("2_ydbs8")
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

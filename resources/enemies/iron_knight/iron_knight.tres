@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://co0wwaqi3nk2c"]
+
+[ext_resource type="SpriteFrames" uid="uid://dgvx6kv3gdyh6" path="res://resources/enemies/iron_knight/iron_knight_frames.tres" id="1_5nuh2"]
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_igub7"]
+[ext_resource type="SpriteFrames" uid="uid://ds3cafv3yeb8q" path="res://resources/battle_animations/slash_frames.tres" id="2_c8scq"]
+
+[resource]
+script = ExtResource("1_igub7")
+enemy_id = "iron_knight"
+enemy_name = "铁骑士"
+frames = ExtResource("1_5nuh2")
+hp = 420
+atk = 380
+def = 258
+crit = 40
+agi = 4
+gold_drop = 54
+xp_drop = 6
+hit_frames = ExtResource("2_c8scq")
+ability_description = " 必杀剑"
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

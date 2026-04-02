@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://cxir7g5twnbu7"]
+
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_3mppi"]
+[ext_resource type="SpriteFrames" uid="uid://7nqqlkntwpkt" path="res://resources/enemies/stone_golem/stone_golem_frames.tres" id="1_a6uyl"]
+[ext_resource type="SpriteFrames" uid="uid://h7752g7ici7w" path="res://resources/battle_animations/punch_frames.tres" id="2_pt58l"]
+
+[resource]
+script = ExtResource("1_3mppi")
+enemy_id = "stone_golem"
+enemy_name = "石怪"
+frames = ExtResource("1_a6uyl")
+hp = 30
+atk = 45
+def = 70
+crit = 2
+gold_drop = 7
+xp_drop = 1
+hit_frames = ExtResource("2_pt58l")
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

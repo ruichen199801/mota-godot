@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://xtnn2q4svlft"]
+
+[ext_resource type="SpriteFrames" uid="uid://c47w3ncpod6na" path="res://resources/enemies/slime_man/slime_man_frames.tres" id="1_iluyb"]
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_m71ir"]
+[ext_resource type="SpriteFrames" uid="uid://h7752g7ici7w" path="res://resources/battle_animations/punch_frames.tres" id="2_laaey"]
+
+[resource]
+script = ExtResource("1_m71ir")
+enemy_id = "slime_man"
+enemy_name = "史莱姆人"
+frames = ExtResource("1_iluyb")
+hp = 90
+atk = 79
+def = 24
+crit = 4
+agi = 30
+gold_drop = 10
+xp_drop = 2
+hit_frames = ExtResource("2_laaey")
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

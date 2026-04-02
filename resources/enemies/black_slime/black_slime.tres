@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://c6xjwvf370bjb"]
+
+[ext_resource type="SpriteFrames" uid="uid://gj7nx3wtyj4x" path="res://resources/enemies/black_slime/black_slime_frames.tres" id="1_etc30"]
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_w2mvk"]
+[ext_resource type="SpriteFrames" uid="uid://h7752g7ici7w" path="res://resources/battle_animations/punch_frames.tres" id="2_i355j"]
+
+[resource]
+script = ExtResource("1_w2mvk")
+enemy_id = "black_slime"
+enemy_name = "黑色史莱姆"
+frames = ExtResource("1_etc30")
+hp = 80
+atk = 37
+def = 9
+crit = 4
+gold_drop = 5
+xp_drop = 1
+hit_frames = ExtResource("2_i355j")
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

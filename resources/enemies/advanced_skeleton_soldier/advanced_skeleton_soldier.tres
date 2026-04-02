@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://cfqupiudveoxb"]
+
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_be4om"]
+[ext_resource type="SpriteFrames" uid="uid://6ulkjiopmeju" path="res://resources/enemies/advanced_skeleton_soldier/advanced_skeleton_soldier_frames.tres" id="1_ptuua"]
+[ext_resource type="SpriteFrames" uid="uid://ds3cafv3yeb8q" path="res://resources/battle_animations/slash_frames.tres" id="2_0ivuy"]
+
+[resource]
+script = ExtResource("1_be4om")
+enemy_id = "advanced_skeleton_soldier"
+enemy_name = "高级骷髅兵"
+frames = ExtResource("1_ptuua")
+hp = 1020
+atk = 1341
+def = 600
+crit = 5
+agi = 3
+gold_drop = 145
+xp_drop = 15
+hit_frames = ExtResource("2_0ivuy")
+weaken_chance = 13
+ability_description = "衰弱攻击"
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

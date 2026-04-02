@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://bef7or4cc5pbn"]
+
+[ext_resource type="SpriteFrames" uid="uid://d6tmuf3qvbbt" path="res://resources/enemies/fake_princess/fake_princess_frames.tres" id="1_olfn5"]
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_otel4"]
+[ext_resource type="SpriteFrames" uid="uid://h7752g7ici7w" path="res://resources/battle_animations/punch_frames.tres" id="2_bvnic"]
+
+[resource]
+script = ExtResource("1_otel4")
+enemy_id = "fake_princess"
+enemy_name = "假公主"
+frames = ExtResource("1_olfn5")
+hp = 600
+atk = 270
+def = 160
+crit = 5
+agi = 5
+gold_drop = 120
+xp_drop = 13
+hit_frames = ExtResource("2_bvnic")
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://bkc23wd0l4gxe"]
+
+[ext_resource type="SpriteFrames" uid="uid://cvs3ru6fiijs3" path="res://resources/enemies/gold_slime/gold_slime_frames.tres" id="1_5e2c7"]
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_srbru"]
+[ext_resource type="SpriteFrames" uid="uid://h7752g7ici7w" path="res://resources/battle_animations/punch_frames.tres" id="2_7n6ym"]
+
+[resource]
+script = ExtResource("1_srbru")
+enemy_id = "gold_slime"
+enemy_name = "黄金史莱姆"
+frames = ExtResource("1_5e2c7")
+hp = 20
+atk = 1
+def = 9999
+crit = 20
+agi = 30
+hit_frames = ExtResource("2_7n6ym")
+atk_times = 3
+adaptive_atk = 400
+ability_description = "多段攻击 特殊战斗"
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

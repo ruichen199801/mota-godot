@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://c7w0y1xknrpon"]
+
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_ohcv6"]
+[ext_resource type="SpriteFrames" uid="uid://c411h14abf12i" path="res://resources/enemies/intermediate_skeleton_soldier/intermediate_skeleton_soldier_frames.tres" id="1_yo4xt"]
+[ext_resource type="SpriteFrames" uid="uid://ds3cafv3yeb8q" path="res://resources/battle_animations/slash_frames.tres" id="2_dop1q"]
+
+[resource]
+script = ExtResource("1_ohcv6")
+enemy_id = "intermediate_skeleton_soldier"
+enemy_name = "中级骷髅兵"
+frames = ExtResource("1_yo4xt")
+hp = 290
+atk = 170
+def = 23
+crit = 5
+agi = 3
+gold_drop = 21
+xp_drop = 3
+hit_frames = ExtResource("2_dop1q")
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

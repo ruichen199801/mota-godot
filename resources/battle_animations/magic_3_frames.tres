@@ -1,0 +1,73 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://ffyvwrtlgv00"]
+
+[ext_resource type="Texture2D" uid="uid://byc44ta4vmoje" path="res://assets/animations/magic_3_crit.png" id="1_yqi48"]
+[ext_resource type="Texture2D" uid="uid://cw3iyp245oafp" path="res://assets/animations/magic_3.png" id="2_01lmw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oohae"]
+atlas = ExtResource("1_yqi48")
+region = Rect2(0, 0, 77, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfkt6"]
+atlas = ExtResource("1_yqi48")
+region = Rect2(77, 0, 77, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0bhe"]
+atlas = ExtResource("1_yqi48")
+region = Rect2(154, 0, 77, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5nxq"]
+atlas = ExtResource("1_yqi48")
+region = Rect2(231, 0, 77, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eg1s0"]
+atlas = ExtResource("2_01lmw")
+region = Rect2(0, 0, 66, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a322l"]
+atlas = ExtResource("2_01lmw")
+region = Rect2(66, 0, 66, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8140"]
+atlas = ExtResource("2_01lmw")
+region = Rect2(132, 0, 66, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gn8wu"]
+atlas = ExtResource("2_01lmw")
+region = Rect2(198, 0, 66, 68)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oohae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfkt6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0bhe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5nxq")
+}],
+"loop": false,
+"name": &"crit",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eg1s0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a322l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8140")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gn8wu")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 20.0
+}]

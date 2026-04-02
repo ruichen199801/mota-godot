@@ -2,7 +2,7 @@
 
 [ext_resource type="SpriteFrames" uid="uid://jjf64ygb3hkq" path="res://resources/enemies/spirit_skeleton/spirit_skeleton_frames.tres" id="1_cblaq"]
 [ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_yk0ke"]
-[ext_resource type="SpriteFrames" uid="uid://ds3cafv3yeb8q" path="res://resources/battle_animations/slash_frames.tres" id="2_3d33k"]
+[ext_resource type="SpriteFrames" uid="uid://h7752g7ici7w" path="res://resources/battle_animations/punch_frames.tres" id="2_cblaq"]
 
 [resource]
 script = ExtResource("1_yk0ke")
@@ -16,5 +16,5 @@ crit = 5
 agi = 3
 gold_drop = 70
 xp_drop = 8
-hit_frames = ExtResource("2_3d33k")
+hit_frames = ExtResource("2_cblaq")
 metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

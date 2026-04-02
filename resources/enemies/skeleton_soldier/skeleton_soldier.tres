@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://br3gjysbavueb"]
+
+[ext_resource type="SpriteFrames" uid="uid://b8vos405il1kv" path="res://resources/enemies/skeleton_soldier/skeleton_soldier_frames.tres" id="1_ndbui"]
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_pyd71"]
+[ext_resource type="SpriteFrames" uid="uid://ds3cafv3yeb8q" path="res://resources/battle_animations/slash_frames.tres" id="2_opsse"]
+
+[resource]
+script = ExtResource("1_pyd71")
+enemy_id = "skeleton_soldier"
+enemy_name = "骷髅兵"
+frames = ExtResource("1_ndbui")
+hp = 190
+atk = 100
+def = 5
+crit = 4
+agi = 3
+gold_drop = 13
+xp_drop = 2
+hit_frames = ExtResource("2_opsse")
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

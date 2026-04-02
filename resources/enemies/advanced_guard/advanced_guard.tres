@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://btjtn5abvuis1"]
+
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_te3m6"]
+[ext_resource type="SpriteFrames" uid="uid://bmay6xhmea7yd" path="res://resources/enemies/advanced_guard/advanced_guard_frames.tres" id="1_vku3t"]
+[ext_resource type="SpriteFrames" uid="uid://h7752g7ici7w" path="res://resources/battle_animations/punch_frames.tres" id="2_quu0a"]
+
+[resource]
+script = ExtResource("1_te3m6")
+enemy_id = "advanced_guard"
+enemy_name = "高级守卫"
+frames = ExtResource("1_vku3t")
+hp = 1150
+atk = 651
+def = 860
+crit = 5
+agi = 4
+gold_drop = 110
+xp_drop = 12
+hit_frames = ExtResource("2_quu0a")
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

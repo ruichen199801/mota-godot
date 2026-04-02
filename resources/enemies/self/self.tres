@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://cb47vhdjso0e"]
+
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_cje0q"]
+[ext_resource type="SpriteFrames" uid="uid://b0w0ml08mwhh4" path="res://resources/enemies/self/self_frames.tres" id="1_q1ku0"]
+[ext_resource type="SpriteFrames" uid="uid://ds3cafv3yeb8q" path="res://resources/battle_animations/slash_frames.tres" id="1_s0d6m"]
+
+[resource]
+script = ExtResource("1_cje0q")
+enemy_id = "self"
+enemy_name = "自己"
+frames = ExtResource("1_q1ku0")
+hp = 1100
+atk = 325
+def = 160
+crit = 5
+agi = 5
+gold_drop = 300
+xp_drop = 31
+hit_frames = ExtResource("1_s0d6m")
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

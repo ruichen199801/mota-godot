@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://bnk76vofn40ru"]
+
+[ext_resource type="SpriteFrames" uid="uid://lel5qkfhbnlr" path="res://resources/enemies/intermediate_mage/intermediate_mage_frames.tres" id="1_c8hbr"]
+[ext_resource type="SpriteFrames" uid="uid://i52lnf8r6b3y" path="res://resources/battle_animations/magic_2_frames.tres" id="2_vqlrs"]
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="4_3h1aq"]
+
+[resource]
+script = ExtResource("4_3h1aq")
+enemy_id = "intermediate_mage"
+enemy_name = "中级魔法师"
+frames = ExtResource("1_c8hbr")
+hp = 190
+atk = 20
+def = 20
+crit = 2
+gold_drop = 8
+xp_drop = 1
+hit_frames = ExtResource("2_vqlrs")
+ignore_def = true
+ability_description = "攻击无视防御力"
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

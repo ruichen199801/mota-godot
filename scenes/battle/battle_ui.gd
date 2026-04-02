@@ -48,7 +48,7 @@ enum BattleUIState {
 @onready var battle_border: PanelContainer = %BattleBorder
 
 const MISS_FLOAT_DISTANCE := 20.0
-const MISS_FLOAT_DURATION := 0.6
+const MISS_FLOAT_DURATION := 0.4
 const RESULT_EXTEND_DURATION := 0.3
 const RESULT_HEIGHT := 32.0
 const GAME_OVER_FLOAT_DURATION := 2.0

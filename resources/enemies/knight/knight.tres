@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://daix88venj2d4"]
+
+[ext_resource type="SpriteFrames" uid="uid://h10htff2p8xe" path="res://resources/enemies/knight/knight_frames.tres" id="1_1r1vg"]
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_clos5"]
+[ext_resource type="SpriteFrames" uid="uid://ds3cafv3yeb8q" path="res://resources/battle_animations/slash_frames.tres" id="2_ecf6l"]
+
+[resource]
+script = ExtResource("1_clos5")
+enemy_id = "knight"
+enemy_name = "骑士"
+frames = ExtResource("1_1r1vg")
+hp = 130
+atk = 115
+def = 43
+crit = 30
+agi = 4
+gold_drop = 17
+xp_drop = 2
+hit_frames = ExtResource("2_ecf6l")
+ability_description = "必杀剑"
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

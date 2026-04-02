@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://c5xa113vfy3t"]
+
+[ext_resource type="SpriteFrames" uid="uid://nla6s3e6muw2" path="res://resources/enemies/advanced_mage/advanced_mage_frames.tres" id="1_ox2pe"]
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_pfbpg"]
+[ext_resource type="SpriteFrames" uid="uid://ffyvwrtlgv00" path="res://resources/battle_animations/magic_3_frames.tres" id="2_ox2pe"]
+
+[resource]
+script = ExtResource("1_pfbpg")
+enemy_id = "advanced_mage"
+enemy_name = " 高级魔法师"
+frames = ExtResource("1_ox2pe")
+hp = 290
+atk = 40
+def = 90
+crit = 2
+gold_drop = 27
+xp_drop = 3
+hit_frames = ExtResource("2_ox2pe")
+ignore_def = true
+ability_description = "攻击无视防御力"
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"
