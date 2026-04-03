@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://cs7sq61sqbqx4"]
+
+[ext_resource type="SpriteFrames" uid="uid://bfso3rol345co" path="res://resources/enemies/great_demon_king/great_demon_king_frames.tres" id="1_42tas"]
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_s0tgr"]
+[ext_resource type="SpriteFrames" uid="uid://ds3cafv3yeb8q" path="res://resources/battle_animations/slash_frames.tres" id="2_mad6f"]
+
+[resource]
+script = ExtResource("1_s0tgr")
+enemy_id = "great_demon_king"
+enemy_name = "大魔王"
+frames = ExtResource("1_42tas")
+hp = 1000
+atk = 1200
+def = 980
+crit = 16
+agi = 7
+gold_drop = 400
+xp_drop = 41
+hit_frames = ExtResource("2_mad6f")
+weaken_chance = 10
+ability_description = "衰弱攻击"
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

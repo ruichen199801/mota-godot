@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://cjk0jfuhuvu8n"]
+
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_6c422"]
+[ext_resource type="SpriteFrames" uid="uid://kcjb76q75tl1" path="res://resources/enemies/demon_king_gledi/demon_king_gledi_frames.tres" id="1_qo2r3"]
+[ext_resource type="SpriteFrames" uid="uid://j71ux2fpehat" path="res://resources/battle_animations/magic_9_frames.tres" id="2_jk3la"]
+
+[resource]
+script = ExtResource("1_6c422")
+enemy_id = "demon_king_gledi"
+enemy_name = "魔王‧格勒第"
+frames = ExtResource("1_qo2r3")
+hp = 5000
+atk = 1500
+def = 1200
+crit = 50
+agi = 20
+hit_frames = ExtResource("2_jk3la")
+atk_times = 2
+ability_description = "多段攻击"
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

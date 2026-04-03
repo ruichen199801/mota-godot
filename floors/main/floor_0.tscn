@@ -36,6 +36,8 @@
 [ext_resource type="Resource" uid="uid://ct8qok27qfe0j" path="res://resources/items/divine_sword_token.tres" id="18_pdykn"]
 [ext_resource type="Resource" uid="uid://3f7h4cjt5eqc" path="res://resources/enemies/mercury_man/mercury_man.tres" id="19_cv4xu"]
 [ext_resource type="Resource" uid="uid://cl45kg8ytwi31" path="res://resources/items/light_sword.tres" id="20_t8fqy"]
+[ext_resource type="Resource" uid="uid://kob68opwiawx" path="res://resources/enemies/dual_wield_swordsman/dual_wield_swordsman.tres" id="23_xxc2f"]
+[ext_resource type="Resource" uid="uid://c85pbjg16tf51" path="res://resources/enemies/sword_king/sword_king.tres" id="24_h5xhw"]
 
 [node name="Floor0" type="Node2D" unique_id=1806746235]
 script = ExtResource("1_b0ara")
@@ -128,6 +130,14 @@ data = ExtResource("11_f4ax8")
 [node name="SpiritWarrior" parent="Entities" unique_id=571879175 instance=ExtResource("3_wsiys")]
 position = Vector2(288, 64)
 data = ExtResource("12_1icpw")
+
+[node name="DualWieldSwordsman" parent="Entities" unique_id=224896642 instance=ExtResource("3_wsiys")]
+position = Vector2(256, 96)
+data = ExtResource("23_xxc2f")
+
+[node name="SwordKing" parent="Entities" unique_id=1058460890 instance=ExtResource("3_wsiys")]
+position = Vector2(288, 96)
+data = ExtResource("24_h5xhw")
 
 [node name="FireWine" parent="Entities" unique_id=341659336 instance=ExtResource("8_2p8vk")]
 position = Vector2(256, 32)

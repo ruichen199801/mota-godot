@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://blbv3u2hxf245"]
+
+[ext_resource type="SpriteFrames" uid="uid://bat7gdsqrfg5r" path="res://resources/enemies/giant_octopus/giant_octopus_frames.tres" id="1_orrf3"]
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_uevtb"]
+[ext_resource type="SpriteFrames" uid="uid://h7752g7ici7w" path="res://resources/battle_animations/punch_frames.tres" id="2_mmilc"]
+[ext_resource type="SpriteFrames" uid="uid://ctlvi6r4qvnu" path="res://resources/enemies/giant_octopus/giant_octopus_world_frames.tres" id="4_mtat5"]
+
+[resource]
+script = ExtResource("1_uevtb")
+enemy_id = "giant_octopus"
+enemy_name = "巨大八爪鱼"
+frames = ExtResource("1_orrf3")
+world_frames_override = ExtResource("4_mtat5")
+hit_frames = ExtResource("2_mmilc")
+hp = 700
+atk = 295
+def = 120
+crit = 7
+agi = 5
+gold_drop = 170
+xp_drop = 18
+weaken_chance = 7
+ability_description = "衰弱攻击"
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

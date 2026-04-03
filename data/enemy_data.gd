@@ -4,6 +4,9 @@ extends Resource
 @export var enemy_id: String
 @export var enemy_name: String
 @export var frames: SpriteFrames
+@export var world_frames_override: SpriteFrames # optional override for big enemies
+@export var hit_frames: SpriteFrames
+
 @export var hp: int
 @export var atk: int
 @export var def: int
@@ -11,7 +14,6 @@ extends Resource
 @export var agi: int
 @export var gold_drop: int
 @export var xp_drop: int
-@export var hit_frames: SpriteFrames
 
 @export_group("Special Abilities")
 @export var atk_times: int = 1
@@ -37,3 +39,7 @@ func _get_icon() -> Texture2D:
 		return null
 	var first_anim = frames.get_animation_names()[0]
 	return frames.get_frame_texture(first_anim, 0)
+	
+
+func get_world_frames() -> SpriteFrames:
+	return world_frames_override if world_frames_override != null else frames

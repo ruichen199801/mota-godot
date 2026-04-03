@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://rlerasgmv788"]
+
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_0tcrc"]
+[ext_resource type="SpriteFrames" uid="uid://be8ricv53n12k" path="res://resources/enemies/archmage/archmage_frames.tres" id="1_2oqc5"]
+[ext_resource type="SpriteFrames" uid="uid://eaf8ssk0wl5c" path="res://resources/battle_animations/magic_6_frames.tres" id="2_e2fdj"]
+
+[resource]
+script = ExtResource("1_0tcrc")
+enemy_id = "archmage"
+enemy_name = "大法师"
+frames = ExtResource("1_2oqc5")
+hp = 450
+atk = 100
+def = 302
+crit = 2
+agi = 1
+gold_drop = 77
+xp_drop = 8
+hit_frames = ExtResource("2_e2fdj")
+ignore_def = true
+ability_description = "攻击无视防御力"
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

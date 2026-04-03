@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dr68ga4l8syi"]
+
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_oacxy"]
+[ext_resource type="SpriteFrames" uid="uid://da30vxnq0lc81" path="res://resources/enemies/demon_king/demon_king_frames.tres" id="1_qbcen"]
+[ext_resource type="SpriteFrames" uid="uid://h7752g7ici7w" path="res://resources/battle_animations/punch_frames.tres" id="2_own3a"]
+
+[resource]
+script = ExtResource("1_oacxy")
+enemy_id = "demon_king"
+enemy_name = "魔王"
+frames = ExtResource("1_qbcen")
+hp = 635
+atk = 600
+def = 500
+crit = 14
+agi = 6
+gold_drop = 88
+xp_drop = 9
+hit_frames = ExtResource("2_own3a")
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

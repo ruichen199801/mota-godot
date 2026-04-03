@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://c1qjyr76a3ayq"]
+
+[ext_resource type="SpriteFrames" uid="uid://crcvc8wpj0gbn" path="res://resources/enemies/poison_dragon/poison_dragon_frames.tres" id="1_3jxku"]
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_jgnqx"]
+[ext_resource type="SpriteFrames" uid="uid://dy1v6q2riou4l" path="res://resources/battle_animations/bite_frames.tres" id="2_wufu5"]
+[ext_resource type="SpriteFrames" uid="uid://dt104ip5i6apj" path="res://resources/enemies/poison_dragon/poison_dragon_world_frames.tres" id="4_giu2y"]
+
+[resource]
+script = ExtResource("1_jgnqx")
+enemy_id = "poison_dragon"
+enemy_name = "毒龙"
+frames = ExtResource("1_3jxku")
+world_frames_override = ExtResource("4_giu2y")
+hit_frames = ExtResource("2_wufu5")
+hp = 2350
+atk = 1400
+def = 930
+crit = 15
+agi = 7
+gold_drop = 600
+xp_drop = 61
+poison_chance = 20
+ability_description = "毒攻击"
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

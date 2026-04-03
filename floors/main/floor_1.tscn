@@ -20,12 +20,22 @@
 [ext_resource type="Resource" uid="uid://co0wwaqi3nk2c" path="res://resources/enemies/iron_knight/iron_knight.tres" id="10_7a2j7"]
 [ext_resource type="Resource" uid="uid://c5xa113vfy3t" path="res://resources/enemies/advanced_mage/advanced_mage.tres" id="10_8xjhj"]
 [ext_resource type="Resource" uid="uid://br3gjysbavueb" path="res://resources/enemies/skeleton_soldier/skeleton_soldier.tres" id="13_33fbf"]
+[ext_resource type="Resource" uid="uid://dpbbu5ein8jlt" path="res://resources/enemies/mage_leader/mage_leader.tres" id="13_ivpww"]
+[ext_resource type="Resource" uid="uid://vn8623jnio4n" path="res://resources/enemies/dark_mage/dark_mage.tres" id="13_urnor"]
 [ext_resource type="Resource" uid="uid://c7w0y1xknrpon" path="res://resources/enemies/intermediate_skeleton_soldier/intermediate_skeleton_soldier.tres" id="14_lqivb"]
+[ext_resource type="Resource" uid="uid://c2xcp7e6qwu88" path="res://resources/enemies/mage_marshal/mage_marshal.tres" id="14_y4chl"]
+[ext_resource type="Resource" uid="uid://rlerasgmv788" path="res://resources/enemies/archmage/archmage.tres" id="15_1mtck"]
 [ext_resource type="Resource" uid="uid://cfqupiudveoxb" path="res://resources/enemies/advanced_skeleton_soldier/advanced_skeleton_soldier.tres" id="15_n8s22"]
+[ext_resource type="Resource" uid="uid://dqm8qsxccjika" path="res://resources/enemies/red_robed_archmage/red_robed_archmage.tres" id="16_vif7q"]
 [ext_resource type="Resource" uid="uid://7nbr0u1stj3b" path="res://resources/enemies/guard/guard.tres" id="18_pm81e"]
 [ext_resource type="Resource" uid="uid://bspc3jh7haujg" path="res://resources/enemies/intermediate_guard/intermediate_guard.tres" id="19_hyoj5"]
 [ext_resource type="Resource" uid="uid://btjtn5abvuis1" path="res://resources/enemies/advanced_guard/advanced_guard.tres" id="20_t4ecj"]
 [ext_resource type="Resource" uid="uid://ch43yj4nl741t" path="res://resources/enemies/skeleton/skeleton.tres" id="20_urnor"]
+[ext_resource type="Resource" uid="uid://dr68ga4l8syi" path="res://resources/enemies/demon_king/demon_king.tres" id="30_cwgqa"]
+[ext_resource type="Resource" uid="uid://cs7sq61sqbqx4" path="res://resources/enemies/great_demon_king/great_demon_king.tres" id="31_pb4dk"]
+[ext_resource type="Resource" uid="uid://cjk0jfuhuvu8n" path="res://resources/enemies/demon_king_gledi/demon_king_gledi.tres" id="32_jybvg"]
+[ext_resource type="Resource" uid="uid://hesn6cq63lku" path="res://resources/enemies/dragon/dragon.tres" id="33_jk001"]
+[ext_resource type="Resource" uid="uid://blbv3u2hxf245" path="res://resources/enemies/giant_octopus/giant_octopus.tres" id="34_jtrnx"]
 
 [node name="Floor0" type="Node2D" unique_id=1806746235]
 script = ExtResource("1_w8oah")
@@ -56,11 +66,11 @@ position = Vector2(224, 128)
 data = ExtResource("8_telvf")
 
 [node name="XpShop1" parent="Entities" unique_id=1191910855 instance=ExtResource("6_o5ddk")]
-position = Vector2(128, 248)
+position = Vector2(128, 160)
 data = ExtResource("8_nki1m")
 
 [node name="XpShop2" parent="Entities" unique_id=632798153 instance=ExtResource("6_o5ddk")]
-position = Vector2(224, 248)
+position = Vector2(224, 160)
 data = ExtResource("8_33nwr")
 
 [node name="Mage" parent="Entities" unique_id=403944013 instance=ExtResource("3_q7nhy")]
@@ -75,13 +85,17 @@ data = ExtResource("9_u0epg")
 position = Vector2(160, 32)
 data = ExtResource("10_8xjhj")
 
-[node name="StoneGolem" parent="Entities" unique_id=2033536466 instance=ExtResource("3_q7nhy")]
+[node name="Archmage" parent="Entities" unique_id=208446021 instance=ExtResource("3_q7nhy")]
 position = Vector2(192, 32)
-data = ExtResource("7_p8dw7")
+data = ExtResource("15_1mtck")
 
-[node name="IronGolem" parent="Entities" unique_id=1856272833 instance=ExtResource("3_q7nhy")]
+[node name="RedRobedArchmage" parent="Entities" unique_id=1789858739 instance=ExtResource("3_q7nhy")]
 position = Vector2(224, 32)
-data = ExtResource("6_0mlsg")
+data = ExtResource("16_vif7q")
+
+[node name="DarkMage" parent="Entities" unique_id=1919667763 instance=ExtResource("3_q7nhy")]
+position = Vector2(256, 32)
+data = ExtResource("13_urnor")
 
 [node name="Knight" parent="Entities" unique_id=1388166236 instance=ExtResource("3_q7nhy")]
 position = Vector2(96, 64)
@@ -103,7 +117,7 @@ data = ExtResource("8_8ye4v")
 position = Vector2(224, 64)
 data = ExtResource("9_u12av")
 
-[node name="Skeleton" parent="Entities" unique_id=605189716 instance=ExtResource("3_q7nhy")]
+[node name="Skeleton" parent="Entities" unique_id=871216000 instance=ExtResource("3_q7nhy")]
 position = Vector2(96, 96)
 data = ExtResource("20_urnor")
 
@@ -130,3 +144,45 @@ data = ExtResource("19_hyoj5")
 [node name="AdvancedGuard" parent="Entities" unique_id=2113903378 instance=ExtResource("3_q7nhy")]
 position = Vector2(288, 96)
 data = ExtResource("20_t4ecj")
+
+[node name="MageLeader" parent="Entities" unique_id=605189716 instance=ExtResource("3_q7nhy")]
+position = Vector2(32, 224)
+data = ExtResource("13_ivpww")
+
+[node name="MageMarshal" parent="Entities" unique_id=1516378287 instance=ExtResource("3_q7nhy")]
+position = Vector2(64, 224)
+data = ExtResource("14_y4chl")
+
+[node name="DemonKing" parent="Entities" unique_id=882853589 instance=ExtResource("3_q7nhy")]
+position = Vector2(32, 256)
+data = ExtResource("30_cwgqa")
+
+[node name="GreatDemonKing" parent="Entities" unique_id=205803870 instance=ExtResource("3_q7nhy")]
+position = Vector2(64, 256)
+data = ExtResource("31_pb4dk")
+
+[node name="DemonKingGledi" parent="Entities" unique_id=1450547793 instance=ExtResource("3_q7nhy")]
+position = Vector2(32, 192)
+data = ExtResource("32_jybvg")
+
+[node name="Dragon" parent="Entities" unique_id=978693300 instance=ExtResource("3_q7nhy")]
+position = Vector2(128, 192)
+data = ExtResource("33_jk001")
+cell_size = Vector2i(3, 3)
+interact_offset = Vector2i(1, 2)
+interact_facing = Vector2i(0, 1)
+
+[node name="GiantOctopus" parent="Entities" unique_id=486876267 instance=ExtResource("3_q7nhy")]
+position = Vector2(224, 192)
+data = ExtResource("34_jtrnx")
+cell_size = Vector2i(3, 3)
+interact_offset = Vector2i(1, 2)
+interact_facing = Vector2i(0, 1)
+
+[node name="StoneGolem" parent="Entities" unique_id=2033536466 instance=ExtResource("3_q7nhy")]
+position = Vector2(32, 288)
+data = ExtResource("7_p8dw7")
+
+[node name="IronGolem" parent="Entities" unique_id=1856272833 instance=ExtResource("3_q7nhy")]
+position = Vector2(64, 288)
+data = ExtResource("6_0mlsg")

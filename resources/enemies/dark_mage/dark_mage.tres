@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://vn8623jnio4n"]
+
+[ext_resource type="SpriteFrames" uid="uid://bhlaotyrruo5o" path="res://resources/enemies/dark_mage/dark_mage_frames.tres" id="1_cunwg"]
+[ext_resource type="SpriteFrames" uid="uid://ewsgfqdadkf4" path="res://resources/battle_animations/magic_8_frames.tres" id="2_cunwg"]
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="3_nas8u"]
+
+[resource]
+script = ExtResource("3_nas8u")
+enemy_id = "dark_mage"
+enemy_name = "暗黑魔法师"
+frames = ExtResource("1_cunwg")
+hp = 1650
+atk = 220
+def = 920
+crit = 8
+agi = 6
+gold_drop = 500
+xp_drop = 51
+hit_frames = ExtResource("2_cunwg")
+ignore_def = true
+ability_description = "攻击无视防御力"
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://c85pbjg16tf51"]
+
+[ext_resource type="SpriteFrames" uid="uid://cug3u8gqlcn4v" path="res://resources/enemies/sword_king/sword_king_frames.tres" id="1_1piui"]
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_1xla7"]
+[ext_resource type="SpriteFrames" uid="uid://ds3cafv3yeb8q" path="res://resources/battle_animations/slash_frames.tres" id="2_ejxh4"]
+
+[resource]
+script = ExtResource("1_1xla7")
+enemy_id = "sword_king"
+enemy_name = "剑王"
+frames = ExtResource("1_1piui")
+hp = 1065
+atk = 894
+def = 770
+crit = 10
+agi = 6
+gold_drop = 145
+xp_drop = 15
+hit_frames = ExtResource("2_ejxh4")
+atk_times = 4
+ability_description = "多段攻击"
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

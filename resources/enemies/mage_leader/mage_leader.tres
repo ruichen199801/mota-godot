@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dpbbu5ein8jlt"]
+
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_a1gbi"]
+[ext_resource type="SpriteFrames" uid="uid://dxfcpnnrg4mbg" path="res://resources/enemies/mage_leader/mage_leader_frames.tres" id="1_yg8in"]
+[ext_resource type="SpriteFrames" uid="uid://cyjn75wavr0c" path="res://resources/battle_animations/magic_4_frames.tres" id="2_0ymor"]
+
+[resource]
+script = ExtResource("1_a1gbi")
+enemy_id = "mage_leader"
+enemy_name = "魔法师首领"
+frames = ExtResource("1_yg8in")
+hp = 330
+atk = 70
+def = 150
+crit = 10
+agi = 5
+gold_drop = 43
+xp_drop = 5
+hit_frames = ExtResource("2_0ymor")
+ignore_def = true
+ability_description = "攻击无视防御力"
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

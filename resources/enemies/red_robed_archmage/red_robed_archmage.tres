@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dqm8qsxccjika"]
+
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="1_mm2me"]
+[ext_resource type="SpriteFrames" uid="uid://r1um6en3x7yn" path="res://resources/enemies/red_robed_archmage/red_robed_archmage_frames.tres" id="1_yaupa"]
+[ext_resource type="SpriteFrames" uid="uid://jxrpp3iocpb4" path="res://resources/battle_animations/magic_7_frames.tres" id="2_qpb2k"]
+
+[resource]
+script = ExtResource("1_mm2me")
+enemy_id = "red_robed_archmage"
+enemy_name = "红衣大法师"
+frames = ExtResource("1_yaupa")
+hp = 875
+atk = 120
+def = 513
+crit = 2
+agi = 1
+gold_drop = 101
+xp_drop = 11
+hit_frames = ExtResource("2_qpb2k")
+ignore_def = true
+ability_description = "攻击无视防御力"
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

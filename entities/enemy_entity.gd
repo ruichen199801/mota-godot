@@ -25,12 +25,16 @@ func on_block(player_data: PlayerData) -> void:
 
 func replace_with(new_data: EnemyData) -> void:
 	data = new_data
-	if data.frames:
-		anim.sprite_frames = data.frames
+	var frames := data.get_world_frames()
+	if frames:
+		anim.sprite_frames = frames
 		anim.play("idle")
 
 
 func _refresh_visuals() -> void:
-	if data and data.frames:
-		anim.sprite_frames = data.frames
+	if data == null:
+		return
+	var frames := data.get_world_frames()
+	if frames:
+		anim.sprite_frames = frames
 		anim.play("idle")

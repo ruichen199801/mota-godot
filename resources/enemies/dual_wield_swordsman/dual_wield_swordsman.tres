@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://kob68opwiawx"]
+
+[ext_resource type="SpriteFrames" uid="uid://tv34plh1wjmg" path="res://resources/enemies/dual_wield_swordsman/dual_wield_swordsman_frames.tres" id="1_pnqsy"]
+[ext_resource type="SpriteFrames" uid="uid://ds3cafv3yeb8q" path="res://resources/battle_animations/slash_frames.tres" id="2_kdm3b"]
+[ext_resource type="Script" uid="uid://bv4f1jnah1g8o" path="res://data/enemy_data.gd" id="3_475t6"]
+
+[resource]
+script = ExtResource("3_475t6")
+enemy_id = "dual_wield_swordsman"
+enemy_name = "双手剑士"
+frames = ExtResource("1_pnqsy")
+hp = 280
+atk = 210
+def = 110
+crit = 7
+agi = 4
+gold_drop = 34
+xp_drop = 4
+hit_frames = ExtResource("2_kdm3b")
+atk_times = 2
+ability_description = "多段攻击"
+metadata/_custom_type_script = "uid://bv4f1jnah1g8o"
