@@ -22,11 +22,11 @@ func _ready() -> void:
 			sprite.texture = data.icon
 
 
-func is_blocking(_player_data: PlayerData) -> bool:
-	return false
+func is_async() -> bool:
+	return true
 
 
-func on_enter(pd: PlayerData) -> void:
+func on_block(pd: PlayerData) -> void:
 	match data.item_type:
 		ItemData.ItemType.INSTANT:
 			print("Applied instant item %s: %s" % [data.item_name, data.description])
@@ -42,4 +42,7 @@ func on_enter(pd: PlayerData) -> void:
 			print("Obtained permanent item %s: %s" % [data.item_name, data.description])
 			pd.add_to_inventory(data)
 			
+	visible = false
+	EventBus.item_pickup_show.emit(data)
+	await EventBus.item_pickup_dismissed
 	remove_from_grid()

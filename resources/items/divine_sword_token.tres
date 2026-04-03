@@ -7,7 +7,7 @@
 script = ExtResource("1_2sloj")
 item_id = "divine_sword_token"
 item_name = "神剑之证"
-description = "按Z键可将面前一格的怪物变为绿色史莱姆"
+description = "按Z键将面前一格怪物变为绿色史莱姆"
 icon = ExtResource("1_e2gi1")
 item_type = 1
 max_uses = 5

@@ -7,7 +7,7 @@
 script = ExtResource("1_0urg2")
 item_id = "cross"
 item_name = "十字架"
-description = "体力为0时可使体力+2000"
+description = "体力为0时使体力+2000"
 icon = ExtResource("1_bp6iw")
 item_type = 2
 metadata/_custom_type_script = "uid://x7y7v7vypehe"

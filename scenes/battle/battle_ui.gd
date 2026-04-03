@@ -71,7 +71,8 @@ func _unhandled_input(event: InputEvent) -> void:
 				retreat_pressed.emit()
 				get_viewport().set_input_as_handled()
 		BattleUIState.AWAITING_DISMISS:
-			if event.is_action_pressed("ui_accept") or (event is InputEventMouseButton and event.pressed):
+			if event.is_action_pressed("ui_accept") or \
+			   (event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT):
 				battle_ui_dismissed.emit()
 				get_viewport().set_input_as_handled()
 	

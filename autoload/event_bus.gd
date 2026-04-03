@@ -11,6 +11,8 @@ signal floor_switched(floor_id: String)
 # Item events
 signal floor_transport_requested
 signal mind_mirror_requested
+signal item_pickup_show(item_data: ItemData)
+signal item_pickup_dismissed
 
 # Shop events
 signal shop_opened(shop_entity: ShopEntity)

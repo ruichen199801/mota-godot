@@ -7,7 +7,7 @@
 script = ExtResource("1_bjp33")
 item_id = "anywhere_door"
 item_name = "随意门"
-description = "按T键可将面前一格的地形变为黄门"
+description = "按T键将面前一格地形变为黄门"
 icon = ExtResource("1_all87")
 item_type = 1
 metadata/_custom_type_script = "uid://x7y7v7vypehe"

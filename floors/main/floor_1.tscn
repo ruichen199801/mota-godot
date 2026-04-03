@@ -166,14 +166,14 @@ position = Vector2(32, 192)
 data = ExtResource("32_jybvg")
 
 [node name="Dragon" parent="Entities" unique_id=978693300 instance=ExtResource("3_q7nhy")]
-position = Vector2(128, 192)
+position = Vector2(128, 224)
 data = ExtResource("33_jk001")
 cell_size = Vector2i(3, 3)
 interact_offset = Vector2i(1, 2)
 interact_facing = Vector2i(0, 1)
 
 [node name="GiantOctopus" parent="Entities" unique_id=486876267 instance=ExtResource("3_q7nhy")]
-position = Vector2(224, 192)
+position = Vector2(224, 224)
 data = ExtResource("34_jtrnx")
 cell_size = Vector2i(3, 3)
 interact_offset = Vector2i(1, 2)
