@@ -46,9 +46,6 @@ var _weaken_debuffs := {
 @export var hp: int = 1000:
 	set(v):
 		hp = v
-		if hp <= 0 and has_item("cross"):
-			hp = 2000
-			remove_item("cross")
 		emit_changed()
 		
 @export var atk: int = 10:
@@ -155,7 +152,7 @@ func use_item(item_id: String) -> bool:
 
 
 ## Removes (usually permanent) item entirely regardless of remaining uses.
-## e.g. cross triggers after hp <= 0 -> gone
+## e.g. cross triggers after hp <= 0 in battle -> gone
 func remove_item(item_id: String) -> bool:
 	if item_id not in inventory:
 		return false

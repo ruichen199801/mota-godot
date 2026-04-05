@@ -135,7 +135,11 @@ func _run_battle() -> BattleResult:
 			print(_format_log(_enemy_data.enemy_name, enemy_result))
 
 			if _player_hp <= 0:
-				return BattleResult.LOSE
+				if _try_revive():
+					battle_ui.update_hp(_player_hp, _enemy_hp)
+					continue
+				else:
+					return BattleResult.LOSE
 		
 		# Retreat pressed during enemy animations
 		if _retreat_requested:
@@ -196,6 +200,14 @@ func _update_player_state(result: AttackResult) -> void:
 	if _enemy_data.weaken_chance > 0:
 		if randi() % 100 < _enemy_data.weaken_chance:
 			_player_data.state = PlayerData.State.WEAKENED
+
+
+func _try_revive() -> bool:
+	if _player_hp <= 0 and _player_data.has_item("cross"):
+		_player_hp = 2000
+		_player_data.remove_item("cross")
+		return true
+	return false
 
 
 func _apply_battle_result(result: BattleResult) -> void:
