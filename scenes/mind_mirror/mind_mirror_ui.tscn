@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://bu4gsu4ooxk5l"]
+
+[ext_resource type="Theme" uid="uid://bocaa5wajr1kd" path="res://resources/base_theme.tres" id="1_oypmg"]
+[ext_resource type="Script" uid="uid://bcmrjg8u7cvtd" path="res://scenes/mind_mirror/mind_mirror_ui.gd" id="2_a1cjq"]
+[ext_resource type="FontFile" uid="uid://dm1lrh1p7e6yb" path="res://assets/fonts/HuangYinQi-Regular.ttf" id="3_c2jd6"]
+[ext_resource type="Texture2D" uid="uid://cvcp6vylusams" path="res://assets/images/arrow.png" id="4_a1cjq"]
+[ext_resource type="Script" uid="uid://dhbdyi3h08ong" path="res://scenes/common/flash_label.gd" id="5_c2jd6"]
+
+[node name="MindMirrorUI" type="Control" unique_id=1599391033]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 192.0
+offset_top = 32.0
+offset_right = -32.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_oypmg")
+script = ExtResource("2_a1cjq")
+
+[node name="Background" type="ColorRect" parent="." unique_id=751872288]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="WatermarkLabel1" type="Label" parent="Background" unique_id=1264180988]
+texture_filter = 2
+layout_mode = 0
+offset_left = 95.0
+offset_top = 91.0
+offset_right = 174.0
+offset_bottom = 182.66666
+theme_override_colors/font_color = Color(1, 1, 1, 0.4)
+theme_override_fonts/font = ExtResource("3_c2jd6")
+theme_override_font_sizes/font_size = 80
+text = "魔"
+
+[node name="WatermarkLabel2" type="Label" parent="Background" unique_id=1275853931]
+texture_filter = 2
+layout_mode = 0
+offset_left = 178.0
+offset_top = 163.0
+offset_right = 257.0
+offset_bottom = 254.66666
+theme_override_colors/font_color = Color(1, 1, 1, 0.4)
+theme_override_fonts/font = ExtResource("3_c2jd6")
+theme_override_font_sizes/font_size = 80
+text = "塔"
+
+[node name="ContentMargin" type="MarginContainer" parent="." unique_id=1378578494]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+
+[node name="ContentVBox" type="VBoxContainer" parent="ContentMargin" unique_id=119100525]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="PageContainer" type="VBoxContainer" parent="ContentMargin/ContentVBox" unique_id=785134003]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="BottomRow" type="VBoxContainer" parent="ContentMargin/ContentVBox" unique_id=991525180]
+layout_mode = 2
+size_flags_vertical = 8
+mouse_filter = 2
+theme_override_constants/separation = 0
+alignment = 2
+
+[node name="ArrowRow" type="HBoxContainer" parent="ContentMargin/ContentVBox/BottomRow" unique_id=146491923]
+layout_mode = 2
+size_flags_vertical = 8
+mouse_filter = 2
+theme_override_constants/separation = 16
+alignment = 2
+
+[node name="LeftArrow" type="TextureRect" parent="ContentMargin/ContentVBox/BottomRow/ArrowRow" unique_id=1010125164]
+unique_name_in_owner = true
+texture_filter = 2
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 0
+texture = ExtResource("4_a1cjq")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="RightArrow" type="TextureRect" parent="ContentMargin/ContentVBox/BottomRow/ArrowRow" unique_id=1448307922]
+unique_name_in_owner = true
+texture_filter = 2
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 0
+texture = ExtResource("4_a1cjq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DismissHint" type="Label" parent="ContentMargin/ContentVBox/BottomRow" unique_id=1393228999]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+theme_type_variation = &"SystemLabel"
+text = "-Enter-"
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("5_c2jd6")

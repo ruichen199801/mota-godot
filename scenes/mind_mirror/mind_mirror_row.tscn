@@ -1,0 +1,247 @@
+[gd_scene format=3 uid="uid://bypqoewm5vp5p"]
+
+[ext_resource type="Theme" uid="uid://bocaa5wajr1kd" path="res://resources/base_theme.tres" id="1_sdhka"]
+[ext_resource type="SpriteFrames" uid="uid://gb1ab001a3u3" path="res://resources/enemies/green_slime/green_slime_frames.tres" id="2_32aus"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sdhka"]
+
+[node name="MindMirrorRow" type="PanelContainer" unique_id=2031222570]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_sdhka")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_sdhka")
+
+[node name="RowVBox" type="VBoxContainer" parent="." unique_id=1376308076]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="TopRow" type="HBoxContainer" parent="RowVBox" unique_id=1050937008]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="NameTitle" type="Label" parent="RowVBox/TopRow" unique_id=566434919]
+layout_mode = 2
+text = "名称："
+vertical_alignment = 1
+
+[node name="NameLabel" type="Label" parent="RowVBox/TopRow" unique_id=1174668108]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "丧尸"
+vertical_alignment = 1
+
+[node name="AbilityTitle" type="Label" parent="RowVBox/TopRow" unique_id=1636968716]
+layout_mode = 2
+text = "特殊："
+vertical_alignment = 1
+
+[node name="AbilityLabel" type="Label" parent="RowVBox/TopRow" unique_id=570290112]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "没有"
+vertical_alignment = 1
+
+[node name="BottomRow" type="HBoxContainer" parent="RowVBox" unique_id=1057675995]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="AvatarBorder" type="PanelContainer" parent="RowVBox/BottomRow" unique_id=917156739]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 2
+
+[node name="AvatarSprite" type="AnimatedSprite2D" parent="RowVBox/BottomRow/AvatarBorder" unique_id=1870287553]
+unique_name_in_owner = true
+position = Vector2(2, 2)
+sprite_frames = ExtResource("2_32aus")
+animation = &"idle"
+centered = false
+
+[node name="StatsVBox" type="VBoxContainer" parent="RowVBox/BottomRow" unique_id=1571887695]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 6
+
+[node name="StatsGrid1" type="GridContainer" parent="RowVBox/BottomRow/StatsVBox" unique_id=536711826]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+columns = 5
+
+[node name="HPLabel" type="Label" parent="RowVBox/BottomRow/StatsVBox/StatsGrid1" unique_id=1120351729]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "体力："
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ATKLabel" type="Label" parent="RowVBox/BottomRow/StatsVBox/StatsGrid1" unique_id=1618333924]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "攻击力："
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DEFLabel" type="Label" parent="RowVBox/BottomRow/StatsVBox/StatsGrid1" unique_id=221658340]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "防御力："
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CRITLabel" type="Label" parent="RowVBox/BottomRow/StatsVBox/StatsGrid1" unique_id=1139970193]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "暴击："
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AGILabel" type="Label" parent="RowVBox/BottomRow/StatsVBox/StatsGrid1" unique_id=219202346]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "敏捷："
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HPValue" type="Label" parent="RowVBox/BottomRow/StatsVBox/StatsGrid1" unique_id=196229799]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SystemLabel"
+theme_override_colors/font_color = Color(0.49019608, 0.8745098, 0.39215687, 1)
+theme_override_font_sizes/font_size = 12
+text = "190"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ATKValue" type="Label" parent="RowVBox/BottomRow/StatsVBox/StatsGrid1" unique_id=1237352463]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SystemLabel"
+theme_override_colors/font_color = Color(0.60784316, 0.34901962, 0.7137255, 1)
+theme_override_font_sizes/font_size = 12
+text = "90"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DEFValue" type="Label" parent="RowVBox/BottomRow/StatsVBox/StatsGrid1" unique_id=1565598859]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SystemLabel"
+theme_override_colors/font_color = Color(0.9098039, 0.72156864, 0.6156863, 1)
+theme_override_font_sizes/font_size = 12
+text = "33"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CRITValue" type="Label" parent="RowVBox/BottomRow/StatsVBox/StatsGrid1" unique_id=1158918234]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SystemLabel"
+theme_override_colors/font_color = Color(0.9098039, 0.627451, 0.1882353, 1)
+theme_override_font_sizes/font_size = 12
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AGIValue" type="Label" parent="RowVBox/BottomRow/StatsVBox/StatsGrid1" unique_id=15496082]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SystemLabel"
+theme_override_colors/font_color = Color(0.15294118, 0.68235296, 0.3764706, 1)
+theme_override_font_sizes/font_size = 12
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StatsGrid2" type="GridContainer" parent="RowVBox/BottomRow/StatsVBox" unique_id=1047246570]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+columns = 4
+
+[node name="ATKTimesLabel" type="Label" parent="RowVBox/BottomRow/StatsVBox/StatsGrid2" unique_id=861752282]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "攻击次数："
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EstDamageLabel" type="Label" parent="RowVBox/BottomRow/StatsVBox/StatsGrid2" unique_id=1129439053]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "估计伤害："
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="XPLabel" type="Label" parent="RowVBox/BottomRow/StatsVBox/StatsGrid2" unique_id=923778935]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Exp："
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GoldLabel" type="Label" parent="RowVBox/BottomRow/StatsVBox/StatsGrid2" unique_id=1728247960]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Gold："
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ATKTimesValue" type="Label" parent="RowVBox/BottomRow/StatsVBox/StatsGrid2" unique_id=419355689]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SystemLabel"
+theme_override_colors/font_color = Color(0.35686275, 0.54509807, 0.8392157, 1)
+theme_override_font_sizes/font_size = 12
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EstDamageValue" type="Label" parent="RowVBox/BottomRow/StatsVBox/StatsGrid2" unique_id=1151468488]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SystemLabel"
+theme_override_colors/font_color = Color(0.90588236, 0.29803923, 0.23529412, 1)
+theme_override_font_sizes/font_size = 12
+text = "46"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="XPValue" type="Label" parent="RowVBox/BottomRow/StatsVBox/StatsGrid2" unique_id=1526603217]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SystemLabel"
+theme_override_colors/font_color = Color(0.3647059, 0.6784314, 0.8862745, 1)
+theme_override_font_sizes/font_size = 12
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GoldValue" type="Label" parent="RowVBox/BottomRow/StatsVBox/StatsGrid2" unique_id=1492166964]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SystemLabel"
+theme_override_colors/font_color = Color(0.9607843, 0.84313726, 0.25882354, 1)
+theme_override_font_sizes/font_size = 12
+text = "15"
+horizontal_alignment = 1
+vertical_alignment = 1

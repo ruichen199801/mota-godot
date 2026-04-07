@@ -8,6 +8,7 @@ extends Node2D
 @onready var hud: Control = $UILayer/HUD
 @onready var shop_ui: ShopUI = $UILayer/ShopUI
 @onready var battle_ui: BattleUI = $UILayer/BattleUI
+@onready var mind_mirror_ui: MindMirrorUI = $UILayer/MindMirrorUI
 
 
 func _ready() -> void:
@@ -23,6 +24,7 @@ func _ready() -> void:
 	hud.bind_player(player.data, player.get_icon())
 	EventBus.floor_change_requested.connect(_on_floor_change)
 	EventBus.shop_opened.connect(_on_shop_opened)
+	EventBus.mind_mirror_requested.connect(_on_mind_mirror_requested)
 
 
 func _load_all_floors() -> void:
@@ -67,3 +69,7 @@ func _switch_to_floor(floor_id: String) -> void:
 
 func _on_shop_opened(shop_entity: ShopEntity) -> void:
 	shop_ui.open(shop_entity, player.data)
+
+
+func _on_mind_mirror_requested() -> void:
+	mind_mirror_ui.open(player.data)

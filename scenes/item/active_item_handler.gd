@@ -68,5 +68,7 @@ func _use_floor_transport(pd: PlayerData) -> void:
 func _use_mind_mirror(pd: PlayerData) -> void:
 	if not pd.has_item("mind_mirror"):
 		return
+	player.is_busy = true # prevent player moving
 	EventBus.mind_mirror_requested.emit()
-	# TODO: Handle this event in main.gd to open enemy stats UI
+	await EventBus.mind_mirror_closed
+	player.is_busy = false
