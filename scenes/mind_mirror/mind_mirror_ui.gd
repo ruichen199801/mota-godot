@@ -10,7 +10,7 @@ const ENEMIES_PER_PAGE := 3
 var _entries: Array[EnemyData] = []
 var _player_data: PlayerData
 var _current_page := 0
-var _total_pages := 0
+var _total_pages := 1
 
 var _row_template: PackedScene = preload("res://scenes/mind_mirror/mind_mirror_row.tscn")
 
@@ -40,12 +40,8 @@ func open(player_data: PlayerData) -> void:
 	_entries.clear()
 	_gather_enemies()
 
-	if _entries.is_empty():
-		close()
-		return
-
 	_current_page = 0
-	_total_pages = ceili(float(_entries.size()) / ENEMIES_PER_PAGE)
+	_total_pages = maxi(ceili(float(_entries.size()) / ENEMIES_PER_PAGE), 1)
 	_build_page()
 	visible = true
 
@@ -84,6 +80,10 @@ func _build_page() -> void:
 	_update_arrows()
 
 
+## Displays stats for all visible enemies on the current floor.
+## For special enemy abilities or item effects:
+##   - mirror_atk, magic_amulet will be shown in atk/def stats.
+##   - harden, adaptive_atk will be hidden from the player.
 func _populate_row(row: Control, ed: EnemyData) -> void:
 	row.get_node("%NameLabel").text = ed.enemy_name
 	row.get_node("%AbilityLabel").text = ed.ability_description
@@ -92,29 +92,62 @@ func _populate_row(row: Control, ed: EnemyData) -> void:
 	if ed.frames:
 		sprite.sprite_frames = ed.frames
 		sprite.play("idle")
+	
+	var effective_atk := ed.atk
+	if ed.mirror_atk and _player_data.atk > ed.atk:
+		effective_atk = _player_data.atk
+		
+	var effective_def := ed.def
+	if _player_data.has_item("magic_amulet") and "mage" in ed.enemy_id and ed.enemy_id != "dark_mage":
+		effective_def = maxi(ed.def - _player_data.def / 3, 0)
 
 	row.get_node("%HPValue").text = str(ed.hp)
-	row.get_node("%ATKValue").text = str(ed.atk)
-	row.get_node("%DEFValue").text = str(ed.def)
+	row.get_node("%ATKValue").text = str(effective_atk)
+	row.get_node("%DEFValue").text = str(effective_def)
 	row.get_node("%CRITValue").text = str(ed.crit)
 	row.get_node("%AGIValue").text = str(ed.agi)
 	row.get_node("%ATKTimesValue").text = str(ed.atk_times)
 	row.get_node("%XPValue").text = str(ed.xp_drop)
 	row.get_node("%GoldValue").text = str(ed.gold_drop)
 
-	var est := _estimate_damage(ed)
+	var est := _estimate_damage(ed, effective_atk, effective_def)
 	row.get_node("%EstDamageValue").text = "???" if est < 0 else str(est)
 
 
-func _estimate_damage(ed: EnemyData) -> int:
-	var player_hit := maxi(_player_data.atk - ed.def, 0)
+## Damage estimate based on vanilla (atk-def)*atk_times calculations.
+## 
+## Supports:
+##   - break adjustments (atk_crit, def_crit)
+##   - certain enemy abilities (ignore_def, mirror_atk)
+##   - certain item effects (magic_amulet)
+##
+## Ignores / Does not work on: 
+##   - random events (crit, dodge, random emblem effects)
+##   - certain enemy abilities (harden, adaptive_atk)
+##   - special battle rules (silver_slime, gold_slime)
+##
+## Returns -1 if player can't kill enemy.
+## Returns 0 if enemy can't hurt player.
+func _estimate_damage(ed: EnemyData, effective_atk: int, effective_def: int) -> int:
+	var player_hit := maxi(_player_data.atk - effective_def, 0)
+	if player_hit == 0 and _player_data.atk + _player_data.atk_crit >= effective_def:
+		player_hit = 1	
 	if player_hit <= 0:
 		return -1
-	var turns_to_kill := (ed.hp + player_hit - 1) / player_hit
-	var enemy_hit := maxi(ed.atk - _player_data.def, 0)
+	
+	var player_damage_per_round := player_hit * _player_data.atk_times
+	var turns_to_kill := (ed.hp + player_damage_per_round - 1) / player_damage_per_round
+	
+	var enemy_hit := maxi(effective_atk - _player_data.def, 0)
+	if ed.ignore_def:
+		enemy_hit = effective_atk
+	if enemy_hit == 0 and effective_atk + _player_data.def_crit >= _player_data.def:
+		enemy_hit = 1
 	if enemy_hit <= 0:
 		return 0
-	return enemy_hit * (turns_to_kill - 1)
+		
+	# Player attacks first, so enemy gets (turns_to_skill-1) rounds of attacks
+	return enemy_hit * ed.atk_times * (turns_to_kill - 1)
 
 
 func _update_arrows() -> void:

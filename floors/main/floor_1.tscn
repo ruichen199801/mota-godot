@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://doupmspvj5m2v" path="res://floors/floor_setup.gd" id="1_w8oah"]
 [ext_resource type="TileSet" uid="uid://di6pm00t0x4tx" path="res://resources/floor_tileset.tres" id="2_jb7uo"]
 [ext_resource type="PackedScene" uid="uid://b678t3khc1li4" path="res://entities/enemy_entity.tscn" id="3_q7nhy"]
+[ext_resource type="PackedScene" uid="uid://cbmf85d67vidj" path="res://entities/stair_up_entity.tscn" id="3_wb105"]
 [ext_resource type="Resource" uid="uid://cdu60blrckaw0" path="res://resources/enemies/mage/mage.tres" id="5_8povw"]
 [ext_resource type="PackedScene" uid="uid://ubv3jnibyiks" path="res://entities/stair_down_entity.tscn" id="5_jb7uo"]
 [ext_resource type="Resource" uid="uid://blpkfouhjsrp3" path="res://resources/enemies/iron_golem/iron_golem.tres" id="6_0mlsg"]
@@ -37,7 +38,7 @@
 [ext_resource type="Resource" uid="uid://hesn6cq63lku" path="res://resources/enemies/dragon/dragon.tres" id="33_jk001"]
 [ext_resource type="Resource" uid="uid://blbv3u2hxf245" path="res://resources/enemies/giant_octopus/giant_octopus.tres" id="34_jtrnx"]
 
-[node name="Floor0" type="Node2D" unique_id=1806746235]
+[node name="Floor1" type="Node2D" unique_id=1806746235]
 script = ExtResource("1_w8oah")
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=2065011923]
@@ -52,7 +53,12 @@ tile_set = ExtResource("2_jb7uo")
 [node name="Entities" type="Node2D" parent="." unique_id=1047835971]
 z_index = 2
 
-[node name="StairDown" parent="Entities" unique_id=1587493218 instance=ExtResource("5_jb7uo")]
+[node name="StairUp" parent="Entities" unique_id=1587493218 instance=ExtResource("3_wb105")]
+position = Vector2(32, 128)
+dest_floor_id = "main_2"
+dest_pos = Vector2i(1, 1)
+
+[node name="StairDown" parent="Entities" unique_id=1154838460 instance=ExtResource("5_jb7uo")]
 position = Vector2(32, 32)
 dest_floor_id = "main_0"
 dest_pos = Vector2i(7, 5)

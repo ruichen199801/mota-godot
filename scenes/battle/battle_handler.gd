@@ -42,6 +42,7 @@ func _on_battle_requested(enemy_entity: EnemyEntity, player_data: PlayerData) ->
 	_enemy_def = _enemy_data.def
 	_retreat_requested = false
 	
+	_apply_magic_amulet()
 	_apply_adaptive_stats()
 	
 	battle_ui.retreat_pressed.connect(_on_retreat_pressed)
@@ -68,6 +69,12 @@ func _on_battle_requested(enemy_entity: EnemyEntity, player_data: PlayerData) ->
 	
 	battle_ui.retreat_pressed.disconnect(_on_retreat_pressed)
 	EventBus.battle_finished.emit()
+
+
+func _apply_magic_amulet() -> void:
+	if _player_data.has_item("magic_amulet") and "mage" in _enemy_data.enemy_id \
+	 and _enemy_data.enemy_id != "dark_mage":
+		_enemy_def = maxi(_enemy_def - _player_data.def / 3, 0)
 
 
 # Calculates effective enemy atk/def based on special abilities. Called once before battle starts.
@@ -121,7 +128,7 @@ func _run_battle() -> BattleResult:
 			var enemy_result := _resolve_attack(
 				_enemy_atk, effective_def,
 				_enemy_data.crit, _player_data.agi,
-				-_player_data.def_crit
+				_player_data.def_crit
 			)
 			_player_hp -= enemy_result.damage
 			battle_ui.update_hp(_player_hp, _enemy_hp)
@@ -159,8 +166,8 @@ func _run_battle() -> BattleResult:
 ##   dodge_chance  - defender's agi (% chance to dodge the attack)
 ##   break_adjust  - modifier for minimum-damage threshold check:
 ##                   if base damage is 0 but atk + break_adjust >= def, deal 1 damage
-##                   for player attacking enemy, break_adjust = +atk_crit 
-##                   for enemy attacking player, break_adjust = -def_crit
+##                   for player attacking enemy, break_adjust = atk_crit 
+##                   for enemy attacking player, break_adjust = def_crit
 func _resolve_attack(atk: int, def: int, 
 					 crit_chance: int, dodge_chance: int, 
 					 break_adjust: int) -> AttackResult:

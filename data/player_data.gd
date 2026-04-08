@@ -103,7 +103,7 @@ var _weaken_debuffs := {
 		atk_crit = v
 		emit_changed()
 		
-@export var def_crit: int = 0:
+@export var def_crit: int = 30:
 	set(v):
 		def_crit = v
 		emit_changed()

@@ -7,14 +7,14 @@
 [sub_resource type="Resource" id="Resource_drw6s"]
 script = ExtResource("1_6ysxb")
 def = 13
-def_crit = 5
+def_crit = -5
 metadata/_custom_type_script = "uid://6cgvhhds7l2r"
 
 [resource]
 script = ExtResource("3_y6g3v")
 item_id = "iron_shield"
 item_name = "铁盾"
-description = "防御力+13，防御临界值+5"
+description = "防御力+13，防御临界值-5"
 icon = ExtResource("2_6ysxb")
 effect = SubResource("Resource_drw6s")
 metadata/_custom_type_script = "uid://x7y7v7vypehe"

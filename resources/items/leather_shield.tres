@@ -7,14 +7,14 @@
 [sub_resource type="Resource" id="Resource_drw6s"]
 script = ExtResource("1_fq02c")
 def = 7
-def_crit = 5
+def_crit = -5
 metadata/_custom_type_script = "uid://6cgvhhds7l2r"
 
 [resource]
 script = ExtResource("1_4pep6")
 item_id = "leather_shield"
 item_name = "皮革之盾"
-description = "防御力+7，防御临界值+5"
+description = "防御力+7，防御临界值-5"
 icon = ExtResource("2_0joeq")
 effect = SubResource("Resource_drw6s")
 metadata/_custom_type_script = "uid://x7y7v7vypehe"

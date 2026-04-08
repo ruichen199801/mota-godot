@@ -77,6 +77,9 @@ func _unhandled_input(event: InputEvent) -> void:
 				get_viewport().set_input_as_handled()
 	
 
+## Displays player and enemy stats during battle.
+## For special enemy abilities or item effects:
+##   - adaptive_atk, mirror_atk, harden, magic_amulet will be reflected in atk/def values.
 func show_battle(player_data: PlayerData, enemy_data: EnemyData, player_icon: Texture2D, 
 				enemy_atk: int, enemy_def: int) -> void:
 	_reset_battle_effects()

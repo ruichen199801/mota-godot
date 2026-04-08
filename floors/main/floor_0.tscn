@@ -38,6 +38,7 @@
 [ext_resource type="Resource" uid="uid://cl45kg8ytwi31" path="res://resources/items/light_sword.tres" id="20_t8fqy"]
 [ext_resource type="Resource" uid="uid://kob68opwiawx" path="res://resources/enemies/dual_wield_swordsman/dual_wield_swordsman.tres" id="23_xxc2f"]
 [ext_resource type="Resource" uid="uid://c85pbjg16tf51" path="res://resources/enemies/sword_king/sword_king.tres" id="24_h5xhw"]
+[ext_resource type="Resource" uid="uid://n1v1cahyrty" path="res://resources/items/hero_shield.tres" id="31_up5lp"]
 
 [node name="Floor0" type="Node2D" unique_id=1806746235]
 script = ExtResource("1_b0ara")
@@ -159,6 +160,10 @@ data = ExtResource("13_q4xqp")
 position = Vector2(96, 288)
 data = ExtResource("20_t8fqy")
 
+[node name="HeroShield" parent="Entities" unique_id=1365116579 instance=ExtResource("8_2p8vk")]
+position = Vector2(288, 256)
+data = ExtResource("31_up5lp")
+
 [node name="AnywhereDoor" parent="Entities" unique_id=2028102346 instance=ExtResource("8_2p8vk")]
 position = Vector2(128, 288)
 data = ExtResource("15_my178")
@@ -171,7 +176,7 @@ data = ExtResource("16_ki1wk")
 position = Vector2(192, 288)
 data = ExtResource("18_pdykn")
 
-[node name="GemPickaxe" parent="Entities" unique_id=1365116579 instance=ExtResource("8_2p8vk")]
+[node name="GemPickaxe" parent="Entities" unique_id=2090830126 instance=ExtResource("8_2p8vk")]
 position = Vector2(224, 288)
 data = ExtResource("9_vx8v0")
 
