@@ -6,7 +6,7 @@ extends Control
 @onready var up_arrow: TextureRect = %UpArrow
 @onready var down_arrow: TextureRect = %DownArrow
 
-## Sorted local copy of visited floors allowlisted for transport feature,
+## Sorted local copy of visited floors eligible for transport feature,
 ## E.g. ["base_2", "base_1", "main_0", "main_1", "main_2"]
 var _visited_floors: Array[String] = []
 
@@ -106,8 +106,8 @@ func _confirm_floor_selection() -> void:
 		push_error("No stair found on floor %s" % selected_id)
 		return
 
-	close()
-	EventBus.floor_change_requested.emit(selected_id, stair_pos)
+	visible = false
+	EventBus.floor_transport_selected.emit(selected_id, stair_pos)
 
 
 func _get_floor_order(floor_id: String) -> int:

@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://7kkre86bhigy"]
+
+[ext_resource type="Script" uid="uid://ck6803y652svu" path="res://scenes/floor_transition/floor_transition_ui.gd" id="1_djksc"]
+[ext_resource type="FontFile" uid="uid://dm1lrh1p7e6yb" path="res://assets/fonts/HuangYinQi-Regular.ttf" id="2_ac3lr"]
+
+[node name="FloorTransitionUI" type="Control" unique_id=909891897]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 192.0
+offset_top = 32.0
+offset_right = -32.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_djksc")
+
+[node name="Background" type="ColorRect" parent="." unique_id=688859025]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="WatermarkLabel1" type="Label" parent="Background" unique_id=698804633]
+texture_filter = 2
+layout_mode = 0
+offset_left = 95.0
+offset_top = 91.0
+offset_right = 174.0
+offset_bottom = 182.66666
+theme_override_fonts/font = ExtResource("2_ac3lr")
+theme_override_font_sizes/font_size = 80
+text = "魔"
+
+[node name="WatermarkLabel2" type="Label" parent="Background" unique_id=1048830223]
+texture_filter = 2
+layout_mode = 0
+offset_left = 178.0
+offset_top = 163.0
+offset_right = 257.0
+offset_bottom = 254.66666
+theme_override_fonts/font = ExtResource("2_ac3lr")
+theme_override_font_sizes/font_size = 80
+text = "塔"

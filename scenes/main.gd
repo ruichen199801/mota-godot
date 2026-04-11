@@ -10,6 +10,7 @@ extends Node2D
 @onready var battle_ui: BattleUI = $UILayer/BattleUI
 @onready var mind_mirror_ui: MindMirrorUI = $UILayer/MindMirrorUI
 @onready var floor_transport_ui: FloorTransportUI = $UILayer/FloorTransportUI
+@onready var floor_transition_ui: FloorTransitionUI = $UILayer/FloorTransitionUI
 
 
 func _ready() -> void:
@@ -20,13 +21,16 @@ func _ready() -> void:
 	player.init(FloorManager.START_POS)
 	
 	_load_all_floors()
-	_switch_to_floor(FloorManager.START_FLOOR_ID)
+	FloorManager.switch_to_floor(FloorManager.START_FLOOR_ID)
+	hud.set_floor_display(FloorManager.START_FLOOR_ID)
 	
 	hud.bind_player(player.data, player.get_icon())
 	EventBus.floor_change_requested.connect(_on_floor_change)
 	EventBus.shop_opened.connect(_on_shop_opened)
 	EventBus.mind_mirror_requested.connect(_on_mind_mirror_requested)
 	EventBus.floor_transport_requested.connect(_on_floor_transport_requested)
+	EventBus.floor_transport_selected.connect(_on_floor_transport_selected)
+	EventBus.floor_transport_closed.connect(_on_floor_transport_closed)
 
 
 func _load_all_floors() -> void:
@@ -46,13 +50,41 @@ func _load_all_floors() -> void:
 			FloorManager.add_floor(floor_id, floor_node, floor_grid)
 
 
-func _on_floor_change(floor_id: String, spawn_pos: Vector2i) -> void:
-	_switch_to_floor(floor_id)
+# --- Floor change handlers ---
+#
+# Two paths trigger floor changes:
+#
+# 1. Entity path (e.g. stair):
+#    player walks into entity -> move_resolver awaits on_block -> entity emits
+#    floor_change_requested -> _transition_to_floor ->
+#    emits floor_change_completed -> on_block returns.
+#    Player movement is blocked by move resolver's async chain.
+#
+# 2. Transport path:
+#    player opens transport UI -> is_busy set to true -> player selects floor ->
+#    emits floor_transport_selected -> _transition_to_floor -> is_busy set to false.
+#    Player movement is blocked by flipping is_busy manually.
+
+
+## Shared floor change logic. Sequence of events:
+##   1. Updates label to new floor name immediately
+##   2. Plays fade-in overlay (old floor still visible underneath)
+##   3. At full black: switches to the new floor and places the player
+##   4. Plays fade-out overlay (new floor reveals)
+func _transition_to_floor(floor_id: String, spawn_pos: Vector2i) -> void:
+	hud.set_floor_display(floor_id)
+	await floor_transition_ui.play()
+	_place_on_floor(floor_id, spawn_pos)
+	await floor_transition_ui.dismiss()
+	
+
+func _place_on_floor(floor_id: String, spawn_pos: Vector2i) -> void:
+	FloorManager.switch_to_floor(floor_id)
 	
 	if not FloorManager.is_in_bounds(spawn_pos):
 		push_error("Player spawn pos %s out of bounds on floor %s" % [spawn_pos, floor_id])
 		return
-	
+		
 	var entity := FloorManager.get_entity(spawn_pos)
 	if entity != null and not entity.can_spawn_on():
 		push_error("Player spawn pos %s blocked by %s on floor %s" % [
@@ -61,14 +93,29 @@ func _on_floor_change(floor_id: String, spawn_pos: Vector2i) -> void:
 		return
 	
 	player.place_at(spawn_pos)
+
+		
+## Handles floor change triggered by entities (stair) via move resolver.
+func _on_floor_change(floor_id: String, spawn_pos: Vector2i) -> void:
+	await _transition_to_floor(floor_id, spawn_pos)
+	EventBus.floor_change_completed.emit()
+
+
+## Handles floor change triggered by floor transport UI.
+func _on_floor_transport_requested() -> void:
+	player.is_busy = true
+	floor_transport_ui.open()
+
+
+func _on_floor_transport_selected(floor_id: String, spawn_pos: Vector2i) -> void:
+	await _transition_to_floor(floor_id, spawn_pos)
+	player.is_busy = false
 	
-
-func _switch_to_floor(floor_id: String) -> void:
-	FloorManager.switch_to_floor(floor_id)
-	hud.set_floor_display(floor_id)
-	EventBus.floor_switched.emit(floor_id)
-	# TODO: Wire up the signal with floor change UI
-
+	
+func _on_floor_transport_closed() -> void:
+	player.is_busy = false
+	
+# --- UI handlers ---
 
 func _on_shop_opened(shop_entity: ShopEntity) -> void:
 	shop_ui.open(shop_entity, player.data)
@@ -76,7 +123,3 @@ func _on_shop_opened(shop_entity: ShopEntity) -> void:
 
 func _on_mind_mirror_requested() -> void:
 	mind_mirror_ui.open(player.data)
-
-
-func _on_floor_transport_requested() -> void:
-	floor_transport_ui.open()

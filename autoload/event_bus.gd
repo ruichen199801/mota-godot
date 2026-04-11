@@ -6,13 +6,16 @@ signal move_resolved(target_pos: Vector2i, approved: bool)
 
 # Floor events
 signal floor_change_requested(floor_id: String, spawn_pos: Vector2i)
-signal floor_switched(floor_id: String)
+signal floor_change_completed
 
 # Item events
 signal floor_transport_requested
+signal floor_transport_selected(floor_id: String, spawn_pos: Vector2i)
 signal floor_transport_closed
+
 signal mind_mirror_requested
 signal mind_mirror_closed
+
 signal item_pickup_show(item_data: ItemData)
 signal item_pickup_dismissed
 

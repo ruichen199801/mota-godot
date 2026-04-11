@@ -7,8 +7,14 @@ var icon: Texture2D: get = get_icon
 
 var grid_pos: Vector2i
 var facing := Vector2i.DOWN
-var is_busy := false
 var retry_timer := 0.0 
+var is_busy := false
+## FOR DEBUGGING
+#var is_busy := false:
+	#set(v):
+		#if v != is_busy:
+			#print("Player %s" % ("blocked" if v else "unblocked"))
+		#is_busy = v
 
 const MOVE_TIME := 0.12
 const RETRY_DELAY := 0.15
@@ -25,7 +31,6 @@ func init(start_pos: Vector2i, template: PlayerData = null) -> void:
 func place_at(pos: Vector2i) -> void:
 	grid_pos = pos
 	position = FloorManager.grid_to_world(pos)
-	is_busy = false
 	_play_idle()
 	
 	

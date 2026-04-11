@@ -14,6 +14,11 @@ enum StairDirection { UP, DOWN }
 func can_spawn_on() -> bool:
 	return true
 	
+
+func is_async() -> bool:
+	return true
+	
 	
 func on_block(_player_data: PlayerData) -> void:
 	EventBus.floor_change_requested.emit(dest_floor_id, dest_pos)
+	await EventBus.floor_change_completed

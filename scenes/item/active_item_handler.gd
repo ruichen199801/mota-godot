@@ -64,10 +64,7 @@ func _use_floor_transport(pd: PlayerData) -> void:
 		return
 	if not FloorManager.is_transport_usable(FloorManager.current_floor_id):
 		return
-	player.is_busy = true # prevent player moving
 	EventBus.floor_transport_requested.emit()
-	await EventBus.floor_transport_closed
-	player.is_busy = false
 	
 
 func _use_mind_mirror(pd: PlayerData) -> void:
