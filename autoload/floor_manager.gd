@@ -12,12 +12,13 @@ const FLOOR_NAMES := { # floor_type -> floor_name
 	"base": "地下", 
 	"mota": "魔塔", 
 }
-
 const FLOOR_RANGES := { # floor_type -> floor_range
 	"main": [0, 20],
 	"base": [1, 25], 
 	"mota": [1, 10], 
 }
+const TRANSPORT_EXCLUDED_TYPES: Array[String] = ["mota"]
+const TRANSPORT_LOCKED_FLOORS: Array[String] = ["main_10", "main_20", "base_25"]
 
 var floors: Dictionary = {} # floor_id -> FloorData
 var grid: Dictionary = {} # Vector2i -> TileEntity
@@ -95,16 +96,18 @@ func switch_to_floor(floor_id: String) -> void:
 func create_floor_id(floor_type: String, floor_num: int) -> String:
 	return "%s_%d" % [floor_type, floor_num]
 	
+
+func get_floor_type(floor_id: String) -> String:
+	return floor_id.split("_")[0]
+
+
+func get_floor_num(floor_id: String) -> int:
+	return floor_id.split("_")[1].to_int()
 	
-func parse_floor_id(floor_id: String) -> Array:
-	var parts := floor_id.split("_")
-	return [parts[0], parts[1].to_int()]
-
-
+	
 func get_floor_name(floor_id: String) -> String:
-	var parsed := parse_floor_id(floor_id)
-	var floor_type: String = parsed[0]
-	var floor_num: int = parsed[1]
+	var floor_type := get_floor_type(floor_id)
+	var floor_num := get_floor_num(floor_id)
 	
 	if floor_type == "main" and floor_num == 0:
 		return "%s   入口" % FLOOR_NAMES[floor_type]
@@ -112,5 +115,16 @@ func get_floor_name(floor_id: String) -> String:
 
 
 func get_floor_scene_path(floor_id: String) -> String:
-	var parsed := parse_floor_id(floor_id)
-	return "res://floors/%s/floor_%s.tscn" % [parsed[0], parsed[1]]
+	return "res://floors/%s.tscn" % floor_id
+
+
+# Whether this floor appears in the transport floor list
+func is_transport_listed(floor_id: String) -> bool:
+	return get_floor_type(floor_id) not in TRANSPORT_EXCLUDED_TYPES
+	
+
+# Whether transport can be used while player is on this floor
+func is_transport_usable(floor_id: String) -> bool:
+	if not is_transport_listed(floor_id):
+		return false
+	return floor_id not in TRANSPORT_LOCKED_FLOORS

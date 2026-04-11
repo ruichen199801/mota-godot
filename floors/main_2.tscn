@@ -1,0 +1,107 @@
+[gd_scene format=4 uid="uid://bnjwgynx1qw43"]
+
+[ext_resource type="Script" uid="uid://doupmspvj5m2v" path="res://floors/floor_setup.gd" id="1_shjqt"]
+[ext_resource type="TileSet" uid="uid://di6pm00t0x4tx" path="res://resources/floor_tileset.tres" id="2_lqqbc"]
+[ext_resource type="PackedScene" uid="uid://ubv3jnibyiks" path="res://entities/stair_down_entity.tscn" id="3_03xtj"]
+[ext_resource type="PackedScene" uid="uid://cbmf85d67vidj" path="res://entities/stair_up_entity.tscn" id="3_sbqtg"]
+[ext_resource type="PackedScene" uid="uid://bp13ks4wpt6ea" path="res://entities/door_entity.tscn" id="4_1kjok"]
+[ext_resource type="PackedScene" uid="uid://d2gnobmc7j4xv" path="res://entities/item_entity.tscn" id="4_aksbr"]
+[ext_resource type="Resource" uid="uid://kl2hba15hg7v" path="res://resources/items/yellow_key.tres" id="5_2oqxg"]
+[ext_resource type="Resource" uid="uid://cgffc8s7urdnd" path="res://resources/items/blue_key.tres" id="5_gni10"]
+[ext_resource type="Resource" uid="uid://b5tvr5hwiubg" path="res://resources/items/blue_gem.tres" id="6_2oqxg"]
+[ext_resource type="Resource" uid="uid://j0c3lt0bvhrs" path="res://resources/items/red_key.tres" id="7_jx7hg"]
+[ext_resource type="Resource" uid="uid://8vwv0rpxhslm" path="res://resources/items/red_gem.tres" id="7_sbqtg"]
+[ext_resource type="Resource" uid="uid://dew2n4qxuoylg" path="res://resources/items/potion.tres" id="8_jx7hg"]
+
+[node name="Main2" type="Node2D" unique_id=1806746235]
+script = ExtResource("1_shjqt")
+
+[node name="Ground" type="TileMapLayer" parent="." unique_id=2065011923]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAEAAAABAAAAAAAAAAEAAAACAAAAAAAAAAEAAAADAAAAAAAAAAEAAAAEAAAAAAAAAAEAAAAFAAAAAAAAAAEAAAAGAAAAAAAAAAEAAAAHAAAAAAAAAAEAAAAIAAAAAAAAAAEAAAAJAAAAAAAAAAEAAAAKAAAAAAAAAAEAAAAAAAEAAAAAAAEAAAABAAEAAAAAAAEAAAACAAEAAAAAAAEAAAADAAEAAAAAAAEAAAAEAAEAAAAAAAEAAAAFAAEAAAAAAAEAAAAGAAEAAAAAAAEAAAAHAAEAAAAAAAEAAAAIAAEAAAAAAAEAAAAJAAEAAAAAAAEAAAAKAAEAAAAAAAEAAAAAAAIAAAAAAAEAAAABAAIAAAAAAAEAAAACAAIAAAAAAAEAAAADAAIAAAAAAAEAAAAEAAIAAAAAAAEAAAAFAAIAAAAAAAEAAAAGAAIAAAAAAAEAAAAHAAIAAAAAAAEAAAAIAAIAAAAAAAEAAAAJAAIAAAAAAAEAAAAKAAIAAAAAAAEAAAAAAAMAAAAAAAEAAAABAAMAAAAAAAEAAAACAAMAAAAAAAEAAAADAAMAAAAAAAEAAAAEAAMAAAAAAAEAAAAFAAMAAAAAAAEAAAAGAAMAAAAAAAEAAAAHAAMAAAAAAAEAAAAIAAMAAAAAAAEAAAAJAAMAAAAAAAEAAAAKAAMAAAAAAAEAAAAAAAQAAAAAAAEAAAABAAQAAAAAAAEAAAACAAQAAAAAAAEAAAADAAQAAAAAAAEAAAAEAAQAAAAAAAEAAAAFAAQAAAAAAAEAAAAGAAQAAAAAAAEAAAAHAAQAAAAAAAEAAAAIAAQAAAAAAAEAAAAJAAQAAAAAAAEAAAAKAAQAAAAAAAEAAAAAAAUAAAAAAAEAAAABAAUAAAAAAAEAAAACAAUAAAAAAAEAAAADAAUAAAAAAAEAAAAEAAUAAAAAAAEAAAAFAAUAAAAAAAEAAAAGAAUAAAAAAAEAAAAHAAUAAAAAAAEAAAAIAAUAAAAAAAEAAAAJAAUAAAAAAAEAAAAKAAUAAAAAAAEAAAAAAAYAAAAAAAEAAAAAAAcAAAAAAAEAAAABAAYAAAAAAAEAAAABAAcAAAAAAAEAAAACAAYAAAAAAAEAAAACAAcAAAAAAAEAAAADAAYAAAAAAAEAAAADAAcAAAAAAAEAAAAEAAYAAAAAAAEAAAAEAAcAAAAAAAEAAAAFAAYAAAAAAAEAAAAFAAcAAAAAAAEAAAAGAAYAAAAAAAEAAAAGAAcAAAAAAAEAAAAHAAYAAAAAAAEAAAAHAAcAAAAAAAEAAAAIAAYAAAAAAAEAAAAIAAcAAAAAAAEAAAAJAAYAAAAAAAEAAAAJAAcAAAAAAAEAAAAKAAYAAAAAAAEAAAAKAAcAAAAAAAEAAAAAAAgAAAAAAAEAAAABAAgAAAAAAAEAAAACAAgAAAAAAAEAAAAIAAgAAAAAAAEAAAAJAAgAAAAAAAEAAAAKAAgAAAAAAAEAAAAAAAkAAAAAAAEAAAABAAkAAAAAAAEAAAACAAkAAAAAAAEAAAADAAkAAAAAAAEAAAAEAAkAAAAAAAEAAAAFAAkAAAAAAAEAAAAGAAkAAAAAAAEAAAAHAAkAAAAAAAEAAAAIAAkAAAAAAAEAAAAJAAkAAAAAAAEAAAAKAAkAAAAAAAEAAAAAAAoAAAAAAAEAAAABAAoAAAAAAAEAAAACAAoAAAAAAAEAAAADAAoAAAAAAAEAAAAEAAoAAAAAAAEAAAAFAAoAAAAAAAEAAAAGAAoAAAAAAAEAAAAHAAoAAAAAAAEAAAAIAAoAAAAAAAEAAAAJAAoAAAAAAAEAAAAKAAoAAAAAAAEAAAADAAgAAAAAAAEAAAAEAAgAAAAAAAEAAAAFAAgAAAAAAAEAAAAGAAgAAAAAAAEAAAAHAAgAAAAAAAEAAAA=")
+tile_set = ExtResource("2_lqqbc")
+
+[node name="Walls" type="TileMapLayer" parent="." unique_id=1108185961]
+z_index = 1
+tile_map_data = PackedByteArray("AAAAAAAAAAADAAAAAAABAAAAAAADAAAAAAACAAAAAAADAAAAAAADAAAAAAADAAAAAAAEAAAAAAADAAAAAAAFAAAAAAADAAAAAAAGAAAAAAADAAAAAAAHAAAAAAADAAAAAAAIAAAAAAADAAAAAAAJAAAAAAADAAAAAAAKAAAAAAADAAAAAAAAAAEAAAADAAAAAAAAAAIAAAADAAAAAAAAAAMAAAADAAAAAAAAAAQAAAADAAAAAAAAAAUAAAADAAAAAAAAAAYAAAADAAAAAAAAAAcAAAADAAAAAAAKAAEAAAADAAAAAAAKAAIAAAADAAAAAAAKAAMAAAADAAAAAAAKAAQAAAADAAAAAAAKAAUAAAADAAAAAAAKAAYAAAADAAAAAAAKAAcAAAADAAAAAAAKAAgAAAADAAAAAAAKAAkAAAADAAAAAAAKAAoAAAADAAAAAAAJAAoAAAADAAAAAAAIAAoAAAADAAAAAAAHAAoAAAADAAAAAAAGAAoAAAADAAAAAAAFAAoAAAADAAAAAAAEAAoAAAADAAAAAAADAAoAAAADAAAAAAACAAoAAAADAAAAAAABAAoAAAADAAAAAAAAAAoAAAADAAAAAAAAAAkAAAADAAAAAAAAAAgAAAADAAAAAAAJAAEAAAADAAAAAAAIAAEAAAADAAAAAAAJAAIAAAADAAAAAAAJAAMAAAADAAAAAAAIAAUAAAADAAAAAAAIAAYAAAADAAAAAAAIAAcAAAADAAAAAAAIAAgAAAADAAAAAAAIAAkAAAADAAAAAAAGAAYAAAADAAAAAAAGAAcAAAADAAAAAAAGAAgAAAADAAAAAAAGAAkAAAADAAAAAAAFAAYAAAADAAAAAAAEAAYAAAADAAAAAAACAAYAAAADAAAAAAACAAcAAAADAAAAAAACAAgAAAADAAAAAAACAAkAAAADAAAAAAABAAQAAAADAAAAAAAEAAEAAAADAAAAAAAEAAIAAAADAAAAAAAGAAEAAAADAAAAAAAGAAIAAAADAAAAAAAGAAMAAAADAAAAAAAHAAMAAAADAAAAAAAGAAQAAAADAAAAAAADAAQAAAADAAAAAAAEAAQAAAADAAAAAAAFAAQAAAADAAAAAAA=")
+tile_set = ExtResource("2_lqqbc")
+
+[node name="Entities" type="Node2D" parent="." unique_id=1047835971]
+z_index = 2
+
+[node name="StairUp1" parent="Entities" unique_id=1587493218 instance=ExtResource("3_sbqtg")]
+position = Vector2(224, 288)
+dest_floor_id = "main_3"
+dest_pos = Vector2i(7, 9)
+is_transport_target = true
+
+[node name="StairUp2" parent="Entities" unique_id=1913126064 instance=ExtResource("3_sbqtg")]
+position = Vector2(288, 288)
+dest_floor_id = "main_3"
+dest_pos = Vector2i(9, 9)
+
+[node name="StairDown" parent="Entities" unique_id=2057480134 instance=ExtResource("3_03xtj")]
+position = Vector2(224, 32)
+dest_floor_id = "main_1"
+dest_pos = Vector2i(1, 4)
+
+[node name="YellowKey" parent="Entities" unique_id=1365116579 instance=ExtResource("4_aksbr")]
+position = Vector2(160, 256)
+data = ExtResource("5_2oqxg")
+
+[node name="BlueKey1" parent="Entities" unique_id=300011022 instance=ExtResource("4_aksbr")]
+position = Vector2(128, 288)
+data = ExtResource("5_gni10")
+
+[node name="BlueKey2" parent="Entities" unique_id=985529586 instance=ExtResource("4_aksbr")]
+position = Vector2(192, 160)
+data = ExtResource("5_gni10")
+
+[node name="RedKey1" parent="Entities" unique_id=147850269 instance=ExtResource("4_aksbr")]
+position = Vector2(32, 256)
+data = ExtResource("7_jx7hg")
+
+[node name="RedKey2" parent="Entities" unique_id=709704987 instance=ExtResource("4_aksbr")]
+position = Vector2(32, 288)
+data = ExtResource("7_jx7hg")
+
+[node name="BlueGem1" parent="Entities" unique_id=657124381 instance=ExtResource("4_aksbr")]
+position = Vector2(64, 32)
+data = ExtResource("6_2oqxg")
+
+[node name="BlueGem2" parent="Entities" unique_id=1887820212 instance=ExtResource("4_aksbr")]
+position = Vector2(96, 256)
+data = ExtResource("6_2oqxg")
+
+[node name="RedGem1" parent="Entities" unique_id=1287379709 instance=ExtResource("4_aksbr")]
+position = Vector2(32, 32)
+data = ExtResource("7_sbqtg")
+
+[node name="RedGem2" parent="Entities" unique_id=1295894039 instance=ExtResource("4_aksbr")]
+position = Vector2(96, 224)
+data = ExtResource("7_sbqtg")
+
+[node name="Potion1" parent="Entities" unique_id=325359393 instance=ExtResource("4_aksbr")]
+position = Vector2(32, 64)
+data = ExtResource("8_jx7hg")
+
+[node name="Potion2" parent="Entities" unique_id=900833003 instance=ExtResource("4_aksbr")]
+position = Vector2(64, 64)
+data = ExtResource("8_jx7hg")
+
+[node name="YellowDoor1" parent="Entities" unique_id=2056068635 instance=ExtResource("4_1kjok")]
+position = Vector2(32, 192)
+
+[node name="YellowDoor2" parent="Entities" unique_id=312495998 instance=ExtResource("4_1kjok")]
+position = Vector2(96, 192)
+
+[node name="RedDoor1" parent="Entities" unique_id=187665571 instance=ExtResource("4_1kjok")]
+position = Vector2(64, 128)
+door_type = 2
+
+[node name="RedDoor2" parent="Entities" unique_id=966263294 instance=ExtResource("4_1kjok")]
+position = Vector2(128, 160)
+door_type = 2
+
+[node name="IronDoor" parent="Entities" unique_id=1909238268 instance=ExtResource("4_1kjok")]
+position = Vector2(160, 96)
+door_type = 3

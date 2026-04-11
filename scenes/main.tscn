@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://0t6sx8oyodxo" path="res://scenes/battle/battle_ui.tscn" id="8_tipki"]
 [ext_resource type="PackedScene" uid="uid://drl2e0cqgdes5" path="res://scenes/item/item_pickup_ui.tscn" id="10_choun"]
 [ext_resource type="PackedScene" uid="uid://bu4gsu4ooxk5l" path="res://scenes/mind_mirror/mind_mirror_ui.tscn" id="11_ya4ey"]
+[ext_resource type="PackedScene" uid="uid://bpvo8sr4toxl0" path="res://scenes/floor_transport/floor_transport_ui.tscn" id="12_eb6dy"]
 
 [node name="Main" type="Node2D" unique_id=1276187132]
 script = ExtResource("1_0wfyh")
@@ -65,5 +66,9 @@ visible = false
 metadata/_edit_lock_ = true
 
 [node name="MindMirrorUI" parent="UILayer" unique_id=1599391033 instance=ExtResource("11_ya4ey")]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="FloorTransportUI" parent="UILayer" unique_id=1924757997 instance=ExtResource("12_eb6dy")]
 visible = false
 metadata/_edit_lock_ = true

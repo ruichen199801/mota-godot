@@ -1,7 +1,7 @@
 extends Label
 
 @export var min_alpha: float = 0.3
-@export var fade_duration: float = 1.2
+@export var fade_duration: float = 0.8
 
 var _tween: Tween
 

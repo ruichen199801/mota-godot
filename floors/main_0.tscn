@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://doupmspvj5m2v" path="res://floors/floor_setup.gd" id="1_b0ara"]
 [ext_resource type="TileSet" uid="uid://di6pm00t0x4tx" path="res://resources/floor_tileset.tres" id="2_ruu8h"]
 [ext_resource type="PackedScene" uid="uid://b678t3khc1li4" path="res://entities/enemy_entity.tscn" id="3_wsiys"]
+[ext_resource type="PackedScene" uid="uid://ubv3jnibyiks" path="res://entities/stair_down_entity.tscn" id="4_62cp1"]
 [ext_resource type="Resource" uid="uid://dgycbud154adj" path="res://resources/enemies/green_slime/green_slime.tres" id="4_qm6t4"]
 [ext_resource type="Resource" uid="uid://bsnuhn75qr0pd" path="res://resources/enemies/red_slime/red_slime.tres" id="5_fkqoe"]
 [ext_resource type="PackedScene" uid="uid://cbmf85d67vidj" path="res://entities/stair_up_entity.tscn" id="5_ruu8h"]
@@ -40,7 +41,7 @@
 [ext_resource type="Resource" uid="uid://c85pbjg16tf51" path="res://resources/enemies/sword_king/sword_king.tres" id="24_h5xhw"]
 [ext_resource type="Resource" uid="uid://n1v1cahyrty" path="res://resources/items/hero_shield.tres" id="31_up5lp"]
 
-[node name="Floor0" type="Node2D" unique_id=1806746235]
+[node name="Main0" type="Node2D" unique_id=1806746235]
 script = ExtResource("1_b0ara")
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=2065011923]
@@ -58,6 +59,11 @@ z_index = 2
 [node name="StairUp" parent="Entities" unique_id=1587493218 instance=ExtResource("5_ruu8h")]
 position = Vector2(224, 160)
 dest_floor_id = "main_1"
+dest_pos = Vector2i(1, 1)
+
+[node name="StairDown" parent="Entities" unique_id=1140032479 instance=ExtResource("4_62cp1")]
+position = Vector2(192, 32)
+dest_floor_id = "base_1"
 dest_pos = Vector2i(1, 1)
 
 [node name="GreenSlime" parent="Entities" unique_id=605189716 instance=ExtResource("3_wsiys")]

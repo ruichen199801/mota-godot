@@ -9,6 +9,7 @@ extends Node2D
 @onready var shop_ui: ShopUI = $UILayer/ShopUI
 @onready var battle_ui: BattleUI = $UILayer/BattleUI
 @onready var mind_mirror_ui: MindMirrorUI = $UILayer/MindMirrorUI
+@onready var floor_transport_ui: FloorTransportUI = $UILayer/FloorTransportUI
 
 
 func _ready() -> void:
@@ -25,6 +26,7 @@ func _ready() -> void:
 	EventBus.floor_change_requested.connect(_on_floor_change)
 	EventBus.shop_opened.connect(_on_shop_opened)
 	EventBus.mind_mirror_requested.connect(_on_mind_mirror_requested)
+	EventBus.floor_transport_requested.connect(_on_floor_transport_requested)
 
 
 func _load_all_floors() -> void:
@@ -65,6 +67,7 @@ func _switch_to_floor(floor_id: String) -> void:
 	FloorManager.switch_to_floor(floor_id)
 	hud.set_floor_display(floor_id)
 	EventBus.floor_switched.emit(floor_id)
+	# TODO: Wire up the signal with floor change UI
 
 
 func _on_shop_opened(shop_entity: ShopEntity) -> void:
@@ -73,3 +76,7 @@ func _on_shop_opened(shop_entity: ShopEntity) -> void:
 
 func _on_mind_mirror_requested() -> void:
 	mind_mirror_ui.open(player.data)
+
+
+func _on_floor_transport_requested() -> void:
+	floor_transport_ui.open()

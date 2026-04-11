@@ -4,6 +4,7 @@ var player: Node2D
 
 
 func _input(event: InputEvent) -> void:
+	# Blocks all item handler input while any entity interaction is in progress
 	if player == null or player.is_busy:
 		return
 	
@@ -61,14 +62,18 @@ func _use_divine_sword_token(pd: PlayerData) -> void:
 func _use_floor_transport(pd: PlayerData) -> void:
 	if not pd.has_item("golden_feather"):
 		return
+	if not FloorManager.is_transport_usable(FloorManager.current_floor_id):
+		return
+	player.is_busy = true # prevent player moving
 	EventBus.floor_transport_requested.emit()
-	# TODO: Handle this event in main.gd to open floor selection UI
+	await EventBus.floor_transport_closed
+	player.is_busy = false
 	
 
 func _use_mind_mirror(pd: PlayerData) -> void:
 	if not pd.has_item("mind_mirror"):
 		return
-	player.is_busy = true # prevent player moving
+	player.is_busy = true
 	EventBus.mind_mirror_requested.emit()
 	await EventBus.mind_mirror_closed
 	player.is_busy = false

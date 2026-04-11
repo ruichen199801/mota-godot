@@ -1,0 +1,203 @@
+[gd_scene format=3 uid="uid://bpvo8sr4toxl0"]
+
+[ext_resource type="Theme" uid="uid://bocaa5wajr1kd" path="res://resources/base_theme.tres" id="1_aa8wa"]
+[ext_resource type="FontFile" uid="uid://dm1lrh1p7e6yb" path="res://assets/fonts/HuangYinQi-Regular.ttf" id="1_f0g1k"]
+[ext_resource type="Script" uid="uid://beobb6vqoiiif" path="res://scenes/floor_transport/floor_transport_ui.gd" id="2_8i5ss"]
+[ext_resource type="Texture2D" uid="uid://cvcp6vylusams" path="res://assets/images/arrow.png" id="3_qr3rf"]
+[ext_resource type="Script" uid="uid://dhbdyi3h08ong" path="res://scenes/common/flash_label.gd" id="4_8i5ss"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qr3rf"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.6, 0.8, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 8.0
+expand_margin_top = 4.0
+expand_margin_right = 8.0
+expand_margin_bottom = 4.0
+
+[node name="FloorTransportUI" type="Control" unique_id=1924757997]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 192.0
+offset_top = 32.0
+offset_right = -32.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_aa8wa")
+script = ExtResource("2_8i5ss")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1242848181]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="WatermarkLabel1" type="Label" parent="Background" unique_id=203297724]
+texture_filter = 2
+layout_mode = 0
+offset_left = 95.0
+offset_top = 91.0
+offset_right = 174.0
+offset_bottom = 182.66666
+theme_override_colors/font_color = Color(1, 1, 1, 0.4)
+theme_override_fonts/font = ExtResource("1_f0g1k")
+theme_override_font_sizes/font_size = 80
+text = "魔"
+
+[node name="WatermarkLabel2" type="Label" parent="Background" unique_id=185763710]
+texture_filter = 2
+layout_mode = 0
+offset_left = 178.0
+offset_top = 163.0
+offset_right = 257.0
+offset_bottom = 254.66666
+theme_override_colors/font_color = Color(1, 1, 1, 0.4)
+theme_override_fonts/font = ExtResource("1_f0g1k")
+theme_override_font_sizes/font_size = 80
+text = "塔"
+
+[node name="ContentMargin" type="MarginContainer" parent="." unique_id=1384546098]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CenterContent" type="VBoxContainer" parent="ContentMargin" unique_id=2124127218]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="UpArrowContainer" type="Control" parent="ContentMargin/CenterContent" unique_id=447151318]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="UpArrow" type="TextureRect" parent="ContentMargin/CenterContent/UpArrowContainer" unique_id=1309370131]
+unique_name_in_owner = true
+texture_filter = 2
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 0
+offset_top = 12.0
+offset_right = 24.0
+offset_bottom = 36.0
+rotation = -1.5707964
+size_flags_horizontal = 4
+mouse_filter = 0
+texture = ExtResource("3_qr3rf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FloorBorder" type="PanelContainer" parent="ContentMargin/CenterContent" unique_id=1759039647]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qr3rf")
+
+[node name="FloorHBox" type="HBoxContainer" parent="ContentMargin/CenterContent/FloorBorder" unique_id=2145346349]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="FloorPrefixLabel" type="Label" parent="ContentMargin/CenterContent/FloorBorder/FloorHBox" unique_id=638692151]
+unique_name_in_owner = true
+texture_filter = 2
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "B"
+vertical_alignment = 1
+
+[node name="FloorNumberLabel" type="Label" parent="ContentMargin/CenterContent/FloorBorder/FloorHBox" unique_id=1528928097]
+unique_name_in_owner = true
+texture_filter = 2
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"SystemLabel"
+theme_override_font_sizes/font_size = 32
+text = "13"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FloorSuffixLabel" type="Label" parent="ContentMargin/CenterContent/FloorBorder/FloorHBox" unique_id=2070200456]
+unique_name_in_owner = true
+texture_filter = 2
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 36
+text = "F"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="DownArrowContainer" type="Control" parent="ContentMargin/CenterContent" unique_id=1529566095]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="DownArrow" type="TextureRect" parent="ContentMargin/CenterContent/DownArrowContainer" unique_id=484299395]
+unique_name_in_owner = true
+texture_filter = 2
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 0
+offset_left = 24.0
+offset_top = 12.0
+offset_right = 48.0
+offset_bottom = 36.0
+rotation = 1.5707964
+size_flags_horizontal = 4
+mouse_filter = 0
+texture = ExtResource("3_qr3rf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DismissHint" type="Label" parent="." unique_id=2137417181]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 247.0
+offset_top = 216.0
+offset_right = 293.0
+offset_bottom = 235.54169
+size_flags_vertical = 8
+theme_type_variation = &"SystemLabel"
+text = "-Enter-"
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("4_8i5ss")
+
+[node name="QuitHint" type="Label" parent="." unique_id=110844266]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 267.0
+offset_top = 319.0
+offset_right = 340.0
+offset_bottom = 338.54166
+size_flags_vertical = 8
+theme_type_variation = &"SystemLabel"
+text = "-Quit- (Esc)"
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("4_8i5ss")
