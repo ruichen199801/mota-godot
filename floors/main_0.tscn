@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ubv3jnibyiks" path="res://entities/stair_down_entity.tscn" id="4_62cp1"]
 [ext_resource type="Resource" uid="uid://dgycbud154adj" path="res://resources/enemies/green_slime/green_slime.tres" id="4_qm6t4"]
 [ext_resource type="Resource" uid="uid://bsnuhn75qr0pd" path="res://resources/enemies/red_slime/red_slime.tres" id="5_fkqoe"]
+[ext_resource type="PackedScene" uid="uid://d2xyqkcfr7fhh" path="res://entities/edge_portal_entity.tscn" id="5_fpl3a"]
 [ext_resource type="PackedScene" uid="uid://cbmf85d67vidj" path="res://entities/stair_up_entity.tscn" id="5_ruu8h"]
 [ext_resource type="Resource" uid="uid://c6xjwvf370bjb" path="res://resources/enemies/black_slime/black_slime.tres" id="6_2x163"]
 [ext_resource type="Resource" uid="uid://b6a8ij3no162s" path="res://resources/enemies/bat/bat.tres" id="6_6c5lk"]
@@ -65,6 +66,11 @@ dest_pos = Vector2i(1, 1)
 position = Vector2(192, 32)
 dest_floor_id = "base_1"
 dest_pos = Vector2i(1, 1)
+
+[node name="PortalToBase2" parent="Entities" unique_id=298097349 instance=ExtResource("5_fpl3a")]
+position = Vector2(320, 160)
+trigger_direction = Vector2i(1, 0)
+dest_floor_id = "base_2"
 
 [node name="GreenSlime" parent="Entities" unique_id=605189716 instance=ExtResource("3_wsiys")]
 position = Vector2(32, 32)

@@ -11,6 +11,7 @@ enum StairDirection { UP, DOWN }
 @export var is_transport_target: bool = false
 	
 
+# Without this, player can't be placed on the stair
 func can_spawn_on() -> bool:
 	return true
 	

@@ -8,8 +8,9 @@ var wall_scene: PackedScene = preload("res://entities/wall_entity.tscn")
 const REPLACEABLE_ALT_ID: int = 1
 
 
-func setup() -> Dictionary:
+func setup() -> Array:
 	var floor_grid: Dictionary = {}
+	var portal_map: Dictionary = {}
 	
 	# Load entity child scenes
 	for child in entities_node.get_children():
@@ -19,6 +20,11 @@ func setup() -> Dictionary:
 			)
 			child.position = Vector2(gp * FloorManager.CELL_SIZE)
 			child.grid_pos = gp
+			
+			if child is EdgePortalEntity:
+				portal_map[gp] = child
+				print("Loaded edge portal at %s" % gp)
+				continue
 			
 			floor_grid[gp] = child	
 			print("Loaded entity %s at %s" % [child.name, gp])
@@ -45,4 +51,4 @@ func setup() -> Dictionary:
 		entities_node.add_child(wall)
 		floor_grid[cell] = wall
 	
-	return floor_grid
+	return [floor_grid, portal_map]

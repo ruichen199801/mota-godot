@@ -4,6 +4,7 @@
 [ext_resource type="TileSet" uid="uid://di6pm00t0x4tx" path="res://resources/floor_tileset.tres" id="2_mgwka"]
 [ext_resource type="PackedScene" uid="uid://cbmf85d67vidj" path="res://entities/stair_up_entity.tscn" id="3_o6ych"]
 [ext_resource type="PackedScene" uid="uid://ubv3jnibyiks" path="res://entities/stair_down_entity.tscn" id="4_6wm34"]
+[ext_resource type="PackedScene" uid="uid://d2xyqkcfr7fhh" path="res://entities/edge_portal_entity.tscn" id="5_vyrfh"]
 
 [node name="Base2" type="Node2D" unique_id=1806746235]
 script = ExtResource("1_hc3yb")
@@ -28,3 +29,14 @@ dest_pos = Vector2i(10, 10)
 [node name="StairDown" parent="Entities" unique_id=2136569547 instance=ExtResource("4_6wm34")]
 position = Vector2(320, 320)
 dest_floor_id = "base_3"
+
+[node name="PortalToMain0" parent="Entities" unique_id=298097349 instance=ExtResource("5_vyrfh")]
+trigger_direction = Vector2i(-1, 0)
+dest_floor_id = "main_0"
+dest_pos = Vector2i(10, 5)
+
+[node name="PortalToMota1" parent="Entities" unique_id=1307236997 instance=ExtResource("5_vyrfh")]
+position = Vector2(320, 0)
+trigger_direction = Vector2i(0, -1)
+dest_floor_id = "mota_1"
+dest_pos = Vector2i(5, 10)

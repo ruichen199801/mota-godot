@@ -65,10 +65,11 @@ func spawn_entity(scene: PackedScene, pos: Vector2i) -> TileEntity:
 	
 # --- Floor methods ---
 
-func add_floor(floor_id: String, node: Node2D, floor_grid: Dictionary) -> void:
-	floors[floor_id] = FloorData.new(node, floor_grid)
+func add_floor(floor_id: String, node: Node2D, floor_grid: Dictionary, 
+			   portal_map: Dictionary = {}) -> void:
+	floors[floor_id] = FloorData.new(node, floor_grid, portal_map)
 	node.visible = false
-	print("Added floor %s: %d cells" % [floor_id, floor_grid.size()])
+	print("Added floor %s: %d cells, %d portals" % [floor_id, floor_grid.size(), portal_map.size()])
 
 
 func switch_to_floor(floor_id: String) -> void:
@@ -90,6 +91,13 @@ func switch_to_floor(floor_id: String) -> void:
 	
 	if floor_id not in visited_floors:
 		visited_floors.append(floor_id)
+
+
+## Returns the edge portal at given cell on current floor, or null if none exists.
+func get_portal(pos: Vector2i) -> EdgePortalEntity:
+	if current_floor_id in floors:
+		return floors[current_floor_id].portals.get(pos, null)
+	return null
 	
 # --- Floor ID methods ---
 

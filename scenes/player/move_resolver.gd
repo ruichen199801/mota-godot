@@ -17,6 +17,13 @@ func _on_move_requested(direction: Vector2i) -> void:
 	
 	# Boundary check
 	if entity == null and not FloorManager.is_in_bounds(target):
+		var portal := _get_matching_portal(player.grid_pos, direction)
+		if portal != null:
+			is_resolving = true
+			EventBus.floor_change_requested.emit(portal.dest_floor_id, portal.dest_pos)
+			await EventBus.floor_change_completed
+			is_resolving = false
+			
 		EventBus.move_resolved.emit(target, false)
 		return
 	
@@ -55,3 +62,11 @@ func _on_move_requested(direction: Vector2i) -> void:
 func _approve_move(target: Vector2i) -> void:
 	player.data.apply_poison()
 	EventBus.move_resolved.emit(target, true)
+
+
+## Checks if the player's current cell has an edge portal matching the move direction.
+func _get_matching_portal(pos: Vector2i, direction: Vector2i) -> EdgePortalEntity:
+	var portal := FloorManager.get_portal(pos)
+	if portal != null and portal.trigger_direction == direction:
+		return portal
+	return null

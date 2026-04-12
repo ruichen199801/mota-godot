@@ -46,8 +46,8 @@ func _load_all_floors() -> void:
 			var scene: PackedScene = load(path)
 			var floor_node: Node2D = scene.instantiate()
 			floor_container.add_child(floor_node)
-			var floor_grid: Dictionary = floor_node.setup()
-			FloorManager.add_floor(floor_id, floor_node, floor_grid)
+			var result: Array = floor_node.setup() # [floor_grid, portal_map]
+			FloorManager.add_floor(floor_id, floor_node, result[0], result[1])
 
 
 # --- Floor change handlers ---

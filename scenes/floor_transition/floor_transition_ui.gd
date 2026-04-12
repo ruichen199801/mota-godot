@@ -1,9 +1,9 @@
 class_name FloorTransitionUI 
 extends Control
 
-const FADE_IN_DURATION := 0.4
-const HOLD_DURATION := 0.5
-const FADE_OUT_DURATION := 0.4
+const FADE_IN_DURATION := 0.3
+const HOLD_DURATION := 0.4
+const FADE_OUT_DURATION := 0.3
 
 
 func _ready() -> void:
