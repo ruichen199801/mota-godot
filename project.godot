@@ -38,6 +38,10 @@ version_control/autoload_on_startup=true
 
 enabled=PackedStringArray("res://addons/ai_assistant_hub/plugin.cfg", "res://addons/godot_xterm/plugin.cfg")
 
+[global_group]
+
+player=""
+
 [gui]
 
 theme/default_font_multichannel_signed_distance_field=true

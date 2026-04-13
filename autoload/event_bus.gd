@@ -26,3 +26,10 @@ signal shop_closed
 # Battle events
 signal battle_requested(enemy_entity: EnemyEntity, player_data: PlayerData)
 signal battle_finished
+
+# NPC events
+signal npc_dialog_opened(npc_name: String, npc_frames: SpriteFrames, dialogs: Array)
+signal npc_dialog_closed
+
+signal npc_merchant_opened(npc_name: String, npc_frames: SpriteFrames, merchant_data: NpcMerchantData)
+signal npc_merchant_closed

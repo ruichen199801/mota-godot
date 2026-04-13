@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cqlg5vidblj5i"]
 
 [ext_resource type="Script" uid="uid://x7y7v7vypehe" path="res://data/item_data.gd" id="1_0nyig"]
-[ext_resource type="Script" uid="uid://cmjlpv0hu2hs3" path="res://data/effects/holy_water_effect.gd" id="1_6aok0"]
+[ext_resource type="Script" uid="uid://cmjlpv0hu2hs3" path="res://data/item_effect/holy_water_effect.gd" id="1_6aok0"]
 [ext_resource type="Texture2D" uid="uid://btmly2mu17ar" path="res://assets/images/holy_water.png" id="2_bfjdn"]
 
 [sub_resource type="Resource" id="Resource_3qheo"]
