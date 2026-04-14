@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cv12hwq0yxdal"]
 
 [ext_resource type="Script" uid="uid://g1bm1e2kiukl" path="res://entities/npc_entity.gd" id="1_wrlvl"]
-[ext_resource type="SpriteFrames" uid="uid://sbv076eg1003" path="res://resources/npc/old_man_frames.tres" id="2_w5xut"]
+[ext_resource type="SpriteFrames" uid="uid://sbv076eg1003" path="res://resources/npcs/oldman_frames.tres" id="2_w5xut"]
 
 [node name="NpcEntity" type="Node2D" unique_id=774706501]
 script = ExtResource("1_wrlvl")

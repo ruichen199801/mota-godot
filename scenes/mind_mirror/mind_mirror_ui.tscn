@@ -115,6 +115,7 @@ stretch_mode = 5
 
 [node name="DismissHint" type="Label" parent="ContentMargin/ContentVBox/BottomRow" unique_id=1393228999]
 unique_name_in_owner = true
+texture_filter = 2
 layout_mode = 2
 size_flags_vertical = 8
 theme_type_variation = &"SystemLabel"

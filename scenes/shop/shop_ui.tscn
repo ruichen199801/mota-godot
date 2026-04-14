@@ -56,6 +56,7 @@ mouse_filter = 2
 
 [node name="TitleLabel" type="Label" parent="ShopBorder/ContentVBox/UpperMargin/UpperVBox" unique_id=1735751781]
 unique_name_in_owner = true
+texture_filter = 2
 layout_mode = 2
 theme_type_variation = &"ShopLabel"
 theme_override_font_sizes/font_size = 18
@@ -82,6 +83,7 @@ centered = false
 
 [node name="DescriptionLabel" type="RichTextLabel" parent="ShopBorder/ContentVBox/UpperMargin/UpperVBox/UpperSection" unique_id=2094491218]
 unique_name_in_owner = true
+texture_filter = 2
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -128,6 +130,7 @@ stretch_mode = 5
 
 [node name="OptionLabel1" type="RichTextLabel" parent="ShopBorder/ContentVBox/LowerMargin/OptionsContainer/Option1" unique_id=1046818594]
 unique_name_in_owner = true
+texture_filter = 2
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 mouse_filter = 2
@@ -142,6 +145,7 @@ vertical_alignment = 1
 
 [node name="CostHint1" type="Label" parent="ShopBorder/ContentVBox/LowerMargin/OptionsContainer/Option1" unique_id=1614448644]
 unique_name_in_owner = true
+texture_filter = 2
 layout_mode = 2
 theme_type_variation = &"SystemLabel"
 theme_override_colors/font_color = Color(0.23137255, 0.69411767, 0.2627451, 1)
@@ -166,6 +170,7 @@ stretch_mode = 5
 
 [node name="OptionLabel2" type="RichTextLabel" parent="ShopBorder/ContentVBox/LowerMargin/OptionsContainer/Option2" unique_id=631508228]
 unique_name_in_owner = true
+texture_filter = 2
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 mouse_filter = 2
@@ -180,6 +185,7 @@ vertical_alignment = 1
 
 [node name="CostHint2" type="Label" parent="ShopBorder/ContentVBox/LowerMargin/OptionsContainer/Option2" unique_id=1088283246]
 unique_name_in_owner = true
+texture_filter = 2
 layout_mode = 2
 theme_type_variation = &"SystemLabel"
 theme_override_colors/font_color = Color(0.23137255, 0.69411767, 0.2627451, 1)
@@ -204,6 +210,7 @@ stretch_mode = 5
 
 [node name="OptionLabel3" type="RichTextLabel" parent="ShopBorder/ContentVBox/LowerMargin/OptionsContainer/Option3" unique_id=234519115]
 unique_name_in_owner = true
+texture_filter = 2
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 mouse_filter = 2
@@ -218,6 +225,7 @@ vertical_alignment = 1
 
 [node name="CostHint3" type="Label" parent="ShopBorder/ContentVBox/LowerMargin/OptionsContainer/Option3" unique_id=604329264]
 unique_name_in_owner = true
+texture_filter = 2
 layout_mode = 2
 theme_type_variation = &"SystemLabel"
 theme_override_colors/font_color = Color(0.23137255, 0.69411767, 0.2627451, 1)
@@ -242,6 +250,7 @@ stretch_mode = 5
 
 [node name="LeaveLabel" type="Label" parent="ShopBorder/ContentVBox/LowerMargin/OptionsContainer/LeaveOption" unique_id=1219607063]
 unique_name_in_owner = true
+texture_filter = 2
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 theme_type_variation = &"ShopLabel"

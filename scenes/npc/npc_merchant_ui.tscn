@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ctvollt826n8x" path="res://scenes/npc/npc_merchant_ui.gd" id="1_2q5t1"]
 [ext_resource type="Theme" uid="uid://bocaa5wajr1kd" path="res://resources/base_theme.tres" id="1_68gp1"]
 [ext_resource type="Texture2D" uid="uid://bw2505uv4eaqv" path="res://assets/images/ground.png" id="3_0b2h6"]
-[ext_resource type="SpriteFrames" uid="uid://0a8itglro6ui" path="res://resources/npc/merchant_frames.tres" id="4_8hc8h"]
+[ext_resource type="SpriteFrames" uid="uid://0a8itglro6ui" path="res://resources/npcs/merchant_frames.tres" id="4_8hc8h"]
 [ext_resource type="FontFile" uid="uid://dm1lrh1p7e6yb" path="res://assets/fonts/HuangYinQi-Regular.ttf" id="5_n2obw"]
 
 [node name="NpcMerchantUI" type="Control" unique_id=1723117716]
@@ -56,6 +56,7 @@ mouse_filter = 2
 
 [node name="MerchantNameLabel" type="Label" parent="MerchantBorder/ContentVBox/UpperMargin/UpperVBox" unique_id=464356519]
 unique_name_in_owner = true
+texture_filter = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_n2obw")
 theme_override_font_sizes/font_size = 20
@@ -83,6 +84,7 @@ centered = false
 
 [node name="MerchantDescLabel" type="RichTextLabel" parent="MerchantBorder/ContentVBox/UpperMargin/UpperVBox/UpperSection" unique_id=1354539655]
 unique_name_in_owner = true
+texture_filter = 2
 custom_minimum_size = Vector2(150, 60)
 layout_mode = 2
 size_flags_horizontal = 3

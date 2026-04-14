@@ -116,6 +116,7 @@ mouse_filter = 2
 theme_override_constants/separation = 2
 
 [node name="StateTitle" type="Label" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox/IconStateSection/StateVBox" unique_id=961849898]
+texture_filter = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "状态："
@@ -129,6 +130,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_n56i7")
 
 [node name="StateValue" type="Label" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox/IconStateSection/StateVBox/StateBox" unique_id=2128822481]
 unique_name_in_owner = true
+texture_filter = 2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -145,6 +147,7 @@ mouse_filter = 2
 columns = 2
 
 [node name="LevelLabel" type="Label" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox/StatsSection" unique_id=1865541114]
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 text = "等级："
@@ -152,6 +155,7 @@ vertical_alignment = 1
 
 [node name="LevelValue" type="Label" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox/StatsSection" unique_id=1960423276]
 unique_name_in_owner = true
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"HudStatsLabel"
@@ -160,6 +164,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HPLabel" type="Label" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox/StatsSection" unique_id=2014419264]
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 text = "体力："
@@ -167,6 +172,7 @@ vertical_alignment = 1
 
 [node name="HPValue" type="Label" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox/StatsSection" unique_id=1854396257]
 unique_name_in_owner = true
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"HudStatsLabel"
@@ -175,6 +181,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ATKLabel" type="Label" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox/StatsSection" unique_id=401360794]
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 text = "攻击力："
@@ -182,6 +189,7 @@ vertical_alignment = 1
 
 [node name="ATKValue" type="Label" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox/StatsSection" unique_id=1959910666]
 unique_name_in_owner = true
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"HudStatsLabel"
@@ -190,6 +198,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="DEFLabel" type="Label" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox/StatsSection" unique_id=1600183609]
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 text = "防御力："
@@ -197,6 +206,7 @@ vertical_alignment = 1
 
 [node name="DEFValue" type="Label" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox/StatsSection" unique_id=664494434]
 unique_name_in_owner = true
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"HudStatsLabel"
@@ -205,6 +215,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CRITLabel" type="Label" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox/StatsSection" unique_id=1935376871]
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 text = "暴击："
@@ -212,6 +223,7 @@ vertical_alignment = 1
 
 [node name="CRITValue" type="Label" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox/StatsSection" unique_id=563872984]
 unique_name_in_owner = true
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"HudStatsLabel"
@@ -220,6 +232,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AGILabel" type="Label" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox/StatsSection" unique_id=1243799186]
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 text = "敏捷："
@@ -227,6 +240,7 @@ vertical_alignment = 1
 
 [node name="AGIValue" type="Label" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox/StatsSection" unique_id=1519349894]
 unique_name_in_owner = true
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"HudStatsLabel"
@@ -235,6 +249,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="XPLabel" type="Label" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox/StatsSection" unique_id=390864273]
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 text = "经验值："
@@ -242,6 +257,7 @@ vertical_alignment = 1
 
 [node name="XPValue" type="Label" parent="LeftSection/LeftMargin/LeftVBox/PlayerBorder/PlayerMargin/PlayerVBox/StatsSection" unique_id=1881204902]
 unique_name_in_owner = true
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"HudStatsLabel"
@@ -281,6 +297,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="YellowKeyX" type="Label" parent="LeftSection/LeftMargin/LeftVBox/KeysBorder/KeysMargin/KeysSection" unique_id=955824624]
+texture_filter = 2
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_n56i7")
 theme_override_font_sizes/font_size = 18
@@ -289,6 +306,7 @@ vertical_alignment = 1
 
 [node name="YellowKeyValue" type="Label" parent="LeftSection/LeftMargin/LeftVBox/KeysBorder/KeysMargin/KeysSection" unique_id=1267987644]
 unique_name_in_owner = true
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"HudKeysLabel"
@@ -306,6 +324,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="BlueKeyX" type="Label" parent="LeftSection/LeftMargin/LeftVBox/KeysBorder/KeysMargin/KeysSection" unique_id=535510626]
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_fonts/font = SubResource("FontVariation_n56i7")
@@ -315,6 +334,7 @@ vertical_alignment = 1
 
 [node name="BlueKeyValue" type="Label" parent="LeftSection/LeftMargin/LeftVBox/KeysBorder/KeysMargin/KeysSection" unique_id=1979010430]
 unique_name_in_owner = true
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"HudKeysLabel"
@@ -332,6 +352,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="RedKeyX" type="Label" parent="LeftSection/LeftMargin/LeftVBox/KeysBorder/KeysMargin/KeysSection" unique_id=992119169]
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_fonts/font = SubResource("FontVariation_n56i7")
@@ -341,6 +362,7 @@ vertical_alignment = 1
 
 [node name="RedKeyValue" type="Label" parent="LeftSection/LeftMargin/LeftVBox/KeysBorder/KeysMargin/KeysSection" unique_id=1339019425]
 unique_name_in_owner = true
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"HudKeysLabel"
@@ -358,6 +380,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="GoldX" type="Label" parent="LeftSection/LeftMargin/LeftVBox/KeysBorder/KeysMargin/KeysSection" unique_id=583499943]
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_fonts/font = SubResource("FontVariation_n56i7")
@@ -367,6 +390,7 @@ vertical_alignment = 1
 
 [node name="GoldValue" type="Label" parent="LeftSection/LeftMargin/LeftVBox/KeysBorder/KeysMargin/KeysSection" unique_id=2100485272]
 unique_name_in_owner = true
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"HudKeysLabel"
@@ -397,6 +421,7 @@ columns = 2
 
 [node name="SaveButton" type="Button" parent="LeftSection/LeftMargin/LeftVBox/OptionsBorder/OptionsMargin/OptionsSection" unique_id=255631642]
 unique_name_in_owner = true
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
@@ -405,6 +430,7 @@ text = "存档"
 
 [node name="LoadButton" type="Button" parent="LeftSection/LeftMargin/LeftVBox/OptionsBorder/OptionsMargin/OptionsSection" unique_id=1685975735]
 unique_name_in_owner = true
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
@@ -413,6 +439,7 @@ text = "读档"
 
 [node name="ItemsButton" type="Button" parent="LeftSection/LeftMargin/LeftVBox/OptionsBorder/OptionsMargin/OptionsSection" unique_id=48367595]
 unique_name_in_owner = true
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
@@ -421,6 +448,7 @@ text = "物品"
 
 [node name="SettingsButton" type="Button" parent="LeftSection/LeftMargin/LeftVBox/OptionsBorder/OptionsMargin/OptionsSection" unique_id=1198801649]
 unique_name_in_owner = true
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
@@ -460,6 +488,7 @@ stretch_mode = 1
 
 [node name="FloorLabel" type="Label" parent="FloorTitle" unique_id=1921353656]
 unique_name_in_owner = true
+texture_filter = 2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

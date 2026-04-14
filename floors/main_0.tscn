@@ -10,21 +10,27 @@
 [ext_resource type="PackedScene" uid="uid://cbmf85d67vidj" path="res://entities/stair_up_entity.tscn" id="5_ruu8h"]
 [ext_resource type="Resource" uid="uid://c6xjwvf370bjb" path="res://resources/enemies/black_slime/black_slime.tres" id="6_2x163"]
 [ext_resource type="Resource" uid="uid://b6a8ij3no162s" path="res://resources/enemies/bat/bat.tres" id="6_6c5lk"]
+[ext_resource type="PackedScene" uid="uid://cv12hwq0yxdal" path="res://entities/npc_entity.tscn" id="6_tsqci"]
 [ext_resource type="PackedScene" uid="uid://bp13ks4wpt6ea" path="res://entities/door_entity.tscn" id="6_wsiys"]
 [ext_resource type="Resource" uid="uid://cfey4lh27ys0t" path="res://resources/enemies/poison_bat/poison_bat.tres" id="6_yo0li"]
 [ext_resource type="Resource" uid="uid://6mxs5f5iwql8" path="res://resources/enemies/poison_zombie/poison_zombie.tres" id="7_f36ga"]
 [ext_resource type="PackedScene" uid="uid://po6tanfhlyd6" path="res://entities/lava_entity.tscn" id="7_qm6t4"]
+[ext_resource type="Script" uid="uid://nlow5r0mr3bq" path="res://data/npc_dialog_data.gd" id="7_t7i0h"]
 [ext_resource type="Resource" uid="uid://j84j2hjdrmb4" path="res://resources/enemies/slime_king/slime_king.tres" id="7_uimwn"]
 [ext_resource type="PackedScene" uid="uid://d2gnobmc7j4xv" path="res://entities/item_entity.tscn" id="8_2p8vk"]
+[ext_resource type="Script" uid="uid://dktqal1ji0w0" path="res://data/npc_behavior/npc_dialog_behavior.gd" id="8_oc7i3"]
 [ext_resource type="Resource" uid="uid://cyvfa5e6d26l0" path="res://resources/items/wing_of_speed.tres" id="9_cc1qs"]
+[ext_resource type="SpriteFrames" uid="uid://sbv076eg1003" path="res://resources/npcs/oldman_frames.tres" id="9_konfa"]
 [ext_resource type="Resource" uid="uid://c16o21mruyxm4" path="res://resources/items/gem_pickaxe.tres" id="9_vx8v0"]
 [ext_resource type="Resource" uid="uid://drkyk4j3v0tml" path="res://resources/enemies/spirit_skeleton/spirit_skeleton.tres" id="10_2gtno"]
 [ext_resource type="Resource" uid="uid://dew2n4qxuoylg" path="res://resources/items/potion.tres" id="10_8qnd4"]
+[ext_resource type="Script" uid="uid://dn7vsl533x7gh" path="res://data/npc_data.gd" id="10_ddk45"]
 [ext_resource type="Resource" uid="uid://bf0jksikbblts" path="res://resources/enemies/giant_bat/giant_bat.tres" id="10_ieyq2"]
 [ext_resource type="Resource" uid="uid://dqn8b5mevldvw" path="res://resources/enemies/spirit_skeleton_soldier/spirit_skeleton_soldier.tres" id="11_f4ax8"]
 [ext_resource type="Resource" uid="uid://qc6aroo647jm" path="res://resources/enemies/red_bat/red_bat.tres" id="11_vnl6i"]
 [ext_resource type="Resource" uid="uid://c4illtgd8ltxk" path="res://resources/enemies/spirit_warrior/spirit_warrior.tres" id="12_1icpw"]
 [ext_resource type="Resource" uid="uid://cfidvljhgwc06" path="res://resources/items/magic_key.tres" id="12_cc1qs"]
+[ext_resource type="SpriteFrames" uid="uid://0a8itglro6ui" path="res://resources/npcs/merchant_frames.tres" id="12_ddk45"]
 [ext_resource type="Resource" uid="uid://ci34bb5piualn" path="res://resources/enemies/zombie/zombie.tres" id="13_2x163"]
 [ext_resource type="Resource" uid="uid://bvtnhkvtamdxv" path="res://resources/items/ice_amulet.tres" id="13_q4xqp"]
 [ext_resource type="Resource" uid="uid://8er5orvrxdhj" path="res://resources/enemies/zombie_soldier/zombie_soldier.tres" id="14_uimwn"]
@@ -41,6 +47,75 @@
 [ext_resource type="Resource" uid="uid://kob68opwiawx" path="res://resources/enemies/dual_wield_swordsman/dual_wield_swordsman.tres" id="23_xxc2f"]
 [ext_resource type="Resource" uid="uid://c85pbjg16tf51" path="res://resources/enemies/sword_king/sword_king.tres" id="24_h5xhw"]
 [ext_resource type="Resource" uid="uid://n1v1cahyrty" path="res://resources/items/hero_shield.tres" id="31_up5lp"]
+
+[sub_resource type="Resource" id="Resource_cgjpo"]
+script = ExtResource("7_t7i0h")
+text = "听说这座塔不止20层...
+但是最高只能去到第20层...
+真叫人头痛..."
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_xkerl"]
+script = ExtResource("8_oc7i3")
+dialogs = Array[ExtResource("7_t7i0h")]([SubResource("Resource_cgjpo")])
+metadata/_custom_type_script = "uid://dktqal1ji0w0"
+
+[sub_resource type="Resource" id="Resource_c64ya"]
+script = ExtResource("10_ddk45")
+npc_id = "oldman_f0_1"
+npc_name = "老人"
+frames = ExtResource("9_konfa")
+behavior = SubResource("Resource_xkerl")
+metadata/_custom_type_script = "uid://dn7vsl533x7gh"
+
+[sub_resource type="Resource" id="Resource_oc7i3"]
+script = ExtResource("7_t7i0h")
+text = "你好啊，勇者！"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_konfa"]
+script = ExtResource("7_t7i0h")
+speaker = 1
+text = "你好啊，老者！"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_ddk45"]
+script = ExtResource("7_t7i0h")
+text = "再见！"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_rkwby"]
+script = ExtResource("8_oc7i3")
+dialogs = Array[ExtResource("7_t7i0h")]([SubResource("Resource_oc7i3"), SubResource("Resource_konfa"), SubResource("Resource_ddk45")])
+metadata/_custom_type_script = "uid://dktqal1ji0w0"
+
+[sub_resource type="Resource" id="Resource_t7i0h"]
+script = ExtResource("10_ddk45")
+npc_id = "oldman_f0_2"
+npc_name = "老人"
+frames = ExtResource("9_konfa")
+behavior = SubResource("Resource_rkwby")
+metadata/_custom_type_script = "uid://dn7vsl533x7gh"
+
+[sub_resource type="Resource" id="Resource_mvppp"]
+script = ExtResource("7_t7i0h")
+text = "又是挑战者吗?
+希望你能够活着回去，
+嘻嘻嘻嘻..."
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_4uope"]
+script = ExtResource("8_oc7i3")
+dialogs = Array[ExtResource("7_t7i0h")]([SubResource("Resource_mvppp")])
+metadata/_custom_type_script = "uid://dktqal1ji0w0"
+
+[sub_resource type="Resource" id="Resource_xdeuw"]
+script = ExtResource("10_ddk45")
+npc_id = "merchant_f0_1"
+npc_name = "奸商"
+frames = ExtResource("12_ddk45")
+behavior = SubResource("Resource_4uope")
+metadata/_custom_type_script = "uid://dn7vsl533x7gh"
 
 [node name="Main0" type="Node2D" unique_id=1806746235]
 script = ExtResource("1_b0ara")
@@ -71,6 +146,18 @@ dest_pos = Vector2i(1, 1)
 position = Vector2(320, 160)
 trigger_direction = Vector2i(1, 0)
 dest_floor_id = "base_2"
+
+[node name="OldMan1" parent="Entities" unique_id=774706501 instance=ExtResource("6_tsqci")]
+position = Vector2(96, 160)
+data = SubResource("Resource_c64ya")
+
+[node name="OldMan2" parent="Entities" unique_id=862525014 instance=ExtResource("6_tsqci")]
+position = Vector2(96, 192)
+data = SubResource("Resource_t7i0h")
+
+[node name="Merchant" parent="Entities" unique_id=894531296 instance=ExtResource("6_tsqci")]
+position = Vector2(160, 96)
+data = SubResource("Resource_xdeuw")
 
 [node name="GreenSlime" parent="Entities" unique_id=605189716 instance=ExtResource("3_wsiys")]
 position = Vector2(32, 32)

@@ -11,6 +11,7 @@ extends Node2D
 @onready var mind_mirror_ui: MindMirrorUI = $UILayer/MindMirrorUI
 @onready var floor_transport_ui: FloorTransportUI = $UILayer/FloorTransportUI
 @onready var floor_transition_ui: FloorTransitionUI = $UILayer/FloorTransitionUI
+@onready var npc_merchant_ui: Control = $UILayer/NpcMerchantUI
 
 
 func _ready() -> void:
@@ -31,6 +32,7 @@ func _ready() -> void:
 	EventBus.floor_transport_requested.connect(_on_floor_transport_requested)
 	EventBus.floor_transport_selected.connect(_on_floor_transport_selected)
 	EventBus.floor_transport_closed.connect(_on_floor_transport_closed)
+	EventBus.npc_merchant_opened.connect(_on_npc_merchant_opened)
 
 
 func _load_all_floors() -> void:
@@ -123,3 +125,8 @@ func _on_shop_opened(shop_entity: ShopEntity) -> void:
 
 func _on_mind_mirror_requested() -> void:
 	mind_mirror_ui.open(player.data)
+
+
+func _on_npc_merchant_opened(npc_name: String, npc_frames: SpriteFrames,
+							 merchant_data: NpcMerchantData) -> void:
+	npc_merchant_ui.open(npc_name, npc_frames, merchant_data, player.data)

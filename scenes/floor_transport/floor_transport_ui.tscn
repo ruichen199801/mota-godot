@@ -110,6 +110,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="FloorBorder" type="PanelContainer" parent="ContentMargin/CenterContent" unique_id=1759039647]
+texture_filter = 2
 layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qr3rf")
@@ -176,6 +177,7 @@ stretch_mode = 5
 
 [node name="DismissHint" type="Label" parent="." unique_id=2137417181]
 unique_name_in_owner = true
+texture_filter = 2
 layout_mode = 0
 offset_left = 247.0
 offset_top = 216.0
@@ -190,6 +192,7 @@ script = ExtResource("4_8i5ss")
 
 [node name="QuitHint" type="Label" parent="." unique_id=110844266]
 unique_name_in_owner = true
+texture_filter = 2
 layout_mode = 0
 offset_left = 267.0
 offset_top = 319.0

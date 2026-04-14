@@ -4,6 +4,31 @@
 [ext_resource type="TileSet" uid="uid://di6pm00t0x4tx" path="res://resources/floor_tileset.tres" id="2_oneo6"]
 [ext_resource type="PackedScene" uid="uid://cbmf85d67vidj" path="res://entities/stair_up_entity.tscn" id="3_kgc7r"]
 [ext_resource type="PackedScene" uid="uid://ubv3jnibyiks" path="res://entities/stair_down_entity.tscn" id="4_tqcet"]
+[ext_resource type="PackedScene" uid="uid://cv12hwq0yxdal" path="res://entities/npc_entity.tscn" id="5_8j475"]
+[ext_resource type="Script" uid="uid://nlow5r0mr3bq" path="res://data/npc_dialog_data.gd" id="6_t5na6"]
+[ext_resource type="Script" uid="uid://dktqal1ji0w0" path="res://data/npc_behavior/npc_dialog_behavior.gd" id="7_i2q01"]
+[ext_resource type="SpriteFrames" uid="uid://sbv076eg1003" path="res://resources/npcs/oldman_frames.tres" id="8_8j475"]
+[ext_resource type="Script" uid="uid://dn7vsl533x7gh" path="res://data/npc_data.gd" id="9_377oy"]
+
+[sub_resource type="Resource" id="Resource_2257r"]
+script = ExtResource("6_t5na6")
+text = "这个给你....
+有了这个，
+就可看清楚怪物的能力...."
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_5kvjd"]
+script = ExtResource("7_i2q01")
+dialogs = Array[ExtResource("6_t5na6")]([SubResource("Resource_2257r")])
+metadata/_custom_type_script = "uid://dktqal1ji0w0"
+
+[sub_resource type="Resource" id="Resource_t5na6"]
+script = ExtResource("9_377oy")
+npc_id = "oldman_b1_1"
+npc_name = "老人"
+frames = ExtResource("8_8j475")
+behavior = SubResource("Resource_5kvjd")
+metadata/_custom_type_script = "uid://dn7vsl533x7gh"
 
 [node name="Base1" type="Node2D" unique_id=1806746235]
 script = ExtResource("1_tn2hu")
@@ -28,3 +53,7 @@ dest_pos = Vector2i(6, 1)
 [node name="StairDown" parent="Entities" unique_id=2057480134 instance=ExtResource("4_tqcet")]
 position = Vector2(320, 320)
 dest_floor_id = "base_2"
+
+[node name="OldMan" parent="Entities" unique_id=774706501 instance=ExtResource("5_8j475")]
+position = Vector2(160, 224)
+data = SubResource("Resource_t5na6")

@@ -25,24 +25,28 @@ layout_mode = 2
 mouse_filter = 2
 
 [node name="NameTitle" type="Label" parent="RowVBox/TopRow" unique_id=566434919]
+texture_filter = 2
 layout_mode = 2
 text = "名称："
 vertical_alignment = 1
 
 [node name="NameLabel" type="Label" parent="RowVBox/TopRow" unique_id=1174668108]
 unique_name_in_owner = true
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 text = "丧尸"
 vertical_alignment = 1
 
 [node name="AbilityTitle" type="Label" parent="RowVBox/TopRow" unique_id=1636968716]
+texture_filter = 2
 layout_mode = 2
 text = "特殊："
 vertical_alignment = 1
 
 [node name="AbilityLabel" type="Label" parent="RowVBox/TopRow" unique_id=570290112]
 unique_name_in_owner = true
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 text = "没有"
@@ -79,6 +83,7 @@ mouse_filter = 2
 columns = 5
 
 [node name="HPLabel" type="Label" parent="RowVBox/BottomRow/StatsVBox/StatsGrid1" unique_id=1120351729]
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 text = "体力："
@@ -86,6 +91,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ATKLabel" type="Label" parent="RowVBox/BottomRow/StatsVBox/StatsGrid1" unique_id=1618333924]
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 text = "攻击力："
@@ -93,6 +99,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="DEFLabel" type="Label" parent="RowVBox/BottomRow/StatsVBox/StatsGrid1" unique_id=221658340]
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 text = "防御力："
@@ -100,6 +107,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CRITLabel" type="Label" parent="RowVBox/BottomRow/StatsVBox/StatsGrid1" unique_id=1139970193]
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 text = "暴击："
@@ -107,6 +115,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AGILabel" type="Label" parent="RowVBox/BottomRow/StatsVBox/StatsGrid1" unique_id=219202346]
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 text = "敏捷："
@@ -115,6 +124,7 @@ vertical_alignment = 1
 
 [node name="HPValue" type="Label" parent="RowVBox/BottomRow/StatsVBox/StatsGrid1" unique_id=196229799]
 unique_name_in_owner = true
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"SystemLabel"
@@ -126,6 +136,7 @@ vertical_alignment = 1
 
 [node name="ATKValue" type="Label" parent="RowVBox/BottomRow/StatsVBox/StatsGrid1" unique_id=1237352463]
 unique_name_in_owner = true
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"SystemLabel"
@@ -137,6 +148,7 @@ vertical_alignment = 1
 
 [node name="DEFValue" type="Label" parent="RowVBox/BottomRow/StatsVBox/StatsGrid1" unique_id=1565598859]
 unique_name_in_owner = true
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"SystemLabel"
@@ -148,6 +160,7 @@ vertical_alignment = 1
 
 [node name="CRITValue" type="Label" parent="RowVBox/BottomRow/StatsVBox/StatsGrid1" unique_id=1158918234]
 unique_name_in_owner = true
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"SystemLabel"
@@ -159,6 +172,7 @@ vertical_alignment = 1
 
 [node name="AGIValue" type="Label" parent="RowVBox/BottomRow/StatsVBox/StatsGrid1" unique_id=15496082]
 unique_name_in_owner = true
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"SystemLabel"
@@ -175,6 +189,7 @@ mouse_filter = 2
 columns = 4
 
 [node name="ATKTimesLabel" type="Label" parent="RowVBox/BottomRow/StatsVBox/StatsGrid2" unique_id=861752282]
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 text = "攻击次数："
@@ -182,6 +197,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="EstDamageLabel" type="Label" parent="RowVBox/BottomRow/StatsVBox/StatsGrid2" unique_id=1129439053]
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 text = "估计伤害："
@@ -189,6 +205,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="XPLabel" type="Label" parent="RowVBox/BottomRow/StatsVBox/StatsGrid2" unique_id=923778935]
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Exp："
@@ -196,6 +213,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="GoldLabel" type="Label" parent="RowVBox/BottomRow/StatsVBox/StatsGrid2" unique_id=1728247960]
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Gold："
@@ -204,6 +222,7 @@ vertical_alignment = 1
 
 [node name="ATKTimesValue" type="Label" parent="RowVBox/BottomRow/StatsVBox/StatsGrid2" unique_id=419355689]
 unique_name_in_owner = true
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"SystemLabel"
@@ -215,6 +234,7 @@ vertical_alignment = 1
 
 [node name="EstDamageValue" type="Label" parent="RowVBox/BottomRow/StatsVBox/StatsGrid2" unique_id=1151468488]
 unique_name_in_owner = true
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"SystemLabel"
@@ -226,6 +246,7 @@ vertical_alignment = 1
 
 [node name="XPValue" type="Label" parent="RowVBox/BottomRow/StatsVBox/StatsGrid2" unique_id=1526603217]
 unique_name_in_owner = true
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"SystemLabel"
@@ -237,6 +258,7 @@ vertical_alignment = 1
 
 [node name="GoldValue" type="Label" parent="RowVBox/BottomRow/StatsVBox/StatsGrid2" unique_id=1492166964]
 unique_name_in_owner = true
+texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"SystemLabel"
