@@ -7,8 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://cv12hwq0yxdal" path="res://entities/npc_entity.tscn" id="5_8j475"]
 [ext_resource type="Script" uid="uid://nlow5r0mr3bq" path="res://data/npc_dialog_data.gd" id="6_t5na6"]
 [ext_resource type="Script" uid="uid://dktqal1ji0w0" path="res://data/npc_behavior/npc_dialog_behavior.gd" id="7_i2q01"]
+[ext_resource type="Script" uid="uid://bru2snxxyg2v4" path="res://data/npc_action/npc_post_action.gd" id="7_xjp1l"]
 [ext_resource type="SpriteFrames" uid="uid://sbv076eg1003" path="res://resources/npcs/oldman_frames.tres" id="8_8j475"]
+[ext_resource type="Script" uid="uid://c6aeoqsh2x5v5" path="res://data/npc_action/npc_remove_action.gd" id="8_377oy"]
 [ext_resource type="Script" uid="uid://dn7vsl533x7gh" path="res://data/npc_data.gd" id="9_377oy"]
+[ext_resource type="Resource" uid="uid://b7f3l0sv7pe4i" path="res://resources/items/mind_mirror.tres" id="9_2257r"]
+[ext_resource type="Script" uid="uid://ca3xixvnlvp5q" path="res://data/npc_action/npc_give_item_action.gd" id="10_5kvjd"]
 
 [sub_resource type="Resource" id="Resource_2257r"]
 script = ExtResource("6_t5na6")
@@ -17,9 +21,19 @@ text = "这个给你....
 就可看清楚怪物的能力...."
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
+[sub_resource type="Resource" id="Resource_ypsju"]
+script = ExtResource("8_377oy")
+metadata/_custom_type_script = "uid://c6aeoqsh2x5v5"
+
+[sub_resource type="Resource" id="Resource_3xydw"]
+script = ExtResource("10_5kvjd")
+item = ExtResource("9_2257r")
+metadata/_custom_type_script = "uid://ca3xixvnlvp5q"
+
 [sub_resource type="Resource" id="Resource_5kvjd"]
 script = ExtResource("7_i2q01")
 dialogs = Array[ExtResource("6_t5na6")]([SubResource("Resource_2257r")])
+post_actions = Array[ExtResource("7_xjp1l")]([SubResource("Resource_ypsju"), SubResource("Resource_3xydw")])
 metadata/_custom_type_script = "uid://dktqal1ji0w0"
 
 [sub_resource type="Resource" id="Resource_t5na6"]

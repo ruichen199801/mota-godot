@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://nlow5r0mr3bq" path="res://data/npc_dialog_data.gd" id="7_t7i0h"]
 [ext_resource type="Resource" uid="uid://j84j2hjdrmb4" path="res://resources/enemies/slime_king/slime_king.tres" id="7_uimwn"]
 [ext_resource type="PackedScene" uid="uid://d2gnobmc7j4xv" path="res://entities/item_entity.tscn" id="8_2p8vk"]
+[ext_resource type="Script" uid="uid://bru2snxxyg2v4" path="res://data/npc_action/npc_post_action.gd" id="8_c64ya"]
 [ext_resource type="Script" uid="uid://dktqal1ji0w0" path="res://data/npc_behavior/npc_dialog_behavior.gd" id="8_oc7i3"]
 [ext_resource type="Resource" uid="uid://cyvfa5e6d26l0" path="res://resources/items/wing_of_speed.tres" id="9_cc1qs"]
 [ext_resource type="SpriteFrames" uid="uid://sbv076eg1003" path="res://resources/npcs/oldman_frames.tres" id="9_konfa"]
@@ -33,12 +34,16 @@
 [ext_resource type="SpriteFrames" uid="uid://0a8itglro6ui" path="res://resources/npcs/merchant_frames.tres" id="12_ddk45"]
 [ext_resource type="Resource" uid="uid://ci34bb5piualn" path="res://resources/enemies/zombie/zombie.tres" id="13_2x163"]
 [ext_resource type="Resource" uid="uid://bvtnhkvtamdxv" path="res://resources/items/ice_amulet.tres" id="13_q4xqp"]
+[ext_resource type="Script" uid="uid://bgvrtb78qik1k" path="res://data/npc_action/npc_move_and_switch_action.gd" id="13_rkwby"]
+[ext_resource type="SpriteFrames" uid="uid://ju775ieq3to5" path="res://resources/npcs/thief_frames.tres" id="14_cgjpo"]
 [ext_resource type="Resource" uid="uid://8er5orvrxdhj" path="res://resources/enemies/zombie_soldier/zombie_soldier.tres" id="14_uimwn"]
 [ext_resource type="Resource" uid="uid://41tscolgmqor" path="res://resources/items/anywhere_door.tres" id="15_my178"]
+[ext_resource type="Script" uid="uid://b0lno0g37mqqa" path="res://data/npc_action/npc_spawn_enemy_action.gd" id="16_cgjpo"]
 [ext_resource type="Resource" uid="uid://clpmukkfspi0d" path="res://resources/items/cross.tres" id="16_ki1wk"]
 [ext_resource type="Resource" uid="uid://bef7or4cc5pbn" path="res://resources/enemies/fake_princess/fake_princess.tres" id="16_oq0yt"]
 [ext_resource type="Resource" uid="uid://cb47vhdjso0e" path="res://resources/enemies/self/self.tres" id="17_77l36"]
 [ext_resource type="Resource" uid="uid://d46fpmp66mlp" path="res://resources/items/fire_wine.tres" id="17_rau4n"]
+[ext_resource type="SpriteFrames" uid="uid://c58cvrjebi8qb" path="res://resources/npcs/princess_frames.tres" id="17_xkerl"]
 [ext_resource type="Resource" uid="uid://xtnn2q4svlft" path="res://resources/enemies/slime_man/slime_man.tres" id="18_1d1l2"]
 [ext_resource type="Resource" uid="uid://3gcce6ftuade" path="res://resources/items/antidote.tres" id="18_2gtno"]
 [ext_resource type="Resource" uid="uid://ct8qok27qfe0j" path="res://resources/items/divine_sword_token.tres" id="18_pdykn"]
@@ -117,6 +122,91 @@ frames = ExtResource("12_ddk45")
 behavior = SubResource("Resource_4uope")
 metadata/_custom_type_script = "uid://dn7vsl533x7gh"
 
+[sub_resource type="Resource" id="Resource_scpkc"]
+script = ExtResource("7_t7i0h")
+text = "什么？你找来了我的锄头？好吧，我来帮你打开地下二层的密道！"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_l5vg8"]
+script = ExtResource("7_t7i0h")
+text = "要买钥匙吗？"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_hs43i"]
+script = ExtResource("8_oc7i3")
+dialogs = Array[ExtResource("7_t7i0h")]([SubResource("Resource_l5vg8")])
+metadata/_custom_type_script = "uid://dktqal1ji0w0"
+
+[sub_resource type="Resource" id="Resource_j66wf"]
+script = ExtResource("10_ddk45")
+npc_id = "thief_b2_1"
+npc_name = "盗贼"
+frames = ExtResource("14_cgjpo")
+behavior = SubResource("Resource_hs43i")
+metadata/_custom_type_script = "uid://dn7vsl533x7gh"
+
+[sub_resource type="Resource" id="Resource_8a718"]
+script = ExtResource("13_rkwby")
+target_floor = "base_2"
+target_pos = Vector2i(0, 6)
+new_data = SubResource("Resource_j66wf")
+metadata/_custom_type_script = "uid://bgvrtb78qik1k"
+
+[sub_resource type="Resource" id="Resource_jt7kn"]
+script = ExtResource("8_oc7i3")
+dialogs = Array[ExtResource("7_t7i0h")]([SubResource("Resource_scpkc")])
+post_actions = Array[ExtResource("8_c64ya")]([SubResource("Resource_8a718")])
+metadata/_custom_type_script = "uid://dktqal1ji0w0"
+
+[sub_resource type="Resource" id="Resource_pit3x"]
+script = ExtResource("10_ddk45")
+npc_id = "thief_f0_1"
+npc_name = "盗贼"
+frames = ExtResource("14_cgjpo")
+behavior = SubResource("Resource_jt7kn")
+metadata/_custom_type_script = "uid://dn7vsl533x7gh"
+
+[sub_resource type="Resource" id="Resource_i3jls"]
+script = ExtResource("7_t7i0h")
+speaker = 1
+text = "公主，我来救你了！"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_f0nfx"]
+script = ExtResource("7_t7i0h")
+text = "......"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_pp5lq"]
+script = ExtResource("7_t7i0h")
+speaker = 1
+text = "怎么了？我们快走吧"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_aeghn"]
+script = ExtResource("7_t7i0h")
+text = "呼呼呼哈哈哈哈哈！你上当了！"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_7x1ca"]
+script = ExtResource("16_cgjpo")
+enemy_data = ExtResource("16_oq0yt")
+metadata/_custom_type_script = "uid://b0lno0g37mqqa"
+
+[sub_resource type="Resource" id="Resource_xq0hc"]
+script = ExtResource("8_oc7i3")
+dialogs = Array[ExtResource("7_t7i0h")]([SubResource("Resource_i3jls"), SubResource("Resource_f0nfx"), SubResource("Resource_pp5lq"), SubResource("Resource_aeghn")])
+post_actions = Array[ExtResource("8_c64ya")]([SubResource("Resource_7x1ca")])
+metadata/_custom_type_script = "uid://dktqal1ji0w0"
+
+[sub_resource type="Resource" id="Resource_mpb1u"]
+script = ExtResource("10_ddk45")
+npc_id = "princess_f0_1"
+npc_name = "公主"
+frames = ExtResource("17_xkerl")
+behavior = SubResource("Resource_xq0hc")
+metadata/_custom_type_script = "uid://dn7vsl533x7gh"
+
 [node name="Main0" type="Node2D" unique_id=1806746235]
 script = ExtResource("1_b0ara")
 
@@ -158,6 +248,14 @@ data = SubResource("Resource_t7i0h")
 [node name="Merchant" parent="Entities" unique_id=894531296 instance=ExtResource("6_tsqci")]
 position = Vector2(160, 96)
 data = SubResource("Resource_xdeuw")
+
+[node name="Thief" parent="Entities" unique_id=2031874387 instance=ExtResource("6_tsqci")]
+position = Vector2(128, 128)
+data = SubResource("Resource_pit3x")
+
+[node name="FakePrincessNpc" parent="Entities" unique_id=1771291956 instance=ExtResource("6_tsqci")]
+position = Vector2(160, 192)
+data = SubResource("Resource_mpb1u")
 
 [node name="GreenSlime" parent="Entities" unique_id=605189716 instance=ExtResource("3_wsiys")]
 position = Vector2(32, 32)

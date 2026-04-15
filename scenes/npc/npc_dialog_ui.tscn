@@ -73,6 +73,7 @@ centered = false
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
+theme_override_constants/separation = 6
 
 [node name="NpcNameLabel" type="Label" parent="NpcPanel/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=897846477]
 unique_name_in_owner = true
@@ -166,6 +167,7 @@ stretch_mode = 5
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
+theme_override_constants/separation = 6
 
 [node name="PlayerNameLabel" type="Label" parent="PlayerPanel/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1749405559]
 unique_name_in_owner = true

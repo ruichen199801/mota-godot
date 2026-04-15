@@ -51,16 +51,21 @@ func grid_to_world(cell: Vector2i) -> Vector2:
 
 
 func spawn_entity(scene: PackedScene, pos: Vector2i) -> TileEntity:
+	return spawn_entity_on_floor(scene, current_floor_id, pos)
+
+
+func spawn_entity_on_floor(scene: PackedScene, floor_id: String,
+						   pos: Vector2i) -> TileEntity:
 	var entity: TileEntity = scene.instantiate()
 	entity.position = grid_to_world(pos)
 	entity.grid_pos = pos
 	
-	var old_entity := get_entity(pos)
+	var old_entity: TileEntity = floors[floor_id].grid.get(pos, null)
 	if old_entity:
 		old_entity.remove_from_grid()
 	
-	set_entity(pos, entity)
-	floors[current_floor_id].node.get_node("Entities").add_child(entity)
+	floors[floor_id].grid[pos] = entity
+	floors[floor_id].node.get_node("Entities").add_child(entity)
 	return entity
 	
 # --- Floor methods ---
