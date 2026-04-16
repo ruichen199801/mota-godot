@@ -27,10 +27,8 @@ func is_async() -> bool:
 	
 func on_block(player_data: PlayerData) -> void:
 	if data and data.behavior:
-		await data.behavior.execute(data.npc_name, data.frames)
-		
-		for action in data.behavior.post_actions:
-			await action.apply(grid_pos, player_data)
+		await data.behavior.execute(data.npc_name, data.frames, player_data)
+		await data.behavior.run_post_actions(grid_pos, player_data)
 		
 		if FloorManager.get_entity(grid_pos) != self:
 			queue_free()

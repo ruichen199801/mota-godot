@@ -30,14 +30,19 @@
 [ext_resource type="Resource" uid="uid://dqn8b5mevldvw" path="res://resources/enemies/spirit_skeleton_soldier/spirit_skeleton_soldier.tres" id="11_f4ax8"]
 [ext_resource type="Resource" uid="uid://qc6aroo647jm" path="res://resources/enemies/red_bat/red_bat.tres" id="11_vnl6i"]
 [ext_resource type="Resource" uid="uid://c4illtgd8ltxk" path="res://resources/enemies/spirit_warrior/spirit_warrior.tres" id="12_1icpw"]
+[ext_resource type="Script" uid="uid://bb3dtivmjel72" path="res://data/npc_condition/npc_has_item_condition.gd" id="12_4uope"]
 [ext_resource type="Resource" uid="uid://cfidvljhgwc06" path="res://resources/items/magic_key.tres" id="12_cc1qs"]
 [ext_resource type="SpriteFrames" uid="uid://0a8itglro6ui" path="res://resources/npcs/merchant_frames.tres" id="12_ddk45"]
+[ext_resource type="Script" uid="uid://btaqsx7ydfud" path="res://data/npc_condition/npc_condition.gd" id="12_scpkc"]
 [ext_resource type="Resource" uid="uid://ci34bb5piualn" path="res://resources/enemies/zombie/zombie.tres" id="13_2x163"]
 [ext_resource type="Resource" uid="uid://bvtnhkvtamdxv" path="res://resources/items/ice_amulet.tres" id="13_q4xqp"]
-[ext_resource type="Script" uid="uid://bgvrtb78qik1k" path="res://data/npc_action/npc_move_and_switch_action.gd" id="13_rkwby"]
+[ext_resource type="Script" uid="uid://bgvrtb78qik1k" path="res://data/npc_action/npc_respawn_action.gd" id="13_rkwby"]
+[ext_resource type="Script" uid="uid://bfpvfiuxd5pws" path="res://data/npc_behavior/npc_conditional_behavior.gd" id="13_xdeuw"]
+[ext_resource type="Script" uid="uid://cra84k00nr80m" path="res://data/npc_condition/npc_any_condition.gd" id="14_8a718"]
 [ext_resource type="SpriteFrames" uid="uid://ju775ieq3to5" path="res://resources/npcs/thief_frames.tres" id="14_cgjpo"]
 [ext_resource type="Resource" uid="uid://8er5orvrxdhj" path="res://resources/enemies/zombie_soldier/zombie_soldier.tres" id="14_uimwn"]
 [ext_resource type="Resource" uid="uid://41tscolgmqor" path="res://resources/items/anywhere_door.tres" id="15_my178"]
+[ext_resource type="Script" uid="uid://chum8njyixr2l" path="res://data/npc_action/npc_place_stair_action.gd" id="15_xkerl"]
 [ext_resource type="Script" uid="uid://b0lno0g37mqqa" path="res://data/npc_action/npc_spawn_enemy_action.gd" id="16_cgjpo"]
 [ext_resource type="Resource" uid="uid://clpmukkfspi0d" path="res://resources/items/cross.tres" id="16_ki1wk"]
 [ext_resource type="Resource" uid="uid://bef7or4cc5pbn" path="res://resources/enemies/fake_princess/fake_princess.tres" id="16_oq0yt"]
@@ -102,24 +107,56 @@ frames = ExtResource("9_konfa")
 behavior = SubResource("Resource_rkwby")
 metadata/_custom_type_script = "uid://dn7vsl533x7gh"
 
-[sub_resource type="Resource" id="Resource_mvppp"]
+[sub_resource type="Resource" id="Resource_6q7tm"]
+script = ExtResource("7_t7i0h")
+text = "你要买勇者之证增幅器吗？"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_xpt3e"]
+script = ExtResource("8_oc7i3")
+dialogs = Array[ExtResource("7_t7i0h")]([SubResource("Resource_6q7tm")])
+metadata/_custom_type_script = "uid://dktqal1ji0w0"
+
+[sub_resource type="Resource" id="Resource_4b777"]
+script = ExtResource("12_4uope")
+item_id = "divine_sword_token"
+metadata/_custom_type_script = "uid://bb3dtivmjel72"
+
+[sub_resource type="Resource" id="Resource_wvcej"]
+script = ExtResource("12_4uope")
+item_id = "anywhere_door"
+metadata/_custom_type_script = "uid://bb3dtivmjel72"
+
+[sub_resource type="Resource" id="Resource_52unh"]
+script = ExtResource("14_8a718")
+conditions = Array[ExtResource("12_scpkc")]([SubResource("Resource_4b777"), SubResource("Resource_wvcej")])
+metadata/_custom_type_script = "uid://cra84k00nr80m"
+
+[sub_resource type="Resource" id="Resource_8n2sy"]
 script = ExtResource("7_t7i0h")
 text = "又是挑战者吗?
 希望你能够活着回去，
 嘻嘻嘻嘻..."
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
-[sub_resource type="Resource" id="Resource_4uope"]
+[sub_resource type="Resource" id="Resource_e5eto"]
 script = ExtResource("8_oc7i3")
-dialogs = Array[ExtResource("7_t7i0h")]([SubResource("Resource_mvppp")])
+dialogs = Array[ExtResource("7_t7i0h")]([SubResource("Resource_8n2sy")])
 metadata/_custom_type_script = "uid://dktqal1ji0w0"
+
+[sub_resource type="Resource" id="Resource_5x58p"]
+script = ExtResource("13_xdeuw")
+condition = SubResource("Resource_52unh")
+default_behavior = SubResource("Resource_e5eto")
+alt_behavior = SubResource("Resource_xpt3e")
+metadata/_custom_type_script = "uid://bfpvfiuxd5pws"
 
 [sub_resource type="Resource" id="Resource_xdeuw"]
 script = ExtResource("10_ddk45")
 npc_id = "merchant_f0_1"
 npc_name = "奸商"
 frames = ExtResource("12_ddk45")
-behavior = SubResource("Resource_4uope")
+behavior = SubResource("Resource_5x58p")
 metadata/_custom_type_script = "uid://dn7vsl533x7gh"
 
 [sub_resource type="Resource" id="Resource_scpkc"]
@@ -152,10 +189,17 @@ target_pos = Vector2i(0, 6)
 new_data = SubResource("Resource_j66wf")
 metadata/_custom_type_script = "uid://bgvrtb78qik1k"
 
+[sub_resource type="Resource" id="Resource_pn2d5"]
+script = ExtResource("15_xkerl")
+floor_id = "base_2"
+pos = Vector2i(0, 8)
+stair_dest_floor = "mota_1"
+metadata/_custom_type_script = "uid://chum8njyixr2l"
+
 [sub_resource type="Resource" id="Resource_jt7kn"]
 script = ExtResource("8_oc7i3")
 dialogs = Array[ExtResource("7_t7i0h")]([SubResource("Resource_scpkc")])
-post_actions = Array[ExtResource("8_c64ya")]([SubResource("Resource_8a718")])
+post_actions = Array[ExtResource("8_c64ya")]([SubResource("Resource_8a718"), SubResource("Resource_pn2d5")])
 metadata/_custom_type_script = "uid://dktqal1ji0w0"
 
 [sub_resource type="Resource" id="Resource_pit3x"]
