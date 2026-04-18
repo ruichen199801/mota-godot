@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bw2505uv4eaqv" path="res://assets/images/ground.png" id="3_0b2h6"]
 [ext_resource type="SpriteFrames" uid="uid://0a8itglro6ui" path="res://resources/npcs/merchant_frames.tres" id="4_8hc8h"]
 [ext_resource type="FontFile" uid="uid://dm1lrh1p7e6yb" path="res://assets/fonts/HuangYinQi-Regular.ttf" id="5_n2obw"]
+[ext_resource type="Texture2D" uid="uid://cvcp6vylusams" path="res://assets/images/arrow.png" id="6_l812o"]
 
 [node name="NpcMerchantUI" type="Control" unique_id=1723117716]
 layout_mode = 3
@@ -92,7 +93,7 @@ mouse_filter = 2
 theme_override_constants/line_separation = 2
 theme_override_fonts/normal_font = ExtResource("5_n2obw")
 bbcode_enabled = true
-text = "[font=res://assets/fonts/system_font.tres][font_size=12]$15[/font_size][/font]就可以回复[font=res://assets/fonts/system_font.tres][font_size=12]200[/font_size][/font]体力需要吗？"
+text = "来！手上缺少哪一种钥匙？我有大量的！"
 fit_content = true
 scroll_active = false
 
@@ -108,8 +109,158 @@ mouse_filter = 2
 
 [node name="MerchantOptionsContainer" type="VBoxContainer" parent="MerchantBorder/ContentVBox/LowerMargin" unique_id=392194793]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 110)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 8
+
+[node name="Option1" type="HBoxContainer" parent="MerchantBorder/ContentVBox/LowerMargin/MerchantOptionsContainer" unique_id=1901027677]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 0
+
+[node name="Arrow1" type="TextureRect" parent="MerchantBorder/ContentVBox/LowerMargin/MerchantOptionsContainer/Option1" unique_id=259541438]
+unique_name_in_owner = true
+texture_filter = 2
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+texture = ExtResource("6_l812o")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="OptionLabel1" type="RichTextLabel" parent="MerchantBorder/ContentVBox/LowerMargin/MerchantOptionsContainer/Option1" unique_id=561928553]
+unique_name_in_owner = true
+texture_filter = 2
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+theme_type_variation = &"ShopRichTextLabel"
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "黄钥匙"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CostHint1" type="Label" parent="MerchantBorder/ContentVBox/LowerMargin/MerchantOptionsContainer/Option1" unique_id=566181199]
+unique_name_in_owner = true
+texture_filter = 2
+layout_mode = 2
+theme_type_variation = &"SystemLabel"
+text = "($20)"
+vertical_alignment = 1
+
+[node name="Option2" type="HBoxContainer" parent="MerchantBorder/ContentVBox/LowerMargin/MerchantOptionsContainer" unique_id=1845949165]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 0
+
+[node name="Arrow2" type="TextureRect" parent="MerchantBorder/ContentVBox/LowerMargin/MerchantOptionsContainer/Option2" unique_id=1127115732]
+unique_name_in_owner = true
+texture_filter = 2
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+texture = ExtResource("6_l812o")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="OptionLabel2" type="RichTextLabel" parent="MerchantBorder/ContentVBox/LowerMargin/MerchantOptionsContainer/Option2" unique_id=1320135396]
+unique_name_in_owner = true
+texture_filter = 2
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+theme_type_variation = &"ShopRichTextLabel"
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "蓝钥匙"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CostHint2" type="Label" parent="MerchantBorder/ContentVBox/LowerMargin/MerchantOptionsContainer/Option2" unique_id=513480265]
+unique_name_in_owner = true
+texture_filter = 2
+layout_mode = 2
+theme_type_variation = &"SystemLabel"
+text = "($80)"
+vertical_alignment = 1
+
+[node name="Option3" type="HBoxContainer" parent="MerchantBorder/ContentVBox/LowerMargin/MerchantOptionsContainer" unique_id=938121135]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 0
+
+[node name="Arrow3" type="TextureRect" parent="MerchantBorder/ContentVBox/LowerMargin/MerchantOptionsContainer/Option3" unique_id=75223976]
+unique_name_in_owner = true
+texture_filter = 2
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+texture = ExtResource("6_l812o")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="OptionLabel3" type="RichTextLabel" parent="MerchantBorder/ContentVBox/LowerMargin/MerchantOptionsContainer/Option3" unique_id=57589734]
+unique_name_in_owner = true
+texture_filter = 2
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+theme_type_variation = &"ShopRichTextLabel"
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "红钥匙"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CostHint3" type="Label" parent="MerchantBorder/ContentVBox/LowerMargin/MerchantOptionsContainer/Option3" unique_id=2056859124]
+unique_name_in_owner = true
+texture_filter = 2
+layout_mode = 2
+theme_type_variation = &"SystemLabel"
+text = "($500)"
+vertical_alignment = 1
+
+[node name="LeaveOption" type="HBoxContainer" parent="MerchantBorder/ContentVBox/LowerMargin/MerchantOptionsContainer" unique_id=1252400078]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 0
+
+[node name="ArrowLeave" type="TextureRect" parent="MerchantBorder/ContentVBox/LowerMargin/MerchantOptionsContainer/LeaveOption" unique_id=831752136]
+unique_name_in_owner = true
+texture_filter = 2
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+texture = ExtResource("6_l812o")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LeaveLabel" type="Label" parent="MerchantBorder/ContentVBox/LowerMargin/MerchantOptionsContainer/LeaveOption" unique_id=1741103422]
+unique_name_in_owner = true
+texture_filter = 2
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"ShopLabel"
+theme_override_font_sizes/font_size = 18
+text = "离开"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 35

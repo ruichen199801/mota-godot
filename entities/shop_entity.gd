@@ -19,7 +19,6 @@ func is_async() -> bool:
 	
 func on_block(_player_data: PlayerData) -> void:
 	EventBus.shop_opened.emit(self)
-	print("Opening shop panel")
 	await EventBus.shop_closed
 
 # --- Purchase logic ---
@@ -52,14 +51,7 @@ func purchase(player_data: PlayerData, option: ShopOptionData) -> bool:
 		ShopData.CurrencyType.XP:
 			player_data.xp -= cost
 	
-	if option.level > 0:
-		player_data.level += option.level
-	if option.hp != 0:
-		player_data.hp += option.hp
-	if option.atk != 0:
-		player_data.atk += option.atk
-	if option.def != 0:
-		player_data.def += option.def
+	option.apply_option(player_data)
 	
 	purchase_count += 1
 	return true

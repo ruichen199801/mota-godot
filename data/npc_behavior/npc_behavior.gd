@@ -12,3 +12,5 @@ func execute(_npc_name: String, _npc_frames: SpriteFrames,
 func run_post_actions(grid_pos: Vector2i, player_data: PlayerData) -> void:
 	for action in post_actions:
 		await action.apply(grid_pos, player_data)
+	# Only run each post action once
+	post_actions.clear()
