@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://83htevejqgok"]
+
+[ext_resource type="Script" uid="uid://bo1wumwlij8md" path="res://data/item_effect/emblem_upgrade_effect.gd" id="1_n612b"]
+[ext_resource type="Texture2D" uid="uid://4x0is0csxo2d" path="res://assets/images/emblem_hero.png" id="2_2wlrs"]
+[ext_resource type="Script" uid="uid://x7y7v7vypehe" path="res://data/item_data.gd" id="3_k3lqp"]
+
+[sub_resource type="Resource" id="Resource_fqg00"]
+script = ExtResource("1_n612b")
+from_level = 2
+to_level = 3
+metadata/_custom_type_script = "uid://bo1wumwlij8md"
+
+[resource]
+script = ExtResource("3_k3lqp")
+item_id = "hero_emblem_lv3"
+item_name = "增幅器"
+description = "勇者之证Lv2->Lv3"
+icon = ExtResource("2_2wlrs")
+effect = SubResource("Resource_fqg00")
+metadata/_custom_type_script = "uid://x7y7v7vypehe"

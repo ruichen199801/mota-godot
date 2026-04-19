@@ -1,6 +1,7 @@
 class_name NpcRespawnAction
 extends NpcPostAction
 
+# target_floor and target_pos are optional. If not provided, NPC will respawn on the same cell.
 @export var target_floor: String
 @export var target_pos: Vector2i
 @export var new_data: NpcData

@@ -107,7 +107,21 @@ var _weaken_debuffs := {
 	set(v):
 		def_crit = v
 		emit_changed()
-	
+
+# --- Emblems ---
+
+enum EmblemType { NONE, HERO, SAGE, OVERLOAD }
+
+var emblem_type: EmblemType = EmblemType.NONE:
+	set(v):
+		emblem_type = v
+		emit_changed()
+
+var emblem_level: int = 0:
+	set(v):
+		emblem_level = v
+		emit_changed()
+
 # --- Inventory ---
 
 class InventorySlot:

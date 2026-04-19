@@ -111,9 +111,9 @@ func _get_row_index(sel_index: int) -> int:
 
 
 func _confirm_selection() -> void:
-	if _selected_index == _option_count:
+	if _selected_index == _option_count: # leave option
 		close()
-		EventBus.npc_merchant_closed.emit()
+		EventBus.npc_merchant_closed.emit(false)
 		return
 
 	var opt: ShopOptionData = _merchant_data.options[_selected_index]
@@ -123,7 +123,7 @@ func _confirm_selection() -> void:
 		
 		if _merchant_data.one_time:
 			close()
-			EventBus.npc_merchant_closed.emit()
+			EventBus.npc_merchant_closed.emit(true)
 		_refresh()
 	else:
 		print("Merchant: trade failed")

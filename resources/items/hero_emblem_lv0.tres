@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ce6p5m7um1kw0"]
+
+[ext_resource type="Script" uid="uid://dmhc63rw7uxe8" path="res://data/item_effect/emblem_pickup_effect.gd" id="1_xauyj"]
+[ext_resource type="Texture2D" uid="uid://4x0is0csxo2d" path="res://assets/images/emblem_hero.png" id="2_vwprj"]
+[ext_resource type="Script" uid="uid://x7y7v7vypehe" path="res://data/item_data.gd" id="3_gvyd1"]
+
+[sub_resource type="Resource" id="Resource_iox4j"]
+script = ExtResource("1_xauyj")
+emblem_type = 1
+metadata/_custom_type_script = "uid://dmhc63rw7uxe8"
+
+[resource]
+script = ExtResource("3_gvyd1")
+item_id = "hero_emblem_lv0"
+item_name = "镶有红宝石的章"
+icon = ExtResource("2_vwprj")
+effect = SubResource("Resource_iox4j")
+metadata/_custom_type_script = "uid://x7y7v7vypehe"

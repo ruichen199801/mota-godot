@@ -29,6 +29,7 @@ signal items_requested
 signal settings_requested
 
 var player_data: PlayerData
+var player_node: Node2D
 
 
 func _ready() -> void:
@@ -38,13 +39,10 @@ func _ready() -> void:
 	settings_button.pressed.connect(settings_requested.emit)
 	
 	
-func bind_player(data: PlayerData, icon: Texture2D) -> void:
+func bind_player(data: PlayerData, player: Node2D) -> void:
 	player_data = data
+	player_node = player
 	player_data.changed.connect(_refresh_hud_data)
-	
-	if icon:
-		player_icon.texture = icon
-		
 	_refresh_hud_data()
 	
 
@@ -55,6 +53,9 @@ func set_floor_display(floor_id: String) -> void:
 func _refresh_hud_data() -> void:
 	if player_data == null:
 		return
+	
+	if player_node:
+		player_icon.texture = player_node.get_icon()
 		
 	level_value.text = str(player_data.level)
 	hp_value.text = str(player_data.hp)

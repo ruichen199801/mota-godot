@@ -10,7 +10,7 @@ enum ItemType { INSTANT, CONSUMABLE, PERMANENT }
 @export var frames: SpriteFrames # optional, for animated items
 @export var item_type: ItemType
 @export var max_uses: int = 1 # only meaningful for consumable items
-@export var effect: EffectData # null for permanent items
+@export var effect: EffectData # only needed by instant items
 
 
 func apply(player_data: PlayerData) -> void:

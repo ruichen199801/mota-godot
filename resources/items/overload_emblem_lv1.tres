@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://s2cjd6eshpri"]
+
+[ext_resource type="Script" uid="uid://bo1wumwlij8md" path="res://data/item_effect/emblem_upgrade_effect.gd" id="1_4c3yo"]
+[ext_resource type="Script" uid="uid://6cgvhhds7l2r" path="res://data/item_effect/stat_effect.gd" id="2_0sslo"]
+[ext_resource type="Texture2D" uid="uid://brpbsx67xe3pe" path="res://assets/images/emblem_overload.png" id="3_5v83x"]
+[ext_resource type="Script" uid="uid://x7y7v7vypehe" path="res://data/item_data.gd" id="4_k56fv"]
+
+[sub_resource type="Resource" id="Resource_ya2n3"]
+script = ExtResource("2_0sslo")
+atk = 15
+def = 15
+metadata/_custom_type_script = "uid://6cgvhhds7l2r"
+
+[sub_resource type="Resource" id="Resource_hd1un"]
+script = ExtResource("1_4c3yo")
+stat_effect = SubResource("Resource_ya2n3")
+metadata/_custom_type_script = "uid://bo1wumwlij8md"
+
+[resource]
+script = ExtResource("4_k56fv")
+item_id = "overload_emblem_lv1"
+item_name = "霸者之证"
+icon = ExtResource("3_5v83x")
+effect = SubResource("Resource_hd1un")
+metadata/_custom_type_script = "uid://x7y7v7vypehe"

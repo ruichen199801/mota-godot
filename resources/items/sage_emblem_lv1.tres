@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://di85ttptbu157"]
+
+[ext_resource type="Script" uid="uid://bo1wumwlij8md" path="res://data/item_effect/emblem_upgrade_effect.gd" id="1_uv58y"]
+[ext_resource type="Script" uid="uid://6cgvhhds7l2r" path="res://data/item_effect/stat_effect.gd" id="2_aohjb"]
+[ext_resource type="Texture2D" uid="uid://tp8wow2qrfg8" path="res://assets/images/emblem_sage.png" id="3_kle2s"]
+[ext_resource type="Script" uid="uid://x7y7v7vypehe" path="res://data/item_data.gd" id="4_qktb7"]
+
+[sub_resource type="Resource" id="Resource_uejnj"]
+script = ExtResource("2_aohjb")
+agi = 5
+metadata/_custom_type_script = "uid://6cgvhhds7l2r"
+
+[sub_resource type="Resource" id="Resource_dl6gv"]
+script = ExtResource("1_uv58y")
+stat_effect = SubResource("Resource_uejnj")
+metadata/_custom_type_script = "uid://bo1wumwlij8md"
+
+[resource]
+script = ExtResource("4_qktb7")
+item_id = "sage_emblem_lv1"
+item_name = "贤者之证"
+icon = ExtResource("3_kle2s")
+effect = SubResource("Resource_dl6gv")
+metadata/_custom_type_script = "uid://x7y7v7vypehe"

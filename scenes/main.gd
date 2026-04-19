@@ -25,7 +25,7 @@ func _ready() -> void:
 	FloorManager.switch_to_floor(FloorManager.START_FLOOR_ID)
 	hud.set_floor_display(FloorManager.START_FLOOR_ID)
 	
-	hud.bind_player(player.data, player.get_icon())
+	hud.bind_player(player.data, player)
 	EventBus.floor_change_requested.connect(_on_floor_change)
 	EventBus.shop_opened.connect(_on_shop_opened)
 	EventBus.mind_mirror_requested.connect(_on_mind_mirror_requested)

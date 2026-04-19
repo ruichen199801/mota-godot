@@ -20,12 +20,27 @@ const MOVE_TIME := 0.12
 const RETRY_DELAY := 0.15
 const DEFAULT_TEMPLATE := preload("res://resources/player/default_player.tres")
 
+const EMBLEM_FRAMES := {
+	PlayerData.EmblemType.HERO: preload("res://resources/player/hero_player_frames.tres"),
+	PlayerData.EmblemType.OVERLOAD: preload("res://resources/player/overload_player_frames.tres"),
+	PlayerData.EmblemType.SAGE: preload("res://resources/player/sage_player_frames.tres"),
+}
+
 
 func init(start_pos: Vector2i, template: PlayerData = null) -> void:
 	if template == null:
 		template = DEFAULT_TEMPLATE
 	data = template.duplicate()
+	data.changed.connect(_on_player_data_changed)
 	place_at(start_pos)
+
+
+func _on_player_data_changed() -> void:
+	if data.emblem_level == 1 and data.emblem_type in EMBLEM_FRAMES:
+		var new_frames: SpriteFrames = EMBLEM_FRAMES[data.emblem_type]
+		if anim.sprite_frames != new_frames:
+			anim.sprite_frames = new_frames
+			_play_idle()
 	
 	
 func place_at(pos: Vector2i) -> void:

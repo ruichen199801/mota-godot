@@ -32,4 +32,4 @@ signal npc_dialog_opened(npc_name: String, npc_frames: SpriteFrames, dialogs: Ar
 signal npc_dialog_closed
 
 signal npc_merchant_opened(npc_name: String, npc_frames: SpriteFrames, merchant_data: NpcMerchantData)
-signal npc_merchant_closed
+signal npc_merchant_closed(one_time_trade_made: bool)
