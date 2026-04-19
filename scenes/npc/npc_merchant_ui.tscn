@@ -4,7 +4,8 @@
 [ext_resource type="Theme" uid="uid://bocaa5wajr1kd" path="res://resources/base_theme.tres" id="1_68gp1"]
 [ext_resource type="Texture2D" uid="uid://bw2505uv4eaqv" path="res://assets/images/ground.png" id="3_0b2h6"]
 [ext_resource type="SpriteFrames" uid="uid://0a8itglro6ui" path="res://resources/npcs/merchant_frames.tres" id="4_8hc8h"]
-[ext_resource type="FontFile" uid="uid://dm1lrh1p7e6yb" path="res://assets/fonts/HuangYinQi-Regular.ttf" id="5_n2obw"]
+[ext_resource type="FontFile" uid="uid://boocf5n81wiyf" path="res://assets/fonts/ChaoHongShuJian-Regular.ttf" id="4_l812o"]
+[ext_resource type="Script" uid="uid://booe54nyo4reu" path="res://scenes/common/styled_rich_text_label.gd" id="6_avpas"]
 [ext_resource type="Texture2D" uid="uid://cvcp6vylusams" path="res://assets/images/arrow.png" id="6_l812o"]
 
 [node name="NpcMerchantUI" type="Control" unique_id=1723117716]
@@ -59,7 +60,7 @@ mouse_filter = 2
 unique_name_in_owner = true
 texture_filter = 2
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_n2obw")
+theme_override_fonts/font = ExtResource("4_l812o")
 theme_override_font_sizes/font_size = 20
 text = "奸商"
 horizontal_alignment = 1
@@ -91,11 +92,13 @@ layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
 theme_override_constants/line_separation = 2
-theme_override_fonts/normal_font = ExtResource("5_n2obw")
+theme_override_fonts/normal_font = ExtResource("4_l812o")
 bbcode_enabled = true
-text = "来！手上缺少哪一种钥匙？我有大量的！"
+text = "来！手上缺少哪一种钥匙?我有大量的！"
 fit_content = true
 scroll_active = false
+script = ExtResource("6_avpas")
+styled_font_size = 12
 
 [node name="Divider" type="ColorRect" parent="MerchantBorder/ContentVBox" unique_id=1287753323]
 custom_minimum_size = Vector2(0, 2)
@@ -139,7 +142,7 @@ custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 mouse_filter = 2
-theme_type_variation = &"ShopRichTextLabel"
+theme_override_fonts/normal_font = ExtResource("4_l812o")
 theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
 text = "黄钥匙"
@@ -147,6 +150,7 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("6_avpas")
 
 [node name="CostHint1" type="Label" parent="MerchantBorder/ContentVBox/LowerMargin/MerchantOptionsContainer/Option1" unique_id=566181199]
 unique_name_in_owner = true
@@ -179,7 +183,7 @@ custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 mouse_filter = 2
-theme_type_variation = &"ShopRichTextLabel"
+theme_override_fonts/normal_font = ExtResource("4_l812o")
 theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
 text = "蓝钥匙"
@@ -187,6 +191,7 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("6_avpas")
 
 [node name="CostHint2" type="Label" parent="MerchantBorder/ContentVBox/LowerMargin/MerchantOptionsContainer/Option2" unique_id=513480265]
 unique_name_in_owner = true
@@ -219,7 +224,7 @@ custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 mouse_filter = 2
-theme_type_variation = &"ShopRichTextLabel"
+theme_override_fonts/normal_font = ExtResource("4_l812o")
 theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
 text = "红钥匙"
@@ -227,6 +232,7 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("6_avpas")
 
 [node name="CostHint3" type="Label" parent="MerchantBorder/ContentVBox/LowerMargin/MerchantOptionsContainer/Option3" unique_id=2056859124]
 unique_name_in_owner = true
@@ -258,7 +264,7 @@ texture_filter = 2
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_type_variation = &"ShopLabel"
+theme_override_fonts/font = ExtResource("4_l812o")
 theme_override_font_sizes/font_size = 18
 text = "离开"
 horizontal_alignment = 1

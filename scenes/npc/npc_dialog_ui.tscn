@@ -4,9 +4,10 @@
 [ext_resource type="Script" uid="uid://b0t3i7gyk1pr8" path="res://scenes/npc/npc_dialog_ui.gd" id="1_26rho"]
 [ext_resource type="Texture2D" uid="uid://bw2505uv4eaqv" path="res://assets/images/ground.png" id="3_bxu0h"]
 [ext_resource type="SpriteFrames" uid="uid://sbv076eg1003" path="res://resources/npcs/oldman_frames.tres" id="4_xt6h1"]
-[ext_resource type="FontFile" uid="uid://dm1lrh1p7e6yb" path="res://assets/fonts/HuangYinQi-Regular.ttf" id="5_bxu0h"]
+[ext_resource type="FontFile" uid="uid://boocf5n81wiyf" path="res://assets/fonts/ChaoHongShuJian-Regular.ttf" id="5_bnrye"]
 [ext_resource type="Script" uid="uid://dhbdyi3h08ong" path="res://scenes/common/flash_label.gd" id="5_tw7d1"]
 [ext_resource type="FontFile" uid="uid://ckgwfb237tyom" path="res://assets/fonts/HanYiZongYiTiJian-Regular.ttf" id="6_bnrye"]
+[ext_resource type="Script" uid="uid://booe54nyo4reu" path="res://scenes/common/styled_rich_text_label.gd" id="7_bnrye"]
 [ext_resource type="Texture2D" uid="uid://bxw5pcooyj2k8" path="res://assets/images/player_0.png" id="7_xt6h1"]
 
 [node name="NpcDialogUI" type="Control" unique_id=980426186]
@@ -79,7 +80,7 @@ theme_override_constants/separation = 6
 unique_name_in_owner = true
 texture_filter = 2
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_bxu0h")
+theme_override_fonts/font = ExtResource("5_bnrye")
 theme_override_font_sizes/font_size = 20
 text = "神秘老人"
 horizontal_alignment = 1
@@ -94,13 +95,15 @@ size_flags_horizontal = 3
 mouse_filter = 2
 theme_override_constants/line_separation = 4
 theme_override_fonts/normal_font = ExtResource("6_bnrye")
-theme_override_font_sizes/normal_font_size = 13
+theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "这个给你....
 有了这个，
 就可看清楚怪物的能力...."
 fit_content = true
 scroll_active = false
+script = ExtResource("7_bnrye")
+styled_font_size = 12
 
 [node name="NpcDismissHint" type="Label" parent="NpcPanel/MarginContainer/VBoxContainer" unique_id=2114343147]
 unique_name_in_owner = true
@@ -173,7 +176,7 @@ theme_override_constants/separation = 6
 unique_name_in_owner = true
 texture_filter = 2
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_bxu0h")
+theme_override_fonts/font = ExtResource("5_bnrye")
 theme_override_font_sizes/font_size = 20
 text = "勇者"
 horizontal_alignment = 1
@@ -188,12 +191,14 @@ size_flags_horizontal = 3
 mouse_filter = 2
 theme_override_constants/line_separation = 4
 theme_override_fonts/normal_font = ExtResource("6_bnrye")
-theme_override_font_sizes/normal_font_size = 13
+theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "又是假的！
 可恶"
 fit_content = true
 scroll_active = false
+script = ExtResource("7_bnrye")
+styled_font_size = 12
 
 [node name="PlayerDismissHint" type="Label" parent="PlayerPanel/MarginContainer/VBoxContainer" unique_id=499918972]
 unique_name_in_owner = true

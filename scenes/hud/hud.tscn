@@ -5,9 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://bw2505uv4eaqv" path="res://assets/images/ground.png" id="3_c45xl"]
 [ext_resource type="Texture2D" uid="uid://bxw5pcooyj2k8" path="res://assets/images/player_0.png" id="3_mgtrf"]
 [ext_resource type="Texture2D" uid="uid://bfs7h2gg5i60f" path="res://assets/images/key_yellow.png" id="4_0bx4p"]
+[ext_resource type="FontFile" uid="uid://cokudok3b6nm7" path="res://assets/fonts/OpenSans-SemiBoldItalic.ttf" id="5_nhd55"]
 [ext_resource type="FontFile" uid="uid://da1f3rfg3lq41" path="res://assets/fonts/DFBuDingW12-Regular.ttf" id="6_v7mo4"]
 [ext_resource type="Texture2D" uid="uid://dpad4pcf863r3" path="res://assets/images/key_blue.png" id="7_mq0y1"]
 [ext_resource type="Texture2D" uid="uid://qhd3xmr4b2jt" path="res://assets/images/key_red.png" id="8_go0ap"]
+[ext_resource type="FontFile" uid="uid://bmfwh0y3fif5y" path="res://assets/fonts/OpenSans-SemiBold.ttf" id="8_q6mn5"]
 [ext_resource type="Texture2D" uid="uid://p7drk4m3ocdq" path="res://assets/images/gold.png" id="9_go0ap"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mgtrf"]
@@ -158,7 +160,7 @@ unique_name_in_owner = true
 texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
-theme_type_variation = &"HudStatsLabel"
+theme_override_fonts/font = ExtResource("5_nhd55")
 text = "3"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -175,7 +177,7 @@ unique_name_in_owner = true
 texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
-theme_type_variation = &"HudStatsLabel"
+theme_override_fonts/font = ExtResource("5_nhd55")
 text = "900"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -192,7 +194,7 @@ unique_name_in_owner = true
 texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
-theme_type_variation = &"HudStatsLabel"
+theme_override_fonts/font = ExtResource("5_nhd55")
 text = "60"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -209,7 +211,7 @@ unique_name_in_owner = true
 texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
-theme_type_variation = &"HudStatsLabel"
+theme_override_fonts/font = ExtResource("5_nhd55")
 text = "57"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -226,7 +228,7 @@ unique_name_in_owner = true
 texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
-theme_type_variation = &"HudStatsLabel"
+theme_override_fonts/font = ExtResource("5_nhd55")
 text = "5"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -243,7 +245,7 @@ unique_name_in_owner = true
 texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
-theme_type_variation = &"HudStatsLabel"
+theme_override_fonts/font = ExtResource("5_nhd55")
 text = "2"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -260,7 +262,7 @@ unique_name_in_owner = true
 texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
-theme_type_variation = &"HudStatsLabel"
+theme_override_fonts/font = ExtResource("5_nhd55")
 text = "69"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -309,7 +311,8 @@ unique_name_in_owner = true
 texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
-theme_type_variation = &"HudKeysLabel"
+theme_override_fonts/font = ExtResource("8_q6mn5")
+theme_override_font_sizes/font_size = 16
 text = "3"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -337,7 +340,8 @@ unique_name_in_owner = true
 texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
-theme_type_variation = &"HudKeysLabel"
+theme_override_fonts/font = ExtResource("8_q6mn5")
+theme_override_font_sizes/font_size = 16
 text = "2"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -365,7 +369,8 @@ unique_name_in_owner = true
 texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
-theme_type_variation = &"HudKeysLabel"
+theme_override_fonts/font = ExtResource("8_q6mn5")
+theme_override_font_sizes/font_size = 16
 text = "3"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -393,7 +398,8 @@ unique_name_in_owner = true
 texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
-theme_type_variation = &"HudKeysLabel"
+theme_override_fonts/font = ExtResource("8_q6mn5")
+theme_override_font_sizes/font_size = 16
 text = "42"
 horizontal_alignment = 1
 vertical_alignment = 1

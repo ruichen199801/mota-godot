@@ -4,7 +4,9 @@
 [ext_resource type="Theme" uid="uid://bocaa5wajr1kd" path="res://resources/base_theme.tres" id="1_gk7bq"]
 [ext_resource type="Texture2D" uid="uid://bw2505uv4eaqv" path="res://assets/images/ground.png" id="3_8cucq"]
 [ext_resource type="SpriteFrames" uid="uid://cegvlfjje8u6q" path="res://resources/shops/gold_shop_frames.tres" id="4_i3qau"]
+[ext_resource type="FontFile" uid="uid://boocf5n81wiyf" path="res://assets/fonts/ChaoHongShuJian-Regular.ttf" id="4_ux4ja"]
 [ext_resource type="Texture2D" uid="uid://cvcp6vylusams" path="res://assets/images/arrow.png" id="6_m4vnt"]
+[ext_resource type="Script" uid="uid://booe54nyo4reu" path="res://scenes/common/styled_rich_text_label.gd" id="6_ux4ja"]
 
 [node name="ShopUI" type="Control" unique_id=1644778655]
 layout_mode = 3
@@ -58,8 +60,8 @@ mouse_filter = 2
 unique_name_in_owner = true
 texture_filter = 2
 layout_mode = 2
-theme_type_variation = &"ShopLabel"
-theme_override_font_sizes/font_size = 18
+theme_override_fonts/font = ExtResource("4_ux4ja")
+theme_override_font_sizes/font_size = 20
 text = "贪婪之神"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -84,16 +86,18 @@ centered = false
 [node name="DescriptionLabel" type="RichTextLabel" parent="ShopBorder/ContentVBox/UpperMargin/UpperVBox/UpperSection" unique_id=2094491218]
 unique_name_in_owner = true
 texture_filter = 2
-custom_minimum_size = Vector2(160, 0)
+custom_minimum_size = Vector2(160, 60)
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
-theme_type_variation = &"ShopRichTextLabel"
+theme_override_fonts/normal_font = ExtResource("4_ux4ja")
 bbcode_enabled = true
-text = "人类啊！如果你愿意给我 [font=res://assets/fonts/system_font.tres][font_size=12]20[/font_size][/font] 个金币的话，我可以加强你的战斗力！
+text = "人类啊！如果你愿意给我 [font=res://assets/fonts/OpenSans-SemiBold.ttf][font_size=12]20[/font_size][/font] 个金币的话，我可以加强你的战斗力！
 "
 fit_content = true
 scroll_active = false
+script = ExtResource("6_ux4ja")
+styled_font_size = 12
 
 [node name="Divider" type="ColorRect" parent="ShopBorder/ContentVBox" unique_id=228339935]
 custom_minimum_size = Vector2(0, 2)
@@ -134,14 +138,15 @@ texture_filter = 2
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 mouse_filter = 2
-theme_type_variation = &"ShopRichTextLabel"
+theme_override_fonts/normal_font = ExtResource("4_ux4ja")
 theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
-text = "增加[font=res://assets/fonts/system_font.tres][font_size=14]500[/font_size][/font]点体力"
+text = "增加[font=res://assets/fonts/OpenSans-SemiBold.ttf][font_size=14]500[/font_size][/font]点体力"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("6_ux4ja")
 
 [node name="CostHint1" type="Label" parent="ShopBorder/ContentVBox/LowerMargin/OptionsContainer/Option1" unique_id=1614448644]
 unique_name_in_owner = true
@@ -174,14 +179,15 @@ texture_filter = 2
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 mouse_filter = 2
-theme_type_variation = &"ShopRichTextLabel"
+theme_override_fonts/normal_font = ExtResource("4_ux4ja")
 theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
-text = "增加[font=res://assets/fonts/system_font.tres][font_size=14]3[/font_size][/font]点攻击力"
+text = "增加[font=res://assets/fonts/OpenSans-SemiBold.ttf][font_size=14]3[/font_size][/font]点攻击力"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("6_ux4ja")
 
 [node name="CostHint2" type="Label" parent="ShopBorder/ContentVBox/LowerMargin/OptionsContainer/Option2" unique_id=1088283246]
 unique_name_in_owner = true
@@ -214,14 +220,15 @@ texture_filter = 2
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 mouse_filter = 2
-theme_type_variation = &"ShopRichTextLabel"
+theme_override_fonts/normal_font = ExtResource("4_ux4ja")
 theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
-text = "增加[font=res://assets/fonts/system_font.tres][font_size=14]3[/font_size][/font]点防御力"
+text = "增加[font=res://assets/fonts/OpenSans-SemiBold.ttf][font_size=14]3[/font_size][/font]点防御力"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("6_ux4ja")
 
 [node name="CostHint3" type="Label" parent="ShopBorder/ContentVBox/LowerMargin/OptionsContainer/Option3" unique_id=604329264]
 unique_name_in_owner = true
@@ -253,7 +260,7 @@ unique_name_in_owner = true
 texture_filter = 2
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
-theme_type_variation = &"ShopLabel"
+theme_override_fonts/font = ExtResource("4_ux4ja")
 theme_override_font_sizes/font_size = 18
 text = "离开"
 horizontal_alignment = 1

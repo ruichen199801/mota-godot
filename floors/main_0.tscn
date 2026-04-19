@@ -246,7 +246,7 @@ metadata/_custom_type_script = "uid://vork0ooj1wrk"
 
 [sub_resource type="Resource" id="Resource_cvhj2"]
 script = ExtResource("18_l5vg8")
-description = "[font=res://assets/fonts/system_font.tres][font_size=12]$15[/font_size][/font]就可以回复[font=res://assets/fonts/system_font.tres][font_size=12]200[/font_size][/font]体力需要吗？"
+description = "$15就可以回复200体力需要吗？"
 one_time = true
 options = Array[ExtResource("17_pit3x")]([SubResource("Resource_cih2b")])
 metadata/_custom_type_script = "uid://dnkssnvswhj24"
@@ -319,7 +319,7 @@ metadata/_custom_type_script = "uid://vork0ooj1wrk"
 
 [sub_resource type="Resource" id="Resource_q5oej"]
 script = ExtResource("18_l5vg8")
-description = "[font=res://assets/fonts/system_font.tres][font_size=12]500[/font_size][/font]金币换增幅器要么"
+description = "500金币换增幅器要么"
 one_time = true
 options = Array[ExtResource("17_pit3x")]([SubResource("Resource_tw220")])
 metadata/_custom_type_script = "uid://dnkssnvswhj24"

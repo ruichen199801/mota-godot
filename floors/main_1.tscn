@@ -72,11 +72,11 @@ position = Vector2(224, 128)
 data = ExtResource("8_telvf")
 
 [node name="XpShop1" parent="Entities" unique_id=1191910855 instance=ExtResource("6_o5ddk")]
-position = Vector2(128, 160)
+position = Vector2(128, 192)
 data = ExtResource("8_nki1m")
 
 [node name="XpShop2" parent="Entities" unique_id=632798153 instance=ExtResource("6_o5ddk")]
-position = Vector2(224, 160)
+position = Vector2(224, 192)
 data = ExtResource("8_33nwr")
 
 [node name="Mage" parent="Entities" unique_id=403944013 instance=ExtResource("3_q7nhy")]

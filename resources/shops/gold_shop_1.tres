@@ -11,7 +11,7 @@
 script = ExtResource("2_mo0j8")
 shop_id = "gold_shop_1"
 shop_name = "贪婪之神"
-description = "人类啊！如果你愿意给我 [font=res://assets/fonts/system_font.tres][font_size=12]%d[/font_size][/font] 个金币的话，我可以加强你的战斗力！"
+description = "人类啊！如果你愿意给我 %d 个金币的话，我可以加强你的战斗力！"
 frames = ExtResource("1_l1qbx")
 base_cost = 20
 cost_increase = 1

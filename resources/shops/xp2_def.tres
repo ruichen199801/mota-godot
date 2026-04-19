@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_lr0w1")
-label = "增加[font=res://assets/fonts/system_font.tres][font_size=14]5[/font_size][/font]点防御力"
+label = "增加5点防御力"
 fixed_cost = 50
 def = 5
 metadata/_custom_type_script = "uid://vork0ooj1wrk"

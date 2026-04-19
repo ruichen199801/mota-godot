@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_e50mh")
-label = "提升[font=res://assets/fonts/system_font.tres][font_size=14]1[/font_size][/font]个等级"
+label = "提升1个等级"
 fixed_cost = 70
 level = 1
 hp = 250

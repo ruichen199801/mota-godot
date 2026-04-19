@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://bocaa5wajr1kd" path="res://resources/base_theme.tres" id="1_c2u0r"]
 [ext_resource type="Texture2D" uid="uid://bw2505uv4eaqv" path="res://assets/images/ground.png" id="2_27qx7"]
 [ext_resource type="Script" uid="uid://dno1r2mq2vc5o" path="res://scenes/item/item_pickup_ui.gd" id="2_t5nlr"]
-[ext_resource type="FontFile" uid="uid://dm1lrh1p7e6yb" path="res://assets/fonts/HuangYinQi-Regular.ttf" id="4_p1c3f"]
+[ext_resource type="FontFile" uid="uid://boocf5n81wiyf" path="res://assets/fonts/ChaoHongShuJian-Regular.ttf" id="4_p1c3f"]
 [ext_resource type="Script" uid="uid://dhbdyi3h08ong" path="res://scenes/common/flash_label.gd" id="5_p1c3f"]
 
 [node name="ItemPickupUI" type="Control" unique_id=703566370]

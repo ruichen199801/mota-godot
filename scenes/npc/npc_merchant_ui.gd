@@ -37,7 +37,7 @@ func open(npc_name: String, npc_frames: SpriteFrames,
 		avatar_sprite.play("idle")
 
 	name_label.text = npc_name
-	description_label.text = merchant_data.description
+	description_label.set_content(merchant_data.description)
 
 	for i in range(3):
 		option_rows[i].visible = i < _option_count
@@ -81,7 +81,7 @@ func _refresh() -> void:
 
 	for i in range(_option_count):
 		var opt: ShopOptionData = _merchant_data.options[i]
-		option_labels[i].text = opt.label
+		option_labels[i].set_content(opt.label)
 
 		if show_hints:
 			var cost := _merchant_data.get_option_cost(opt)

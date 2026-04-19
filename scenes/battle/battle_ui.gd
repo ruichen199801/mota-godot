@@ -54,7 +54,6 @@ const RESULT_HEIGHT := 32.0
 const GAME_OVER_FLOAT_DURATION := 2.0
 const GAME_OVER_HOLD_DURATION := 2.0
 const GAME_OVER_FADE_DURATION := 1.0
-const NUM_FONT := "res://assets/fonts/system_font.tres"
 
 var _state := BattleUIState.CLOSED
 
@@ -62,6 +61,7 @@ var _state := BattleUIState.CLOSED
 func _ready() -> void:
 	self.visible = false
 	_reset_battle_effects()
+	retreat_hint_label.set_content("撤退(Q)")
 	
 	
 func _unhandled_input(event: InputEvent) -> void:
@@ -176,8 +176,8 @@ func play_game_over() -> void:
 	
 	
 func show_result(xp: int, gold: int) -> void:
-	result_xp_label.text = _styled_result("经验值：", xp)
-	result_gold_label.text = _styled_result("金币：", gold)
+	result_xp_label.set_content("经验值：%d" % xp)
+	result_gold_label.set_content("金币：%d" % gold)
 
 	result_content.visible = false
 	result_border.size.y = true
@@ -212,7 +212,3 @@ func _reset_battle_effects() -> void:
 	retreat_hint_label.visible = false
 	dismiss_hint_label.visible = false
 	game_over_label.visible = false
-
-
-func _styled_result(label_text: String, value: int) -> String:
-	return "%s[font=%s]%d[/font]" % [label_text, NUM_FONT, value]

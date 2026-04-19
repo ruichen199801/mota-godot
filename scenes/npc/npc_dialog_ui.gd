@@ -68,12 +68,12 @@ func _show_current_dialog() -> void:
 	match dialog.speaker:
 		NpcDialogData.Speaker.NPC:
 			npc_name_label.text = _npc_name
-			npc_text_label.text = dialog.text
+			npc_text_label.set_content(dialog.text)
 			npc_panel.visible = true
 			player_panel.visible = false
 			
 		NpcDialogData.Speaker.PLAYER:
-			player_text_label.text = dialog.text
+			player_text_label.set_content(dialog.text)
 			player_panel.visible = true
 			npc_panel.visible = false
 

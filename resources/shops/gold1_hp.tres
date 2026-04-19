@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_nsrch")
-label = "增加[font=res://assets/fonts/system_font.tres][font_size=14]500[/font_size][/font]点体力"
+label = "增加500点体力"
 hp = 500
 metadata/_custom_type_script = "uid://vork0ooj1wrk"

@@ -7,6 +7,7 @@
 [ext_resource type="SpriteFrames" uid="uid://gb1ab001a3u3" path="res://resources/enemies/green_slime/green_slime_frames.tres" id="4_bgiko"]
 [ext_resource type="SpriteFrames" uid="uid://h7752g7ici7w" path="res://resources/battle_animations/punch_frames.tres" id="5_keo60"]
 [ext_resource type="Script" uid="uid://dhbdyi3h08ong" path="res://scenes/common/flash_label.gd" id="7_xm0oj"]
+[ext_resource type="Script" uid="uid://booe54nyo4reu" path="res://scenes/common/styled_rich_text_label.gd" id="8_bgmau"]
 
 [node name="BattleUI" type="Control" unique_id=1226879282]
 z_index = 2
@@ -469,7 +470,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 mouse_filter = 2
 bbcode_enabled = true
-text = "经验值：[font=res://assets/fonts/system_font.tres]1[/font]"
+text = "经验值：[font=res://assets/fonts/OpenSans-SemiBold.ttf]1[/font]"
+script = ExtResource("8_bgmau")
 
 [node name="ResultGoldLabel" type="RichTextLabel" parent="ResultBorder/ResultContent/ResultHBox" unique_id=419526436]
 unique_name_in_owner = true
@@ -480,23 +482,25 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 mouse_filter = 2
 bbcode_enabled = true
-text = "金币：[font=res://assets/fonts/system_font.tres]2[/font]"
+text = "金币：[font=res://assets/fonts/OpenSans-SemiBold.ttf]2[/font]"
+script = ExtResource("8_bgmau")
 
 [node name="RetreatHintLabel" type="RichTextLabel" parent="." unique_id=1023574480]
 unique_name_in_owner = true
 visible = false
 texture_filter = 2
 layout_mode = 0
-offset_left = 307.0
+offset_left = 306.0
 offset_top = 224.0
-offset_right = 360.0
+offset_right = 359.0
 offset_bottom = 245.0
 mouse_filter = 2
 theme_override_colors/default_color = Color(1, 0.9490196, 0, 1)
 bbcode_enabled = true
-text = "撤退[font=res://assets/fonts/system_font.tres](Q)[/font]"
+text = "撤退[font=res://assets/fonts/OpenSans-SemiBold.ttf](Q)[/font]"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("8_bgmau")
 
 [node name="DismissHintLabel" type="Label" parent="." unique_id=234389828]
 unique_name_in_owner = true

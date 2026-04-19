@@ -75,14 +75,14 @@ func _refresh() -> void:
 
 	# Set description by shop type: gold shops have %d placeholder, xp shops are plain text
 	if not sd.is_fixed_cost:
-		description_label.text = sd.description % shop_entity.get_option_cost(sd.options[0])
+		description_label.set_content(sd.description % shop_entity.get_option_cost(sd.options[0]))
 	else:
-		description_label.text = sd.description
+		description_label.set_content(sd.description)
 
 	# Set option labels and cost hints
 	for i in range(sd.options.size()):
 		var opt: ShopOptionData = sd.options[i]
-		option_labels[i].text = opt.label
+		option_labels[i].set_content(opt.label)
 
 		if sd.is_fixed_cost:
 			cost_hints[i].text = "（Exp %d）" % opt.fixed_cost
