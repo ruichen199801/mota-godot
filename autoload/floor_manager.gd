@@ -5,7 +5,7 @@ const GRID_WIDTH := 11
 const GRID_HEIGHT := 11
 
 const START_FLOOR_ID := "main_0" # floor_id
-const START_POS := Vector2i(5, 5)
+const START_POS := Vector2i(5, 10)
 
 const FLOOR_NAMES := { # floor_type -> floor_name
 	"main": "主塔",
@@ -131,12 +131,13 @@ func get_floor_scene_path(floor_id: String) -> String:
 	return "res://floors/%s.tscn" % floor_id
 
 
-# Whether this floor appears in the transport floor list
+## Whether this floor appears in the transport floor list
+## If false, player also can't use transport when on this floor
 func is_transport_listed(floor_id: String) -> bool:
 	return get_floor_type(floor_id) not in TRANSPORT_EXCLUDED_TYPES
 	
 
-# Whether transport can be used while player is on this floor
+## Whether transport can be used while player is on this floor
 func is_transport_usable(floor_id: String) -> bool:
 	if not is_transport_listed(floor_id):
 		return false

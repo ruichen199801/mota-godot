@@ -6,7 +6,7 @@ var data: PlayerData
 var icon: Texture2D: get = get_icon
 
 var grid_pos: Vector2i
-var facing := Vector2i.DOWN
+var facing := Vector2i.UP
 var retry_timer := 0.0 
 var is_busy := false
 ## FOR DEBUGGING
@@ -15,11 +15,10 @@ var is_busy := false
 		#if v != is_busy:
 			#print("Player %s" % ("blocked" if v else "unblocked"))
 		#is_busy = v
+const MOVE_TIME := 0.12    # tween duration per cell, player is busy during this
+const RETRY_DELAY := 0.15  # retry cooldown after player is blocked
 
-const MOVE_TIME := 0.12
-const RETRY_DELAY := 0.15
 const DEFAULT_TEMPLATE := preload("res://resources/player/default_player.tres")
-
 const EMBLEM_FRAMES := {
 	PlayerData.EmblemType.HERO: preload("res://resources/player/hero_player_frames.tres"),
 	PlayerData.EmblemType.OVERLOAD: preload("res://resources/player/overload_player_frames.tres"),
@@ -53,11 +52,13 @@ func _ready() -> void:
 	EventBus.move_resolved.connect(_on_move_resolved)
 
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	if is_busy:
 		return	
-	if retry_timer > 0: # throttle re-request after player is blocked
-		retry_timer -= _delta
+		
+	# Throttles repeated requests after player is blocked
+	if retry_timer > 0:
+		retry_timer -= delta
 		return
 		
 	var dir := _get_direction()
@@ -67,7 +68,7 @@ func _process(_delta: float) -> void:
 	facing = dir
 	is_busy = true
 	_play_idle()
-	EventBus.move_requested.emit(dir)
+	EventBus.move_requested.emit(dir)	
 	
 	
 func _get_direction() -> Vector2i:

@@ -4,7 +4,7 @@ extends Resource
 enum CurrencyType { GOLD, XP }
 enum TradeType { BUY, SELL }
 
-@export var description: String
+@export_multiline var description: String
 @export var currency: CurrencyType
 @export var trade_type: TradeType
 @export var one_time: bool # if set to true, the merchant must have npc_remove_action set as well

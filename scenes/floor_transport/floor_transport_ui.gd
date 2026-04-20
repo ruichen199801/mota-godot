@@ -13,6 +13,12 @@ var _visited_floors: Array[String] = []
 ## The currently selected floor in the UI list.
 var _current_index := 0
 
+## Hold-to-scroll: first press is instant, then repeats after initial delay
+var _hold_timer := 0.0
+var _hold_direction := 0 # 1 up, -1 down, 0 idle
+const HOLD_INITIAL_DELAY := 0.2
+const HOLD_REPEAT_RATE := 0.06
+
 
 func _ready() -> void:
 	visible = false
@@ -23,18 +29,40 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if not visible:
 		return
+		
 	if event.is_action_pressed("ui_cancel"):
+		_hold_direction = 0
 		close()
 		get_viewport().set_input_as_handled()
+		
 	elif event.is_action_pressed("ui_accept"):
+		_hold_direction = 0
 		_confirm_floor_selection()
 		get_viewport().set_input_as_handled()
+		
 	elif event.is_action_pressed("move_up"):
 		_scroll_floor_selection(1)
+		_hold_direction = 1
+		_hold_timer = HOLD_INITIAL_DELAY
 		get_viewport().set_input_as_handled()
+		
 	elif event.is_action_pressed("move_down"):
 		_scroll_floor_selection(-1)
+		_hold_direction = -1
+		_hold_timer = HOLD_INITIAL_DELAY
 		get_viewport().set_input_as_handled()
+	
+	elif event.is_action_released("move_up") or event.is_action_released("move_down"):
+		_hold_direction = 0
+
+
+func _process(delta: float) -> void:
+	if not visible or _hold_direction == 0:
+		return
+	_hold_timer -= delta
+	if _hold_timer <= 0:
+		_hold_timer = HOLD_REPEAT_RATE
+		_scroll_floor_selection(_hold_direction)
 		
 		
 func open() -> void:

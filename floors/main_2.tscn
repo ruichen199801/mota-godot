@@ -8,10 +8,150 @@
 [ext_resource type="PackedScene" uid="uid://d2gnobmc7j4xv" path="res://entities/item_entity.tscn" id="4_aksbr"]
 [ext_resource type="Resource" uid="uid://kl2hba15hg7v" path="res://resources/items/yellow_key.tres" id="5_2oqxg"]
 [ext_resource type="Resource" uid="uid://cgffc8s7urdnd" path="res://resources/items/blue_key.tres" id="5_gni10"]
+[ext_resource type="PackedScene" uid="uid://cv12hwq0yxdal" path="res://entities/npc_entity.tscn" id="5_ii348"]
 [ext_resource type="Resource" uid="uid://b5tvr5hwiubg" path="res://resources/items/blue_gem.tres" id="6_2oqxg"]
+[ext_resource type="Script" uid="uid://nlow5r0mr3bq" path="res://data/npc_dialog_data.gd" id="6_iilyr"]
+[ext_resource type="Script" uid="uid://bb3dtivmjel72" path="res://data/npc_condition/npc_has_item_condition.gd" id="6_v66yb"]
+[ext_resource type="Script" uid="uid://vork0ooj1wrk" path="res://data/shop_option_data.gd" id="7_0htec"]
 [ext_resource type="Resource" uid="uid://j0c3lt0bvhrs" path="res://resources/items/red_key.tres" id="7_jx7hg"]
+[ext_resource type="Script" uid="uid://bru2snxxyg2v4" path="res://data/npc_action/npc_post_action.gd" id="7_pjgpr"]
 [ext_resource type="Resource" uid="uid://8vwv0rpxhslm" path="res://resources/items/red_gem.tres" id="7_sbqtg"]
+[ext_resource type="Script" uid="uid://dnkssnvswhj24" path="res://data/npc_merchant_data.gd" id="8_dommr"]
+[ext_resource type="Script" uid="uid://bfpvfiuxd5pws" path="res://data/npc_behavior/npc_conditional_behavior.gd" id="8_hr1w6"]
 [ext_resource type="Resource" uid="uid://dew2n4qxuoylg" path="res://resources/items/potion.tres" id="8_jx7hg"]
+[ext_resource type="Script" uid="uid://dktqal1ji0w0" path="res://data/npc_behavior/npc_dialog_behavior.gd" id="8_v66yb"]
+[ext_resource type="SpriteFrames" uid="uid://ju775ieq3to5" path="res://resources/npcs/thief_frames.tres" id="9_24bdt"]
+[ext_resource type="SpriteFrames" uid="uid://0a8itglro6ui" path="res://resources/npcs/merchant_frames.tres" id="9_hr1w6"]
+[ext_resource type="Script" uid="uid://dn7vsl533x7gh" path="res://data/npc_data.gd" id="10_24bdt"]
+[ext_resource type="Script" uid="uid://uv1g8mwl0ofk" path="res://data/npc_behavior/npc_merchant_behavior.gd" id="10_t5u2c"]
+[ext_resource type="Script" uid="uid://bgvrtb78qik1k" path="res://data/npc_action/npc_respawn_action.gd" id="13_t5u2c"]
+[ext_resource type="Script" uid="uid://chum8njyixr2l" path="res://data/npc_action/npc_place_stair_action.gd" id="14_2d3mq"]
+
+[sub_resource type="Resource" id="Resource_k8wgq"]
+script = ExtResource("6_iilyr")
+text = "咦！这不就是我的锄头吗？
+谢谢你替我找回来！
+让我替你打开通往地下的通道吧！"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_34upf"]
+script = ExtResource("7_0htec")
+label = "黄钥匙"
+fixed_cost = 20
+yellow_keys = 1
+metadata/_custom_type_script = "uid://vork0ooj1wrk"
+
+[sub_resource type="Resource" id="Resource_e2egd"]
+script = ExtResource("7_0htec")
+label = "蓝钥匙"
+fixed_cost = 80
+blue_keys = 1
+metadata/_custom_type_script = "uid://vork0ooj1wrk"
+
+[sub_resource type="Resource" id="Resource_vx1bw"]
+script = ExtResource("8_dommr")
+description = "来！手上缺少哪一种钥匙？我有大量的！"
+options = Array[ExtResource("7_0htec")]([SubResource("Resource_34upf"), SubResource("Resource_e2egd")])
+metadata/_custom_type_script = "uid://dnkssnvswhj24"
+
+[sub_resource type="Resource" id="Resource_s04co"]
+script = ExtResource("10_t5u2c")
+merchant = SubResource("Resource_vx1bw")
+metadata/_custom_type_script = "uid://uv1g8mwl0ofk"
+
+[sub_resource type="Resource" id="Resource_8c6na"]
+script = ExtResource("10_24bdt")
+npc_id = "thief"
+npc_name = "盗贼"
+frames = ExtResource("9_24bdt")
+behavior = SubResource("Resource_s04co")
+metadata/_custom_type_script = "uid://dn7vsl533x7gh"
+
+[sub_resource type="Resource" id="Resource_y8v40"]
+script = ExtResource("13_t5u2c")
+target_floor = "main_0"
+target_pos = Vector2i(2, 1)
+new_data = SubResource("Resource_8c6na")
+metadata/_custom_type_script = "uid://bgvrtb78qik1k"
+
+[sub_resource type="Resource" id="Resource_mbf2s"]
+script = ExtResource("14_2d3mq")
+floor_id = "main_0"
+pos = Vector2i(1, 2)
+stair_dest_floor = "base_1"
+stair_dest_pos = Vector2i(1, 1)
+metadata/_custom_type_script = "uid://chum8njyixr2l"
+
+[sub_resource type="Resource" id="Resource_4ehw2"]
+script = ExtResource("8_v66yb")
+dialogs = Array[ExtResource("6_iilyr")]([SubResource("Resource_k8wgq")])
+post_actions = Array[ExtResource("7_pjgpr")]([SubResource("Resource_y8v40"), SubResource("Resource_mbf2s")])
+metadata/_custom_type_script = "uid://dktqal1ji0w0"
+
+[sub_resource type="Resource" id="Resource_2d3mq"]
+script = ExtResource("6_v66yb")
+item_id = "pickaxe"
+metadata/_custom_type_script = "uid://bb3dtivmjel72"
+
+[sub_resource type="Resource" id="Resource_buhyg"]
+script = ExtResource("7_0htec")
+label = "黄钥匙"
+fixed_cost = 20
+yellow_keys = 1
+metadata/_custom_type_script = "uid://vork0ooj1wrk"
+
+[sub_resource type="Resource" id="Resource_c5a5n"]
+script = ExtResource("7_0htec")
+label = "蓝钥匙"
+fixed_cost = 80
+blue_keys = 1
+metadata/_custom_type_script = "uid://vork0ooj1wrk"
+
+[sub_resource type="Resource" id="Resource_ke42s"]
+script = ExtResource("8_dommr")
+description = "来！手上缺少哪一种钥匙？我有大量的！"
+options = Array[ExtResource("7_0htec")]([SubResource("Resource_buhyg"), SubResource("Resource_c5a5n")])
+metadata/_custom_type_script = "uid://dnkssnvswhj24"
+
+[sub_resource type="Resource" id="Resource_4612g"]
+script = ExtResource("10_t5u2c")
+merchant = SubResource("Resource_ke42s")
+metadata/_custom_type_script = "uid://uv1g8mwl0ofk"
+
+[sub_resource type="Resource" id="Resource_q0j0v"]
+script = ExtResource("8_hr1w6")
+condition = SubResource("Resource_2d3mq")
+default_behavior = SubResource("Resource_4612g")
+alt_behavior = SubResource("Resource_4ehw2")
+metadata/_custom_type_script = "uid://bfpvfiuxd5pws"
+
+[sub_resource type="Resource" id="Resource_qcmo0"]
+script = ExtResource("10_24bdt")
+npc_id = "thief"
+npc_name = "盗贼"
+frames = ExtResource("9_24bdt")
+behavior = SubResource("Resource_q0j0v")
+metadata/_custom_type_script = "uid://dn7vsl533x7gh"
+
+[sub_resource type="Resource" id="Resource_0htec"]
+script = ExtResource("6_iilyr")
+text = "你认识那个被抓住的盗贼吗？
+听说他来这里是为了找一个锄头。
+不知他要来干什么呢..."
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_dommr"]
+script = ExtResource("8_v66yb")
+dialogs = Array[ExtResource("6_iilyr")]([SubResource("Resource_0htec")])
+metadata/_custom_type_script = "uid://dktqal1ji0w0"
+
+[sub_resource type="Resource" id="Resource_t5u2c"]
+script = ExtResource("10_24bdt")
+npc_id = "thief_hint_merchant"
+npc_name = "商人"
+frames = ExtResource("9_hr1w6")
+behavior = SubResource("Resource_dommr")
+metadata/_custom_type_script = "uid://dn7vsl533x7gh"
 
 [node name="Main2" type="Node2D" unique_id=1806746235]
 script = ExtResource("1_shjqt")
@@ -42,7 +182,15 @@ dest_pos = Vector2i(9, 9)
 [node name="StairDown" parent="Entities" unique_id=2057480134 instance=ExtResource("3_03xtj")]
 position = Vector2(224, 32)
 dest_floor_id = "main_1"
-dest_pos = Vector2i(1, 4)
+dest_pos = Vector2i(7, 1)
+
+[node name="Thief" parent="Entities" unique_id=774706501 instance=ExtResource("5_ii348")]
+position = Vector2(160, 32)
+data = SubResource("Resource_qcmo0")
+
+[node name="ThiefHintMerchant" parent="Entities" unique_id=483611521 instance=ExtResource("5_ii348")]
+position = Vector2(160, 288)
+data = SubResource("Resource_t5u2c")
 
 [node name="YellowDoor1" parent="Entities" unique_id=2056068635 instance=ExtResource("4_1kjok")]
 position = Vector2(32, 192)

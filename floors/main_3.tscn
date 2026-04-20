@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://doupmspvj5m2v" path="res://floors/floor_setup.gd" id="1_dyo71"]
 [ext_resource type="TileSet" uid="uid://di6pm00t0x4tx" path="res://resources/floor_tileset.tres" id="2_rclhe"]
+[ext_resource type="PackedScene" uid="uid://cbmf85d67vidj" path="res://entities/stair_up_entity.tscn" id="3_wtrju"]
 [ext_resource type="PackedScene" uid="uid://ubv3jnibyiks" path="res://entities/stair_down_entity.tscn" id="4_0wie4"]
 [ext_resource type="PackedScene" uid="uid://c52blxvwvflo8" path="res://entities/shop_entity.tscn" id="4_5kxpb"]
 [ext_resource type="Resource" uid="uid://t7nekbirmv3y" path="res://resources/shops/gold_shop_1.tres" id="5_bwmp2"]
@@ -21,13 +22,28 @@ tile_set = ExtResource("2_rclhe")
 [node name="Entities" type="Node2D" parent="." unique_id=1047835971]
 z_index = 2
 
+[node name="StairUp1" parent="Entities" unique_id=1587493218 instance=ExtResource("3_wtrju")]
+position = Vector2(32, 32)
+dest_floor_id = "main_4"
+dest_pos = Vector2i(1, 1)
+
+[node name="StairUp2" parent="Entities" unique_id=1799582377 instance=ExtResource("3_wtrju")]
+position = Vector2(32, 160)
+dest_floor_id = "main_4"
+dest_pos = Vector2i(1, 5)
+
+[node name="StairUp3" parent="Entities" unique_id=490523931 instance=ExtResource("3_wtrju")]
+position = Vector2(32, 256)
+dest_floor_id = "main_4"
+dest_pos = Vector2i(1, 8)
+
 [node name="StairDown1" parent="Entities" unique_id=2057480134 instance=ExtResource("4_0wie4")]
 position = Vector2(224, 288)
 dest_floor_id = "main_2"
 dest_pos = Vector2i(7, 9)
 is_transport_target = true
 
-[node name="StairDown2" parent="Entities" unique_id=1587493218 instance=ExtResource("4_0wie4")]
+[node name="StairDown2" parent="Entities" unique_id=197183249 instance=ExtResource("4_0wie4")]
 position = Vector2(288, 288)
 dest_floor_id = "main_2"
 dest_pos = Vector2i(9, 9)

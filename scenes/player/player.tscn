@@ -8,5 +8,5 @@ script = ExtResource("1_3vyb7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1293545604]
 sprite_frames = ExtResource("2_g2els")
-animation = &"idle_down"
+animation = &"idle_up"
 centered = false

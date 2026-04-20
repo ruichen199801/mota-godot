@@ -1,0 +1,74 @@
+[gd_scene format=4 uid="uid://xrl5txsprmn"]
+
+[ext_resource type="Script" uid="uid://doupmspvj5m2v" path="res://floors/floor_setup.gd" id="1_kinom"]
+[ext_resource type="TileSet" uid="uid://di6pm00t0x4tx" path="res://resources/floor_tileset.tres" id="2_1q3l5"]
+[ext_resource type="PackedScene" uid="uid://cbmf85d67vidj" path="res://entities/stair_up_entity.tscn" id="3_6gcda"]
+[ext_resource type="PackedScene" uid="uid://ubv3jnibyiks" path="res://entities/stair_down_entity.tscn" id="4_je52b"]
+[ext_resource type="PackedScene" uid="uid://cv12hwq0yxdal" path="res://entities/npc_entity.tscn" id="5_73tb8"]
+[ext_resource type="Script" uid="uid://nlow5r0mr3bq" path="res://data/npc_dialog_data.gd" id="6_3j00y"]
+[ext_resource type="Script" uid="uid://bru2snxxyg2v4" path="res://data/npc_action/npc_post_action.gd" id="7_fvj1d"]
+[ext_resource type="Script" uid="uid://c6aeoqsh2x5v5" path="res://data/npc_action/npc_remove_action.gd" id="8_ubvr1"]
+[ext_resource type="Resource" uid="uid://cb0tq43capmvq" path="res://resources/items/golden_feather.tres" id="9_4hx0w"]
+[ext_resource type="Script" uid="uid://ca3xixvnlvp5q" path="res://data/npc_action/npc_give_item_action.gd" id="10_oxwv6"]
+[ext_resource type="Script" uid="uid://dktqal1ji0w0" path="res://data/npc_behavior/npc_dialog_behavior.gd" id="11_ijvge"]
+[ext_resource type="SpriteFrames" uid="uid://sbv076eg1003" path="res://resources/npcs/oldman_frames.tres" id="12_r034a"]
+[ext_resource type="Script" uid="uid://dn7vsl533x7gh" path="res://data/npc_data.gd" id="13_n1ptw"]
+
+[sub_resource type="Resource" id="Resource_wtmfe"]
+script = ExtResource("6_3j00y")
+text = "你真了不起
+竟然能来到这层！
+这个给你吧"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_v2yg1"]
+script = ExtResource("8_ubvr1")
+metadata/_custom_type_script = "uid://c6aeoqsh2x5v5"
+
+[sub_resource type="Resource" id="Resource_xgbfv"]
+script = ExtResource("10_oxwv6")
+item = ExtResource("9_4hx0w")
+metadata/_custom_type_script = "uid://ca3xixvnlvp5q"
+
+[sub_resource type="Resource" id="Resource_5t0i7"]
+script = ExtResource("11_ijvge")
+dialogs = Array[ExtResource("6_3j00y")]([SubResource("Resource_wtmfe")])
+post_actions = Array[ExtResource("7_fvj1d")]([SubResource("Resource_v2yg1"), SubResource("Resource_xgbfv")])
+metadata/_custom_type_script = "uid://dktqal1ji0w0"
+
+[sub_resource type="Resource" id="Resource_njctw"]
+script = ExtResource("13_n1ptw")
+npc_id = "floor_transport_oldman"
+npc_name = "神秘老人"
+frames = ExtResource("12_r034a")
+behavior = SubResource("Resource_5t0i7")
+metadata/_custom_type_script = "uid://dn7vsl533x7gh"
+
+[node name="Main8" type="Node2D" unique_id=1806746235]
+script = ExtResource("1_kinom")
+
+[node name="Ground" type="TileMapLayer" parent="." unique_id=2065011923]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAEAAAABAAAAAAAAAAEAAAACAAAAAAAAAAEAAAADAAAAAAAAAAEAAAAEAAAAAAAAAAEAAAAFAAAAAAAAAAEAAAAGAAAAAAAAAAEAAAAHAAAAAAAAAAEAAAAIAAAAAAAAAAEAAAAJAAAAAAAAAAEAAAAKAAAAAAAAAAEAAAAAAAEAAAAAAAEAAAABAAEAAAAAAAEAAAACAAEAAAAAAAEAAAADAAEAAAAAAAEAAAAEAAEAAAAAAAEAAAAFAAEAAAAAAAEAAAAGAAEAAAAAAAEAAAAHAAEAAAAAAAEAAAAIAAEAAAAAAAEAAAAJAAEAAAAAAAEAAAAKAAEAAAAAAAEAAAAAAAIAAAAAAAEAAAABAAIAAAAAAAEAAAACAAIAAAAAAAEAAAADAAIAAAAAAAEAAAAEAAIAAAAAAAEAAAAFAAIAAAAAAAEAAAAGAAIAAAAAAAEAAAAHAAIAAAAAAAEAAAAIAAIAAAAAAAEAAAAJAAIAAAAAAAEAAAAKAAIAAAAAAAEAAAAAAAMAAAAAAAEAAAABAAMAAAAAAAEAAAACAAMAAAAAAAEAAAADAAMAAAAAAAEAAAAEAAMAAAAAAAEAAAAFAAMAAAAAAAEAAAAGAAMAAAAAAAEAAAAHAAMAAAAAAAEAAAAIAAMAAAAAAAEAAAAJAAMAAAAAAAEAAAAKAAMAAAAAAAEAAAAAAAQAAAAAAAEAAAABAAQAAAAAAAEAAAACAAQAAAAAAAEAAAADAAQAAAAAAAEAAAAEAAQAAAAAAAEAAAAFAAQAAAAAAAEAAAAGAAQAAAAAAAEAAAAHAAQAAAAAAAEAAAAIAAQAAAAAAAEAAAAJAAQAAAAAAAEAAAAKAAQAAAAAAAEAAAAAAAUAAAAAAAEAAAABAAUAAAAAAAEAAAACAAUAAAAAAAEAAAADAAUAAAAAAAEAAAAEAAUAAAAAAAEAAAAFAAUAAAAAAAEAAAAGAAUAAAAAAAEAAAAHAAUAAAAAAAEAAAAIAAUAAAAAAAEAAAAJAAUAAAAAAAEAAAAKAAUAAAAAAAEAAAAAAAYAAAAAAAEAAAAAAAcAAAAAAAEAAAABAAYAAAAAAAEAAAABAAcAAAAAAAEAAAACAAYAAAAAAAEAAAACAAcAAAAAAAEAAAADAAYAAAAAAAEAAAADAAcAAAAAAAEAAAAEAAYAAAAAAAEAAAAEAAcAAAAAAAEAAAAFAAYAAAAAAAEAAAAFAAcAAAAAAAEAAAAGAAYAAAAAAAEAAAAGAAcAAAAAAAEAAAAHAAYAAAAAAAEAAAAHAAcAAAAAAAEAAAAIAAYAAAAAAAEAAAAIAAcAAAAAAAEAAAAJAAYAAAAAAAEAAAAJAAcAAAAAAAEAAAAKAAYAAAAAAAEAAAAKAAcAAAAAAAEAAAAAAAgAAAAAAAEAAAABAAgAAAAAAAEAAAACAAgAAAAAAAEAAAAIAAgAAAAAAAEAAAAJAAgAAAAAAAEAAAAKAAgAAAAAAAEAAAAAAAkAAAAAAAEAAAABAAkAAAAAAAEAAAACAAkAAAAAAAEAAAADAAkAAAAAAAEAAAAEAAkAAAAAAAEAAAAFAAkAAAAAAAEAAAAGAAkAAAAAAAEAAAAHAAkAAAAAAAEAAAAIAAkAAAAAAAEAAAAJAAkAAAAAAAEAAAAKAAkAAAAAAAEAAAAAAAoAAAAAAAEAAAABAAoAAAAAAAEAAAACAAoAAAAAAAEAAAADAAoAAAAAAAEAAAAEAAoAAAAAAAEAAAAFAAoAAAAAAAEAAAAGAAoAAAAAAAEAAAAHAAoAAAAAAAEAAAAIAAoAAAAAAAEAAAAJAAoAAAAAAAEAAAAKAAoAAAAAAAEAAAADAAgAAAAAAAEAAAAEAAgAAAAAAAEAAAAFAAgAAAAAAAEAAAAGAAgAAAAAAAEAAAAHAAgAAAAAAAEAAAA=")
+tile_set = ExtResource("2_1q3l5")
+
+[node name="Walls" type="TileMapLayer" parent="." unique_id=1108185961]
+z_index = 1
+tile_map_data = PackedByteArray("AAAIAAAAAAADAAAAAAACAAgAAAADAAAAAAADAAgAAAADAAAAAAAEAAgAAAADAAAAAAAIAAgAAAADAAAAAAAIAAcAAAADAAAAAAAIAAYAAAADAAAAAAAHAAgAAAADAAAAAAAGAAgAAAADAAAAAAAKAAEAAAADAAAAAAAJAAMAAAADAAAAAAAIAAMAAAADAAAAAAAIAAIAAAADAAAAAAAHAAIAAAADAAAAAAAIAAQAAAADAAAAAAAIAAUAAAADAAAAAAAJAAYAAAADAAAAAAAKAAYAAAADAAAAAAAGAAEAAAADAAAAAAAGAAIAAAADAAAAAAAEAAAAAAADAAAAAAAEAAIAAAADAAAAAAADAAIAAAADAAAAAAAEAAMAAAADAAAAAAAEAAQAAAADAAAAAAAGAAMAAAADAAAAAAAGAAQAAAADAAAAAAAGAAYAAAADAAAAAAAGAAcAAAADAAAAAAAEAAYAAAADAAAAAAAEAAcAAAADAAAAAAACAAcAAAADAAAAAAACAAYAAAADAAAAAAACAAUAAAADAAAAAAACAAQAAAADAAAAAAACAAMAAAADAAAAAAACAAIAAAADAAAAAAACAAEAAAADAAAAAAAAAAEAAAADAAAAAAABAAMAAAADAAAAAAAAAAYAAAADAAAAAAA=")
+tile_set = ExtResource("2_1q3l5")
+
+[node name="Entities" type="Node2D" parent="." unique_id=1047835971]
+z_index = 2
+
+[node name="StairUp" parent="Entities" unique_id=1587493218 instance=ExtResource("3_6gcda")]
+position = Vector2(320, 160)
+dest_floor_id = "main_9"
+dest_pos = Vector2i(10, 5)
+
+[node name="StairDown" parent="Entities" unique_id=1588002824 instance=ExtResource("4_je52b")]
+position = Vector2(0, 160)
+dest_floor_id = "main_7"
+dest_pos = Vector2i(0, 5)
+
+[node name="FloorTransportOldman" parent="Entities" unique_id=774706501 instance=ExtResource("5_73tb8")]
+position = Vector2(288, 224)
+data = SubResource("Resource_njctw")

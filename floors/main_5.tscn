@@ -1,0 +1,74 @@
+[gd_scene format=4 uid="uid://bmbefuc3oxgw"]
+
+[ext_resource type="Script" uid="uid://doupmspvj5m2v" path="res://floors/floor_setup.gd" id="1_qwhy2"]
+[ext_resource type="TileSet" uid="uid://di6pm00t0x4tx" path="res://resources/floor_tileset.tres" id="2_v2d0s"]
+[ext_resource type="PackedScene" uid="uid://cbmf85d67vidj" path="res://entities/stair_up_entity.tscn" id="3_kbgfl"]
+[ext_resource type="PackedScene" uid="uid://ubv3jnibyiks" path="res://entities/stair_down_entity.tscn" id="4_m14j4"]
+[ext_resource type="PackedScene" uid="uid://cv12hwq0yxdal" path="res://entities/npc_entity.tscn" id="5_31kbn"]
+[ext_resource type="Script" uid="uid://nlow5r0mr3bq" path="res://data/npc_dialog_data.gd" id="6_0otrr"]
+[ext_resource type="Script" uid="uid://bru2snxxyg2v4" path="res://data/npc_action/npc_post_action.gd" id="7_65msx"]
+[ext_resource type="Script" uid="uid://c6aeoqsh2x5v5" path="res://data/npc_action/npc_remove_action.gd" id="8_o185f"]
+[ext_resource type="Resource" uid="uid://b7f3l0sv7pe4i" path="res://resources/items/mind_mirror.tres" id="9_j6yld"]
+[ext_resource type="Script" uid="uid://ca3xixvnlvp5q" path="res://data/npc_action/npc_give_item_action.gd" id="10_lesic"]
+[ext_resource type="Script" uid="uid://dktqal1ji0w0" path="res://data/npc_behavior/npc_dialog_behavior.gd" id="11_bagp2"]
+[ext_resource type="SpriteFrames" uid="uid://sbv076eg1003" path="res://resources/npcs/oldman_frames.tres" id="12_c1vkj"]
+[ext_resource type="Script" uid="uid://dn7vsl533x7gh" path="res://data/npc_data.gd" id="13_pkx6a"]
+
+[sub_resource type="Resource" id="Resource_2257r"]
+script = ExtResource("6_0otrr")
+text = "这个给你....
+有了这个，
+就可看清楚怪物的能力...."
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_ypsju"]
+script = ExtResource("8_o185f")
+metadata/_custom_type_script = "uid://c6aeoqsh2x5v5"
+
+[sub_resource type="Resource" id="Resource_3xydw"]
+script = ExtResource("10_lesic")
+item = ExtResource("9_j6yld")
+metadata/_custom_type_script = "uid://ca3xixvnlvp5q"
+
+[sub_resource type="Resource" id="Resource_5kvjd"]
+script = ExtResource("11_bagp2")
+dialogs = Array[ExtResource("6_0otrr")]([SubResource("Resource_2257r")])
+post_actions = Array[ExtResource("7_65msx")]([SubResource("Resource_ypsju"), SubResource("Resource_3xydw")])
+metadata/_custom_type_script = "uid://dktqal1ji0w0"
+
+[sub_resource type="Resource" id="Resource_e63wh"]
+script = ExtResource("13_pkx6a")
+npc_id = "mind_mirror_oldman"
+npc_name = "神秘老人"
+frames = ExtResource("12_c1vkj")
+behavior = SubResource("Resource_5kvjd")
+metadata/_custom_type_script = "uid://dn7vsl533x7gh"
+
+[node name="Main5" type="Node2D" unique_id=1806746235]
+script = ExtResource("1_qwhy2")
+
+[node name="Ground" type="TileMapLayer" parent="." unique_id=2065011923]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAEAAAABAAAAAAAAAAEAAAACAAAAAAAAAAEAAAADAAAAAAAAAAEAAAAEAAAAAAAAAAEAAAAFAAAAAAAAAAEAAAAGAAAAAAAAAAEAAAAHAAAAAAAAAAEAAAAIAAAAAAAAAAEAAAAJAAAAAAAAAAEAAAAKAAAAAAAAAAEAAAAAAAEAAAAAAAEAAAABAAEAAAAAAAEAAAACAAEAAAAAAAEAAAADAAEAAAAAAAEAAAAEAAEAAAAAAAEAAAAFAAEAAAAAAAEAAAAGAAEAAAAAAAEAAAAHAAEAAAAAAAEAAAAIAAEAAAAAAAEAAAAJAAEAAAAAAAEAAAAKAAEAAAAAAAEAAAAAAAIAAAAAAAEAAAABAAIAAAAAAAEAAAACAAIAAAAAAAEAAAADAAIAAAAAAAEAAAAEAAIAAAAAAAEAAAAFAAIAAAAAAAEAAAAGAAIAAAAAAAEAAAAHAAIAAAAAAAEAAAAIAAIAAAAAAAEAAAAJAAIAAAAAAAEAAAAKAAIAAAAAAAEAAAAAAAMAAAAAAAEAAAABAAMAAAAAAAEAAAACAAMAAAAAAAEAAAADAAMAAAAAAAEAAAAEAAMAAAAAAAEAAAAFAAMAAAAAAAEAAAAGAAMAAAAAAAEAAAAHAAMAAAAAAAEAAAAIAAMAAAAAAAEAAAAJAAMAAAAAAAEAAAAKAAMAAAAAAAEAAAAAAAQAAAAAAAEAAAABAAQAAAAAAAEAAAACAAQAAAAAAAEAAAADAAQAAAAAAAEAAAAEAAQAAAAAAAEAAAAFAAQAAAAAAAEAAAAGAAQAAAAAAAEAAAAHAAQAAAAAAAEAAAAIAAQAAAAAAAEAAAAJAAQAAAAAAAEAAAAKAAQAAAAAAAEAAAAAAAUAAAAAAAEAAAABAAUAAAAAAAEAAAACAAUAAAAAAAEAAAADAAUAAAAAAAEAAAAEAAUAAAAAAAEAAAAFAAUAAAAAAAEAAAAGAAUAAAAAAAEAAAAHAAUAAAAAAAEAAAAIAAUAAAAAAAEAAAAJAAUAAAAAAAEAAAAKAAUAAAAAAAEAAAAAAAYAAAAAAAEAAAAAAAcAAAAAAAEAAAABAAYAAAAAAAEAAAABAAcAAAAAAAEAAAACAAYAAAAAAAEAAAACAAcAAAAAAAEAAAADAAYAAAAAAAEAAAADAAcAAAAAAAEAAAAEAAYAAAAAAAEAAAAEAAcAAAAAAAEAAAAFAAYAAAAAAAEAAAAFAAcAAAAAAAEAAAAGAAYAAAAAAAEAAAAGAAcAAAAAAAEAAAAHAAYAAAAAAAEAAAAHAAcAAAAAAAEAAAAIAAYAAAAAAAEAAAAIAAcAAAAAAAEAAAAJAAYAAAAAAAEAAAAJAAcAAAAAAAEAAAAKAAYAAAAAAAEAAAAKAAcAAAAAAAEAAAAAAAgAAAAAAAEAAAABAAgAAAAAAAEAAAACAAgAAAAAAAEAAAAIAAgAAAAAAAEAAAAJAAgAAAAAAAEAAAAKAAgAAAAAAAEAAAAAAAkAAAAAAAEAAAABAAkAAAAAAAEAAAACAAkAAAAAAAEAAAADAAkAAAAAAAEAAAAEAAkAAAAAAAEAAAAFAAkAAAAAAAEAAAAGAAkAAAAAAAEAAAAHAAkAAAAAAAEAAAAIAAkAAAAAAAEAAAAJAAkAAAAAAAEAAAAKAAkAAAAAAAEAAAAAAAoAAAAAAAEAAAABAAoAAAAAAAEAAAACAAoAAAAAAAEAAAADAAoAAAAAAAEAAAAEAAoAAAAAAAEAAAAFAAoAAAAAAAEAAAAGAAoAAAAAAAEAAAAHAAoAAAAAAAEAAAAIAAoAAAAAAAEAAAAJAAoAAAAAAAEAAAAKAAoAAAAAAAEAAAADAAgAAAAAAAEAAAAEAAgAAAAAAAEAAAAFAAgAAAAAAAEAAAAGAAgAAAAAAAEAAAAHAAgAAAAAAAEAAAA=")
+tile_set = ExtResource("2_v2d0s")
+
+[node name="Walls" type="TileMapLayer" parent="." unique_id=1108185961]
+z_index = 1
+tile_map_data = PackedByteArray("AAAAAAAAAAADAAAAAAAEAAAAAAADAAAAAAAGAAAAAAADAAAAAAAAAAEAAAADAAAAAAAAAAIAAAADAAAAAAAAAAYAAAADAAAAAAAAAAcAAAADAAAAAAAKAAQAAAADAAAAAAAEAAoAAAADAAAAAAADAAoAAAADAAAAAAACAAoAAAADAAAAAAABAAoAAAADAAAAAAAAAAoAAAADAAAAAAAAAAkAAAADAAAAAAAAAAgAAAADAAAAAAABAAYAAAADAAAAAAABAAcAAAADAAAAAAABAAkAAAADAAAAAAADAAkAAAADAAAAAAAEAAkAAAADAAAAAAAEAAgAAAADAAAAAAAEAAcAAAADAAAAAAADAAcAAAADAAAAAAADAAYAAAADAAAAAAADAAQAAAADAAAAAAADAAMAAAADAAAAAAAEAAMAAAADAAAAAAAEAAIAAAADAAAAAAAEAAEAAAADAAAAAAAGAAEAAAADAAAAAAAGAAIAAAADAAAAAAAGAAMAAAADAAAAAAAHAAMAAAADAAAAAAAHAAQAAAADAAAAAAAJAAQAAAADAAAAAAAHAAYAAAADAAAAAAAJAAYAAAADAAAAAAAHAAcAAAADAAAAAAAGAAcAAAADAAAAAAAGAAgAAAADAAAAAAAGAAkAAAADAAAAAAAGAAoAAAADAAAAAAAAAAMAAAADAAAAAAAAAAQAAAADAAAAAAABAAQAAAADAAAAAAA=")
+tile_set = ExtResource("2_v2d0s")
+
+[node name="Entities" type="Node2D" parent="." unique_id=1047835971]
+z_index = 2
+
+[node name="StairUp" parent="Entities" unique_id=1587493218 instance=ExtResource("3_kbgfl")]
+position = Vector2(160, 0)
+dest_floor_id = "main_6"
+dest_pos = Vector2i(5, 0)
+
+[node name="StairDown" parent="Entities" unique_id=1154838460 instance=ExtResource("4_m14j4")]
+position = Vector2(160, 160)
+dest_floor_id = "main_4"
+dest_pos = Vector2i(6, 5)
+
+[node name="MindMirrorOldman" parent="Entities" unique_id=774706501 instance=ExtResource("5_31kbn")]
+position = Vector2(160, 320)
+data = SubResource("Resource_e63wh")

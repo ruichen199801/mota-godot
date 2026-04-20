@@ -1,0 +1,86 @@
+[gd_scene format=4 uid="uid://60qh86q488hb"]
+
+[ext_resource type="Script" uid="uid://doupmspvj5m2v" path="res://floors/floor_setup.gd" id="1_5ywdy"]
+[ext_resource type="TileSet" uid="uid://di6pm00t0x4tx" path="res://resources/floor_tileset.tres" id="2_c14bd"]
+[ext_resource type="PackedScene" uid="uid://cbmf85d67vidj" path="res://entities/stair_up_entity.tscn" id="3_fwboj"]
+[ext_resource type="PackedScene" uid="uid://ubv3jnibyiks" path="res://entities/stair_down_entity.tscn" id="4_78lru"]
+[ext_resource type="PackedScene" uid="uid://cv12hwq0yxdal" path="res://entities/npc_entity.tscn" id="5_piitu"]
+[ext_resource type="Script" uid="uid://vork0ooj1wrk" path="res://data/shop_option_data.gd" id="6_pka0e"]
+[ext_resource type="Script" uid="uid://dnkssnvswhj24" path="res://data/npc_merchant_data.gd" id="7_juu2q"]
+[ext_resource type="Script" uid="uid://bru2snxxyg2v4" path="res://data/npc_action/npc_post_action.gd" id="8_5kb1w"]
+[ext_resource type="Script" uid="uid://c6aeoqsh2x5v5" path="res://data/npc_action/npc_remove_action.gd" id="9_ojcks"]
+[ext_resource type="Script" uid="uid://uv1g8mwl0ofk" path="res://data/npc_behavior/npc_merchant_behavior.gd" id="10_7xuve"]
+[ext_resource type="SpriteFrames" uid="uid://0a8itglro6ui" path="res://resources/npcs/merchant_frames.tres" id="11_o67fc"]
+[ext_resource type="Script" uid="uid://dn7vsl533x7gh" path="res://data/npc_data.gd" id="12_f52ao"]
+
+[sub_resource type="Resource" id="Resource_cih2b"]
+script = ExtResource("6_pka0e")
+label = "要!"
+fixed_cost = 15
+hp = 200
+metadata/_custom_type_script = "uid://vork0ooj1wrk"
+
+[sub_resource type="Resource" id="Resource_l6wl2"]
+script = ExtResource("7_juu2q")
+description = "$15就可以回复200体力需要吗？"
+one_time = true
+options = Array[ExtResource("6_pka0e")]([SubResource("Resource_cih2b")])
+metadata/_custom_type_script = "uid://dnkssnvswhj24"
+
+[sub_resource type="Resource" id="Resource_g5j44"]
+script = ExtResource("9_ojcks")
+metadata/_custom_type_script = "uid://c6aeoqsh2x5v5"
+
+[sub_resource type="Resource" id="Resource_tplr4"]
+script = ExtResource("10_7xuve")
+merchant = SubResource("Resource_l6wl2")
+post_actions = Array[ExtResource("8_5kb1w")]([SubResource("Resource_g5j44")])
+metadata/_custom_type_script = "uid://uv1g8mwl0ofk"
+
+[sub_resource type="Resource" id="Resource_mcret"]
+script = ExtResource("12_f52ao")
+npc_id = "heal_hp_merchant"
+npc_name = "奸商"
+frames = ExtResource("11_o67fc")
+behavior = SubResource("Resource_tplr4")
+metadata/_custom_type_script = "uid://dn7vsl533x7gh"
+
+[node name="Main4" type="Node2D" unique_id=1806746235]
+script = ExtResource("1_5ywdy")
+
+[node name="Ground" type="TileMapLayer" parent="." unique_id=2065011923]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAEAAAABAAAAAAAAAAEAAAACAAAAAAAAAAEAAAADAAAAAAAAAAEAAAAEAAAAAAAAAAEAAAAFAAAAAAAAAAEAAAAGAAAAAAAAAAEAAAAHAAAAAAAAAAEAAAAIAAAAAAAAAAEAAAAJAAAAAAAAAAEAAAAKAAAAAAAAAAEAAAAAAAEAAAAAAAEAAAABAAEAAAAAAAEAAAACAAEAAAAAAAEAAAADAAEAAAAAAAEAAAAEAAEAAAAAAAEAAAAFAAEAAAAAAAEAAAAGAAEAAAAAAAEAAAAHAAEAAAAAAAEAAAAIAAEAAAAAAAEAAAAJAAEAAAAAAAEAAAAKAAEAAAAAAAEAAAAAAAIAAAAAAAEAAAABAAIAAAAAAAEAAAACAAIAAAAAAAEAAAADAAIAAAAAAAEAAAAEAAIAAAAAAAEAAAAFAAIAAAAAAAEAAAAGAAIAAAAAAAEAAAAHAAIAAAAAAAEAAAAIAAIAAAAAAAEAAAAJAAIAAAAAAAEAAAAKAAIAAAAAAAEAAAAAAAMAAAAAAAEAAAABAAMAAAAAAAEAAAACAAMAAAAAAAEAAAADAAMAAAAAAAEAAAAEAAMAAAAAAAEAAAAFAAMAAAAAAAEAAAAGAAMAAAAAAAEAAAAHAAMAAAAAAAEAAAAIAAMAAAAAAAEAAAAJAAMAAAAAAAEAAAAKAAMAAAAAAAEAAAAAAAQAAAAAAAEAAAABAAQAAAAAAAEAAAACAAQAAAAAAAEAAAADAAQAAAAAAAEAAAAEAAQAAAAAAAEAAAAFAAQAAAAAAAEAAAAGAAQAAAAAAAEAAAAHAAQAAAAAAAEAAAAIAAQAAAAAAAEAAAAJAAQAAAAAAAEAAAAKAAQAAAAAAAEAAAAAAAUAAAAAAAEAAAABAAUAAAAAAAEAAAACAAUAAAAAAAEAAAADAAUAAAAAAAEAAAAEAAUAAAAAAAEAAAAFAAUAAAAAAAEAAAAGAAUAAAAAAAEAAAAHAAUAAAAAAAEAAAAIAAUAAAAAAAEAAAAJAAUAAAAAAAEAAAAKAAUAAAAAAAEAAAAAAAYAAAAAAAEAAAAAAAcAAAAAAAEAAAABAAYAAAAAAAEAAAABAAcAAAAAAAEAAAACAAYAAAAAAAEAAAACAAcAAAAAAAEAAAADAAYAAAAAAAEAAAADAAcAAAAAAAEAAAAEAAYAAAAAAAEAAAAEAAcAAAAAAAEAAAAFAAYAAAAAAAEAAAAFAAcAAAAAAAEAAAAGAAYAAAAAAAEAAAAGAAcAAAAAAAEAAAAHAAYAAAAAAAEAAAAHAAcAAAAAAAEAAAAIAAYAAAAAAAEAAAAIAAcAAAAAAAEAAAAJAAYAAAAAAAEAAAAJAAcAAAAAAAEAAAAKAAYAAAAAAAEAAAAKAAcAAAAAAAEAAAAAAAgAAAAAAAEAAAABAAgAAAAAAAEAAAACAAgAAAAAAAEAAAAIAAgAAAAAAAEAAAAJAAgAAAAAAAEAAAAKAAgAAAAAAAEAAAAAAAkAAAAAAAEAAAABAAkAAAAAAAEAAAACAAkAAAAAAAEAAAADAAkAAAAAAAEAAAAEAAkAAAAAAAEAAAAFAAkAAAAAAAEAAAAGAAkAAAAAAAEAAAAHAAkAAAAAAAEAAAAIAAkAAAAAAAEAAAAJAAkAAAAAAAEAAAAKAAkAAAAAAAEAAAAAAAoAAAAAAAEAAAABAAoAAAAAAAEAAAACAAoAAAAAAAEAAAADAAoAAAAAAAEAAAAEAAoAAAAAAAEAAAAFAAoAAAAAAAEAAAAGAAoAAAAAAAEAAAAHAAoAAAAAAAEAAAAIAAoAAAAAAAEAAAAJAAoAAAAAAAEAAAAKAAoAAAAAAAEAAAADAAgAAAAAAAEAAAAEAAgAAAAAAAEAAAAFAAgAAAAAAAEAAAAGAAgAAAAAAAEAAAAHAAgAAAAAAAEAAAA=")
+tile_set = ExtResource("2_c14bd")
+
+[node name="Walls" type="TileMapLayer" parent="." unique_id=1108185961]
+z_index = 1
+tile_map_data = PackedByteArray("AAAAAAAAAAADAAAAAAABAAAAAAADAAAAAAACAAAAAAADAAAAAAADAAAAAAADAAAAAAAEAAAAAAADAAAAAAAFAAAAAAADAAAAAAAGAAAAAAADAAAAAAAHAAAAAAADAAAAAAAIAAAAAAADAAAAAAAJAAAAAAADAAAAAAAKAAAAAAADAAAAAAAAAAEAAAADAAAAAAAAAAIAAAADAAAAAAAAAAMAAAADAAAAAAAAAAQAAAADAAAAAAAAAAUAAAADAAAAAAAAAAYAAAADAAAAAAAAAAcAAAADAAAAAAAKAAEAAAADAAAAAAAKAAIAAAADAAAAAAAKAAMAAAADAAAAAAAKAAQAAAADAAAAAAAKAAUAAAADAAAAAAAKAAYAAAADAAAAAAAKAAcAAAADAAAAAAAKAAgAAAADAAAAAAAKAAkAAAADAAAAAAAKAAoAAAADAAAAAAAJAAoAAAADAAAAAAAIAAoAAAADAAAAAAAHAAoAAAADAAAAAAAGAAoAAAADAAAAAAAFAAoAAAADAAAAAAAEAAoAAAADAAAAAAADAAoAAAADAAAAAAACAAoAAAADAAAAAAABAAoAAAADAAAAAAAAAAoAAAADAAAAAAAAAAkAAAADAAAAAAAAAAgAAAADAAAAAAABAAkAAAADAAAAAAADAAgAAAADAAAAAAADAAcAAAADAAAAAAABAAYAAAADAAAAAAABAAcAAAADAAAAAAACAAYAAAADAAAAAAADAAYAAAADAAAAAAAEAAYAAAADAAAAAAAIAAYAAAADAAAAAAAJAAYAAAADAAAAAAAIAAcAAAADAAAAAAAIAAkAAAADAAAAAAAGAAYAAAADAAAAAAAFAAYAAAADAAAAAAAFAAcAAAADAAAAAAAGAAcAAAADAAAAAAAFAAkAAAADAAAAAAAGAAkAAAADAAAAAAABAAIAAAADAAAAAAACAAIAAAADAAAAAAAEAAIAAAADAAAAAAAEAAMAAAADAAAAAAAFAAIAAAADAAAAAAAFAAMAAAADAAAAAAAIAAIAAAADAAAAAAAIAAMAAAADAAAAAAAIAAQAAAADAAAAAAAHAAQAAAADAAAAAAAFAAQAAAADAAAAAAAGAAQAAAADAAAAAAAEAAQAAAADAAAAAAADAAQAAAADAAAAAAACAAQAAAADAAAAAAABAAQAAAADAAAAAAAFAAUAAAADAAAAAAA=")
+tile_set = ExtResource("2_c14bd")
+
+[node name="Entities" type="Node2D" parent="." unique_id=1047835971]
+z_index = 2
+
+[node name="StairUp" parent="Entities" unique_id=1587493218 instance=ExtResource("3_fwboj")]
+position = Vector2(192, 160)
+dest_floor_id = "main_5"
+dest_pos = Vector2i(5, 5)
+
+[node name="StairDown1" parent="Entities" unique_id=1154838460 instance=ExtResource("4_78lru")]
+position = Vector2(32, 32)
+dest_floor_id = "main_3"
+dest_pos = Vector2i(1, 1)
+is_transport_target = true
+
+[node name="StairDown2" parent="Entities" unique_id=170582198 instance=ExtResource("4_78lru")]
+position = Vector2(32, 160)
+dest_floor_id = "main_3"
+dest_pos = Vector2i(1, 5)
+
+[node name="StairDown3" parent="Entities" unique_id=1845088499 instance=ExtResource("4_78lru")]
+position = Vector2(32, 256)
+dest_floor_id = "main_3"
+dest_pos = Vector2i(1, 8)
+
+[node name="HealHpMerchant" parent="Entities" unique_id=774706501 instance=ExtResource("5_piitu")]
+position = Vector2(192, 96)
+data = SubResource("Resource_mcret")

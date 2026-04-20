@@ -12,7 +12,7 @@ var _player_data: PlayerData
 var _current_page := 0
 var _total_pages := 1
 
-var _row_template: PackedScene = preload("res://scenes/mind_mirror/mind_mirror_row.tscn")
+var _row_template: PackedScene = preload("res://scenes/mind_mirror/mind_mirror_row.tscn") 
 
 
 func _ready() -> void:
@@ -23,7 +23,7 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not visible:
-		return
+		return		
 	if event.is_action_pressed("ui_accept"):
 		close()
 		get_viewport().set_input_as_handled()
