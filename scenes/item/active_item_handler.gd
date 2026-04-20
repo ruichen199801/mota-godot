@@ -53,6 +53,8 @@ func _use_divine_sword_token(pd: PlayerData) -> void:
 	var entity := FloorManager.get_entity(target)
 	
 	if entity is EnemyEntity:
+		if entity.data.immune_to_divine_sword:
+			return
 		pd.use_item("divine_sword_token")
 		# Replace with green slime
 		var slime_data: EnemyData = preload("res://resources/enemies/green_slime/green_slime.tres")

@@ -21,4 +21,5 @@ gold_drop = 600
 xp_drop = 61
 poison_chance = 20
 ability_description = "毒攻击"
+immune_to_divine_sword = true
 metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

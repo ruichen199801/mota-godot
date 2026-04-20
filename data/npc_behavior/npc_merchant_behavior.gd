@@ -21,6 +21,8 @@ func run_post_actions(grid_pos: Vector2i, player_data: PlayerData) -> void:
 		
 	await super.run_post_actions(grid_pos, player_data)
 	
+	# Show item pickup UI only when the trade is one-time, an item is traded, and the trade succeeded.
+	# If the merchant is permanent, e.g. anywhere door refill, item pickup UI won't show.
 	if _one_time_trade_made and merchant.options.size() > 0:
 		var opt: ShopOptionData = merchant.options[0] # assumes only 1 item option
 		if opt.item:

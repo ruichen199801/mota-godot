@@ -1,0 +1,229 @@
+[gd_scene format=4 uid="uid://dov6oyjblxj7k"]
+
+[ext_resource type="TileSet" uid="uid://di6pm00t0x4tx" path="res://resources/floor_tileset.tres" id="1_wgf15"]
+[ext_resource type="PackedScene" uid="uid://d2gnobmc7j4xv" path="res://entities/item_entity.tscn" id="2_6k7fa"]
+[ext_resource type="Resource" uid="uid://kl2hba15hg7v" path="res://resources/items/yellow_key.tres" id="3_8qa4a"]
+[ext_resource type="Resource" uid="uid://cgffc8s7urdnd" path="res://resources/items/blue_key.tres" id="4_ddovn"]
+[ext_resource type="Resource" uid="uid://cfidvljhgwc06" path="res://resources/items/magic_key.tres" id="4_o2a8r"]
+[ext_resource type="Resource" uid="uid://j0c3lt0bvhrs" path="res://resources/items/red_key.tres" id="5_qa5ph"]
+[ext_resource type="Resource" uid="uid://chdfqgd28u6tn" path="res://resources/items/gold.tres" id="7_ddovn"]
+[ext_resource type="Resource" uid="uid://8vwv0rpxhslm" path="res://resources/items/red_gem.tres" id="8_e77hc"]
+[ext_resource type="Resource" uid="uid://b5tvr5hwiubg" path="res://resources/items/blue_gem.tres" id="9_fm7ut"]
+[ext_resource type="Resource" uid="uid://dew2n4qxuoylg" path="res://resources/items/potion.tres" id="10_6k2lp"]
+[ext_resource type="Resource" uid="uid://cyvfa5e6d26l0" path="res://resources/items/wing_of_speed.tres" id="10_f2xnl"]
+[ext_resource type="Resource" uid="uid://cypiw8wv1q82x" path="res://resources/items/green_gem.tres" id="10_us2tf"]
+[ext_resource type="Resource" uid="uid://crv72j1mbl8sh" path="res://resources/items/greater_potion.tres" id="11_kibqd"]
+[ext_resource type="Resource" uid="uid://q0ku5rl35o8q" path="res://resources/items/wing_of_leap.tres" id="11_us2tf"]
+[ext_resource type="Resource" uid="uid://d46fpmp66mlp" path="res://resources/items/fire_wine.tres" id="12_6k2lp"]
+[ext_resource type="Resource" uid="uid://3gcce6ftuade" path="res://resources/items/antidote.tres" id="13_kibqd"]
+[ext_resource type="Resource" uid="uid://cqlg5vidblj5i" path="res://resources/items/holy_water.tres" id="16_7nt12"]
+[ext_resource type="Resource" uid="uid://86j71mejcqtx" path="res://resources/items/iron_sword.tres" id="18_8d1nj"]
+[ext_resource type="Resource" uid="uid://8w4geabl22uo" path="res://resources/items/long_sword.tres" id="19_o3pvs"]
+[ext_resource type="Resource" uid="uid://7ebeobu3c3vx" path="res://resources/items/gem_sword.tres" id="20_ipjrf"]
+[ext_resource type="Resource" uid="uid://cl45kg8ytwi31" path="res://resources/items/light_sword.tres" id="21_p0jal"]
+[ext_resource type="Resource" uid="uid://dwhrwbgw11nsg" path="res://resources/items/hero_sword.tres" id="22_m4q1t"]
+[ext_resource type="Resource" uid="uid://n1v1cahyrty" path="res://resources/items/hero_shield.tres" id="23_7dwqu"]
+[ext_resource type="Resource" uid="uid://d30dnyolr3fx0" path="res://resources/items/leather_shield.tres" id="23_m4q1t"]
+[ext_resource type="Resource" uid="uid://bgoksh5q4b60k" path="res://resources/items/iron_shield.tres" id="24_7dwqu"]
+[ext_resource type="Resource" uid="uid://bxl61vmo02oyv" path="res://resources/items/light_shield.tres" id="25_d8tr0"]
+[ext_resource type="Resource" uid="uid://c70631s80bywe" path="res://resources/items/holy_cross_shield.tres" id="26_17a8y"]
+[ext_resource type="Resource" uid="uid://ce6p5m7um1kw0" path="res://resources/items/hero_emblem_lv0.tres" id="28_5if0y"]
+[ext_resource type="Resource" uid="uid://c16o21mruyxm4" path="res://resources/items/gem_pickaxe.tres" id="28_7dwqu"]
+[ext_resource type="Resource" uid="uid://b7h406hwv0y76" path="res://resources/items/pickaxe.tres" id="28_d8tr0"]
+[ext_resource type="Resource" uid="uid://dlg14ckdx4v6h" path="res://resources/items/hero_emblem_lv1.tres" id="29_57r1m"]
+[ext_resource type="Resource" uid="uid://ct8qok27qfe0j" path="res://resources/items/divine_sword_token.tres" id="29_c3fh3"]
+[ext_resource type="Resource" uid="uid://clpmukkfspi0d" path="res://resources/items/cross.tres" id="30_17a8y"]
+[ext_resource type="Resource" uid="uid://dykkxk45r1j3b" path="res://resources/items/hero_emblem_lv2.tres" id="30_np6ps"]
+[ext_resource type="Resource" uid="uid://83htevejqgok" path="res://resources/items/hero_emblem_lv3.tres" id="31_4g45h"]
+[ext_resource type="Resource" uid="uid://c60wunkp6fage" path="res://resources/items/overload_emblem_lv0.tres" id="32_np6ps"]
+[ext_resource type="Resource" uid="uid://bvtnhkvtamdxv" path="res://resources/items/ice_amulet.tres" id="32_ulo31"]
+[ext_resource type="Resource" uid="uid://s2cjd6eshpri" path="res://resources/items/overload_emblem_lv1.tres" id="33_4g45h"]
+[ext_resource type="Resource" uid="uid://c4hm6px85crl4" path="res://resources/items/overload_emblem_lv2.tres" id="34_s1x5m"]
+[ext_resource type="Resource" uid="uid://dtgxkgunnt12i" path="res://resources/items/overload_emblem_lv3.tres" id="35_0l4sv"]
+[ext_resource type="Resource" uid="uid://b1acanwmikiwm" path="res://resources/items/sage_emblem_lv0.tres" id="36_b781i"]
+[ext_resource type="Resource" uid="uid://di85ttptbu157" path="res://resources/items/sage_emblem_lv1.tres" id="37_pctdd"]
+[ext_resource type="Resource" uid="uid://6g2af7p3yhh8" path="res://resources/items/sage_emblem_lv2.tres" id="38_5117l"]
+[ext_resource type="Resource" uid="uid://cexmng024v73m" path="res://resources/items/sage_emblem_lv3.tres" id="39_5acyq"]
+[ext_resource type="Resource" uid="uid://41tscolgmqor" path="res://resources/items/anywhere_door.tres" id="42_5117l"]
+[ext_resource type="Resource" uid="uid://dawvyi544flj5" path="res://resources/items/anywhere_door_bundle.tres" id="43_5acyq"]
+
+[node name="ITEMS_TEMPLATE" type="Node2D" unique_id=1806746235]
+
+[node name="Ground" type="TileMapLayer" parent="." unique_id=2065011923]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAEAAAABAAAAAAAAAAEAAAACAAAAAAAAAAEAAAADAAAAAAAAAAEAAAAEAAAAAAAAAAEAAAAFAAAAAAAAAAEAAAAGAAAAAAAAAAEAAAAHAAAAAAAAAAEAAAAIAAAAAAAAAAEAAAAJAAAAAAAAAAEAAAAKAAAAAAAAAAEAAAAAAAEAAAAAAAEAAAABAAEAAAAAAAEAAAACAAEAAAAAAAEAAAADAAEAAAAAAAEAAAAEAAEAAAAAAAEAAAAFAAEAAAAAAAEAAAAGAAEAAAAAAAEAAAAHAAEAAAAAAAEAAAAIAAEAAAAAAAEAAAAJAAEAAAAAAAEAAAAKAAEAAAAAAAEAAAAAAAIAAAAAAAEAAAABAAIAAAAAAAEAAAACAAIAAAAAAAEAAAADAAIAAAAAAAEAAAAEAAIAAAAAAAEAAAAFAAIAAAAAAAEAAAAGAAIAAAAAAAEAAAAHAAIAAAAAAAEAAAAIAAIAAAAAAAEAAAAJAAIAAAAAAAEAAAAKAAIAAAAAAAEAAAAAAAMAAAAAAAEAAAABAAMAAAAAAAEAAAACAAMAAAAAAAEAAAADAAMAAAAAAAEAAAAEAAMAAAAAAAEAAAAFAAMAAAAAAAEAAAAGAAMAAAAAAAEAAAAHAAMAAAAAAAEAAAAIAAMAAAAAAAEAAAAJAAMAAAAAAAEAAAAKAAMAAAAAAAEAAAAAAAQAAAAAAAEAAAABAAQAAAAAAAEAAAACAAQAAAAAAAEAAAADAAQAAAAAAAEAAAAEAAQAAAAAAAEAAAAFAAQAAAAAAAEAAAAGAAQAAAAAAAEAAAAHAAQAAAAAAAEAAAAIAAQAAAAAAAEAAAAJAAQAAAAAAAEAAAAKAAQAAAAAAAEAAAAAAAUAAAAAAAEAAAABAAUAAAAAAAEAAAACAAUAAAAAAAEAAAADAAUAAAAAAAEAAAAEAAUAAAAAAAEAAAAFAAUAAAAAAAEAAAAGAAUAAAAAAAEAAAAHAAUAAAAAAAEAAAAIAAUAAAAAAAEAAAAJAAUAAAAAAAEAAAAKAAUAAAAAAAEAAAAAAAYAAAAAAAEAAAAAAAcAAAAAAAEAAAABAAYAAAAAAAEAAAABAAcAAAAAAAEAAAACAAYAAAAAAAEAAAACAAcAAAAAAAEAAAADAAYAAAAAAAEAAAADAAcAAAAAAAEAAAAEAAYAAAAAAAEAAAAEAAcAAAAAAAEAAAAFAAYAAAAAAAEAAAAFAAcAAAAAAAEAAAAGAAYAAAAAAAEAAAAGAAcAAAAAAAEAAAAHAAYAAAAAAAEAAAAHAAcAAAAAAAEAAAAIAAYAAAAAAAEAAAAIAAcAAAAAAAEAAAAJAAYAAAAAAAEAAAAJAAcAAAAAAAEAAAAKAAYAAAAAAAEAAAAKAAcAAAAAAAEAAAAAAAgAAAAAAAEAAAABAAgAAAAAAAEAAAACAAgAAAAAAAEAAAAIAAgAAAAAAAEAAAAJAAgAAAAAAAEAAAAKAAgAAAAAAAEAAAAAAAkAAAAAAAEAAAABAAkAAAAAAAEAAAACAAkAAAAAAAEAAAADAAkAAAAAAAEAAAAEAAkAAAAAAAEAAAAFAAkAAAAAAAEAAAAGAAkAAAAAAAEAAAAHAAkAAAAAAAEAAAAIAAkAAAAAAAEAAAAJAAkAAAAAAAEAAAAKAAkAAAAAAAEAAAAAAAoAAAAAAAEAAAABAAoAAAAAAAEAAAACAAoAAAAAAAEAAAADAAoAAAAAAAEAAAAEAAoAAAAAAAEAAAAFAAoAAAAAAAEAAAAGAAoAAAAAAAEAAAAHAAoAAAAAAAEAAAAIAAoAAAAAAAEAAAAJAAoAAAAAAAEAAAAKAAoAAAAAAAEAAAADAAgAAAAAAAEAAAAEAAgAAAAAAAEAAAAFAAgAAAAAAAEAAAAGAAgAAAAAAAEAAAAHAAgAAAAAAAEAAAA=")
+tile_set = ExtResource("1_wgf15")
+
+[node name="YellowKey" parent="." unique_id=1365116579 instance=ExtResource("2_6k7fa")]
+data = ExtResource("3_8qa4a")
+
+[node name="BlueKey" parent="." unique_id=1560241037 instance=ExtResource("2_6k7fa")]
+position = Vector2(32, 0)
+data = ExtResource("4_ddovn")
+
+[node name="RedKey" parent="." unique_id=1442327009 instance=ExtResource("2_6k7fa")]
+position = Vector2(64, 0)
+data = ExtResource("5_qa5ph")
+
+[node name="MagicKey" parent="." unique_id=417465911 instance=ExtResource("2_6k7fa")]
+position = Vector2(96, 0)
+data = ExtResource("4_o2a8r")
+
+[node name="Gold" parent="." unique_id=2008622550 instance=ExtResource("2_6k7fa")]
+position = Vector2(128, 0)
+data = ExtResource("7_ddovn")
+
+[node name="RedGem" parent="." unique_id=699097624 instance=ExtResource("2_6k7fa")]
+position = Vector2(160, 0)
+data = ExtResource("8_e77hc")
+
+[node name="BlueGem" parent="." unique_id=269309494 instance=ExtResource("2_6k7fa")]
+position = Vector2(192, 0)
+data = ExtResource("9_fm7ut")
+
+[node name="GreenGem" parent="." unique_id=471760268 instance=ExtResource("2_6k7fa")]
+position = Vector2(224, 0)
+data = ExtResource("10_us2tf")
+
+[node name="WingOfSpeed" parent="." unique_id=2127879988 instance=ExtResource("2_6k7fa")]
+position = Vector2(0, 32)
+data = ExtResource("10_f2xnl")
+
+[node name="WingOfLeap" parent="." unique_id=2063256087 instance=ExtResource("2_6k7fa")]
+position = Vector2(32, 32)
+data = ExtResource("11_us2tf")
+
+[node name="Potion" parent="." unique_id=1347889180 instance=ExtResource("2_6k7fa")]
+position = Vector2(64, 32)
+data = ExtResource("10_6k2lp")
+
+[node name="GreaterPotion" parent="." unique_id=1736596667 instance=ExtResource("2_6k7fa")]
+position = Vector2(96, 32)
+data = ExtResource("11_kibqd")
+
+[node name="FireWine" parent="." unique_id=1625936671 instance=ExtResource("2_6k7fa")]
+position = Vector2(128, 32)
+data = ExtResource("12_6k2lp")
+
+[node name="Antidote" parent="." unique_id=213145995 instance=ExtResource("2_6k7fa")]
+position = Vector2(160, 32)
+data = ExtResource("13_kibqd")
+
+[node name="HolyWater" parent="." unique_id=1082707131 instance=ExtResource("2_6k7fa")]
+position = Vector2(192, 32)
+data = ExtResource("16_7nt12")
+
+[node name="IronSword" parent="." unique_id=79784771 instance=ExtResource("2_6k7fa")]
+position = Vector2(0, 64)
+data = ExtResource("18_8d1nj")
+
+[node name="LongSword" parent="." unique_id=90794418 instance=ExtResource("2_6k7fa")]
+position = Vector2(32, 64)
+data = ExtResource("19_o3pvs")
+
+[node name="GemSword" parent="." unique_id=1373517403 instance=ExtResource("2_6k7fa")]
+position = Vector2(64, 64)
+data = ExtResource("20_ipjrf")
+
+[node name="LightSword" parent="." unique_id=13350115 instance=ExtResource("2_6k7fa")]
+position = Vector2(96, 64)
+data = ExtResource("21_p0jal")
+
+[node name="HeroSword" parent="." unique_id=1686121008 instance=ExtResource("2_6k7fa")]
+position = Vector2(128, 64)
+data = ExtResource("22_m4q1t")
+
+[node name="LeatherShield" parent="." unique_id=1653156249 instance=ExtResource("2_6k7fa")]
+position = Vector2(160, 64)
+data = ExtResource("23_m4q1t")
+
+[node name="IronShield" parent="." unique_id=420480077 instance=ExtResource("2_6k7fa")]
+position = Vector2(192, 64)
+data = ExtResource("24_7dwqu")
+
+[node name="LightShield" parent="." unique_id=1208570733 instance=ExtResource("2_6k7fa")]
+position = Vector2(224, 64)
+data = ExtResource("25_d8tr0")
+
+[node name="HolyCrossShield" parent="." unique_id=841139861 instance=ExtResource("2_6k7fa")]
+position = Vector2(256, 64)
+data = ExtResource("26_17a8y")
+
+[node name="HeroShield" parent="." unique_id=1219510781 instance=ExtResource("2_6k7fa")]
+position = Vector2(288, 64)
+data = ExtResource("23_7dwqu")
+
+[node name="HeroEmblemLv0" parent="." unique_id=1322695548 instance=ExtResource("2_6k7fa")]
+position = Vector2(0, 96)
+data = ExtResource("28_5if0y")
+
+[node name="HeroEmblemLv1" parent="." unique_id=1224912411 instance=ExtResource("2_6k7fa")]
+position = Vector2(32, 96)
+data = ExtResource("29_57r1m")
+
+[node name="HeroEmblemLv2" parent="." unique_id=504581565 instance=ExtResource("2_6k7fa")]
+position = Vector2(64, 96)
+data = ExtResource("30_np6ps")
+
+[node name="HeroEmblemLv3" parent="." unique_id=171452639 instance=ExtResource("2_6k7fa")]
+position = Vector2(96, 96)
+data = ExtResource("31_4g45h")
+
+[node name="OverloadEmblemLv0" parent="." unique_id=1307283270 instance=ExtResource("2_6k7fa")]
+position = Vector2(0, 128)
+data = ExtResource("32_np6ps")
+
+[node name="OverloadEmblemLv1" parent="." unique_id=1542272278 instance=ExtResource("2_6k7fa")]
+position = Vector2(32, 128)
+data = ExtResource("33_4g45h")
+
+[node name="OverloadEmblemLv2" parent="." unique_id=852580595 instance=ExtResource("2_6k7fa")]
+position = Vector2(64, 128)
+data = ExtResource("34_s1x5m")
+
+[node name="OverloadEmblemLv3" parent="." unique_id=1795900221 instance=ExtResource("2_6k7fa")]
+position = Vector2(96, 128)
+data = ExtResource("35_0l4sv")
+
+[node name="SageEmblemLv0" parent="." unique_id=2022746176 instance=ExtResource("2_6k7fa")]
+position = Vector2(0, 160)
+data = ExtResource("36_b781i")
+
+[node name="SageEmblemLv1" parent="." unique_id=373063985 instance=ExtResource("2_6k7fa")]
+position = Vector2(32, 160)
+data = ExtResource("37_pctdd")
+
+[node name="SageEmblemLv2" parent="." unique_id=1062683346 instance=ExtResource("2_6k7fa")]
+position = Vector2(64, 160)
+data = ExtResource("38_5117l")
+
+[node name="SageEmblemLv3" parent="." unique_id=1474525587 instance=ExtResource("2_6k7fa")]
+position = Vector2(96, 160)
+data = ExtResource("39_5acyq")
+
+[node name="GemPickaxe" parent="." unique_id=1658574302 instance=ExtResource("2_6k7fa")]
+position = Vector2(0, 224)
+data = ExtResource("28_7dwqu")
+
+[node name="DivineSwordToken" parent="." unique_id=137817383 instance=ExtResource("2_6k7fa")]
+position = Vector2(32, 224)
+data = ExtResource("29_c3fh3")
+
+[node name="AnywhereDoor" parent="." unique_id=546218023 instance=ExtResource("2_6k7fa")]
+position = Vector2(64, 224)
+data = ExtResource("42_5117l")
+
+[node name="AnywhereDoorBundle" parent="." unique_id=1441327884 instance=ExtResource("2_6k7fa")]
+position = Vector2(96, 224)
+data = ExtResource("43_5acyq")
+
+[node name="Pickaxe" parent="." unique_id=1976379232 instance=ExtResource("2_6k7fa")]
+position = Vector2(0, 288)
+data = ExtResource("28_d8tr0")
+
+[node name="Cross" parent="." unique_id=2106070667 instance=ExtResource("2_6k7fa")]
+position = Vector2(32, 288)
+data = ExtResource("30_17a8y")
+
+[node name="IceAmulet" parent="." unique_id=1463806884 instance=ExtResource("2_6k7fa")]
+position = Vector2(64, 288)
+data = ExtResource("32_ulo31")

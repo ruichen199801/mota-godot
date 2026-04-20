@@ -6,7 +6,8 @@ var grid_pos: Vector2i
 # Multi-cell entities
 @export var cell_size: Vector2i = Vector2i(1, 1)
 @export var interact_offset: Vector2i = Vector2i(0, 0)
-@export var interact_facing: Vector2i = Vector2i.ZERO # default to any direction
+# Default to any direction, meaning player can interact with entity from all directions
+@export var interact_facing: Vector2i = Vector2i.ZERO
 
 
 func is_blocking(_player_data: PlayerData) -> bool:

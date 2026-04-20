@@ -8,5 +8,5 @@ script = ExtResource("1_07aya")
 item_id = "pickaxe"
 item_name = "锄头"
 icon = ExtResource("1_hu4kq")
-item_type = 1
+item_type = 2
 metadata/_custom_type_script = "uid://x7y7v7vypehe"

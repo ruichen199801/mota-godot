@@ -31,6 +31,11 @@ extends Resource
 @export var next_enemy: EnemyData
 @export var ability_description: String = "没有"
 
+@export_group("Item Flags")
+@export var immune_to_divine_sword := false
+@export var vulnerable_to_magic_amulet := false
+@export var hidden_in_mind_mirror := false
+
 var icon: Texture2D: get = _get_icon
 
 

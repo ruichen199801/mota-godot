@@ -21,4 +21,5 @@ gold_drop = 170
 xp_drop = 18
 weaken_chance = 7
 ability_description = "衰弱攻击"
+immune_to_divine_sword = true
 metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

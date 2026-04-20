@@ -17,4 +17,5 @@ crit = 20
 agi = 30
 adaptive_atk = 400
 ability_description = "特殊战斗"
+immune_to_divine_sword = true
 metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

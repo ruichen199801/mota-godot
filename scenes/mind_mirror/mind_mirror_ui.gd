@@ -59,7 +59,7 @@ func _gather_enemies() -> void:
 		var entity = FloorManager.grid[pos]
 		if entity is EnemyEntity and entity.data != null:
 			var eid: String = entity.data.enemy_id
-			if eid in seen_ids or eid == "fake_princess" or eid == "self":
+			if eid in seen_ids or entity.data.hidden_in_mind_mirror:
 				continue
 			seen_ids[eid] = true
 			_entries.append(entity.data)
@@ -98,7 +98,7 @@ func _populate_row(row: Control, ed: EnemyData) -> void:
 		effective_atk = _player_data.atk
 		
 	var effective_def := ed.def
-	if _player_data.has_item("magic_amulet") and "mage" in ed.enemy_id and ed.enemy_id != "dark_mage":
+	if _player_data.has_item("magic_amulet") and ed.vulnerable_to_magic_amulet:
 		effective_def = maxi(ed.def - _player_data.def / 3, 0)
 
 	row.get_node("%HPValue").text = str(ed.hp)

@@ -72,8 +72,7 @@ func _on_battle_requested(enemy_entity: EnemyEntity, player_data: PlayerData) ->
 
 
 func _apply_magic_amulet() -> void:
-	if _player_data.has_item("magic_amulet") and "mage" in _enemy_data.enemy_id \
-	 and _enemy_data.enemy_id != "dark_mage":
+	if _player_data.has_item("magic_amulet") and _enemy_data.vulnerable_to_magic_amulet:
 		_enemy_def = maxi(_enemy_def - _player_data.def / 3, 0)
 
 

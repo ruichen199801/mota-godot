@@ -32,6 +32,6 @@ position = Vector2(288, 288)
 dest_floor_id = "main_2"
 dest_pos = Vector2i(9, 9)
 
-[node name="GoldShop1" parent="Entities" unique_id=338677699 instance=ExtResource("4_5kxpb")]
+[node name="GoldShop" parent="Entities" unique_id=338677699 instance=ExtResource("4_5kxpb")]
 position = Vector2(64, 224)
 data = ExtResource("5_bwmp2")

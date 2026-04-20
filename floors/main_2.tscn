@@ -44,6 +44,24 @@ position = Vector2(224, 32)
 dest_floor_id = "main_1"
 dest_pos = Vector2i(1, 4)
 
+[node name="YellowDoor1" parent="Entities" unique_id=2056068635 instance=ExtResource("4_1kjok")]
+position = Vector2(32, 192)
+
+[node name="YellowDoor2" parent="Entities" unique_id=312495998 instance=ExtResource("4_1kjok")]
+position = Vector2(96, 192)
+
+[node name="RedDoor1" parent="Entities" unique_id=187665571 instance=ExtResource("4_1kjok")]
+position = Vector2(64, 128)
+door_type = 2
+
+[node name="RedDoor2" parent="Entities" unique_id=966263294 instance=ExtResource("4_1kjok")]
+position = Vector2(128, 160)
+door_type = 2
+
+[node name="IronDoor" parent="Entities" unique_id=1909238268 instance=ExtResource("4_1kjok")]
+position = Vector2(160, 96)
+door_type = 3
+
 [node name="YellowKey" parent="Entities" unique_id=1365116579 instance=ExtResource("4_aksbr")]
 position = Vector2(160, 256)
 data = ExtResource("5_2oqxg")
@@ -87,21 +105,3 @@ data = ExtResource("8_jx7hg")
 [node name="Potion2" parent="Entities" unique_id=900833003 instance=ExtResource("4_aksbr")]
 position = Vector2(64, 64)
 data = ExtResource("8_jx7hg")
-
-[node name="YellowDoor1" parent="Entities" unique_id=2056068635 instance=ExtResource("4_1kjok")]
-position = Vector2(32, 192)
-
-[node name="YellowDoor2" parent="Entities" unique_id=312495998 instance=ExtResource("4_1kjok")]
-position = Vector2(96, 192)
-
-[node name="RedDoor1" parent="Entities" unique_id=187665571 instance=ExtResource("4_1kjok")]
-position = Vector2(64, 128)
-door_type = 2
-
-[node name="RedDoor2" parent="Entities" unique_id=966263294 instance=ExtResource("4_1kjok")]
-position = Vector2(128, 160)
-door_type = 2
-
-[node name="IronDoor" parent="Entities" unique_id=1909238268 instance=ExtResource("4_1kjok")]
-position = Vector2(160, 96)
-door_type = 3
