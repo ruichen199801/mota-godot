@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://1rldsrcmjwuo"]
+
+[ext_resource type="Script" uid="uid://x7y7v7vypehe" path="res://data/item_data.gd" id="1_jwou0"]
+
+[resource]
+script = ExtResource("1_jwou0")
+item_id = "mystic_key"
+item_name = "神秘钥匙"
+description = "可打开17F的秘密通道"
+item_type = 1
+metadata/_custom_type_script = "uid://x7y7v7vypehe"

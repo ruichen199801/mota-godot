@@ -8,7 +8,6 @@ extends Control
 @onready var option_rows: Array[HBoxContainer] = [%Option1, %Option2, %Option3, %LeaveOption]
 @onready var arrows: Array[TextureRect] = [%Arrow1, %Arrow2, %Arrow3, %ArrowLeave]
 @onready var option_labels: Array[RichTextLabel] = [%OptionLabel1, %OptionLabel2, %OptionLabel3]
-@onready var cost_hints: Array[Label] = [%CostHint1, %CostHint2, %CostHint3]
 
 var _merchant_data: NpcMerchantData
 var _player_data: PlayerData
@@ -77,21 +76,19 @@ func _refresh() -> void:
 	if _merchant_data == null:
 		return
 
-	var show_hints := _option_count > 1
+	var show_cost_hints := _option_count > 1
 
 	for i in range(_option_count):
 		var opt: ShopOptionData = _merchant_data.options[i]
-		option_labels[i].set_content(opt.label)
 
-		if show_hints:
+		if show_cost_hints:
 			var cost := _merchant_data.get_option_cost(opt)
 			var currency_name := "$" \
 				if _merchant_data.currency == NpcMerchantData.CurrencyType.GOLD \
 				else "Exp"
-			cost_hints[i].text = "(%s%d)" % [currency_name, cost]
-			cost_hints[i].visible = true
+			option_labels[i].set_content("%s (%s%d)" % [opt.label, currency_name, cost])
 		else:
-			cost_hints[i].visible = false
+			option_labels[i].set_content(opt.label)
 
 
 func _update_arrows() -> void:

@@ -7,10 +7,10 @@ enum ItemType { INSTANT, CONSUMABLE, PERMANENT }
 @export var item_name: String
 @export var description: String
 @export var icon: Texture2D # optional
-@export var frames: SpriteFrames # optional, for animated items
+@export var frames: SpriteFrames # optional, for animated items only
 @export var item_type: ItemType
 @export var max_uses: int = 1 # only meaningful for consumable items
-@export var effect: EffectData # only needed by instant items
+@export var effect: EffectData # optional, for instant items only
 
 
 func apply(player_data: PlayerData) -> void:

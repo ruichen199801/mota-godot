@@ -140,7 +140,7 @@ unique_name_in_owner = true
 texture_filter = 2
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 3
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("4_l812o")
 theme_override_font_sizes/normal_font_size = 18
@@ -151,14 +151,6 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("6_avpas")
-
-[node name="CostHint1" type="Label" parent="MerchantBorder/ContentVBox/LowerMargin/MerchantOptionsContainer/Option1" unique_id=566181199]
-unique_name_in_owner = true
-texture_filter = 2
-layout_mode = 2
-theme_type_variation = &"SystemLabel"
-text = "($20)"
-vertical_alignment = 1
 
 [node name="Option2" type="HBoxContainer" parent="MerchantBorder/ContentVBox/LowerMargin/MerchantOptionsContainer" unique_id=1845949165]
 unique_name_in_owner = true
@@ -181,7 +173,7 @@ unique_name_in_owner = true
 texture_filter = 2
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 3
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("4_l812o")
 theme_override_font_sizes/normal_font_size = 18
@@ -192,14 +184,6 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("6_avpas")
-
-[node name="CostHint2" type="Label" parent="MerchantBorder/ContentVBox/LowerMargin/MerchantOptionsContainer/Option2" unique_id=513480265]
-unique_name_in_owner = true
-texture_filter = 2
-layout_mode = 2
-theme_type_variation = &"SystemLabel"
-text = "($80)"
-vertical_alignment = 1
 
 [node name="Option3" type="HBoxContainer" parent="MerchantBorder/ContentVBox/LowerMargin/MerchantOptionsContainer" unique_id=938121135]
 unique_name_in_owner = true
@@ -222,7 +206,7 @@ unique_name_in_owner = true
 texture_filter = 2
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 3
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("4_l812o")
 theme_override_font_sizes/normal_font_size = 18
@@ -233,14 +217,6 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("6_avpas")
-
-[node name="CostHint3" type="Label" parent="MerchantBorder/ContentVBox/LowerMargin/MerchantOptionsContainer/Option3" unique_id=2056859124]
-unique_name_in_owner = true
-texture_filter = 2
-layout_mode = 2
-theme_type_variation = &"SystemLabel"
-text = "($500)"
-vertical_alignment = 1
 
 [node name="LeaveOption" type="HBoxContainer" parent="MerchantBorder/ContentVBox/LowerMargin/MerchantOptionsContainer" unique_id=1252400078]
 unique_name_in_owner = true
@@ -263,7 +239,7 @@ unique_name_in_owner = true
 texture_filter = 2
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("4_l812o")
 theme_override_font_sizes/font_size = 18
 text = "离开"

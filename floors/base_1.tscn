@@ -38,7 +38,7 @@ metadata/_custom_type_script = "uid://dktqal1ji0w0"
 
 [sub_resource type="Resource" id="Resource_t5na6"]
 script = ExtResource("9_377oy")
-npc_id = "mind_mirror_npc"
+npc_id = "mind_mirror_oldman"
 npc_name = "老人"
 frames = ExtResource("8_8j475")
 behavior = SubResource("Resource_5kvjd")
@@ -68,6 +68,6 @@ dest_pos = Vector2i(6, 1)
 position = Vector2(320, 320)
 dest_floor_id = "base_2"
 
-[node name="MindMirrorNpc" parent="Entities" unique_id=774706501 instance=ExtResource("5_8j475")]
+[node name="MindMirrorOldman" parent="Entities" unique_id=774706501 instance=ExtResource("5_8j475")]
 position = Vector2(160, 224)
 data = SubResource("Resource_t5na6")

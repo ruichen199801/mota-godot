@@ -154,7 +154,7 @@ texture_filter = 2
 layout_mode = 2
 theme_type_variation = &"SystemLabel"
 theme_override_colors/font_color = Color(0.23137255, 0.69411767, 0.2627451, 1)
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 9
 text = "(Exp 70)"
 
 [node name="Option2" type="HBoxContainer" parent="ShopBorder/ContentVBox/LowerMargin/OptionsContainer" unique_id=1426512231]
@@ -195,7 +195,7 @@ texture_filter = 2
 layout_mode = 2
 theme_type_variation = &"SystemLabel"
 theme_override_colors/font_color = Color(0.23137255, 0.69411767, 0.2627451, 1)
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 9
 text = "(Exp 20)"
 
 [node name="Option3" type="HBoxContainer" parent="ShopBorder/ContentVBox/LowerMargin/OptionsContainer" unique_id=81092369]
@@ -236,7 +236,7 @@ texture_filter = 2
 layout_mode = 2
 theme_type_variation = &"SystemLabel"
 theme_override_colors/font_color = Color(0.23137255, 0.69411767, 0.2627451, 1)
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 9
 text = "(Exp 20)"
 
 [node name="LeaveOption" type="HBoxContainer" parent="ShopBorder/ContentVBox/LowerMargin/OptionsContainer" unique_id=858482462]

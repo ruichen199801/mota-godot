@@ -111,10 +111,12 @@ func _populate_row(row: Control, ed: EnemyData) -> void:
 	row.get_node("%GoldValue").text = str(ed.gold_drop)
 
 	var est := _estimate_damage(ed, effective_atk, effective_def)
-	row.get_node("%EstDamageValue").text = "???" if est < 0 else str(est)
+	row.get_node("%EstDamageValue").text = str(est)
 
 
 ## Damage estimate based on vanilla (atk-def)*atk_times calculations.
+## Shows theoretical total damage player would take to kill the enemy,
+## regardless of current HP.
 ## 
 ## Supports:
 ##   - break adjustments (atk_crit, def_crit)
@@ -126,14 +128,16 @@ func _populate_row(row: Control, ed: EnemyData) -> void:
 ##   - certain enemy abilities (harden, adaptive_atk)
 ##   - special battle rules (silver_slime, gold_slime)
 ##
-## Returns -1 if player can't kill enemy.
+## Returns 9999999 if player can't damage enemy at all.
 ## Returns 0 if enemy can't hurt player.
 func _estimate_damage(ed: EnemyData, effective_atk: int, effective_def: int) -> int:
 	var player_hit := maxi(_player_data.atk - effective_def, 0)
 	if player_hit == 0 and _player_data.atk + _player_data.atk_crit >= effective_def:
 		player_hit = 1	
+	
+	# Player can't damage enemy at all
 	if player_hit <= 0:
-		return -1
+		return 9999999
 	
 	var player_damage_per_round := player_hit * _player_data.atk_times
 	var turns_to_kill := (ed.hp + player_damage_per_round - 1) / player_damage_per_round
@@ -143,6 +147,7 @@ func _estimate_damage(ed: EnemyData, effective_atk: int, effective_def: int) -> 
 		enemy_hit = effective_atk
 	if enemy_hit == 0 and effective_atk + _player_data.def_crit >= _player_data.def:
 		enemy_hit = 1
+		
 	if enemy_hit <= 0:
 		return 0
 		
