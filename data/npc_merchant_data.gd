@@ -7,7 +7,8 @@ enum TradeType { BUY, SELL }
 @export_multiline var description: String
 @export var currency: CurrencyType
 @export var trade_type: TradeType
-@export var one_time: bool # if set to true, the merchant must have npc_remove_action set as well
+# If set to true, the merchant must have remove or respawn post action set as well
+@export var one_time: bool
 @export var options: Array[ShopOptionData] = [] # at most 3 options
 
 

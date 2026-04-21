@@ -12,6 +12,19 @@
 [ext_resource type="Script" uid="uid://uv1g8mwl0ofk" path="res://data/npc_behavior/npc_merchant_behavior.gd" id="10_7xuve"]
 [ext_resource type="SpriteFrames" uid="uid://0a8itglro6ui" path="res://resources/npcs/merchant_frames.tres" id="11_o67fc"]
 [ext_resource type="Script" uid="uid://dn7vsl533x7gh" path="res://data/npc_data.gd" id="12_f52ao"]
+[ext_resource type="PackedScene" uid="uid://bp13ks4wpt6ea" path="res://entities/door_entity.tscn" id="13_5kb1w"]
+[ext_resource type="PackedScene" uid="uid://d2gnobmc7j4xv" path="res://entities/item_entity.tscn" id="14_ojcks"]
+[ext_resource type="Resource" uid="uid://crv72j1mbl8sh" path="res://resources/items/greater_potion.tres" id="15_7xuve"]
+[ext_resource type="Resource" uid="uid://q0ku5rl35o8q" path="res://resources/items/wing_of_leap.tres" id="16_mcret"]
+[ext_resource type="Resource" uid="uid://86j71mejcqtx" path="res://resources/items/iron_sword.tres" id="17_jwo0l"]
+[ext_resource type="Resource" uid="uid://cgffc8s7urdnd" path="res://resources/items/blue_key.tres" id="18_2ervy"]
+[ext_resource type="Resource" uid="uid://kl2hba15hg7v" path="res://resources/items/yellow_key.tres" id="19_ndbpu"]
+[ext_resource type="PackedScene" uid="uid://b678t3khc1li4" path="res://entities/enemy_entity.tscn" id="20_0iek0"]
+[ext_resource type="Resource" uid="uid://ch43yj4nl741t" path="res://resources/enemies/skeleton/skeleton.tres" id="21_njhym"]
+[ext_resource type="Resource" uid="uid://cdu60blrckaw0" path="res://resources/enemies/mage/mage.tres" id="22_jwo0l"]
+[ext_resource type="Resource" uid="uid://dgycbud154adj" path="res://resources/enemies/green_slime/green_slime.tres" id="23_0iek0"]
+[ext_resource type="Resource" uid="uid://bsnuhn75qr0pd" path="res://resources/enemies/red_slime/red_slime.tres" id="24_njhym"]
+[ext_resource type="Resource" uid="uid://c6xjwvf370bjb" path="res://resources/enemies/black_slime/black_slime.tres" id="25_sbxbi"]
 
 [sub_resource type="Resource" id="Resource_cih2b"]
 script = ExtResource("6_pka0e")
@@ -54,14 +67,14 @@ tile_set = ExtResource("2_c14bd")
 
 [node name="Walls" type="TileMapLayer" parent="." unique_id=1108185961]
 z_index = 1
-tile_map_data = PackedByteArray("AAAAAAAAAAADAAAAAAABAAAAAAADAAAAAAACAAAAAAADAAAAAAADAAAAAAADAAAAAAAEAAAAAAADAAAAAAAFAAAAAAADAAAAAAAGAAAAAAADAAAAAAAHAAAAAAADAAAAAAAIAAAAAAADAAAAAAAJAAAAAAADAAAAAAAKAAAAAAADAAAAAAAAAAEAAAADAAAAAAAAAAIAAAADAAAAAAAAAAMAAAADAAAAAAAAAAQAAAADAAAAAAAAAAUAAAADAAAAAAAAAAYAAAADAAAAAAAAAAcAAAADAAAAAAAKAAEAAAADAAAAAAAKAAIAAAADAAAAAAAKAAMAAAADAAAAAAAKAAQAAAADAAAAAAAKAAUAAAADAAAAAAAKAAYAAAADAAAAAAAKAAcAAAADAAAAAAAKAAgAAAADAAAAAAAKAAkAAAADAAAAAAAKAAoAAAADAAAAAAAJAAoAAAADAAAAAAAIAAoAAAADAAAAAAAHAAoAAAADAAAAAAAGAAoAAAADAAAAAAAFAAoAAAADAAAAAAAEAAoAAAADAAAAAAADAAoAAAADAAAAAAACAAoAAAADAAAAAAABAAoAAAADAAAAAAAAAAoAAAADAAAAAAAAAAkAAAADAAAAAAAAAAgAAAADAAAAAAABAAkAAAADAAAAAAADAAgAAAADAAAAAAADAAcAAAADAAAAAAABAAYAAAADAAAAAAABAAcAAAADAAAAAAACAAYAAAADAAAAAAADAAYAAAADAAAAAAAEAAYAAAADAAAAAAAIAAYAAAADAAAAAAAJAAYAAAADAAAAAAAIAAcAAAADAAAAAAAIAAkAAAADAAAAAAAGAAYAAAADAAAAAAAFAAYAAAADAAAAAAAFAAcAAAADAAAAAAAGAAcAAAADAAAAAAAFAAkAAAADAAAAAAAGAAkAAAADAAAAAAABAAIAAAADAAAAAAACAAIAAAADAAAAAAAEAAIAAAADAAAAAAAEAAMAAAADAAAAAAAFAAIAAAADAAAAAAAFAAMAAAADAAAAAAAIAAIAAAADAAAAAAAIAAMAAAADAAAAAAAIAAQAAAADAAAAAAAHAAQAAAADAAAAAAAFAAQAAAADAAAAAAAGAAQAAAADAAAAAAAEAAQAAAADAAAAAAADAAQAAAADAAAAAAACAAQAAAADAAAAAAABAAQAAAADAAAAAAAFAAUAAAADAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAAADAAAAAAABAAAAAAADAAAAAAACAAAAAAADAAAAAAADAAAAAAADAAAAAAAEAAAAAAADAAAAAAAFAAAAAAADAAAAAAAGAAAAAAADAAAAAAAHAAAAAAADAAAAAAAIAAAAAAADAAAAAAAJAAAAAAADAAAAAAAKAAAAAAADAAAAAAAAAAEAAAADAAAAAAAAAAIAAAADAAAAAAAAAAMAAAADAAAAAAAAAAQAAAADAAAAAAAAAAYAAAADAAAAAAAAAAcAAAADAAAAAAAKAAEAAAADAAAAAAAKAAIAAAADAAAAAAAKAAMAAAADAAAAAAAKAAQAAAADAAAAAAAKAAUAAAADAAAAAAAKAAYAAAADAAAAAAAKAAcAAAADAAAAAAAKAAgAAAADAAAAAAAKAAkAAAADAAAAAAAKAAoAAAADAAAAAAAJAAoAAAADAAAAAAAIAAoAAAADAAAAAAAHAAoAAAADAAAAAAAGAAoAAAADAAAAAAAFAAoAAAADAAAAAAAEAAoAAAADAAAAAAADAAoAAAADAAAAAAACAAoAAAADAAAAAAABAAoAAAADAAAAAAAAAAoAAAADAAAAAAAAAAkAAAADAAAAAAAAAAgAAAADAAAAAAABAAkAAAADAAAAAAADAAgAAAADAAAAAAADAAcAAAADAAAAAAABAAYAAAADAAAAAAABAAcAAAADAAAAAAACAAYAAAADAAAAAAADAAYAAAADAAAAAAAEAAYAAAADAAAAAAAIAAYAAAADAAAAAAAJAAYAAAADAAAAAAAIAAcAAAADAAAAAAAIAAkAAAADAAAAAAAGAAYAAAADAAAAAAAFAAYAAAADAAAAAAAFAAcAAAADAAAAAAAGAAcAAAADAAAAAAAFAAkAAAADAAAAAAAGAAkAAAADAAAAAAABAAIAAAADAAAAAAACAAIAAAADAAAAAAAEAAIAAAADAAAAAAAEAAMAAAADAAAAAAAFAAIAAAADAAAAAAAFAAMAAAADAAAAAAAIAAIAAAADAAAAAAAIAAMAAAADAAAAAAAIAAQAAAADAAAAAAAHAAQAAAADAAAAAAAFAAQAAAADAAAAAAAGAAQAAAADAAAAAAAEAAQAAAADAAAAAAADAAQAAAADAAAAAAACAAQAAAADAAAAAAABAAQAAAADAAAAAAAEAAUAAAADAAAAAAA=")
 tile_set = ExtResource("2_c14bd")
 
 [node name="Entities" type="Node2D" parent="." unique_id=1047835971]
 z_index = 2
 
 [node name="StairUp" parent="Entities" unique_id=1587493218 instance=ExtResource("3_fwboj")]
-position = Vector2(192, 160)
+position = Vector2(160, 160)
 dest_floor_id = "main_5"
 dest_pos = Vector2i(5, 5)
 
@@ -72,7 +85,7 @@ dest_pos = Vector2i(1, 1)
 is_transport_target = true
 
 [node name="StairDown2" parent="Entities" unique_id=170582198 instance=ExtResource("4_78lru")]
-position = Vector2(32, 160)
+position = Vector2(0, 160)
 dest_floor_id = "main_3"
 dest_pos = Vector2i(1, 5)
 
@@ -84,3 +97,86 @@ dest_pos = Vector2i(1, 8)
 [node name="HealHpMerchant" parent="Entities" unique_id=774706501 instance=ExtResource("5_piitu")]
 position = Vector2(192, 96)
 data = SubResource("Resource_mcret")
+
+[node name="YellowDoor" parent="Entities" unique_id=2056068635 instance=ExtResource("13_5kb1w")]
+position = Vector2(96, 64)
+
+[node name="BlueDoor" parent="Entities" unique_id=95136184 instance=ExtResource("13_5kb1w")]
+position = Vector2(256, 256)
+door_type = 1
+
+[node name="GreaterPotion" parent="Entities" unique_id=1365116579 instance=ExtResource("14_ojcks")]
+position = Vector2(32, 96)
+data = ExtResource("15_7xuve")
+
+[node name="WingOfLeap" parent="Entities" unique_id=1429190265 instance=ExtResource("14_ojcks")]
+position = Vector2(224, 96)
+data = ExtResource("16_mcret")
+
+[node name="IronSword" parent="Entities" unique_id=161350696 instance=ExtResource("14_ojcks")]
+position = Vector2(96, 160)
+data = ExtResource("17_jwo0l")
+
+[node name="BlueKey1" parent="Entities" unique_id=330664545 instance=ExtResource("14_ojcks")]
+position = Vector2(64, 224)
+data = ExtResource("18_2ervy")
+
+[node name="BlueKey2" parent="Entities" unique_id=1610086334 instance=ExtResource("14_ojcks")]
+position = Vector2(288, 288)
+data = ExtResource("18_2ervy")
+
+[node name="YellowKey" parent="Entities" unique_id=1198795236 instance=ExtResource("14_ojcks")]
+position = Vector2(288, 224)
+data = ExtResource("19_ndbpu")
+
+[node name="Skeleton1" parent="Entities" unique_id=605189716 instance=ExtResource("20_0iek0")]
+position = Vector2(96, 96)
+data = ExtResource("21_njhym")
+
+[node name="Skeleton2" parent="Entities" unique_id=1859164737 instance=ExtResource("20_0iek0")]
+position = Vector2(288, 256)
+data = ExtResource("21_njhym")
+
+[node name="Mage1" parent="Entities" unique_id=262854580 instance=ExtResource("20_0iek0")]
+position = Vector2(64, 160)
+data = ExtResource("22_jwo0l")
+
+[node name="Mage2" parent="Entities" unique_id=1661042733 instance=ExtResource("20_0iek0")]
+position = Vector2(224, 64)
+data = ExtResource("22_jwo0l")
+
+[node name="Mage3" parent="Entities" unique_id=877154254 instance=ExtResource("20_0iek0")]
+position = Vector2(288, 160)
+data = ExtResource("22_jwo0l")
+
+[node name="GreenSlime1" parent="Entities" unique_id=98483103 instance=ExtResource("20_0iek0")]
+position = Vector2(64, 288)
+data = ExtResource("23_0iek0")
+
+[node name="GreenSlime2" parent="Entities" unique_id=1358743588 instance=ExtResource("20_0iek0")]
+position = Vector2(128, 288)
+data = ExtResource("23_0iek0")
+
+[node name="RedSlime1" parent="Entities" unique_id=1390307894 instance=ExtResource("20_0iek0")]
+position = Vector2(96, 288)
+data = ExtResource("24_njhym")
+
+[node name="RedSlime2" parent="Entities" unique_id=301931784 instance=ExtResource("20_0iek0")]
+position = Vector2(192, 64)
+data = ExtResource("24_njhym")
+
+[node name="RedSlime3" parent="Entities" unique_id=1552502321 instance=ExtResource("20_0iek0")]
+position = Vector2(224, 32)
+data = ExtResource("24_njhym")
+
+[node name="RedSlime4" parent="Entities" unique_id=519852068 instance=ExtResource("20_0iek0")]
+position = Vector2(192, 160)
+data = ExtResource("24_njhym")
+
+[node name="BlackSlime1" parent="Entities" unique_id=154058217 instance=ExtResource("20_0iek0")]
+position = Vector2(192, 32)
+data = ExtResource("25_sbxbi")
+
+[node name="BlackSlime2" parent="Entities" unique_id=1534421388 instance=ExtResource("20_0iek0")]
+position = Vector2(224, 160)
+data = ExtResource("25_sbxbi")

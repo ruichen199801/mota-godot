@@ -8,33 +8,122 @@
 [ext_resource type="Script" uid="uid://nlow5r0mr3bq" path="res://data/npc_dialog_data.gd" id="6_avypw"]
 [ext_resource type="Script" uid="uid://bru2snxxyg2v4" path="res://data/npc_action/npc_post_action.gd" id="7_hfyf7"]
 [ext_resource type="Script" uid="uid://dktqal1ji0w0" path="res://data/npc_behavior/npc_dialog_behavior.gd" id="8_35ugl"]
+[ext_resource type="Resource" uid="uid://c4hm6px85crl4" path="res://resources/items/overload_emblem_lv2.tres" id="8_nyy8f"]
 [ext_resource type="SpriteFrames" uid="uid://sbv076eg1003" path="res://resources/npcs/oldman_frames.tres" id="9_3addk"]
+[ext_resource type="Script" uid="uid://ca3xixvnlvp5q" path="res://data/npc_action/npc_give_item_action.gd" id="9_k1psw"]
 [ext_resource type="Script" uid="uid://dn7vsl533x7gh" path="res://data/npc_data.gd" id="10_ie7lx"]
 [ext_resource type="SpriteFrames" uid="uid://0a8itglro6ui" path="res://resources/npcs/merchant_frames.tres" id="11_avypw"]
+[ext_resource type="Script" uid="uid://bgvrtb78qik1k" path="res://data/npc_action/npc_respawn_action.gd" id="11_b16ew"]
+[ext_resource type="PackedScene" uid="uid://bp13ks4wpt6ea" path="res://entities/door_entity.tscn" id="12_3addk"]
+[ext_resource type="Script" uid="uid://btaqsx7ydfud" path="res://data/npc_condition/npc_condition.gd" id="12_46jh8"]
+[ext_resource type="PackedScene" uid="uid://d2gnobmc7j4xv" path="res://entities/item_entity.tscn" id="13_ie7lx"]
+[ext_resource type="Script" uid="uid://fjr4xtjuau8g" path="res://data/npc_condition/npc_level_condition.gd" id="13_nyy8f"]
+[ext_resource type="Script" uid="uid://dab71k71t1pwl" path="res://data/npc_condition/npc_emblem_condition.gd" id="14_k1psw"]
+[ext_resource type="Resource" uid="uid://dew2n4qxuoylg" path="res://resources/items/potion.tres" id="14_xg5bs"]
+[ext_resource type="Script" uid="uid://ddt5j1qcfsosb" path="res://data/npc_condition/npc_all_conditions.gd" id="15_n8tkm"]
+[ext_resource type="Resource" uid="uid://8vwv0rpxhslm" path="res://resources/items/red_gem.tres" id="15_v7un8"]
+[ext_resource type="Script" uid="uid://bfpvfiuxd5pws" path="res://data/npc_behavior/npc_conditional_behavior.gd" id="16_050re"]
+[ext_resource type="Resource" uid="uid://b5tvr5hwiubg" path="res://resources/items/blue_gem.tres" id="16_g1lvm"]
+[ext_resource type="Resource" uid="uid://kl2hba15hg7v" path="res://resources/items/yellow_key.tres" id="17_yl7wp"]
+[ext_resource type="Resource" uid="uid://j0c3lt0bvhrs" path="res://resources/items/red_key.tres" id="18_e7oqs"]
+[ext_resource type="PackedScene" uid="uid://b678t3khc1li4" path="res://entities/enemy_entity.tscn" id="19_6qpit"]
+[ext_resource type="Resource" uid="uid://dgycbud154adj" path="res://resources/enemies/green_slime/green_slime.tres" id="20_ncjd1"]
+[ext_resource type="Resource" uid="uid://bsnuhn75qr0pd" path="res://resources/enemies/red_slime/red_slime.tres" id="21_gy7ju"]
+[ext_resource type="Resource" uid="uid://b6a8ij3no162s" path="res://resources/enemies/bat/bat.tres" id="22_1oqya"]
+[ext_resource type="Resource" uid="uid://ci34bb5piualn" path="res://resources/enemies/zombie/zombie.tres" id="23_srfis"]
+[ext_resource type="Resource" uid="uid://ch43yj4nl741t" path="res://resources/enemies/skeleton/skeleton.tres" id="24_drh0q"]
 
-[sub_resource type="Resource" id="Resource_cgjpo"]
+[sub_resource type="Resource" id="Resource_yduuu"]
+script = ExtResource("6_avypw")
+text = "你是来救公主的吧？
+这个无条件送给你啦！
+但你一定要将公主给救出来！"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_n8tkm"]
+script = ExtResource("9_k1psw")
+item = ExtResource("8_nyy8f")
+metadata/_custom_type_script = "uid://ca3xixvnlvp5q"
+
+[sub_resource type="Resource" id="Resource_pwd1o"]
 script = ExtResource("6_avypw")
 text = "听说这座塔不止20层... 
 但是最高只能去到第20层... 
 真叫人头痛..."
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
-[sub_resource type="Resource" id="Resource_xkerl"]
+[sub_resource type="Resource" id="Resource_1tmhe"]
 script = ExtResource("8_35ugl")
-dialogs = Array[ExtResource("6_avypw")]([SubResource("Resource_cgjpo")])
+dialogs = Array[ExtResource("6_avypw")]([SubResource("Resource_pwd1o")])
 metadata/_custom_type_script = "uid://dktqal1ji0w0"
+
+[sub_resource type="Resource" id="Resource_3ro16"]
+script = ExtResource("10_ie7lx")
+npc_id = "floor_num_hint_oldman"
+npc_name = "老人"
+frames = ExtResource("9_3addk")
+behavior = SubResource("Resource_1tmhe")
+metadata/_custom_type_script = "uid://dn7vsl533x7gh"
+
+[sub_resource type="Resource" id="Resource_43fhc"]
+script = ExtResource("11_b16ew")
+new_data = SubResource("Resource_3ro16")
+metadata/_custom_type_script = "uid://bgvrtb78qik1k"
+
+[sub_resource type="Resource" id="Resource_e2eyd"]
+script = ExtResource("8_35ugl")
+dialogs = Array[ExtResource("6_avypw")]([SubResource("Resource_yduuu")])
+post_actions = Array[ExtResource("7_hfyf7")]([SubResource("Resource_n8tkm"), SubResource("Resource_43fhc")])
+metadata/_custom_type_script = "uid://dktqal1ji0w0"
+
+[sub_resource type="Resource" id="Resource_nh7nn"]
+script = ExtResource("13_nyy8f")
+min_level = 20
+metadata/_custom_type_script = "uid://fjr4xtjuau8g"
+
+[sub_resource type="Resource" id="Resource_1xquv"]
+script = ExtResource("14_k1psw")
+emblem_type = 3
+min_level = 1
+metadata/_custom_type_script = "uid://dab71k71t1pwl"
+
+[sub_resource type="Resource" id="Resource_qxog4"]
+script = ExtResource("15_n8tkm")
+conditions = Array[ExtResource("12_46jh8")]([SubResource("Resource_nh7nn"), SubResource("Resource_1xquv")])
+metadata/_custom_type_script = "uid://ddt5j1qcfsosb"
+
+[sub_resource type="Resource" id="Resource_on3wq"]
+script = ExtResource("6_avypw")
+text = "听说这座塔不止20层... 
+但是最高只能去到第20层... 
+真叫人头痛..."
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_tcfcx"]
+script = ExtResource("8_35ugl")
+dialogs = Array[ExtResource("6_avypw")]([SubResource("Resource_on3wq")])
+metadata/_custom_type_script = "uid://dktqal1ji0w0"
+
+[sub_resource type="Resource" id="Resource_ihxcg"]
+script = ExtResource("16_050re")
+condition = SubResource("Resource_qxog4")
+default_behavior = SubResource("Resource_tcfcx")
+alt_behavior = SubResource("Resource_e2eyd")
+metadata/_custom_type_script = "uid://bfpvfiuxd5pws"
 
 [sub_resource type="Resource" id="Resource_xg5bs"]
 script = ExtResource("10_ie7lx")
 npc_id = "floor_num_hint_oldman"
 npc_name = "老人"
 frames = ExtResource("9_3addk")
-behavior = SubResource("Resource_xkerl")
+behavior = SubResource("Resource_ihxcg")
 metadata/_custom_type_script = "uid://dn7vsl533x7gh"
 
 [sub_resource type="Resource" id="Resource_hfyf7"]
 script = ExtResource("6_avypw")
-text = "你知道什么是章吗？在这里有数个不同的章，只要拿到就可以得到一些有利战斗的能力，"
+text = "你知道什么是章吗？
+在这里有数个不同的章，只要拿到
+就可以得到一些有利战斗的能力，"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_35ugl"]
@@ -88,3 +177,97 @@ data = SubResource("Resource_xg5bs")
 [node name="EmblemHintMerchant" parent="Entities" unique_id=1860356186 instance=ExtResource("5_0w8np")]
 position = Vector2(224, 256)
 data = SubResource("Resource_ie7lx")
+
+[node name="YellowDoor1" parent="Entities" unique_id=2056068635 instance=ExtResource("12_3addk")]
+position = Vector2(192, 192)
+
+[node name="YellowDoor2" parent="Entities" unique_id=1967297258 instance=ExtResource("12_3addk")]
+position = Vector2(288, 224)
+
+[node name="BlueDoor" parent="Entities" unique_id=1047878372 instance=ExtResource("12_3addk")]
+position = Vector2(64, 192)
+door_type = 1
+
+[node name="Potion1" parent="Entities" unique_id=1365116579 instance=ExtResource("13_ie7lx")]
+position = Vector2(32, 256)
+data = ExtResource("14_xg5bs")
+
+[node name="Potion2" parent="Entities" unique_id=1313307427 instance=ExtResource("13_ie7lx")]
+position = Vector2(96, 256)
+data = ExtResource("14_xg5bs")
+
+[node name="RedGem" parent="Entities" unique_id=719484056 instance=ExtResource("13_ie7lx")]
+position = Vector2(32, 288)
+data = ExtResource("15_v7un8")
+
+[node name="BlueGem" parent="Entities" unique_id=2030873389 instance=ExtResource("13_ie7lx")]
+position = Vector2(96, 288)
+data = ExtResource("16_g1lvm")
+
+[node name="YellowKey1" parent="Entities" unique_id=976659015 instance=ExtResource("13_ie7lx")]
+position = Vector2(64, 288)
+data = ExtResource("17_yl7wp")
+
+[node name="YellowKey2" parent="Entities" unique_id=1522005813 instance=ExtResource("13_ie7lx")]
+position = Vector2(256, 288)
+data = ExtResource("17_yl7wp")
+
+[node name="YellowKey3" parent="Entities" unique_id=589210142 instance=ExtResource("13_ie7lx")]
+position = Vector2(288, 288)
+data = ExtResource("17_yl7wp")
+
+[node name="RedKey" parent="Entities" unique_id=888460163 instance=ExtResource("13_ie7lx")]
+position = Vector2(224, 288)
+data = ExtResource("18_e7oqs")
+
+[node name="GreenSlime1" parent="Entities" unique_id=605189716 instance=ExtResource("19_6qpit")]
+position = Vector2(64, 32)
+data = ExtResource("20_ncjd1")
+
+[node name="GreenSlime2" parent="Entities" unique_id=1635050328 instance=ExtResource("19_6qpit")]
+position = Vector2(32, 224)
+data = ExtResource("20_ncjd1")
+
+[node name="GreenSlime3" parent="Entities" unique_id=1377272231 instance=ExtResource("19_6qpit")]
+position = Vector2(96, 224)
+data = ExtResource("20_ncjd1")
+
+[node name="GreenSlime4" parent="Entities" unique_id=1020862013 instance=ExtResource("19_6qpit")]
+position = Vector2(160, 288)
+data = ExtResource("20_ncjd1")
+
+[node name="GreenSlime5" parent="Entities" unique_id=891107175 instance=ExtResource("19_6qpit")]
+position = Vector2(224, 96)
+data = ExtResource("20_ncjd1")
+
+[node name="GreenSlime6" parent="Entities" unique_id=1351317303 instance=ExtResource("19_6qpit")]
+position = Vector2(288, 96)
+data = ExtResource("20_ncjd1")
+
+[node name="RedSlime1" parent="Entities" unique_id=1308279484 instance=ExtResource("19_6qpit")]
+position = Vector2(64, 64)
+data = ExtResource("21_gy7ju")
+
+[node name="RedSlime2" parent="Entities" unique_id=624181329 instance=ExtResource("19_6qpit")]
+position = Vector2(256, 96)
+data = ExtResource("21_gy7ju")
+
+[node name="Bat1" parent="Entities" unique_id=735661928 instance=ExtResource("19_6qpit")]
+position = Vector2(32, 128)
+data = ExtResource("22_1oqya")
+
+[node name="Bat2" parent="Entities" unique_id=1163738042 instance=ExtResource("19_6qpit")]
+position = Vector2(192, 128)
+data = ExtResource("22_1oqya")
+
+[node name="Bat3" parent="Entities" unique_id=1824942972 instance=ExtResource("19_6qpit")]
+position = Vector2(256, 64)
+data = ExtResource("22_1oqya")
+
+[node name="Zombie" parent="Entities" unique_id=1689312547 instance=ExtResource("19_6qpit")]
+position = Vector2(64, 256)
+data = ExtResource("23_srfis")
+
+[node name="Skeleton" parent="Entities" unique_id=1436599612 instance=ExtResource("19_6qpit")]
+position = Vector2(288, 256)
+data = ExtResource("24_drh0q")

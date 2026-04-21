@@ -6,6 +6,18 @@
 [ext_resource type="PackedScene" uid="uid://ubv3jnibyiks" path="res://entities/stair_down_entity.tscn" id="4_0wie4"]
 [ext_resource type="PackedScene" uid="uid://c52blxvwvflo8" path="res://entities/shop_entity.tscn" id="4_5kxpb"]
 [ext_resource type="Resource" uid="uid://t7nekbirmv3y" path="res://resources/shops/gold_shop_1.tres" id="5_bwmp2"]
+[ext_resource type="PackedScene" uid="uid://bp13ks4wpt6ea" path="res://entities/door_entity.tscn" id="7_82hmm"]
+[ext_resource type="PackedScene" uid="uid://d2gnobmc7j4xv" path="res://entities/item_entity.tscn" id="8_hndyw"]
+[ext_resource type="Resource" uid="uid://b5tvr5hwiubg" path="res://resources/items/blue_gem.tres" id="9_sv05g"]
+[ext_resource type="Resource" uid="uid://crv72j1mbl8sh" path="res://resources/items/greater_potion.tres" id="9_xo2ot"]
+[ext_resource type="Resource" uid="uid://d46fpmp66mlp" path="res://resources/items/fire_wine.tres" id="10_xo2ot"]
+[ext_resource type="Resource" uid="uid://3gcce6ftuade" path="res://resources/items/antidote.tres" id="11_772uj"]
+[ext_resource type="PackedScene" uid="uid://b678t3khc1li4" path="res://entities/enemy_entity.tscn" id="13_rg2al"]
+[ext_resource type="Resource" uid="uid://b6a8ij3no162s" path="res://resources/enemies/bat/bat.tres" id="14_3fj16"]
+[ext_resource type="Resource" uid="uid://bsnuhn75qr0pd" path="res://resources/enemies/red_slime/red_slime.tres" id="15_7oebu"]
+[ext_resource type="Resource" uid="uid://dgycbud154adj" path="res://resources/enemies/green_slime/green_slime.tres" id="16_b2hoe"]
+[ext_resource type="Resource" uid="uid://cdu60blrckaw0" path="res://resources/enemies/mage/mage.tres" id="17_6n5um"]
+[ext_resource type="Resource" uid="uid://ch43yj4nl741t" path="res://resources/enemies/skeleton/skeleton.tres" id="18_t0q87"]
 
 [node name="Main3" type="Node2D" unique_id=1806746235]
 script = ExtResource("1_dyo71")
@@ -36,6 +48,7 @@ dest_pos = Vector2i(1, 5)
 position = Vector2(32, 256)
 dest_floor_id = "main_4"
 dest_pos = Vector2i(1, 8)
+is_transport_target = true
 
 [node name="StairDown1" parent="Entities" unique_id=2057480134 instance=ExtResource("4_0wie4")]
 position = Vector2(224, 288)
@@ -51,3 +64,74 @@ dest_pos = Vector2i(9, 9)
 [node name="GoldShop" parent="Entities" unique_id=338677699 instance=ExtResource("4_5kxpb")]
 position = Vector2(64, 224)
 data = ExtResource("5_bwmp2")
+
+[node name="YellowDoor" parent="Entities" unique_id=2056068635 instance=ExtResource("7_82hmm")]
+position = Vector2(288, 192)
+
+[node name="BlueDoor1" parent="Entities" unique_id=941607296 instance=ExtResource("7_82hmm")]
+position = Vector2(192, 160)
+door_type = 1
+
+[node name="BlueDoor2" parent="Entities" unique_id=858607056 instance=ExtResource("7_82hmm")]
+position = Vector2(256, 32)
+door_type = 1
+
+[node name="GreaterPotion" parent="Entities" unique_id=1365116579 instance=ExtResource("8_hndyw")]
+position = Vector2(64, 288)
+data = ExtResource("9_xo2ot")
+
+[node name="BlueGem" parent="Entities" unique_id=871700344 instance=ExtResource("8_hndyw")]
+position = Vector2(288, 32)
+data = ExtResource("9_sv05g")
+
+[node name="FireWine" parent="Entities" unique_id=490876993 instance=ExtResource("8_hndyw")]
+position = Vector2(288, 64)
+data = ExtResource("10_xo2ot")
+
+[node name="Antidote" parent="Entities" unique_id=1941615941 instance=ExtResource("8_hndyw")]
+position = Vector2(288, 96)
+data = ExtResource("11_772uj")
+
+[node name="Bat1" parent="Entities" unique_id=605189716 instance=ExtResource("13_rg2al")]
+position = Vector2(32, 96)
+data = ExtResource("14_3fj16")
+
+[node name="Bat2" parent="Entities" unique_id=1046308366 instance=ExtResource("13_rg2al")]
+position = Vector2(96, 32)
+data = ExtResource("14_3fj16")
+
+[node name="Bat3" parent="Entities" unique_id=1113921581 instance=ExtResource("13_rg2al")]
+position = Vector2(160, 96)
+data = ExtResource("14_3fj16")
+
+[node name="Bat4" parent="Entities" unique_id=1431900231 instance=ExtResource("13_rg2al")]
+position = Vector2(96, 160)
+data = ExtResource("14_3fj16")
+
+[node name="RedSlime1" parent="Entities" unique_id=817575781 instance=ExtResource("13_rg2al")]
+position = Vector2(128, 96)
+data = ExtResource("15_7oebu")
+
+[node name="RedSlime2" parent="Entities" unique_id=97965944 instance=ExtResource("13_rg2al")]
+position = Vector2(160, 64)
+data = ExtResource("15_7oebu")
+
+[node name="RedSlime3" parent="Entities" unique_id=363886314 instance=ExtResource("13_rg2al")]
+position = Vector2(96, 256)
+data = ExtResource("15_7oebu")
+
+[node name="RedSlime4" parent="Entities" unique_id=237329064 instance=ExtResource("13_rg2al")]
+position = Vector2(192, 256)
+data = ExtResource("15_7oebu")
+
+[node name="GreenSlime" parent="Entities" unique_id=1123378018 instance=ExtResource("13_rg2al")]
+position = Vector2(64, 256)
+data = ExtResource("16_b2hoe")
+
+[node name="Mage" parent="Entities" unique_id=1177562944 instance=ExtResource("13_rg2al")]
+position = Vector2(224, 32)
+data = ExtResource("17_6n5um")
+
+[node name="Skeleton" parent="Entities" unique_id=1926541153 instance=ExtResource("13_rg2al")]
+position = Vector2(288, 224)
+data = ExtResource("18_t0q87")

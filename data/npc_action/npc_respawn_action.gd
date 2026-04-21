@@ -16,7 +16,10 @@ func apply(grid_pos: Vector2i, _player_data: PlayerData) -> void:
 	var dest_floor := target_floor if target_floor else FloorManager.current_floor_id
 	var dest_pos := target_pos if target_pos else grid_pos
 	
-	entity.remove_from_grid()
+	# Calls queue_free() only later after on_block finishes to avoid crash
+	entity.visible = false
+	for cell in entity.get_occupied_cells():
+		FloorManager.remove_entity(cell)
 	
 	var npc_scene: PackedScene = preload("res://entities/npc_entity.tscn")
 	var new_npc: NpcEntity = FloorManager.spawn_entity_on_floor(

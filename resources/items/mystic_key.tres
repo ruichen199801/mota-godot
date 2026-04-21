@@ -7,5 +7,5 @@ script = ExtResource("1_jwou0")
 item_id = "mystic_key"
 item_name = "神秘钥匙"
 description = "可打开17F的秘密通道"
-item_type = 1
+item_type = 2
 metadata/_custom_type_script = "uid://x7y7v7vypehe"

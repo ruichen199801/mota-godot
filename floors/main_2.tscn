@@ -26,6 +26,14 @@
 [ext_resource type="Script" uid="uid://uv1g8mwl0ofk" path="res://data/npc_behavior/npc_merchant_behavior.gd" id="10_t5u2c"]
 [ext_resource type="Script" uid="uid://bgvrtb78qik1k" path="res://data/npc_action/npc_respawn_action.gd" id="13_t5u2c"]
 [ext_resource type="Script" uid="uid://chum8njyixr2l" path="res://data/npc_action/npc_place_stair_action.gd" id="14_2d3mq"]
+[ext_resource type="Resource" uid="uid://crv72j1mbl8sh" path="res://resources/items/greater_potion.tres" id="27_2d3mq"]
+[ext_resource type="PackedScene" uid="uid://b678t3khc1li4" path="res://entities/enemy_entity.tscn" id="28_buhyg"]
+[ext_resource type="Resource" uid="uid://c7w0y1xknrpon" path="res://resources/enemies/intermediate_skeleton_soldier/intermediate_skeleton_soldier.tres" id="29_c5a5n"]
+[ext_resource type="Resource" uid="uid://qc6aroo647jm" path="res://resources/enemies/red_bat/red_bat.tres" id="30_34upf"]
+[ext_resource type="Resource" uid="uid://daix88venj2d4" path="res://resources/enemies/knight/knight.tres" id="31_e2egd"]
+[ext_resource type="Resource" uid="uid://bsnuhn75qr0pd" path="res://resources/enemies/red_slime/red_slime.tres" id="32_vx1bw"]
+[ext_resource type="Resource" uid="uid://dgycbud154adj" path="res://resources/enemies/green_slime/green_slime.tres" id="33_s04co"]
+[ext_resource type="Resource" uid="uid://b6a8ij3no162s" path="res://resources/enemies/bat/bat.tres" id="34_8c6na"]
 
 [sub_resource type="Resource" id="Resource_k8wgq"]
 script = ExtResource("6_iilyr")
@@ -246,10 +254,46 @@ data = ExtResource("7_sbqtg")
 position = Vector2(96, 224)
 data = ExtResource("7_sbqtg")
 
-[node name="Potion1" parent="Entities" unique_id=325359393 instance=ExtResource("4_aksbr")]
+[node name="Potion" parent="Entities" unique_id=325359393 instance=ExtResource("4_aksbr")]
 position = Vector2(32, 64)
 data = ExtResource("8_jx7hg")
 
-[node name="Potion2" parent="Entities" unique_id=900833003 instance=ExtResource("4_aksbr")]
+[node name="GreaterPotion1" parent="Entities" unique_id=900833003 instance=ExtResource("4_aksbr")]
 position = Vector2(64, 64)
-data = ExtResource("8_jx7hg")
+data = ExtResource("27_2d3mq")
+
+[node name="GreaterPotion2" parent="Entities" unique_id=1050667977 instance=ExtResource("4_aksbr")]
+position = Vector2(288, 256)
+data = ExtResource("27_2d3mq")
+
+[node name="IntermediateSkeletonSoldier" parent="Entities" unique_id=605189716 instance=ExtResource("28_buhyg")]
+position = Vector2(64, 96)
+data = ExtResource("29_c5a5n")
+
+[node name="RedBat" parent="Entities" unique_id=2077488935 instance=ExtResource("28_buhyg")]
+position = Vector2(128, 96)
+data = ExtResource("30_34upf")
+
+[node name="Knight" parent="Entities" unique_id=164626623 instance=ExtResource("28_buhyg")]
+position = Vector2(64, 160)
+data = ExtResource("31_e2egd")
+
+[node name="RedSlime" parent="Entities" unique_id=1828742462 instance=ExtResource("28_buhyg")]
+position = Vector2(256, 96)
+data = ExtResource("32_vx1bw")
+
+[node name="GreenSlime1" parent="Entities" unique_id=608752167 instance=ExtResource("28_buhyg")]
+position = Vector2(224, 192)
+data = ExtResource("33_s04co")
+
+[node name="GreenSlime2" parent="Entities" unique_id=1218432217 instance=ExtResource("28_buhyg")]
+position = Vector2(224, 224)
+data = ExtResource("33_s04co")
+
+[node name="Bat1" parent="Entities" unique_id=1004989050 instance=ExtResource("28_buhyg")]
+position = Vector2(288, 192)
+data = ExtResource("34_8c6na")
+
+[node name="Bat2" parent="Entities" unique_id=439258966 instance=ExtResource("28_buhyg")]
+position = Vector2(288, 224)
+data = ExtResource("34_8c6na")
