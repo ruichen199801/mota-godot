@@ -44,10 +44,12 @@ z_index = 2
 [node name="StairUp1" parent="Entities" unique_id=1587493218 instance=ExtResource("3_d6dg8")]
 position = Vector2(128, 0)
 dest_floor_id = "main_11"
+dest_pos = Vector2i(4, 0)
 
 [node name="StairUp2" parent="Entities" unique_id=850209646 instance=ExtResource("3_d6dg8")]
 position = Vector2(320, 0)
 dest_floor_id = "main_11"
+dest_pos = Vector2i(10, 0)
 is_transport_target = true
 
 [node name="StairDown" parent="Entities" unique_id=183872323 instance=ExtResource("4_3f0pl")]
