@@ -57,13 +57,21 @@ func _gather_enemies() -> void:
 	var seen_ids: Dictionary = {}
 	for pos in FloorManager.grid:
 		var entity = FloorManager.grid[pos]
+		
 		if entity is EnemyEntity and entity.data != null:
 			var eid: String = entity.data.enemy_id
 			if eid in seen_ids or entity.data.hidden_in_mind_mirror:
 				continue
 			seen_ids[eid] = true
 			_entries.append(entity.data)
-
+		
+		elif entity is NpcEntity and entity.data != null and entity.data.preview_enemy != null:
+			var eid: String = entity.data.preview_enemy.enemy_id
+			if eid in seen_ids or entity.data.preview_enemy.hidden_in_mind_mirror:
+				continue
+			seen_ids[eid] = true
+			_entries.append(entity.data.preview_enemy)
+		
 
 func _build_page() -> void:
 	for child in page_container.get_children():

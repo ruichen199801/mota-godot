@@ -43,8 +43,7 @@ metadata/_custom_type_script = "uid://vork0ooj1wrk"
 
 [sub_resource type="Resource" id="Resource_fpl3a"]
 script = ExtResource("8_vbc0n")
-description = "100经验值换增幅器，
-怎样？"
+description = "100经验值换增幅器，怎样？"
 currency = 1
 one_time = true
 options = Array[ExtResource("6_slgkv")]([SubResource("Resource_5t0i7")])
@@ -73,9 +72,7 @@ metadata/_custom_type_script = "uid://ddt5j1qcfsosb"
 
 [sub_resource type="Resource" id="Resource_oc7i3"]
 script = ExtResource("15_qejun")
-text = "公主就在上一层，
-但听说有恶魔守着，
-如果实力不够千万不要上去"
+text = "公主就在上一层，但听说有恶魔守着，如果实力不够千万不要上去"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_ui58h"]

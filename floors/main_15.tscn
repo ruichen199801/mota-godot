@@ -40,8 +40,7 @@
 
 [sub_resource type="Resource" id="Resource_4b777"]
 script = ExtResource("6_l7dkg")
-text = "很久没人能拿到贤者之证了，
-这个就当是奖励吧"
+text = "很久没人能拿到贤者之证了，这个就当是奖励吧"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_wvcej"]
@@ -94,8 +93,7 @@ metadata/_custom_type_script = "uid://vork0ooj1wrk"
 
 [sub_resource type="Resource" id="Resource_71hkq"]
 script = ExtResource("16_67ugk")
-description = "你有钥匙吗？
-我愿意大量收购"
+description = "你有钥匙吗？我愿意大量收购"
 trade_type = 1
 options = Array[ExtResource("15_7fswr")]([SubResource("Resource_cih2b"), SubResource("Resource_cvhj2"), SubResource("Resource_tplr4")])
 metadata/_custom_type_script = "uid://dnkssnvswhj24"

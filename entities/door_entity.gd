@@ -4,6 +4,12 @@ extends TileEntity
 enum DoorType { YELLOW, BLUE, RED, IRON, LOGIC }
 
 @export var door_type: DoorType
+
+## Logic gate behavior:
+##   - If guard_positions is set, gate opens when all guarded cells have no enemies.
+##   - If not set, gate opens when player has gem pickaxe (consumes one use).
+@export var guard_positions: Array[Vector2i] = []
+
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
 const ANIM_NAMES := {
@@ -40,7 +46,10 @@ func _can_open(pd: PlayerData) -> bool:
 		DoorType.BLUE: return pd.blue_keys > 0
 		DoorType.RED: return pd.red_keys > 0
 		DoorType.IRON: return true
-		DoorType.LOGIC: return pd.get_item_uses("gem_pickaxe") > 0
+		DoorType.LOGIC: 
+			if not guard_positions.is_empty():
+				return _guards_cleared()
+			return pd.get_item_uses("gem_pickaxe") > 0
 	return false
 	
 
@@ -49,4 +58,14 @@ func _consume_key(pd: PlayerData) -> void:
 		DoorType.YELLOW: pd.yellow_keys -= 1
 		DoorType.BLUE: pd.blue_keys -= 1
 		DoorType.RED: pd.red_keys -= 1
-		DoorType.LOGIC: pd.use_item("gem_pickaxe")
+		DoorType.LOGIC: 
+			if guard_positions.is_empty():
+				pd.use_item("gem_pickaxe")
+
+
+func _guards_cleared() -> bool:
+	for pos in guard_positions:
+		var entity = FloorManager.get_entity(pos)
+		if entity is EnemyEntity:
+			return false
+	return true

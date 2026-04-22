@@ -4,6 +4,15 @@
 [ext_resource type="TileSet" uid="uid://di6pm00t0x4tx" path="res://resources/floor_tileset.tres" id="2_fghuv"]
 [ext_resource type="PackedScene" uid="uid://d2xyqkcfr7fhh" path="res://entities/portal_entity.tscn" id="3_54y8b"]
 [ext_resource type="PackedScene" uid="uid://cbmf85d67vidj" path="res://entities/stair_up_entity.tscn" id="3_cuqvc"]
+[ext_resource type="PackedScene" uid="uid://bp13ks4wpt6ea" path="res://entities/door_entity.tscn" id="5_21yuy"]
+[ext_resource type="PackedScene" uid="uid://d2gnobmc7j4xv" path="res://entities/item_entity.tscn" id="6_d3grc"]
+[ext_resource type="Resource" uid="uid://8vwv0rpxhslm" path="res://resources/items/red_gem.tres" id="7_mcs0n"]
+[ext_resource type="Resource" uid="uid://b5tvr5hwiubg" path="res://resources/items/blue_gem.tres" id="8_dgcnf"]
+[ext_resource type="PackedScene" uid="uid://b678t3khc1li4" path="res://entities/enemy_entity.tscn" id="9_vl22j"]
+[ext_resource type="Resource" uid="uid://j84j2hjdrmb4" path="res://resources/enemies/slime_king/slime_king.tres" id="10_kw1nh"]
+[ext_resource type="Resource" uid="uid://c6xjwvf370bjb" path="res://resources/enemies/black_slime/black_slime.tres" id="11_uj6yc"]
+[ext_resource type="Resource" uid="uid://bsnuhn75qr0pd" path="res://resources/enemies/red_slime/red_slime.tres" id="12_5xm2n"]
+[ext_resource type="Resource" uid="uid://dgycbud154adj" path="res://resources/enemies/green_slime/green_slime.tres" id="13_7nvfl"]
 
 [node name="Mota1" type="Node2D" unique_id=1806746235]
 script = ExtResource("1_76mg8")
@@ -30,3 +39,69 @@ position = Vector2(160, 320)
 trigger_direction = Vector2i(0, 1)
 dest_floor_id = "main_17"
 dest_pos = Vector2i(2, 0)
+
+[node name="YellowDoor" parent="Entities" unique_id=2056068635 instance=ExtResource("5_21yuy")]
+position = Vector2(160, 224)
+
+[node name="RedDoor1" parent="Entities" unique_id=1932555363 instance=ExtResource("5_21yuy")]
+position = Vector2(0, 128)
+door_type = 2
+
+[node name="RedDoor2" parent="Entities" unique_id=1528293750 instance=ExtResource("5_21yuy")]
+position = Vector2(160, 128)
+door_type = 2
+
+[node name="RedDoor3" parent="Entities" unique_id=1260438790 instance=ExtResource("5_21yuy")]
+position = Vector2(320, 128)
+door_type = 2
+
+[node name="RedGem" parent="Entities" unique_id=1365116579 instance=ExtResource("6_d3grc")]
+data = ExtResource("7_mcs0n")
+
+[node name="BlueGem" parent="Entities" unique_id=186982381 instance=ExtResource("6_d3grc")]
+position = Vector2(320, 0)
+data = ExtResource("8_dgcnf")
+
+[node name="SlimeKing1" parent="Entities" unique_id=605189716 instance=ExtResource("9_vl22j")]
+position = Vector2(0, 32)
+data = ExtResource("10_kw1nh")
+
+[node name="SlimeKing2" parent="Entities" unique_id=2147316567 instance=ExtResource("9_vl22j")]
+position = Vector2(160, 64)
+data = ExtResource("10_kw1nh")
+
+[node name="SlimeKing3" parent="Entities" unique_id=69832378 instance=ExtResource("9_vl22j")]
+position = Vector2(320, 32)
+data = ExtResource("10_kw1nh")
+
+[node name="BlackSlime1" parent="Entities" unique_id=864011637 instance=ExtResource("9_vl22j")]
+position = Vector2(0, 160)
+data = ExtResource("11_uj6yc")
+
+[node name="BlackSlime2" parent="Entities" unique_id=809401336 instance=ExtResource("9_vl22j")]
+position = Vector2(160, 160)
+data = ExtResource("11_uj6yc")
+
+[node name="BlackSlime3" parent="Entities" unique_id=682265915 instance=ExtResource("9_vl22j")]
+position = Vector2(320, 160)
+data = ExtResource("11_uj6yc")
+
+[node name="RedSlime1" parent="Entities" unique_id=1279283880 instance=ExtResource("9_vl22j")]
+position = Vector2(32, 192)
+data = ExtResource("12_5xm2n")
+
+[node name="RedSlime2" parent="Entities" unique_id=593107692 instance=ExtResource("9_vl22j")]
+position = Vector2(64, 192)
+data = ExtResource("12_5xm2n")
+
+[node name="RedSlime3" parent="Entities" unique_id=1280257500 instance=ExtResource("9_vl22j")]
+position = Vector2(256, 192)
+data = ExtResource("12_5xm2n")
+
+[node name="RedSlime4" parent="Entities" unique_id=570945722 instance=ExtResource("9_vl22j")]
+position = Vector2(288, 192)
+data = ExtResource("12_5xm2n")
+
+[node name="GreenSlime" parent="Entities" unique_id=1395586995 instance=ExtResource("9_vl22j")]
+position = Vector2(160, 256)
+data = ExtResource("13_7nvfl")

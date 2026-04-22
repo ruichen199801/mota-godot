@@ -56,10 +56,7 @@ metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_axaiu"]
 script = ExtResource("7_74xru")
-text = "对！有了它你就可以将对手的攻击力
-化成你的体力，虽然出现概率不高，
-但它还有一定概率会令你在战斗后
-回复少量体力"
+text = "对！有了它你就可以将对手的攻击力化成你的体力，虽然出现概率不高，但它还有一定概率会令你在战斗后回复少量体力"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_s1rjc"]
@@ -104,10 +101,7 @@ metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_ymsyt"]
 script = ExtResource("7_74xru")
-text = "你知道的真少嘛~只要拥有它，
-你就可以反弹对手的攻击使它也
-同时受伤，出现概率较高，
-要好好利用呢！"
+text = "你知道的真少嘛~ 只要拥有它，你就可以反弹对手的攻击使它也同时受伤，出现概率较高，要好好利用呢！"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_q5oej"]
@@ -153,9 +147,7 @@ metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_ubeqx"]
 script = ExtResource("7_74xru")
-text = "没错！有了这个再配合增幅器，
-你的攻击次数就会上升，
-对于战斗十分有利的啊！"
+text = "没错！有了这个再配合增幅器，你的攻击次数就会上升，对于战斗十分有利的啊！"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_jg60l"]
@@ -202,9 +194,7 @@ metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 [sub_resource type="Resource" id="Resource_cvhj2"]
 script = ExtResource("7_74xru")
 speaker = 1
-text = "啊！
-我有东西给你鉴定
-你等我一下！"
+text = "啊！我有东西给你鉴定，你等我一下！"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_tplr4"]
@@ -214,8 +204,7 @@ metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_71hkq"]
 script = ExtResource("7_74xru")
-text = "怎样？
-不是有东西要鉴定吗？"
+text = "怎样？不是有东西要鉴定吗？"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_ykbyl"]

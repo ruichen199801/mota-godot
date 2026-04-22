@@ -70,6 +70,7 @@ door_type = 3
 [node name="LogicDoor" parent="Entities" unique_id=418532124 instance=ExtResource("5_stydb")]
 position = Vector2(256, 224)
 door_type = 4
+guard_positions = Array[Vector2i]([Vector2i(9, 7), Vector2i(9, 8), Vector2i(10, 7), Vector2i(10, 8)])
 
 [node name="YellowKey1" parent="Entities" unique_id=1365116579 instance=ExtResource("6_iivpw")]
 position = Vector2(224, 64)

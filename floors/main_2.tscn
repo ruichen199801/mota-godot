@@ -37,9 +37,7 @@
 
 [sub_resource type="Resource" id="Resource_k8wgq"]
 script = ExtResource("6_iilyr")
-text = "咦！这不就是我的锄头吗？
-谢谢你替我找回来！
-让我替你打开通往地下的通道吧！"
+text = "咦！这不就是我的锄头吗？谢谢你替我找回来！让我替你打开通往地下的通道吧！"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_34upf"]
@@ -143,9 +141,7 @@ metadata/_custom_type_script = "uid://dn7vsl533x7gh"
 
 [sub_resource type="Resource" id="Resource_0htec"]
 script = ExtResource("6_iilyr")
-text = "你认识那个被抓住的盗贼吗？
-听说他来这里是为了找一个锄头。
-不知他要来干什么呢..."
+text = "你认识那个被抓住的盗贼吗？听说他来这里是为了找一个锄头，不知他要来干什么呢..."
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_dommr"]

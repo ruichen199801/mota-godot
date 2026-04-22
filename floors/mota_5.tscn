@@ -2,7 +2,70 @@
 
 [ext_resource type="Script" uid="uid://doupmspvj5m2v" path="res://floors/floor_setup.gd" id="1_4xxsg"]
 [ext_resource type="TileSet" uid="uid://di6pm00t0x4tx" path="res://resources/floor_tileset.tres" id="2_ty5t6"]
+[ext_resource type="PackedScene" uid="uid://bp13ks4wpt6ea" path="res://entities/door_entity.tscn" id="4_4tt37"]
 [ext_resource type="PackedScene" uid="uid://ubv3jnibyiks" path="res://entities/stair_down_entity.tscn" id="4_8r03u"]
+[ext_resource type="PackedScene" uid="uid://d2gnobmc7j4xv" path="res://entities/item_entity.tscn" id="4_a3ymv"]
+[ext_resource type="PackedScene" uid="uid://cv12hwq0yxdal" path="res://entities/npc_entity.tscn" id="4_crchg"]
+[ext_resource type="Script" uid="uid://nlow5r0mr3bq" path="res://data/npc_dialog_data.gd" id="5_mkc41"]
+[ext_resource type="Script" uid="uid://bru2snxxyg2v4" path="res://data/npc_action/npc_post_action.gd" id="6_4ia4i"]
+[ext_resource type="Resource" uid="uid://b1acanwmikiwm" path="res://resources/items/sage_emblem_lv0.tres" id="6_re2ig"]
+[ext_resource type="Resource" uid="uid://j0c3lt0bvhrs" path="res://resources/items/red_key.tres" id="7_87uch"]
+[ext_resource type="Script" uid="uid://dktqal1ji0w0" path="res://data/npc_behavior/npc_dialog_behavior.gd" id="7_egrno"]
+[ext_resource type="Resource" uid="uid://c60wunkp6fage" path="res://resources/items/overlord_emblem_lv0.tres" id="7_wn7sw"]
+[ext_resource type="Resource" uid="uid://ce6p5m7um1kw0" path="res://resources/items/hero_emblem_lv0.tres" id="8_87uch"]
+[ext_resource type="SpriteFrames" uid="uid://sbv076eg1003" path="res://resources/npcs/oldman_frames.tres" id="8_nbclo"]
+[ext_resource type="Script" uid="uid://dn7vsl533x7gh" path="res://data/npc_data.gd" id="9_mx5j8"]
+[ext_resource type="Resource" uid="uid://cb47vhdjso0e" path="res://resources/enemies/self/self.tres" id="10_egrno"]
+[ext_resource type="Script" uid="uid://b0lno0g37mqqa" path="res://data/npc_action/npc_spawn_enemy_action.gd" id="11_nbclo"]
+[ext_resource type="SpriteFrames" uid="uid://b0w0ml08mwhh4" path="res://resources/enemies/self/self_frames.tres" id="12_mx5j8"]
+
+[sub_resource type="Resource" id="Resource_c731b"]
+script = ExtResource("5_mkc41")
+text = "这里是魔塔...除了首五层是互相连接外，其余层数均要由不同的传送点传送..."
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_ddk45"]
+script = ExtResource("7_egrno")
+dialogs = Array[ExtResource("5_mkc41")]([SubResource("Resource_c731b")])
+metadata/_custom_type_script = "uid://dktqal1ji0w0"
+
+[sub_resource type="Resource" id="Resource_etieo"]
+script = ExtResource("9_mx5j8")
+npc_id = "mota_floor_hint_oldman"
+npc_name = "老人"
+frames = ExtResource("8_nbclo")
+behavior = SubResource("Resource_ddk45")
+metadata/_custom_type_script = "uid://dn7vsl533x7gh"
+
+[sub_resource type="Resource" id="Resource_omilv"]
+script = ExtResource("5_mkc41")
+speaker = 1
+text = "你是......是我？！"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_2jhpy"]
+script = ExtResource("5_mkc41")
+text = "要使用章...必须要有强大的精神力...所以你要先打败你自己来释放精神力！来吧！！"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_j66wf"]
+script = ExtResource("11_nbclo")
+enemy_data = ExtResource("10_egrno")
+metadata/_custom_type_script = "uid://b0lno0g37mqqa"
+
+[sub_resource type="Resource" id="Resource_mvppp"]
+script = ExtResource("7_egrno")
+dialogs = Array[ExtResource("5_mkc41")]([SubResource("Resource_omilv"), SubResource("Resource_2jhpy")])
+post_actions = Array[ExtResource("6_4ia4i")]([SubResource("Resource_j66wf")])
+metadata/_custom_type_script = "uid://dktqal1ji0w0"
+
+[sub_resource type="Resource" id="Resource_exgfk"]
+script = ExtResource("9_mx5j8")
+npc_id = "self_npc"
+npc_name = "???"
+frames = ExtResource("12_mx5j8")
+behavior = SubResource("Resource_mvppp")
+metadata/_custom_type_script = "uid://dn7vsl533x7gh"
 
 [node name="Mota5" type="Node2D" unique_id=1806746235]
 script = ExtResource("1_4xxsg")
@@ -23,3 +86,59 @@ z_index = 2
 position = Vector2(160, 320)
 dest_floor_id = "mota_4"
 dest_pos = Vector2i(5, 10)
+
+[node name="MotaFloorHintOldman" parent="Entities" unique_id=774706501 instance=ExtResource("4_crchg")]
+position = Vector2(0, 320)
+data = SubResource("Resource_etieo")
+
+[node name="SelfNpc" parent="Entities" unique_id=724918909 instance=ExtResource("4_crchg")]
+position = Vector2(96, 288)
+data = SubResource("Resource_exgfk")
+
+[node name="YellowDoor1" parent="Entities" unique_id=2056068635 instance=ExtResource("4_4tt37")]
+position = Vector2(160, 192)
+
+[node name="YellowDoor2" parent="Entities" unique_id=1468349507 instance=ExtResource("4_4tt37")]
+position = Vector2(160, 224)
+
+[node name="YellowDoor3" parent="Entities" unique_id=257773215 instance=ExtResource("4_4tt37")]
+position = Vector2(160, 256)
+
+[node name="BlueDoor1" parent="Entities" unique_id=1731316468 instance=ExtResource("4_4tt37")]
+position = Vector2(128, 192)
+door_type = 1
+
+[node name="BlueDoor2" parent="Entities" unique_id=841625563 instance=ExtResource("4_4tt37")]
+position = Vector2(160, 160)
+door_type = 1
+
+[node name="BlueDoor3" parent="Entities" unique_id=257935954 instance=ExtResource("4_4tt37")]
+position = Vector2(192, 192)
+door_type = 1
+
+[node name="RedDoor1" parent="Entities" unique_id=936555762 instance=ExtResource("4_4tt37")]
+position = Vector2(0, 128)
+door_type = 2
+
+[node name="RedDoor2" parent="Entities" unique_id=1993794884 instance=ExtResource("4_4tt37")]
+position = Vector2(160, 128)
+door_type = 2
+
+[node name="RedDoor3" parent="Entities" unique_id=1714408332 instance=ExtResource("4_4tt37")]
+position = Vector2(320, 128)
+door_type = 2
+
+[node name="SageEmblemLv0" parent="Entities" unique_id=1365116579 instance=ExtResource("4_a3ymv")]
+data = ExtResource("6_re2ig")
+
+[node name="OverlordEmblemLv0" parent="Entities" unique_id=16262456 instance=ExtResource("4_a3ymv")]
+position = Vector2(160, 0)
+data = ExtResource("7_wn7sw")
+
+[node name="HeroEmblemLv0" parent="Entities" unique_id=1009308202 instance=ExtResource("4_a3ymv")]
+position = Vector2(320, 0)
+data = ExtResource("8_87uch")
+
+[node name="RedKey" parent="Entities" unique_id=1955565805 instance=ExtResource("4_a3ymv")]
+position = Vector2(320, 320)
+data = ExtResource("7_87uch")

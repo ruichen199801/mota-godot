@@ -28,7 +28,7 @@
 
 [sub_resource type="Resource" id="Resource_nuhnq"]
 script = ExtResource("6_y1vem")
-text = "那些骑士的必杀率高达30%，请小心..."
+text = "那些骑士的暴击率高达30%，请小心..."
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_db6v5"]

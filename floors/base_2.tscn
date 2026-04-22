@@ -17,27 +17,26 @@
 [ext_resource type="Script" uid="uid://bfpvfiuxd5pws" path="res://data/npc_behavior/npc_conditional_behavior.gd" id="12_wm5lg"]
 [ext_resource type="SpriteFrames" uid="uid://dosrxwuin6pic" path="res://resources/npcs/fairy_frames.tres" id="13_1vfu4"]
 [ext_resource type="Script" uid="uid://dn7vsl533x7gh" path="res://data/npc_data.gd" id="14_38tnh"]
+[ext_resource type="Resource" uid="uid://cjk0jfuhuvu8n" path="res://resources/enemies/demon_king_gledi/demon_king_gledi.tres" id="18_euekv"]
+[ext_resource type="Script" uid="uid://b0lno0g37mqqa" path="res://data/npc_action/npc_spawn_enemy_action.gd" id="19_lgt1g"]
+[ext_resource type="SpriteFrames" uid="uid://kcjb76q75tl1" path="res://resources/enemies/demon_king_gledi/demon_king_gledi_frames.tres" id="20_mieih"]
 
 [sub_resource type="Resource" id="Resource_rlp4g"]
 script = ExtResource("7_xhppm")
 speaker = 1
-text = "我拿到了！
-力量真的增加了不少！
+text = "我拿到了！力量真的增加了不少！
 谢谢你！"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_qlms4"]
 script = ExtResource("7_xhppm")
-text = "不用谢~
-等你救回了公主后再谢~
+text = "不用谢~ 等你救回了公主后再谢~
 那么，加油吧！"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_t4bsd"]
 script = ExtResource("7_xhppm")
-text = "加油吧！
-要是你救不了公主的话
-我不会放过你的~"
+text = "加油吧！要是你救不了公主的话，我不会放过你的~"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_euekv"]
@@ -78,33 +77,25 @@ metadata/_custom_type_script = "uid://cra84k00nr80m"
 
 [sub_resource type="Resource" id="Resource_n5u17"]
 script = ExtResource("7_xhppm")
-text = "稀客呢~是来救公主的吧？
-但这层往后的怪物会变得更强
-以你现在的实力
-是绝对赢不了的！"
+text = "稀客呢~ 是来救公主的吧？
+但这层往后的怪物会变得更强，以你现在的实力是绝对赢不了的！"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_jwfs7"]
 script = ExtResource("7_xhppm")
 speaker = 1
-text = "是吗？
-那怎么办？"
+text = "是吗？那怎么办？"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_2xuio"]
 script = ExtResource("7_xhppm")
-text = "嗯~~
-我还是建议你到17F去取宝物
-这个你拿去吧
-拿到宝物后你的力量就会大增
-到时再来找我~"
+text = "嗯~~ 我还是建议你到17F去取宝物
+这个你拿去吧，拿到宝物后你的力量就会大增，到时再来找我~"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_lvf15"]
 script = ExtResource("7_xhppm")
-text = "加油吧！
-要是你救不了公主的话
-我不会放过你的~"
+text = "加油吧！要是你救不了公主的话，我不会放过你的~"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_baqwy"]
@@ -134,6 +125,53 @@ frames = ExtResource("13_1vfu4")
 behavior = SubResource("Resource_5xxai")
 metadata/_custom_type_script = "uid://dn7vsl533x7gh"
 
+[sub_resource type="Resource" id="Resource_hs43i"]
+script = ExtResource("7_xhppm")
+text = "看来你的运气挺不错，竟然能到达这里... 不过这里是你的终点了"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_j66wf"]
+script = ExtResource("7_xhppm")
+speaker = 1
+text = "这里当然是终点！因为我会击败你并救走公主！！"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_i3jls"]
+script = ExtResource("7_xhppm")
+text = "似乎你还未明白...."
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_f0nfx"]
+script = ExtResource("7_xhppm")
+speaker = 1
+text = "除了击败你外，我还要明白什么？"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_pp5lq"]
+script = ExtResource("7_xhppm")
+text = "算了，一决雌雄吧"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_ddk45"]
+script = ExtResource("19_lgt1g")
+enemy_data = ExtResource("18_euekv")
+metadata/_custom_type_script = "uid://b0lno0g37mqqa"
+
+[sub_resource type="Resource" id="Resource_mvppp"]
+script = ExtResource("11_mieih")
+dialogs = Array[ExtResource("7_xhppm")]([SubResource("Resource_hs43i"), SubResource("Resource_j66wf"), SubResource("Resource_i3jls"), SubResource("Resource_f0nfx"), SubResource("Resource_pp5lq")])
+post_actions = Array[ExtResource("8_t4bsd")]([SubResource("Resource_ddk45")])
+metadata/_custom_type_script = "uid://dktqal1ji0w0"
+
+[sub_resource type="Resource" id="Resource_38tnh"]
+script = ExtResource("14_38tnh")
+npc_id = "demon_king_npc"
+npc_name = "魔王‧格勒第"
+frames = ExtResource("20_mieih")
+behavior = SubResource("Resource_mvppp")
+preview_enemy = ExtResource("18_euekv")
+metadata/_custom_type_script = "uid://dn7vsl533x7gh"
+
 [node name="Base2" type="Node2D" unique_id=1806746235]
 script = ExtResource("1_hc3yb")
 
@@ -157,6 +195,10 @@ dest_pos = Vector2i(10, 10)
 [node name="Fairy" parent="Entities" unique_id=774706501 instance=ExtResource("5_rlp4g")]
 position = Vector2(160, 160)
 data = SubResource("Resource_thobv")
+
+[node name="DemonKingNpc" parent="Entities" unique_id=1772031818 instance=ExtResource("5_rlp4g")]
+position = Vector2(0, 192)
+data = SubResource("Resource_38tnh")
 
 [node name="YellowDoor1" parent="Entities" unique_id=2056068635 instance=ExtResource("6_sdssp")]
 position = Vector2(96, 160)

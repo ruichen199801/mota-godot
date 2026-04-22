@@ -34,9 +34,7 @@
 
 [sub_resource type="Resource" id="Resource_yduuu"]
 script = ExtResource("6_avypw")
-text = "你是来救公主的吧？
-这个无条件送给你啦！
-但你一定要将公主给救出来！"
+text = "你是来救公主的吧？这个无条件送给你啦！但你一定要将公主给救出来！"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_n8tkm"]
@@ -68,9 +66,7 @@ metadata/_custom_type_script = "uid://ddt5j1qcfsosb"
 
 [sub_resource type="Resource" id="Resource_on3wq"]
 script = ExtResource("6_avypw")
-text = "听说这座塔不止20层...
-但是最高只能去到第20层...
-真叫人头痛..."
+text = "听说这座塔不止20层...但是最高只能去到第20层...真叫人头痛..."
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_tcfcx"]
@@ -95,15 +91,12 @@ metadata/_custom_type_script = "uid://dn7vsl533x7gh"
 
 [sub_resource type="Resource" id="Resource_hfyf7"]
 script = ExtResource("6_avypw")
-text = "你知道什么是章吗？
-在这里有数个不同的章，只要拿到
-就可以得到一些有利战斗的能力，"
+text = "你知道什么是章吗？在这里有数个不同的章，只要拿到就可以得到一些有利战斗的能力，"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_35ugl"]
 script = ExtResource("6_avypw")
-text = "但是章要被鉴定后才可使用
-你必须找一个懂鉴定的人！"
+text = "但是章要被鉴定后才可使用，你必须找一个懂鉴定的人！"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_3addk"]
