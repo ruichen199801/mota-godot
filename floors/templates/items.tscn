@@ -35,11 +35,11 @@
 [ext_resource type="Resource" uid="uid://clpmukkfspi0d" path="res://resources/items/cross.tres" id="30_17a8y"]
 [ext_resource type="Resource" uid="uid://dykkxk45r1j3b" path="res://resources/items/hero_emblem_lv2.tres" id="30_np6ps"]
 [ext_resource type="Resource" uid="uid://83htevejqgok" path="res://resources/items/hero_emblem_lv3.tres" id="31_4g45h"]
-[ext_resource type="Resource" uid="uid://c60wunkp6fage" path="res://resources/items/overload_emblem_lv0.tres" id="32_np6ps"]
+[ext_resource type="Resource" uid="uid://c60wunkp6fage" path="res://resources/items/overlord_emblem_lv0.tres" id="32_np6ps"]
 [ext_resource type="Resource" uid="uid://bvtnhkvtamdxv" path="res://resources/items/ice_amulet.tres" id="32_ulo31"]
-[ext_resource type="Resource" uid="uid://s2cjd6eshpri" path="res://resources/items/overload_emblem_lv1.tres" id="33_4g45h"]
-[ext_resource type="Resource" uid="uid://c4hm6px85crl4" path="res://resources/items/overload_emblem_lv2.tres" id="34_s1x5m"]
-[ext_resource type="Resource" uid="uid://dtgxkgunnt12i" path="res://resources/items/overload_emblem_lv3.tres" id="35_0l4sv"]
+[ext_resource type="Resource" uid="uid://s2cjd6eshpri" path="res://resources/items/overlord_emblem_lv1.tres" id="33_4g45h"]
+[ext_resource type="Resource" uid="uid://c4hm6px85crl4" path="res://resources/items/overlord_emblem_lv2.tres" id="34_s1x5m"]
+[ext_resource type="Resource" uid="uid://dtgxkgunnt12i" path="res://resources/items/overlord_emblem_lv3.tres" id="35_0l4sv"]
 [ext_resource type="Resource" uid="uid://b1acanwmikiwm" path="res://resources/items/sage_emblem_lv0.tres" id="36_b781i"]
 [ext_resource type="Resource" uid="uid://di85ttptbu157" path="res://resources/items/sage_emblem_lv1.tres" id="37_pctdd"]
 [ext_resource type="Resource" uid="uid://6g2af7p3yhh8" path="res://resources/items/sage_emblem_lv2.tres" id="38_5117l"]
@@ -168,19 +168,19 @@ data = ExtResource("30_np6ps")
 position = Vector2(96, 96)
 data = ExtResource("31_4g45h")
 
-[node name="OverloadEmblemLv0" parent="." unique_id=1307283270 instance=ExtResource("2_6k7fa")]
+[node name="OverlordEmblemLv0" parent="." unique_id=1307283270 instance=ExtResource("2_6k7fa")]
 position = Vector2(0, 128)
 data = ExtResource("32_np6ps")
 
-[node name="OverloadEmblemLv1" parent="." unique_id=1542272278 instance=ExtResource("2_6k7fa")]
+[node name="OverlordEmblemLv1" parent="." unique_id=1542272278 instance=ExtResource("2_6k7fa")]
 position = Vector2(32, 128)
 data = ExtResource("33_4g45h")
 
-[node name="OverloadEmblemLv2" parent="." unique_id=852580595 instance=ExtResource("2_6k7fa")]
+[node name="OverlordEmblemLv2" parent="." unique_id=852580595 instance=ExtResource("2_6k7fa")]
 position = Vector2(64, 128)
 data = ExtResource("34_s1x5m")
 
-[node name="OverloadEmblemLv3" parent="." unique_id=1795900221 instance=ExtResource("2_6k7fa")]
+[node name="OverlordEmblemLv3" parent="." unique_id=1795900221 instance=ExtResource("2_6k7fa")]
 position = Vector2(96, 128)
 data = ExtResource("35_0l4sv")
 

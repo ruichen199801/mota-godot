@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://brpbsx67xe3pe"
-path="res://.godot/imported/emblem_overload.png-8770da27a3845299bd3bbe6838fd0758.ctex"
+path="res://.godot/imported/emblem_overlord.png-5573ec0ec50c5a0d894d69989393facc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/emblem_overload.png"
-dest_files=["res://.godot/imported/emblem_overload.png-8770da27a3845299bd3bbe6838fd0758.ctex"]
+source_file="res://assets/images/emblem_overlord.png"
+dest_files=["res://.godot/imported/emblem_overlord.png-5573ec0ec50c5a0d894d69989393facc.ctex"]
 
 [params]
 

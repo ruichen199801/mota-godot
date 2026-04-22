@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c60wunkp6fage"]
 
 [ext_resource type="Script" uid="uid://dmhc63rw7uxe8" path="res://data/item_effect/emblem_pickup_effect.gd" id="1_ymxhj"]
-[ext_resource type="Texture2D" uid="uid://brpbsx67xe3pe" path="res://assets/images/emblem_overload.png" id="2_1twr8"]
+[ext_resource type="Texture2D" uid="uid://brpbsx67xe3pe" path="res://assets/images/emblem_overlord.png" id="2_ymxhj"]
 [ext_resource type="Script" uid="uid://x7y7v7vypehe" path="res://data/item_data.gd" id="3_n82r3"]
 
 [sub_resource type="Resource" id="Resource_1twr8"]
@@ -11,8 +11,8 @@ metadata/_custom_type_script = "uid://dmhc63rw7uxe8"
 
 [resource]
 script = ExtResource("3_n82r3")
-item_id = "overload_emblem_lv0"
+item_id = "overlord_emblem_lv0"
 item_name = "镶有黑珍珠的章"
-icon = ExtResource("2_1twr8")
+icon = ExtResource("2_ymxhj")
 effect = SubResource("Resource_1twr8")
 metadata/_custom_type_script = "uid://x7y7v7vypehe"

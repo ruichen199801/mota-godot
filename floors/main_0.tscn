@@ -9,21 +9,17 @@
 [ext_resource type="PackedScene" uid="uid://d2gnobmc7j4xv" path="res://entities/item_entity.tscn" id="8_2p8vk"]
 [ext_resource type="Script" uid="uid://bru2snxxyg2v4" path="res://data/npc_action/npc_post_action.gd" id="8_c64ya"]
 [ext_resource type="Script" uid="uid://dktqal1ji0w0" path="res://data/npc_behavior/npc_dialog_behavior.gd" id="8_oc7i3"]
-[ext_resource type="SpriteFrames" uid="uid://sbv076eg1003" path="res://resources/npcs/oldman_frames.tres" id="9_konfa"]
 [ext_resource type="Script" uid="uid://dn7vsl533x7gh" path="res://data/npc_data.gd" id="10_ddk45"]
 [ext_resource type="SpriteFrames" uid="uid://0a8itglro6ui" path="res://resources/npcs/merchant_frames.tres" id="12_ddk45"]
 [ext_resource type="Script" uid="uid://btaqsx7ydfud" path="res://data/npc_condition/npc_condition.gd" id="12_scpkc"]
-[ext_resource type="Script" uid="uid://bgvrtb78qik1k" path="res://data/npc_action/npc_respawn_action.gd" id="13_rkwby"]
 [ext_resource type="Script" uid="uid://bfpvfiuxd5pws" path="res://data/npc_behavior/npc_conditional_behavior.gd" id="13_xdeuw"]
 [ext_resource type="Resource" uid="uid://41tscolgmqor" path="res://resources/items/anywhere_door.tres" id="15_my178"]
-[ext_resource type="Script" uid="uid://b0lno0g37mqqa" path="res://data/npc_action/npc_spawn_enemy_action.gd" id="16_cgjpo"]
-[ext_resource type="Resource" uid="uid://bef7or4cc5pbn" path="res://resources/enemies/fake_princess/fake_princess.tres" id="16_oq0yt"]
 [ext_resource type="Script" uid="uid://vork0ooj1wrk" path="res://data/shop_option_data.gd" id="17_pit3x"]
-[ext_resource type="SpriteFrames" uid="uid://c58cvrjebi8qb" path="res://resources/npcs/princess_frames.tres" id="17_xkerl"]
 [ext_resource type="Script" uid="uid://dnkssnvswhj24" path="res://data/npc_merchant_data.gd" id="18_l5vg8"]
 [ext_resource type="Script" uid="uid://uv1g8mwl0ofk" path="res://data/npc_behavior/npc_merchant_behavior.gd" id="19_hs43i"]
-[ext_resource type="Resource" uid="uid://dlg14ckdx4v6h" path="res://resources/items/hero_emblem_lv1.tres" id="21_i3jls"]
+[ext_resource type="Resource" uid="uid://83htevejqgok" path="res://resources/items/hero_emblem_lv3.tres" id="20_7c4by"]
 [ext_resource type="Script" uid="uid://ca3xixvnlvp5q" path="res://data/npc_action/npc_give_item_action.gd" id="22_f0nfx"]
+[ext_resource type="Resource" uid="uid://6g2af7p3yhh8" path="res://resources/items/sage_emblem_lv2.tres" id="22_v0eb0"]
 [ext_resource type="Script" uid="uid://dab71k71t1pwl" path="res://data/npc_condition/npc_emblem_condition.gd" id="24_f0nfx"]
 [ext_resource type="Resource" uid="uid://dykkxk45r1j3b" path="res://resources/items/hero_emblem_lv2.tres" id="25_pp5lq"]
 [ext_resource type="Script" uid="uid://fjr4xtjuau8g" path="res://data/npc_condition/npc_level_condition.gd" id="26_la3xr"]
@@ -32,7 +28,6 @@
 [ext_resource type="Resource" uid="uid://b7h406hwv0y76" path="res://resources/items/pickaxe.tres" id="31_c731b"]
 [ext_resource type="PackedScene" uid="uid://b678t3khc1li4" path="res://entities/enemy_entity.tscn" id="33_v0eb0"]
 [ext_resource type="Resource" uid="uid://dgycbud154adj" path="res://resources/enemies/green_slime/green_slime.tres" id="34_v2yg1"]
-[ext_resource type="Resource" uid="uid://ce6p5m7um1kw0" path="res://resources/items/hero_emblem_lv0.tres" id="60_hs43i"]
 
 [sub_resource type="Resource" id="Resource_v0eb0"]
 script = ExtResource("17_pit3x")
@@ -49,35 +44,9 @@ one_time = true
 options = Array[ExtResource("17_pit3x")]([SubResource("Resource_v0eb0")])
 metadata/_custom_type_script = "uid://dnkssnvswhj24"
 
-[sub_resource type="Resource" id="Resource_la3xr"]
-script = ExtResource("7_t7i0h")
-text = "又是挑战者吗?
-希望你能够活着回去，
-嘻嘻嘻嘻..."
-metadata/_custom_type_script = "uid://nlow5r0mr3bq"
-
-[sub_resource type="Resource" id="Resource_7c4by"]
-script = ExtResource("8_oc7i3")
-dialogs = Array[ExtResource("7_t7i0h")]([SubResource("Resource_la3xr")])
-metadata/_custom_type_script = "uid://dktqal1ji0w0"
-
-[sub_resource type="Resource" id="Resource_5t0i7"]
-script = ExtResource("10_ddk45")
-npc_id = "intro_merchant"
-npc_name = "奸商"
-frames = ExtResource("12_ddk45")
-behavior = SubResource("Resource_7c4by")
-metadata/_custom_type_script = "uid://dn7vsl533x7gh"
-
-[sub_resource type="Resource" id="Resource_fpl3a"]
-script = ExtResource("13_rkwby")
-new_data = SubResource("Resource_5t0i7")
-metadata/_custom_type_script = "uid://bgvrtb78qik1k"
-
 [sub_resource type="Resource" id="Resource_wtmfe"]
 script = ExtResource("19_hs43i")
 merchant = SubResource("Resource_v2yg1")
-post_actions = Array[ExtResource("8_c64ya")]([SubResource("Resource_fpl3a")])
 metadata/_custom_type_script = "uid://uv1g8mwl0ofk"
 
 [sub_resource type="Resource" id="Resource_n87mh"]
@@ -88,7 +57,7 @@ metadata/_custom_type_script = "uid://fjr4xtjuau8g"
 [sub_resource type="Resource" id="Resource_0hcfp"]
 script = ExtResource("24_f0nfx")
 emblem_type = 1
-min_level = 1
+emblem_level = 1
 metadata/_custom_type_script = "uid://dab71k71t1pwl"
 
 [sub_resource type="Resource" id="Resource_xgbfv"]
@@ -117,161 +86,140 @@ metadata/_custom_type_script = "uid://bfpvfiuxd5pws"
 
 [sub_resource type="Resource" id="Resource_xdeuw"]
 script = ExtResource("10_ddk45")
-npc_id = "intro_merchant"
+npc_id = "hero_lv2_merchant"
 npc_name = "奸商"
 frames = ExtResource("12_ddk45")
 behavior = SubResource("Resource_5x58p")
 metadata/_custom_type_script = "uid://dn7vsl533x7gh"
 
-[sub_resource type="Resource" id="Resource_nrs3k"]
+[sub_resource type="Resource" id="Resource_t7i0h"]
 script = ExtResource("7_t7i0h")
-text = "这是勇者之证！"
+text = "挑战者，我送这个给你，
+不过当你救出了公主，
+巨额重酬我要七成！"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
-[sub_resource type="Resource" id="Resource_g4a0m"]
+[sub_resource type="Resource" id="Resource_konfa"]
 script = ExtResource("22_f0nfx")
-item = ExtResource("21_i3jls")
+item = ExtResource("20_7c4by")
 metadata/_custom_type_script = "uid://ca3xixvnlvp5q"
 
-[sub_resource type="Resource" id="Resource_a6d2p"]
-script = ExtResource("7_t7i0h")
-text = "需要鉴定什么吗？"
-metadata/_custom_type_script = "uid://nlow5r0mr3bq"
-
-[sub_resource type="Resource" id="Resource_ymsyt"]
+[sub_resource type="Resource" id="Resource_oc7i3"]
 script = ExtResource("8_oc7i3")
-dialogs = Array[ExtResource("7_t7i0h")]([SubResource("Resource_a6d2p")])
+dialogs = Array[ExtResource("7_t7i0h")]([SubResource("Resource_t7i0h")])
+post_actions = Array[ExtResource("8_c64ya")]([SubResource("Resource_konfa")])
 metadata/_custom_type_script = "uid://dktqal1ji0w0"
 
-[sub_resource type="Resource" id="Resource_qyyeh"]
-script = ExtResource("10_ddk45")
-npc_id = "oldman_f0_3_respawned"
-npc_name = "老人"
-frames = ExtResource("9_konfa")
-behavior = SubResource("Resource_ymsyt")
-metadata/_custom_type_script = "uid://dn7vsl533x7gh"
+[sub_resource type="Resource" id="Resource_la3xr"]
+script = ExtResource("26_la3xr")
+min_level = 35
+metadata/_custom_type_script = "uid://fjr4xtjuau8g"
 
-[sub_resource type="Resource" id="Resource_82hrc"]
-script = ExtResource("13_rkwby")
-new_data = SubResource("Resource_qyyeh")
-metadata/_custom_type_script = "uid://bgvrtb78qik1k"
-
-[sub_resource type="Resource" id="Resource_aqhk3"]
-script = ExtResource("8_oc7i3")
-dialogs = Array[ExtResource("7_t7i0h")]([SubResource("Resource_nrs3k")])
-post_actions = Array[ExtResource("8_c64ya")]([SubResource("Resource_g4a0m"), SubResource("Resource_82hrc")])
-metadata/_custom_type_script = "uid://dktqal1ji0w0"
-
-[sub_resource type="Resource" id="Resource_dw4ub"]
+[sub_resource type="Resource" id="Resource_7c4by"]
 script = ExtResource("24_f0nfx")
 emblem_type = 1
+emblem_level = 2
 metadata/_custom_type_script = "uid://dab71k71t1pwl"
 
-[sub_resource type="Resource" id="Resource_ldhdy"]
+[sub_resource type="Resource" id="Resource_5t0i7"]
+script = ExtResource("27_7c4by")
+conditions = Array[ExtResource("12_scpkc")]([SubResource("Resource_la3xr"), SubResource("Resource_7c4by")])
+metadata/_custom_type_script = "uid://ddt5j1qcfsosb"
+
+[sub_resource type="Resource" id="Resource_gv85u"]
 script = ExtResource("7_t7i0h")
-text = "勇者，你有宝物我可以帮忙鉴定！"
+text = "你见过那条巨龙了吧？
+打败它后可以拿到神剑之证，
+只要你在怪物前使用，那么
+它就会变成最弱的绿色史莱姆，"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
-[sub_resource type="Resource" id="Resource_4lmj6"]
+[sub_resource type="Resource" id="Resource_mscsf"]
+script = ExtResource("7_t7i0h")
+text = "但是对特殊怪物无效，而且
+次数有限，考虑清楚才用啊！"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_7etjt"]
 script = ExtResource("8_oc7i3")
-dialogs = Array[ExtResource("7_t7i0h")]([SubResource("Resource_ldhdy")])
+dialogs = Array[ExtResource("7_t7i0h")]([SubResource("Resource_gv85u"), SubResource("Resource_mscsf")])
 metadata/_custom_type_script = "uid://dktqal1ji0w0"
 
-[sub_resource type="Resource" id="Resource_od1hb"]
+[sub_resource type="Resource" id="Resource_fpl3a"]
 script = ExtResource("13_xdeuw")
-condition = SubResource("Resource_dw4ub")
-default_behavior = SubResource("Resource_4lmj6")
-alt_behavior = SubResource("Resource_aqhk3")
+condition = SubResource("Resource_5t0i7")
+default_behavior = SubResource("Resource_7etjt")
+alt_behavior = SubResource("Resource_oc7i3")
 metadata/_custom_type_script = "uid://bfpvfiuxd5pws"
 
-[sub_resource type="Resource" id="Resource_t4xmc"]
+[sub_resource type="Resource" id="Resource_tsqci"]
 script = ExtResource("10_ddk45")
-npc_id = "emblem_identify_oldman"
-npc_name = "老人"
-frames = ExtResource("9_konfa")
-behavior = SubResource("Resource_od1hb")
+npc_id = "hero_lv3_merchant"
+npc_name = "商人"
+frames = ExtResource("12_ddk45")
+behavior = SubResource("Resource_fpl3a")
 metadata/_custom_type_script = "uid://dn7vsl533x7gh"
 
-[sub_resource type="Resource" id="Resource_i3jls"]
+[sub_resource type="Resource" id="Resource_jt7kn"]
 script = ExtResource("7_t7i0h")
-speaker = 1
-text = "公主，我来救你了！"
+text = "这是贤者之证?
+这个送给你，
+对你有帮助的！"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
-[sub_resource type="Resource" id="Resource_f0nfx"]
-script = ExtResource("7_t7i0h")
-text = "......"
-metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+[sub_resource type="Resource" id="Resource_pit3x"]
+script = ExtResource("22_f0nfx")
+item = ExtResource("22_v0eb0")
+metadata/_custom_type_script = "uid://ca3xixvnlvp5q"
 
-[sub_resource type="Resource" id="Resource_pp5lq"]
-script = ExtResource("7_t7i0h")
-speaker = 1
-text = "怎么了？我们快走吧"
-metadata/_custom_type_script = "uid://nlow5r0mr3bq"
-
-[sub_resource type="Resource" id="Resource_aeghn"]
-script = ExtResource("7_t7i0h")
-text = "呼呼呼哈哈哈哈哈！你上当了！"
-metadata/_custom_type_script = "uid://nlow5r0mr3bq"
-
-[sub_resource type="Resource" id="Resource_7x1ca"]
-script = ExtResource("16_cgjpo")
-enemy_data = ExtResource("16_oq0yt")
-metadata/_custom_type_script = "uid://b0lno0g37mqqa"
-
-[sub_resource type="Resource" id="Resource_xq0hc"]
+[sub_resource type="Resource" id="Resource_l5vg8"]
 script = ExtResource("8_oc7i3")
-dialogs = Array[ExtResource("7_t7i0h")]([SubResource("Resource_i3jls"), SubResource("Resource_f0nfx"), SubResource("Resource_pp5lq"), SubResource("Resource_aeghn")])
-post_actions = Array[ExtResource("8_c64ya")]([SubResource("Resource_7x1ca")])
+dialogs = Array[ExtResource("7_t7i0h")]([SubResource("Resource_jt7kn")])
+post_actions = Array[ExtResource("8_c64ya")]([SubResource("Resource_pit3x")])
 metadata/_custom_type_script = "uid://dktqal1ji0w0"
 
-[sub_resource type="Resource" id="Resource_mpb1u"]
+[sub_resource type="Resource" id="Resource_c64ya"]
+script = ExtResource("26_la3xr")
+min_level = 20
+metadata/_custom_type_script = "uid://fjr4xtjuau8g"
+
+[sub_resource type="Resource" id="Resource_rkwby"]
+script = ExtResource("24_f0nfx")
+emblem_type = 2
+emblem_level = 1
+metadata/_custom_type_script = "uid://dab71k71t1pwl"
+
+[sub_resource type="Resource" id="Resource_cgjpo"]
+script = ExtResource("27_7c4by")
+conditions = Array[ExtResource("12_scpkc")]([SubResource("Resource_c64ya"), SubResource("Resource_rkwby")])
+metadata/_custom_type_script = "uid://ddt5j1qcfsosb"
+
+[sub_resource type="Resource" id="Resource_xkerl"]
+script = ExtResource("7_t7i0h")
+text = "你知道什么是防御临界值吗？只要
+你的防御力比怪物的攻击力高于
+一定数值，他们的攻击就伤不了你，
+当然，这数值越低越好"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_4uope"]
+script = ExtResource("8_oc7i3")
+dialogs = Array[ExtResource("7_t7i0h")]([SubResource("Resource_xkerl")])
+metadata/_custom_type_script = "uid://dktqal1ji0w0"
+
+[sub_resource type="Resource" id="Resource_scpkc"]
+script = ExtResource("13_xdeuw")
+condition = SubResource("Resource_cgjpo")
+default_behavior = SubResource("Resource_4uope")
+alt_behavior = SubResource("Resource_l5vg8")
+metadata/_custom_type_script = "uid://bfpvfiuxd5pws"
+
+[sub_resource type="Resource" id="Resource_8a718"]
 script = ExtResource("10_ddk45")
-npc_id = "fake_princess_npc"
-npc_name = "公主"
-frames = ExtResource("17_xkerl")
-behavior = SubResource("Resource_xq0hc")
-metadata/_custom_type_script = "uid://dn7vsl533x7gh"
-
-[sub_resource type="Resource" id="Resource_8148f"]
-script = ExtResource("17_pit3x")
-label = "黄钥匙"
-fixed_cost = 10
-yellow_keys = -1
-metadata/_custom_type_script = "uid://vork0ooj1wrk"
-
-[sub_resource type="Resource" id="Resource_s1rjc"]
-script = ExtResource("17_pit3x")
-label = "蓝钥匙"
-fixed_cost = 40
-blue_keys = -1
-metadata/_custom_type_script = "uid://vork0ooj1wrk"
-
-[sub_resource type="Resource" id="Resource_lso71"]
-script = ExtResource("17_pit3x")
-label = "红钥匙"
-fixed_cost = 250
-red_keys = -1
-metadata/_custom_type_script = "uid://vork0ooj1wrk"
-
-[sub_resource type="Resource" id="Resource_ed3ec"]
-script = ExtResource("18_l5vg8")
-description = "我来回收多余的钥匙"
-trade_type = 1
-options = Array[ExtResource("17_pit3x")]([SubResource("Resource_8148f"), SubResource("Resource_s1rjc"), SubResource("Resource_lso71")])
-metadata/_custom_type_script = "uid://dnkssnvswhj24"
-
-[sub_resource type="Resource" id="Resource_rq588"]
-script = ExtResource("19_hs43i")
-merchant = SubResource("Resource_ed3ec")
-metadata/_custom_type_script = "uid://uv1g8mwl0ofk"
-
-[sub_resource type="Resource" id="Resource_axaiu"]
-script = ExtResource("10_ddk45")
-npc_id = "sell_key_merchant"
-npc_name = "奸商"
+npc_id = "sage_lv2_merchant"
+npc_name = "商人"
 frames = ExtResource("12_ddk45")
-behavior = SubResource("Resource_rq588")
+behavior = SubResource("Resource_scpkc")
 metadata/_custom_type_script = "uid://dn7vsl533x7gh"
 
 [node name="Main0" type="Node2D" unique_id=1806746235]
@@ -299,21 +247,17 @@ position = Vector2(320, 160)
 trigger_direction = Vector2i(1, 0)
 dest_floor_id = "base_2"
 
-[node name="IntroMerchant" parent="Entities" unique_id=894531296 instance=ExtResource("6_tsqci")]
+[node name="HeroLv2Merchant" parent="Entities" unique_id=894531296 instance=ExtResource("6_tsqci")]
 position = Vector2(256, 32)
 data = SubResource("Resource_xdeuw")
 
-[node name="EmblemIdentifyOldman" parent="Entities" unique_id=44061028 instance=ExtResource("6_tsqci")]
-position = Vector2(32, 160)
-data = SubResource("Resource_t4xmc")
-
-[node name="FakePrincessNpc" parent="Entities" unique_id=1771291956 instance=ExtResource("6_tsqci")]
-position = Vector2(64, 160)
-data = SubResource("Resource_mpb1u")
-
-[node name="SellKeyMerchant" parent="Entities" unique_id=569200579 instance=ExtResource("6_tsqci")]
+[node name="HeroLv3Merchant" parent="Entities" unique_id=1404964201 instance=ExtResource("6_tsqci")]
 position = Vector2(96, 160)
-data = SubResource("Resource_axaiu")
+data = SubResource("Resource_tsqci")
+
+[node name="SageLv2Merchant" parent="Entities" unique_id=1774839987 instance=ExtResource("6_tsqci")]
+position = Vector2(128, 160)
+data = SubResource("Resource_8a718")
 
 [node name="IronDoor" parent="Entities" unique_id=2056068635 instance=ExtResource("28_la3xr")]
 position = Vector2(160, 192)
@@ -323,12 +267,8 @@ door_type = 3
 position = Vector2(192, 160)
 data = ExtResource("15_my178")
 
-[node name="HeroEmblemLv0" parent="Entities" unique_id=1527395453 instance=ExtResource("8_2p8vk")]
-position = Vector2(224, 160)
-data = ExtResource("60_hs43i")
-
 [node name="Pickaxe" parent="Entities" unique_id=1365116579 instance=ExtResource("8_2p8vk")]
-position = Vector2(256, 160)
+position = Vector2(224, 160)
 data = ExtResource("31_c731b")
 
 [node name="GreenSlime" parent="Entities" unique_id=605189716 instance=ExtResource("33_v0eb0")]

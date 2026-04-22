@@ -12,7 +12,7 @@ const NUM_FONT := "res://assets/fonts/OpenSans-SemiBold.ttf"
 
 @export var styled_font_size: int = 14
 
-var _regex := RegEx.create_from_string("(\\$?[a-zA-Z0-9()]+)")
+var _regex := RegEx.create_from_string("(\\$?[a-zA-Z0-9()~]+)")
 
 
 func _ready() -> void:

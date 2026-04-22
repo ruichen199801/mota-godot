@@ -8,12 +8,11 @@
 [ext_resource type="Script" uid="uid://nlow5r0mr3bq" path="res://data/npc_dialog_data.gd" id="6_avypw"]
 [ext_resource type="Script" uid="uid://bru2snxxyg2v4" path="res://data/npc_action/npc_post_action.gd" id="7_hfyf7"]
 [ext_resource type="Script" uid="uid://dktqal1ji0w0" path="res://data/npc_behavior/npc_dialog_behavior.gd" id="8_35ugl"]
-[ext_resource type="Resource" uid="uid://c4hm6px85crl4" path="res://resources/items/overload_emblem_lv2.tres" id="8_nyy8f"]
+[ext_resource type="Resource" uid="uid://c4hm6px85crl4" path="res://resources/items/overlord_emblem_lv2.tres" id="8_nyy8f"]
 [ext_resource type="SpriteFrames" uid="uid://sbv076eg1003" path="res://resources/npcs/oldman_frames.tres" id="9_3addk"]
 [ext_resource type="Script" uid="uid://ca3xixvnlvp5q" path="res://data/npc_action/npc_give_item_action.gd" id="9_k1psw"]
 [ext_resource type="Script" uid="uid://dn7vsl533x7gh" path="res://data/npc_data.gd" id="10_ie7lx"]
 [ext_resource type="SpriteFrames" uid="uid://0a8itglro6ui" path="res://resources/npcs/merchant_frames.tres" id="11_avypw"]
-[ext_resource type="Script" uid="uid://bgvrtb78qik1k" path="res://data/npc_action/npc_respawn_action.gd" id="11_b16ew"]
 [ext_resource type="PackedScene" uid="uid://bp13ks4wpt6ea" path="res://entities/door_entity.tscn" id="12_3addk"]
 [ext_resource type="Script" uid="uid://btaqsx7ydfud" path="res://data/npc_condition/npc_condition.gd" id="12_46jh8"]
 [ext_resource type="PackedScene" uid="uid://d2gnobmc7j4xv" path="res://entities/item_entity.tscn" id="13_ie7lx"]
@@ -45,35 +44,10 @@ script = ExtResource("9_k1psw")
 item = ExtResource("8_nyy8f")
 metadata/_custom_type_script = "uid://ca3xixvnlvp5q"
 
-[sub_resource type="Resource" id="Resource_pwd1o"]
-script = ExtResource("6_avypw")
-text = "听说这座塔不止20层... 
-但是最高只能去到第20层... 
-真叫人头痛..."
-metadata/_custom_type_script = "uid://nlow5r0mr3bq"
-
-[sub_resource type="Resource" id="Resource_1tmhe"]
-script = ExtResource("8_35ugl")
-dialogs = Array[ExtResource("6_avypw")]([SubResource("Resource_pwd1o")])
-metadata/_custom_type_script = "uid://dktqal1ji0w0"
-
-[sub_resource type="Resource" id="Resource_3ro16"]
-script = ExtResource("10_ie7lx")
-npc_id = "floor_num_hint_oldman"
-npc_name = "老人"
-frames = ExtResource("9_3addk")
-behavior = SubResource("Resource_1tmhe")
-metadata/_custom_type_script = "uid://dn7vsl533x7gh"
-
-[sub_resource type="Resource" id="Resource_43fhc"]
-script = ExtResource("11_b16ew")
-new_data = SubResource("Resource_3ro16")
-metadata/_custom_type_script = "uid://bgvrtb78qik1k"
-
 [sub_resource type="Resource" id="Resource_e2eyd"]
 script = ExtResource("8_35ugl")
 dialogs = Array[ExtResource("6_avypw")]([SubResource("Resource_yduuu")])
-post_actions = Array[ExtResource("7_hfyf7")]([SubResource("Resource_n8tkm"), SubResource("Resource_43fhc")])
+post_actions = Array[ExtResource("7_hfyf7")]([SubResource("Resource_n8tkm")])
 metadata/_custom_type_script = "uid://dktqal1ji0w0"
 
 [sub_resource type="Resource" id="Resource_nh7nn"]
@@ -84,7 +58,7 @@ metadata/_custom_type_script = "uid://fjr4xtjuau8g"
 [sub_resource type="Resource" id="Resource_1xquv"]
 script = ExtResource("14_k1psw")
 emblem_type = 3
-min_level = 1
+emblem_level = 1
 metadata/_custom_type_script = "uid://dab71k71t1pwl"
 
 [sub_resource type="Resource" id="Resource_qxog4"]
@@ -94,8 +68,8 @@ metadata/_custom_type_script = "uid://ddt5j1qcfsosb"
 
 [sub_resource type="Resource" id="Resource_on3wq"]
 script = ExtResource("6_avypw")
-text = "听说这座塔不止20层... 
-但是最高只能去到第20层... 
+text = "听说这座塔不止20层...
+但是最高只能去到第20层...
 真叫人头痛..."
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
@@ -113,7 +87,7 @@ metadata/_custom_type_script = "uid://bfpvfiuxd5pws"
 
 [sub_resource type="Resource" id="Resource_xg5bs"]
 script = ExtResource("10_ie7lx")
-npc_id = "floor_num_hint_oldman"
+npc_id = "overlord_lv2_oldman"
 npc_name = "老人"
 frames = ExtResource("9_3addk")
 behavior = SubResource("Resource_ihxcg")
@@ -170,7 +144,7 @@ position = Vector2(160, 32)
 dest_floor_id = "main_0"
 dest_pos = Vector2i(5, 1)
 
-[node name="FloorNumHintOldman" parent="Entities" unique_id=774706501 instance=ExtResource("5_0w8np")]
+[node name="OverlordLv2Oldman" parent="Entities" unique_id=774706501 instance=ExtResource("5_0w8np")]
 position = Vector2(32, 32)
 data = SubResource("Resource_xg5bs")
 

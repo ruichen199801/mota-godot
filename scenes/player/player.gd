@@ -21,7 +21,7 @@ const RETRY_DELAY := 0.15  # retry cooldown after player is blocked
 const DEFAULT_TEMPLATE := preload("res://resources/player/default_player.tres")
 const EMBLEM_FRAMES := {
 	PlayerData.EmblemType.HERO: preload("res://resources/player/hero_player_frames.tres"),
-	PlayerData.EmblemType.OVERLOAD: preload("res://resources/player/overload_player_frames.tres"),
+	PlayerData.EmblemType.OVERLORD: preload("res://resources/player/overlord_player_frames.tres"),
 	PlayerData.EmblemType.SAGE: preload("res://resources/player/sage_player_frames.tres"),
 }
 

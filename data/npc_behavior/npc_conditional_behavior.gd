@@ -1,3 +1,6 @@
+## Two-branch conditional behavior. 
+## Evaluates one condition, picks alt behavior if met, otherwise picks default behavior.
+## Use for simple if/else NPC logic.
 class_name NpcConditionalBehavior
 extends NpcBehavior
 
@@ -20,8 +23,8 @@ func execute(npc_name: String, npc_frames: SpriteFrames,
 	_chosen = chosen
 
 
-## Conditional behavior won't have its own post actions.
-## Instead, it runs post actions assigned to the default or alt behavior based on condition.
+## Delegates post actions to whichever behavior was chosen.
+## The conditional behavior itself has no post actions.
 func run_post_actions(grid_pos: Vector2i, player_data: PlayerData) -> void:
 	if _chosen:
 		await _chosen.run_post_actions(grid_pos, player_data)

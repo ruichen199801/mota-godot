@@ -110,7 +110,7 @@ var _weaken_debuffs := {
 
 # --- Emblems ---
 
-enum EmblemType { NONE, HERO, SAGE, OVERLOAD }
+enum EmblemType { NONE, HERO, SAGE, OVERLORD }
 
 var emblem_type: EmblemType = EmblemType.NONE:
 	set(v):
