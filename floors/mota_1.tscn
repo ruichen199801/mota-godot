@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://doupmspvj5m2v" path="res://floors/floor_setup.gd" id="1_76mg8"]
 [ext_resource type="TileSet" uid="uid://di6pm00t0x4tx" path="res://resources/floor_tileset.tres" id="2_fghuv"]
-[ext_resource type="PackedScene" uid="uid://d2xyqkcfr7fhh" path="res://entities/edge_portal_entity.tscn" id="3_54y8b"]
+[ext_resource type="PackedScene" uid="uid://d2xyqkcfr7fhh" path="res://entities/portal_entity.tscn" id="3_54y8b"]
 [ext_resource type="PackedScene" uid="uid://cbmf85d67vidj" path="res://entities/stair_up_entity.tscn" id="3_cuqvc"]
 
 [node name="Mota1" type="Node2D" unique_id=1806746235]
@@ -25,8 +25,8 @@ position = Vector2(160, 0)
 dest_floor_id = "mota_2"
 dest_pos = Vector2i(5, 0)
 
-[node name="PortalToBase2" parent="Entities" unique_id=298097349 instance=ExtResource("3_54y8b")]
+[node name="PortalToMain17" parent="Entities" unique_id=298097349 instance=ExtResource("3_54y8b")]
 position = Vector2(160, 320)
 trigger_direction = Vector2i(0, 1)
-dest_floor_id = "base_2"
-dest_pos = Vector2i(10, 0)
+dest_floor_id = "main_17"
+dest_pos = Vector2i(2, 0)

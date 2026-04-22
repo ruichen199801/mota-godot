@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://d2xyqkcfr7fhh"]
 
-[ext_resource type="Script" uid="uid://btof5p8c81fnw" path="res://entities/edge_portal_entity.gd" id="1_0yga8"]
+[ext_resource type="Script" uid="uid://btof5p8c81fnw" path="res://entities/portal_entity.gd" id="1_0yga8"]
 [ext_resource type="Texture2D" uid="uid://d1gvt5u5ht6xr" path="res://assets/images/door_yellow.png" id="2_jttq3"]
 
-[node name="EdgePortalEntity" type="Node2D" unique_id=298097349]
+[node name="PortalEntity" type="Node2D" unique_id=298097349]
 script = ExtResource("1_0yga8")
 
 [node name="DebugSprite" type="Sprite2D" parent="." unique_id=203161935]

@@ -3,8 +3,136 @@
 [ext_resource type="Script" uid="uid://doupmspvj5m2v" path="res://floors/floor_setup.gd" id="1_hc3yb"]
 [ext_resource type="TileSet" uid="uid://di6pm00t0x4tx" path="res://resources/floor_tileset.tres" id="2_mgwka"]
 [ext_resource type="PackedScene" uid="uid://cbmf85d67vidj" path="res://entities/stair_up_entity.tscn" id="3_o6ych"]
-[ext_resource type="PackedScene" uid="uid://ubv3jnibyiks" path="res://entities/stair_down_entity.tscn" id="4_6wm34"]
-[ext_resource type="PackedScene" uid="uid://d2xyqkcfr7fhh" path="res://entities/edge_portal_entity.tscn" id="5_vyrfh"]
+[ext_resource type="PackedScene" uid="uid://cv12hwq0yxdal" path="res://entities/npc_entity.tscn" id="5_rlp4g"]
+[ext_resource type="Script" uid="uid://dab71k71t1pwl" path="res://data/npc_condition/npc_emblem_condition.gd" id="6_qlms4"]
+[ext_resource type="PackedScene" uid="uid://bp13ks4wpt6ea" path="res://entities/door_entity.tscn" id="6_sdssp"]
+[ext_resource type="Script" uid="uid://nlow5r0mr3bq" path="res://data/npc_dialog_data.gd" id="7_xhppm"]
+[ext_resource type="Script" uid="uid://chum8njyixr2l" path="res://data/npc_action/npc_place_stair_action.gd" id="8_qlms4"]
+[ext_resource type="Script" uid="uid://bru2snxxyg2v4" path="res://data/npc_action/npc_post_action.gd" id="8_t4bsd"]
+[ext_resource type="Resource" uid="uid://1rldsrcmjwuo" path="res://resources/items/mystic_key.tres" id="9_euekv"]
+[ext_resource type="Script" uid="uid://ca3xixvnlvp5q" path="res://data/npc_action/npc_give_item_action.gd" id="10_lgt1g"]
+[ext_resource type="Script" uid="uid://btaqsx7ydfud" path="res://data/npc_condition/npc_condition.gd" id="10_t4bsd"]
+[ext_resource type="Script" uid="uid://dktqal1ji0w0" path="res://data/npc_behavior/npc_dialog_behavior.gd" id="11_mieih"]
+[ext_resource type="Script" uid="uid://cra84k00nr80m" path="res://data/npc_condition/npc_any_condition.gd" id="12_euekv"]
+[ext_resource type="Script" uid="uid://bfpvfiuxd5pws" path="res://data/npc_behavior/npc_conditional_behavior.gd" id="12_wm5lg"]
+[ext_resource type="SpriteFrames" uid="uid://dosrxwuin6pic" path="res://resources/npcs/fairy_frames.tres" id="13_1vfu4"]
+[ext_resource type="Script" uid="uid://dn7vsl533x7gh" path="res://data/npc_data.gd" id="14_38tnh"]
+
+[sub_resource type="Resource" id="Resource_rlp4g"]
+script = ExtResource("7_xhppm")
+speaker = 1
+text = "我拿到了！
+力量真的增加了不少！
+谢谢你！"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_qlms4"]
+script = ExtResource("7_xhppm")
+text = "不用谢~
+等你救回了公主后再谢~
+那么，加油吧！"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_t4bsd"]
+script = ExtResource("7_xhppm")
+text = "加油吧！
+要是你救不了公主的话
+我不会放过你的~"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_euekv"]
+script = ExtResource("8_qlms4")
+floor_id = "base_2"
+stair_dest_floor = "base_3"
+metadata/_custom_type_script = "uid://chum8njyixr2l"
+
+[sub_resource type="Resource" id="Resource_xhppm"]
+script = ExtResource("11_mieih")
+dialogs = Array[ExtResource("7_xhppm")]([SubResource("Resource_rlp4g"), SubResource("Resource_qlms4")])
+dialogs_after_first_interaction = Array[ExtResource("7_xhppm")]([SubResource("Resource_t4bsd")])
+post_actions = Array[ExtResource("8_t4bsd")]([SubResource("Resource_euekv")])
+metadata/_custom_type_script = "uid://dktqal1ji0w0"
+
+[sub_resource type="Resource" id="Resource_lgt1g"]
+script = ExtResource("6_qlms4")
+emblem_type = 1
+emblem_level = 1
+metadata/_custom_type_script = "uid://dab71k71t1pwl"
+
+[sub_resource type="Resource" id="Resource_mieih"]
+script = ExtResource("6_qlms4")
+emblem_type = 2
+emblem_level = 1
+metadata/_custom_type_script = "uid://dab71k71t1pwl"
+
+[sub_resource type="Resource" id="Resource_wm5lg"]
+script = ExtResource("6_qlms4")
+emblem_type = 3
+emblem_level = 1
+metadata/_custom_type_script = "uid://dab71k71t1pwl"
+
+[sub_resource type="Resource" id="Resource_1vfu4"]
+script = ExtResource("12_euekv")
+conditions = Array[ExtResource("10_t4bsd")]([SubResource("Resource_lgt1g"), SubResource("Resource_mieih"), SubResource("Resource_wm5lg")])
+metadata/_custom_type_script = "uid://cra84k00nr80m"
+
+[sub_resource type="Resource" id="Resource_n5u17"]
+script = ExtResource("7_xhppm")
+text = "稀客呢~是来救公主的吧？
+但这层往后的怪物会变得更强
+以你现在的实力
+是绝对赢不了的！"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_jwfs7"]
+script = ExtResource("7_xhppm")
+speaker = 1
+text = "是吗？
+那怎么办？"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_2xuio"]
+script = ExtResource("7_xhppm")
+text = "嗯~~
+我还是建议你到17F去取宝物
+这个你拿去吧
+拿到宝物后你的力量就会大增
+到时再来找我~"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_lvf15"]
+script = ExtResource("7_xhppm")
+text = "加油吧！
+要是你救不了公主的话
+我不会放过你的~"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_baqwy"]
+script = ExtResource("10_lgt1g")
+item = ExtResource("9_euekv")
+metadata/_custom_type_script = "uid://ca3xixvnlvp5q"
+
+[sub_resource type="Resource" id="Resource_wrmbi"]
+script = ExtResource("11_mieih")
+dialogs = Array[ExtResource("7_xhppm")]([SubResource("Resource_n5u17"), SubResource("Resource_jwfs7"), SubResource("Resource_2xuio")])
+dialogs_after_first_interaction = Array[ExtResource("7_xhppm")]([SubResource("Resource_lvf15")])
+post_actions = Array[ExtResource("8_t4bsd")]([SubResource("Resource_baqwy")])
+metadata/_custom_type_script = "uid://dktqal1ji0w0"
+
+[sub_resource type="Resource" id="Resource_5xxai"]
+script = ExtResource("12_wm5lg")
+condition = SubResource("Resource_1vfu4")
+default_behavior = SubResource("Resource_wrmbi")
+alt_behavior = SubResource("Resource_xhppm")
+metadata/_custom_type_script = "uid://bfpvfiuxd5pws"
+
+[sub_resource type="Resource" id="Resource_thobv"]
+script = ExtResource("14_38tnh")
+npc_id = "fairy"
+npc_name = "妖精"
+frames = ExtResource("13_1vfu4")
+behavior = SubResource("Resource_5xxai")
+metadata/_custom_type_script = "uid://dn7vsl533x7gh"
 
 [node name="Base2" type="Node2D" unique_id=1806746235]
 script = ExtResource("1_hc3yb")
@@ -15,27 +143,29 @@ tile_set = ExtResource("2_mgwka")
 
 [node name="Walls" type="TileMapLayer" parent="." unique_id=1108185961]
 z_index = 1
+tile_map_data = PackedByteArray("AAAAAAUAAAACAAIAAAABAAUAAAACAAIAAAACAAUAAAACAAIAAAAEAAQAAAACAAIAAAADAAMAAAACAAIAAAACAAIAAAACAAIAAAAGAAQAAAACAAIAAAAHAAMAAAACAAIAAAAIAAIAAAACAAIAAAAEAAYAAAACAAIAAAADAAcAAAACAAIAAAACAAgAAAACAAIAAAAGAAYAAAACAAIAAAAHAAcAAAACAAIAAAAIAAgAAAACAAIAAAAIAAUAAAACAAIAAAAJAAUAAAACAAIAAAAKAAUAAAACAAIAAAAFAAkAAAACAAIAAAAFAAoAAAACAAIAAAAFAAEAAAACAAIAAAAFAAAAAAACAAIAAAA=")
 tile_set = ExtResource("2_mgwka")
 
 [node name="Entities" type="Node2D" parent="." unique_id=1047835971]
 z_index = 2
 
 [node name="StairUp" parent="Entities" unique_id=1587493218 instance=ExtResource("3_o6ych")]
-position = Vector2(32, 32)
+position = Vector2(320, 320)
 dest_floor_id = "base_1"
 dest_pos = Vector2i(10, 10)
 
-[node name="StairDown" parent="Entities" unique_id=2136569547 instance=ExtResource("4_6wm34")]
-position = Vector2(320, 320)
-dest_floor_id = "base_3"
+[node name="Fairy" parent="Entities" unique_id=774706501 instance=ExtResource("5_rlp4g")]
+position = Vector2(160, 160)
+data = SubResource("Resource_thobv")
 
-[node name="PortalToMain0" parent="Entities" unique_id=298097349 instance=ExtResource("5_vyrfh")]
-trigger_direction = Vector2i(-1, 0)
-dest_floor_id = "main_0"
-dest_pos = Vector2i(10, 5)
+[node name="YellowDoor1" parent="Entities" unique_id=2056068635 instance=ExtResource("6_sdssp")]
+position = Vector2(96, 160)
 
-[node name="PortalToMota1" parent="Entities" unique_id=1307236997 instance=ExtResource("5_vyrfh")]
-position = Vector2(320, 0)
-trigger_direction = Vector2i(0, -1)
-dest_floor_id = "mota_1"
-dest_pos = Vector2i(5, 10)
+[node name="YellowDoor2" parent="Entities" unique_id=1490981205 instance=ExtResource("6_sdssp")]
+position = Vector2(160, 96)
+
+[node name="YellowDoor3" parent="Entities" unique_id=855511975 instance=ExtResource("6_sdssp")]
+position = Vector2(224, 160)
+
+[node name="YellowDoor4" parent="Entities" unique_id=2122763392 instance=ExtResource("6_sdssp")]
+position = Vector2(160, 224)

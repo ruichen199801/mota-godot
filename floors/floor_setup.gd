@@ -21,9 +21,9 @@ func setup() -> Array:
 			child.position = Vector2(gp * FloorManager.CELL_SIZE)
 			child.grid_pos = gp
 			
-			if child is EdgePortalEntity:
+			if child is PortalEntity:
 				portal_map[gp] = child
-				print("Loaded edge portal at %s" % gp)
+				print("Loaded portal at %s" % gp)
 				continue
 			
 			floor_grid[gp] = child	

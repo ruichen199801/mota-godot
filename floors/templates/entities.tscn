@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cbmf85d67vidj" path="res://entities/stair_up_entity.tscn" id="4_ms56t"]
 [ext_resource type="Resource" uid="uid://t7nekbirmv3y" path="res://resources/shops/gold_shop_1.tres" id="5_5av33"]
 [ext_resource type="PackedScene" uid="uid://ubv3jnibyiks" path="res://entities/stair_down_entity.tscn" id="5_6xtth"]
-[ext_resource type="PackedScene" uid="uid://d2xyqkcfr7fhh" path="res://entities/edge_portal_entity.tscn" id="6_6xtth"]
+[ext_resource type="PackedScene" uid="uid://d2xyqkcfr7fhh" path="res://entities/portal_entity.tscn" id="6_6xtth"]
 [ext_resource type="Resource" uid="uid://ca1mi7813a70a" path="res://resources/shops/gold_shop_2.tres" id="6_ms56t"]
 [ext_resource type="Resource" uid="uid://gp0dhknrc1b4" path="res://resources/shops/xp_shop_1.tres" id="7_6xtth"]
 [ext_resource type="Resource" uid="uid://b14ja7qmm3gln" path="res://resources/shops/xp_shop_2.tres" id="8_4qr4o"]

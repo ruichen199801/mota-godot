@@ -15,15 +15,24 @@ func _on_move_requested(direction: Vector2i) -> void:
 	var target: Vector2i = player.grid_pos + direction
 	var entity: TileEntity = FloorManager.get_entity(target)
 	
-	# Boundary check
-	if entity == null and not FloorManager.is_in_bounds(target):
-		var portal := _get_matching_portal(player.grid_pos, direction)
-		if portal != null:
-			is_resolving = true
-			EventBus.floor_change_requested.emit(portal.dest_floor_id, portal.dest_pos)
-			await EventBus.floor_change_completed
-			is_resolving = false
+	# Portal check
+	var portal := _get_matching_portal(player.grid_pos, direction)
+	if portal != null:
+		if portal.required_item_id and not player.data.has_item(portal.required_item_id):
+			print("Player needs to have %s to use this portal" % portal.required_item_id)
+			EventBus.move_resolved.emit(target, false)
+			return
 			
+		is_resolving = true
+		EventBus.floor_change_requested.emit(portal.dest_floor_id, portal.dest_pos)
+		await EventBus.floor_change_completed
+		is_resolving = false
+		
+		EventBus.move_resolved.emit(target, false)
+		return
+		
+	# Boundary check
+	if not FloorManager.is_in_bounds(target):
 		EventBus.move_resolved.emit(target, false)
 		return
 	
@@ -64,8 +73,8 @@ func _approve_move(target: Vector2i) -> void:
 	EventBus.move_resolved.emit(target, true)
 
 
-## Checks if the player's current cell has an edge portal matching the move direction.
-func _get_matching_portal(pos: Vector2i, direction: Vector2i) -> EdgePortalEntity:
+## Checks if the player's current cell has a portal matching the move direction.
+func _get_matching_portal(pos: Vector2i, direction: Vector2i) -> PortalEntity:
 	var portal := FloorManager.get_portal(pos)
 	if portal != null and portal.trigger_direction == direction:
 		return portal

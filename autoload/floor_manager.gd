@@ -17,8 +17,6 @@ const FLOOR_RANGES := { # floor_type -> floor_range
 	"base": [1, 25], 
 	"mota": [1, 10], 
 }
-const TRANSPORT_EXCLUDED_TYPES: Array[String] = ["mota"]
-const TRANSPORT_LOCKED_FLOORS: Array[String] = ["main_10", "main_20", "base_25"]
 
 var floors: Dictionary = {} # floor_id -> FloorData
 var grid: Dictionary = {} # Vector2i -> TileEntity
@@ -98,8 +96,8 @@ func switch_to_floor(floor_id: String) -> void:
 		visited_floors.append(floor_id)
 
 
-## Returns the edge portal at given cell on current floor, or null if none exists.
-func get_portal(pos: Vector2i) -> EdgePortalEntity:
+## Returns the portal at given cell on current floor, or null if none exists.
+func get_portal(pos: Vector2i) -> PortalEntity:
 	if current_floor_id in floors:
 		return floors[current_floor_id].portals.get(pos, null)
 	return null
@@ -131,14 +129,19 @@ func get_floor_scene_path(floor_id: String) -> String:
 	return "res://floors/%s.tscn" % floor_id
 
 
-## Whether this floor appears in the transport floor list
-## If false, player also can't use transport when on this floor
-func is_transport_listed(floor_id: String) -> bool:
-	return get_floor_type(floor_id) not in TRANSPORT_EXCLUDED_TYPES
+## Whether this floor can appear in the transport floor list
+func is_transport_destination(floor_id: String) -> bool:
+	if get_floor_type(floor_id) == "mota":
+		return false
+	if floor_id in ["main_20", "base_25"]:
+		return false
+	return true
 	
 
-## Whether transport can be used while player is on this floor
+## Whether the player can use transport while on this floor
 func is_transport_usable(floor_id: String) -> bool:
-	if not is_transport_listed(floor_id):
+	if not is_transport_destination(floor_id):
 		return false
-	return floor_id not in TRANSPORT_LOCKED_FLOORS
+	if floor_id in ["main_10"]:
+		return false
+	return true

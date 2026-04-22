@@ -89,7 +89,7 @@ func close() -> void:
 func _gather_visited_floors() -> void:
 	var entries: Array[String] = []
 	for floor_id in FloorManager.visited_floors:
-		if not FloorManager.is_transport_listed(floor_id):
+		if not FloorManager.is_transport_destination(floor_id):
 			continue
 		entries.append(floor_id)
 	entries.sort_custom(func(a, b): return _get_floor_order(a) < _get_floor_order(b))
