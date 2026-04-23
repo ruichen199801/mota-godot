@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="NpcDialogData" format=3 uid="uid://bd3x2wf0ke7nn"]
+
+[ext_resource type="Script" uid="uid://nlow5r0mr3bq" path="res://data/npc_dialog_data.gd" id="1_5e81v"]
+
+[resource]
+script = ExtResource("1_5e81v")
+speaker = 1
+text = "就是这里了... 攻进去！！"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"

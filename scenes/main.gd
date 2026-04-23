@@ -33,6 +33,19 @@ func _ready() -> void:
 	EventBus.floor_transport_selected.connect(_on_floor_transport_selected)
 	EventBus.floor_transport_closed.connect(_on_floor_transport_closed)
 	EventBus.npc_merchant_opened.connect(_on_npc_merchant_opened)
+	
+	_show_intro_dialog()
+
+
+func _show_intro_dialog() -> void:
+	player.is_busy = true
+	await get_tree().create_timer(0.8).timeout
+	var dialogs: Array = [
+		preload("res://resources/npcs/intro_dialog.tres")
+	]
+	EventBus.npc_dialog_opened.emit("", null, dialogs)
+	await EventBus.npc_dialog_closed
+	player.is_busy = false
 
 
 func _load_all_floors() -> void:

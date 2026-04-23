@@ -1,0 +1,117 @@
+[gd_scene format=4 uid="uid://bgjxbm1048oet"]
+
+[ext_resource type="Script" uid="uid://doupmspvj5m2v" path="res://floors/floor_setup.gd" id="1_viros"]
+[ext_resource type="TileSet" uid="uid://di6pm00t0x4tx" path="res://resources/floor_tileset.tres" id="2_g2vh2"]
+[ext_resource type="PackedScene" uid="uid://bp13ks4wpt6ea" path="res://entities/door_entity.tscn" id="3_g2vh2"]
+[ext_resource type="PackedScene" uid="uid://d2xyqkcfr7fhh" path="res://entities/portal_entity.tscn" id="3_ggiow"]
+[ext_resource type="PackedScene" uid="uid://b678t3khc1li4" path="res://entities/enemy_entity.tscn" id="4_27khk"]
+[ext_resource type="PackedScene" uid="uid://cv12hwq0yxdal" path="res://entities/npc_entity.tscn" id="4_n6nxo"]
+[ext_resource type="Resource" uid="uid://dgycbud154adj" path="res://resources/enemies/green_slime/green_slime.tres" id="5_ggiow"]
+[ext_resource type="Script" uid="uid://nlow5r0mr3bq" path="res://data/npc_dialog_data.gd" id="5_rqfgu"]
+[ext_resource type="Resource" uid="uid://bsnuhn75qr0pd" path="res://resources/enemies/red_slime/red_slime.tres" id="6_dg2fb"]
+[ext_resource type="Script" uid="uid://bru2snxxyg2v4" path="res://data/npc_action/npc_post_action.gd" id="6_x8x70"]
+[ext_resource type="Script" uid="uid://dktqal1ji0w0" path="res://data/npc_behavior/npc_dialog_behavior.gd" id="7_3ilyv"]
+[ext_resource type="Resource" uid="uid://c6xjwvf370bjb" path="res://resources/enemies/black_slime/black_slime.tres" id="7_wq2ap"]
+[ext_resource type="SpriteFrames" uid="uid://c58cvrjebi8qb" path="res://resources/npcs/princess_frames.tres" id="8_6gw3s"]
+[ext_resource type="Resource" uid="uid://j84j2hjdrmb4" path="res://resources/enemies/slime_king/slime_king.tres" id="8_fyfc0"]
+[ext_resource type="Resource" uid="uid://c56k6gbops3o3" path="res://resources/enemies/silver_slime/silver_slime.tres" id="9_7hena"]
+[ext_resource type="Script" uid="uid://dn7vsl533x7gh" path="res://data/npc_data.gd" id="9_kfn1s"]
+[ext_resource type="Resource" uid="uid://bkc23wd0l4gxe" path="res://resources/enemies/gold_slime/gold_slime.tres" id="10_tccrr"]
+
+[sub_resource type="Resource" id="Resource_a3fbw"]
+script = ExtResource("5_rqfgu")
+text = "太好了~.... 终于有人来了.......
+这个星期过得很辛苦呢...."
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_8o6gi"]
+script = ExtResource("5_rqfgu")
+speaker = 1
+text = "不用怕！我是来救你的！"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_2hxum"]
+script = ExtResource("5_rqfgu")
+text = "(昏倒)"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_ybpcd"]
+script = ExtResource("5_rqfgu")
+speaker = 1
+text = "看来一切都结束了......
+公主的身体似乎很虚弱，还是先逃出这里吧"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_aoq1u"]
+script = ExtResource("7_3ilyv")
+dialogs = Array[ExtResource("5_rqfgu")]([SubResource("Resource_a3fbw"), SubResource("Resource_8o6gi"), SubResource("Resource_2hxum"), SubResource("Resource_ybpcd")])
+metadata/_custom_type_script = "uid://dktqal1ji0w0"
+
+[sub_resource type="Resource" id="Resource_51tcg"]
+script = ExtResource("9_kfn1s")
+npc_id = "real_princess_npc"
+npc_name = "公主"
+frames = ExtResource("8_6gw3s")
+behavior = SubResource("Resource_aoq1u")
+metadata/_custom_type_script = "uid://dn7vsl533x7gh"
+
+[node name="Mota8" type="Node2D" unique_id=1806746235]
+script = ExtResource("1_viros")
+
+[node name="Ground" type="TileMapLayer" parent="." unique_id=2065011923]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAEAAAABAAAAAAAAAAEAAAACAAAAAAAAAAEAAAADAAAAAAAAAAEAAAAEAAAAAAAAAAEAAAAFAAAAAAAAAAEAAAAGAAAAAAAAAAEAAAAHAAAAAAAAAAEAAAAIAAAAAAAAAAEAAAAJAAAAAAAAAAEAAAAKAAAAAAAAAAEAAAAAAAEAAAAAAAEAAAABAAEAAAAAAAEAAAACAAEAAAAAAAEAAAADAAEAAAAAAAEAAAAEAAEAAAAAAAEAAAAFAAEAAAAAAAEAAAAGAAEAAAAAAAEAAAAHAAEAAAAAAAEAAAAIAAEAAAAAAAEAAAAJAAEAAAAAAAEAAAAKAAEAAAAAAAEAAAAAAAIAAAAAAAEAAAABAAIAAAAAAAEAAAACAAIAAAAAAAEAAAADAAIAAAAAAAEAAAAEAAIAAAAAAAEAAAAFAAIAAAAAAAEAAAAGAAIAAAAAAAEAAAAHAAIAAAAAAAEAAAAIAAIAAAAAAAEAAAAJAAIAAAAAAAEAAAAKAAIAAAAAAAEAAAAAAAMAAAAAAAEAAAABAAMAAAAAAAEAAAACAAMAAAAAAAEAAAADAAMAAAAAAAEAAAAEAAMAAAAAAAEAAAAFAAMAAAAAAAEAAAAGAAMAAAAAAAEAAAAHAAMAAAAAAAEAAAAIAAMAAAAAAAEAAAAJAAMAAAAAAAEAAAAKAAMAAAAAAAEAAAAAAAQAAAAAAAEAAAABAAQAAAAAAAEAAAACAAQAAAAAAAEAAAADAAQAAAAAAAEAAAAEAAQAAAAAAAEAAAAFAAQAAAAAAAEAAAAGAAQAAAAAAAEAAAAHAAQAAAAAAAEAAAAIAAQAAAAAAAEAAAAJAAQAAAAAAAEAAAAKAAQAAAAAAAEAAAAAAAUAAAAAAAEAAAABAAUAAAAAAAEAAAACAAUAAAAAAAEAAAADAAUAAAAAAAEAAAAEAAUAAAAAAAEAAAAFAAUAAAAAAAEAAAAGAAUAAAAAAAEAAAAHAAUAAAAAAAEAAAAIAAUAAAAAAAEAAAAJAAUAAAAAAAEAAAAKAAUAAAAAAAEAAAAAAAYAAAAAAAEAAAAAAAcAAAAAAAEAAAABAAYAAAAAAAEAAAABAAcAAAAAAAEAAAACAAYAAAAAAAEAAAACAAcAAAAAAAEAAAADAAYAAAAAAAEAAAADAAcAAAAAAAEAAAAEAAYAAAAAAAEAAAAEAAcAAAAAAAEAAAAFAAYAAAAAAAEAAAAFAAcAAAAAAAEAAAAGAAYAAAAAAAEAAAAGAAcAAAAAAAEAAAAHAAYAAAAAAAEAAAAHAAcAAAAAAAEAAAAIAAYAAAAAAAEAAAAIAAcAAAAAAAEAAAAJAAYAAAAAAAEAAAAJAAcAAAAAAAEAAAAKAAYAAAAAAAEAAAAKAAcAAAAAAAEAAAAAAAgAAAAAAAEAAAABAAgAAAAAAAEAAAACAAgAAAAAAAEAAAAIAAgAAAAAAAEAAAAJAAgAAAAAAAEAAAAKAAgAAAAAAAEAAAAAAAkAAAAAAAEAAAABAAkAAAAAAAEAAAACAAkAAAAAAAEAAAADAAkAAAAAAAEAAAAEAAkAAAAAAAEAAAAFAAkAAAAAAAEAAAAGAAkAAAAAAAEAAAAHAAkAAAAAAAEAAAAIAAkAAAAAAAEAAAAJAAkAAAAAAAEAAAAKAAkAAAAAAAEAAAAAAAoAAAAAAAEAAAABAAoAAAAAAAEAAAACAAoAAAAAAAEAAAADAAoAAAAAAAEAAAAEAAoAAAAAAAEAAAAFAAoAAAAAAAEAAAAGAAoAAAAAAAEAAAAHAAoAAAAAAAEAAAAIAAoAAAAAAAEAAAAJAAoAAAAAAAEAAAAKAAoAAAAAAAEAAAADAAgAAAAAAAEAAAAEAAgAAAAAAAEAAAAFAAgAAAAAAAEAAAAGAAgAAAAAAAEAAAAHAAgAAAAAAAEAAAA=")
+tile_set = ExtResource("2_g2vh2")
+
+[node name="Walls" type="TileMapLayer" parent="." unique_id=1108185961]
+z_index = 1
+tile_map_data = PackedByteArray("AAAEAAoAAAAAAAMAAAAGAAoAAAAAAAMAAAADAAoAAAABAAIAAAABAAoAAAABAAIAAAAAAAkAAAABAAIAAAACAAkAAAABAAIAAAABAAgAAAABAAIAAAADAAgAAAABAAIAAAAAAAcAAAABAAIAAAACAAcAAAABAAIAAAABAAYAAAABAAIAAAADAAYAAAABAAIAAAACAAUAAAABAAIAAAAAAAUAAAABAAIAAAABAAQAAAABAAIAAAADAAQAAAABAAIAAAAEAAkAAAABAAIAAAAEAAgAAAABAAIAAAAEAAcAAAABAAIAAAAEAAYAAAABAAIAAAAEAAUAAAABAAIAAAAEAAQAAAABAAIAAAAEAAMAAAABAAIAAAAEAAIAAAABAAIAAAAEAAEAAAABAAIAAAAEAAAAAAABAAIAAAAGAAAAAAABAAIAAAAGAAEAAAABAAIAAAAGAAIAAAABAAIAAAAGAAMAAAABAAIAAAAGAAQAAAABAAIAAAAGAAUAAAABAAIAAAAGAAYAAAABAAIAAAAGAAgAAAABAAIAAAAGAAcAAAABAAIAAAAGAAkAAAABAAIAAAACAAMAAAABAAIAAAAAAAMAAAABAAIAAAABAAIAAAABAAIAAAADAAIAAAABAAIAAAACAAEAAAABAAIAAAAAAAEAAAABAAIAAAADAAAAAAABAAIAAAABAAAAAAABAAIAAAAHAAAAAAABAAIAAAAJAAAAAAABAAIAAAAIAAEAAAABAAIAAAAKAAEAAAABAAIAAAAHAAIAAAABAAIAAAAJAAIAAAABAAIAAAAIAAMAAAABAAIAAAAKAAMAAAABAAIAAAAHAAQAAAABAAIAAAAJAAQAAAABAAIAAAAIAAUAAAABAAIAAAAKAAUAAAABAAIAAAAHAAYAAAABAAIAAAAJAAYAAAABAAIAAAAIAAcAAAABAAIAAAAKAAcAAAABAAIAAAAJAAgAAAABAAIAAAAHAAgAAAABAAIAAAAIAAkAAAABAAIAAAAKAAkAAAABAAIAAAAJAAoAAAABAAIAAAAHAAoAAAABAAIAAAA=")
+tile_set = ExtResource("2_g2vh2")
+
+[node name="Entities" type="Node2D" parent="." unique_id=1047835971]
+z_index = 2
+
+[node name="PortalToBase25" parent="Entities" unique_id=298097349 instance=ExtResource("3_ggiow")]
+position = Vector2(160, 320)
+trigger_direction = Vector2i(0, 1)
+dest_floor_id = "base_25"
+dest_pos = Vector2i(5, 10)
+
+[node name="RealPrincessNpc" parent="Entities" unique_id=774706501 instance=ExtResource("4_n6nxo")]
+position = Vector2(160, 0)
+data = SubResource("Resource_51tcg")
+
+[node name="RedDoor1" parent="Entities" unique_id=2056068635 instance=ExtResource("3_g2vh2")]
+position = Vector2(160, 32)
+door_type = 2
+
+[node name="RedDoor2" parent="Entities" unique_id=1011078848 instance=ExtResource("3_g2vh2")]
+position = Vector2(160, 64)
+door_type = 2
+
+[node name="RedDoor3" parent="Entities" unique_id=290284591 instance=ExtResource("3_g2vh2")]
+position = Vector2(160, 96)
+door_type = 2
+
+[node name="GreenSlime" parent="Entities" unique_id=605189716 instance=ExtResource("4_27khk")]
+position = Vector2(160, 288)
+data = ExtResource("5_ggiow")
+
+[node name="RedSlime" parent="Entities" unique_id=1441028684 instance=ExtResource("4_27khk")]
+position = Vector2(160, 256)
+data = ExtResource("6_dg2fb")
+
+[node name="BlackSlime" parent="Entities" unique_id=426113006 instance=ExtResource("4_27khk")]
+position = Vector2(160, 224)
+data = ExtResource("7_wq2ap")
+
+[node name="SlimeKing" parent="Entities" unique_id=533930592 instance=ExtResource("4_27khk")]
+position = Vector2(160, 192)
+data = ExtResource("8_fyfc0")
+
+[node name="SilverSlime" parent="Entities" unique_id=992717932 instance=ExtResource("4_27khk")]
+position = Vector2(160, 160)
+data = ExtResource("9_7hena")
+
+[node name="GoldSlime" parent="Entities" unique_id=1444598222 instance=ExtResource("4_27khk")]
+position = Vector2(160, 128)
+data = ExtResource("10_tccrr")

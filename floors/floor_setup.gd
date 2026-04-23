@@ -23,18 +23,18 @@ func setup() -> Array:
 			
 			if child is PortalEntity:
 				portal_map[gp] = child
-				print("Loaded portal at %s" % gp)
+				# print("Loaded portal at %s" % gp)
 				continue
 			
 			floor_grid[gp] = child	
-			print("Loaded entity %s at %s" % [child.name, gp])
+			# print("Loaded entity %s at %s" % [child.name, gp])
 			for occ in child.get_occupied_cells():
 				if occ != gp:
 					floor_grid[occ] = child
-					print("Loaded multi-cell entity %s at %s" % [child.name, occ])	
+					# print("Loaded multi-cell entity %s at %s" % [child.name, occ])	
 	
 	# Load walls from tilemap
-	print("Loaded %d walls" % walls_tilemap.get_used_cells().size())
+	# print("Loaded %d walls" % walls_tilemap.get_used_cells().size())
 	for cell in walls_tilemap.get_used_cells():
 		if cell in floor_grid:
 			continue

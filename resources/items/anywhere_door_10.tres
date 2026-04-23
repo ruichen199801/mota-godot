@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_n5u51")
-item_id = "anywhere_door_bundle"
+item_id = "anywhere_door"
 item_name = "随意门"
 description = "按T键将面前一格地形变为黄门"
 icon = ExtResource("1_0p6nf")

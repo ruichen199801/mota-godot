@@ -45,7 +45,7 @@
 [ext_resource type="Resource" uid="uid://6g2af7p3yhh8" path="res://resources/items/sage_emblem_lv2.tres" id="38_5117l"]
 [ext_resource type="Resource" uid="uid://cexmng024v73m" path="res://resources/items/sage_emblem_lv3.tres" id="39_5acyq"]
 [ext_resource type="Resource" uid="uid://41tscolgmqor" path="res://resources/items/anywhere_door.tres" id="42_5117l"]
-[ext_resource type="Resource" uid="uid://dawvyi544flj5" path="res://resources/items/anywhere_door_bundle.tres" id="43_5acyq"]
+[ext_resource type="Resource" uid="uid://dawvyi544flj5" path="res://resources/items/anywhere_door_10.tres" id="43_5acyq"]
 
 [node name="ITEMS_TEMPLATE" type="Node2D" unique_id=1806746235]
 

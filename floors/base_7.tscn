@@ -1,0 +1,103 @@
+[gd_scene format=4 uid="uid://uktgyg6hsu1o"]
+
+[ext_resource type="Script" uid="uid://doupmspvj5m2v" path="res://floors/floor_setup.gd" id="1_ox8l3"]
+[ext_resource type="TileSet" uid="uid://di6pm00t0x4tx" path="res://resources/floor_tileset.tres" id="2_v0f2k"]
+[ext_resource type="PackedScene" uid="uid://cbmf85d67vidj" path="res://entities/stair_up_entity.tscn" id="3_jgdgo"]
+[ext_resource type="PackedScene" uid="uid://ubv3jnibyiks" path="res://entities/stair_down_entity.tscn" id="4_40hn8"]
+[ext_resource type="PackedScene" uid="uid://cv12hwq0yxdal" path="res://entities/npc_entity.tscn" id="5_6546a"]
+[ext_resource type="Script" uid="uid://nlow5r0mr3bq" path="res://data/npc_dialog_data.gd" id="6_pe24f"]
+[ext_resource type="Script" uid="uid://bru2snxxyg2v4" path="res://data/npc_action/npc_post_action.gd" id="7_crxsf"]
+[ext_resource type="Resource" uid="uid://6g2af7p3yhh8" path="res://resources/items/sage_emblem_lv2.tres" id="8_r708b"]
+[ext_resource type="Script" uid="uid://ca3xixvnlvp5q" path="res://data/npc_action/npc_give_item_action.gd" id="9_vqqkt"]
+[ext_resource type="Script" uid="uid://dktqal1ji0w0" path="res://data/npc_behavior/npc_dialog_behavior.gd" id="10_42lnl"]
+[ext_resource type="Script" uid="uid://btaqsx7ydfud" path="res://data/npc_condition/npc_condition.gd" id="11_ol6ru"]
+[ext_resource type="Script" uid="uid://fjr4xtjuau8g" path="res://data/npc_condition/npc_level_condition.gd" id="12_mkiuu"]
+[ext_resource type="Script" uid="uid://dab71k71t1pwl" path="res://data/npc_condition/npc_emblem_condition.gd" id="13_cq8fu"]
+[ext_resource type="Script" uid="uid://ddt5j1qcfsosb" path="res://data/npc_condition/npc_all_conditions.gd" id="14_qp0yw"]
+[ext_resource type="Script" uid="uid://bfpvfiuxd5pws" path="res://data/npc_behavior/npc_conditional_behavior.gd" id="15_yber2"]
+[ext_resource type="SpriteFrames" uid="uid://0a8itglro6ui" path="res://resources/npcs/merchant_frames.tres" id="16_kdos0"]
+[ext_resource type="Script" uid="uid://dn7vsl533x7gh" path="res://data/npc_data.gd" id="17_w1oga"]
+
+[sub_resource type="Resource" id="Resource_jt7kn"]
+script = ExtResource("6_pe24f")
+text = "这是贤者之证？这个送给你，对你有帮助的！"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_pit3x"]
+script = ExtResource("9_vqqkt")
+item = ExtResource("8_r708b")
+metadata/_custom_type_script = "uid://ca3xixvnlvp5q"
+
+[sub_resource type="Resource" id="Resource_oqggq"]
+script = ExtResource("10_42lnl")
+dialogs = Array[ExtResource("6_pe24f")]([SubResource("Resource_jt7kn")])
+post_actions = Array[ExtResource("7_crxsf")]([SubResource("Resource_pit3x")])
+metadata/_custom_type_script = "uid://dktqal1ji0w0"
+
+[sub_resource type="Resource" id="Resource_c64ya"]
+script = ExtResource("12_mkiuu")
+min_level = 20
+metadata/_custom_type_script = "uid://fjr4xtjuau8g"
+
+[sub_resource type="Resource" id="Resource_rkwby"]
+script = ExtResource("13_cq8fu")
+emblem_type = 2
+emblem_level = 1
+metadata/_custom_type_script = "uid://dab71k71t1pwl"
+
+[sub_resource type="Resource" id="Resource_e6ueg"]
+script = ExtResource("14_qp0yw")
+conditions = Array[ExtResource("11_ol6ru")]([SubResource("Resource_c64ya"), SubResource("Resource_rkwby")])
+metadata/_custom_type_script = "uid://ddt5j1qcfsosb"
+
+[sub_resource type="Resource" id="Resource_xkerl"]
+script = ExtResource("6_pe24f")
+text = "你知道什么是防御临界值吗？只要你的防御力比怪物的攻击力高于一定数值，他们的攻击就伤不了你，当然，这数值越低越好"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_36ohg"]
+script = ExtResource("10_42lnl")
+dialogs = Array[ExtResource("6_pe24f")]([SubResource("Resource_xkerl")])
+metadata/_custom_type_script = "uid://dktqal1ji0w0"
+
+[sub_resource type="Resource" id="Resource_scpkc"]
+script = ExtResource("15_yber2")
+condition = SubResource("Resource_e6ueg")
+default_behavior = SubResource("Resource_36ohg")
+alt_behavior = SubResource("Resource_oqggq")
+metadata/_custom_type_script = "uid://bfpvfiuxd5pws"
+
+[sub_resource type="Resource" id="Resource_at3ci"]
+script = ExtResource("17_w1oga")
+npc_id = "sage_lv2_merchant"
+npc_name = "商人"
+frames = ExtResource("16_kdos0")
+behavior = SubResource("Resource_scpkc")
+metadata/_custom_type_script = "uid://dn7vsl533x7gh"
+
+[node name="Base7" type="Node2D" unique_id=1806746235]
+script = ExtResource("1_ox8l3")
+
+[node name="Ground" type="TileMapLayer" parent="." unique_id=2065011923]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAEAAAABAAAAAAAAAAEAAAACAAAAAAAAAAEAAAADAAAAAAAAAAEAAAAEAAAAAAAAAAEAAAAFAAAAAAAAAAEAAAAGAAAAAAAAAAEAAAAHAAAAAAAAAAEAAAAIAAAAAAAAAAEAAAAJAAAAAAAAAAEAAAAKAAAAAAAAAAEAAAAAAAEAAAAAAAEAAAABAAEAAAAAAAEAAAACAAEAAAAAAAEAAAADAAEAAAAAAAEAAAAEAAEAAAAAAAEAAAAFAAEAAAAAAAEAAAAGAAEAAAAAAAEAAAAHAAEAAAAAAAEAAAAIAAEAAAAAAAEAAAAJAAEAAAAAAAEAAAAKAAEAAAAAAAEAAAAAAAIAAAAAAAEAAAABAAIAAAAAAAEAAAACAAIAAAAAAAEAAAADAAIAAAAAAAEAAAAEAAIAAAAAAAEAAAAFAAIAAAAAAAEAAAAGAAIAAAAAAAEAAAAHAAIAAAAAAAEAAAAIAAIAAAAAAAEAAAAJAAIAAAAAAAEAAAAKAAIAAAAAAAEAAAAAAAMAAAAAAAEAAAABAAMAAAAAAAEAAAACAAMAAAAAAAEAAAADAAMAAAAAAAEAAAAEAAMAAAAAAAEAAAAFAAMAAAAAAAEAAAAGAAMAAAAAAAEAAAAHAAMAAAAAAAEAAAAIAAMAAAAAAAEAAAAJAAMAAAAAAAEAAAAKAAMAAAAAAAEAAAAAAAQAAAAAAAEAAAABAAQAAAAAAAEAAAACAAQAAAAAAAEAAAADAAQAAAAAAAEAAAAEAAQAAAAAAAEAAAAFAAQAAAAAAAEAAAAGAAQAAAAAAAEAAAAHAAQAAAAAAAEAAAAIAAQAAAAAAAEAAAAJAAQAAAAAAAEAAAAKAAQAAAAAAAEAAAAAAAUAAAAAAAEAAAABAAUAAAAAAAEAAAACAAUAAAAAAAEAAAADAAUAAAAAAAEAAAAEAAUAAAAAAAEAAAAFAAUAAAAAAAEAAAAGAAUAAAAAAAEAAAAHAAUAAAAAAAEAAAAIAAUAAAAAAAEAAAAJAAUAAAAAAAEAAAAKAAUAAAAAAAEAAAAAAAYAAAAAAAEAAAAAAAcAAAAAAAEAAAABAAYAAAAAAAEAAAABAAcAAAAAAAEAAAACAAYAAAAAAAEAAAACAAcAAAAAAAEAAAADAAYAAAAAAAEAAAADAAcAAAAAAAEAAAAEAAYAAAAAAAEAAAAEAAcAAAAAAAEAAAAFAAYAAAAAAAEAAAAFAAcAAAAAAAEAAAAGAAYAAAAAAAEAAAAGAAcAAAAAAAEAAAAHAAYAAAAAAAEAAAAHAAcAAAAAAAEAAAAIAAYAAAAAAAEAAAAIAAcAAAAAAAEAAAAJAAYAAAAAAAEAAAAJAAcAAAAAAAEAAAAKAAYAAAAAAAEAAAAKAAcAAAAAAAEAAAAAAAgAAAAAAAEAAAABAAgAAAAAAAEAAAACAAgAAAAAAAEAAAAIAAgAAAAAAAEAAAAJAAgAAAAAAAEAAAAKAAgAAAAAAAEAAAAAAAkAAAAAAAEAAAABAAkAAAAAAAEAAAACAAkAAAAAAAEAAAADAAkAAAAAAAEAAAAEAAkAAAAAAAEAAAAFAAkAAAAAAAEAAAAGAAkAAAAAAAEAAAAHAAkAAAAAAAEAAAAIAAkAAAAAAAEAAAAJAAkAAAAAAAEAAAAKAAkAAAAAAAEAAAAAAAoAAAAAAAEAAAABAAoAAAAAAAEAAAACAAoAAAAAAAEAAAADAAoAAAAAAAEAAAAEAAoAAAAAAAEAAAAFAAoAAAAAAAEAAAAGAAoAAAAAAAEAAAAHAAoAAAAAAAEAAAAIAAoAAAAAAAEAAAAJAAoAAAAAAAEAAAAKAAoAAAAAAAEAAAADAAgAAAAAAAEAAAAEAAgAAAAAAAEAAAAFAAgAAAAAAAEAAAAGAAgAAAAAAAEAAAAHAAgAAAAAAAEAAAA=")
+tile_set = ExtResource("2_v0f2k")
+
+[node name="Walls" type="TileMapLayer" parent="." unique_id=1108185961]
+z_index = 1
+tile_map_data = PackedByteArray("AAABAAAAAAACAAIAAAACAAAAAAACAAIAAAADAAAAAAACAAIAAAAEAAAAAAACAAIAAAAFAAAAAAACAAIAAAAGAAAAAAACAAIAAAAHAAAAAAACAAIAAAAIAAAAAAACAAIAAAAJAAAAAAACAAIAAAAKAAAAAAACAAIAAAAGAAIAAAACAAIAAAAHAAIAAAACAAIAAAAIAAIAAAACAAIAAAAJAAIAAAACAAIAAAAKAAIAAAACAAIAAAAGAAMAAAACAAIAAAAGAAQAAAACAAIAAAAGAAUAAAACAAIAAAAAAAgAAAACAAIAAAAAAAkAAAACAAIAAAAAAAoAAAACAAIAAAABAAoAAAACAAIAAAABAAkAAAACAAIAAAABAAgAAAACAAIAAAAAAAYAAAACAAIAAAABAAYAAAACAAIAAAACAAYAAAACAAIAAAADAAYAAAACAAIAAAAEAAYAAAACAAIAAAAEAAUAAAACAAIAAAAEAAMAAAACAAIAAAAEAAIAAAACAAIAAAADAAIAAAACAAIAAAACAAIAAAACAAIAAAABAAIAAAACAAIAAAAAAAIAAAACAAIAAAAHAAQAAAACAAIAAAAIAAQAAAACAAIAAAAJAAQAAAACAAIAAAAGAAcAAAACAAIAAAAHAAcAAAACAAIAAAAIAAcAAAACAAIAAAAJAAcAAAACAAIAAAAKAAcAAAACAAIAAAAIAAgAAAACAAIAAAAIAAkAAAACAAIAAAAGAAkAAAACAAIAAAAGAAoAAAACAAIAAAAEAAcAAAACAAIAAAAEAAgAAAACAAIAAAAEAAkAAAACAAIAAAABAAcAAAACAAIAAQA=")
+tile_set = ExtResource("2_v0f2k")
+
+[node name="Entities" type="Node2D" parent="." unique_id=1047835971]
+z_index = 2
+
+[node name="StairUp" parent="Entities" unique_id=1587493218 instance=ExtResource("3_jgdgo")]
+dest_floor_id = "base_6"
+
+[node name="StairDown" parent="Entities" unique_id=1762356824 instance=ExtResource("4_40hn8")]
+position = Vector2(0, 96)
+dest_floor_id = "base_8"
+dest_pos = Vector2i(0, 3)
+
+[node name="SageLv2Merchant" parent="Entities" unique_id=774706501 instance=ExtResource("5_6546a")]
+position = Vector2(320, 256)
+data = SubResource("Resource_at3ci")

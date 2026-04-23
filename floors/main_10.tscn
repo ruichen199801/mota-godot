@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cbmf85d67vidj" path="res://entities/stair_up_entity.tscn" id="3_d6dg8"]
 [ext_resource type="PackedScene" uid="uid://ubv3jnibyiks" path="res://entities/stair_down_entity.tscn" id="4_3f0pl"]
 [ext_resource type="PackedScene" uid="uid://bp13ks4wpt6ea" path="res://entities/door_entity.tscn" id="5_0mtgg"]
+[ext_resource type="PackedScene" uid="uid://d2xyqkcfr7fhh" path="res://entities/portal_entity.tscn" id="5_jp6gx"]
 [ext_resource type="PackedScene" uid="uid://d2gnobmc7j4xv" path="res://entities/item_entity.tscn" id="6_e0jnv"]
 [ext_resource type="Resource" uid="uid://kl2hba15hg7v" path="res://resources/items/yellow_key.tres" id="7_stxkb"]
 [ext_resource type="Resource" uid="uid://cgffc8s7urdnd" path="res://resources/items/blue_key.tres" id="8_m4thu"]
@@ -56,6 +57,11 @@ is_transport_target = true
 position = Vector2(288, 224)
 dest_floor_id = "main_9"
 dest_pos = Vector2i(9, 7)
+
+[node name="PortalToMota10" parent="Entities" unique_id=298097349 instance=ExtResource("5_jp6gx")]
+trigger_direction = Vector2i(-1, 0)
+dest_floor_id = "mota_10"
+dest_pos = Vector2i(5, 10)
 
 [node name="YellowDoor" parent="Entities" unique_id=2056068635 instance=ExtResource("5_0mtgg")]
 position = Vector2(96, 192)

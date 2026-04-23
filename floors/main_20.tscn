@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bp13ks4wpt6ea" path="res://entities/door_entity.tscn" id="11_rdq47"]
 [ext_resource type="PackedScene" uid="uid://d2gnobmc7j4xv" path="res://entities/item_entity.tscn" id="12_4iqdj"]
 [ext_resource type="Resource" uid="uid://cypiw8wv1q82x" path="res://resources/items/green_gem.tres" id="13_84cif"]
+[ext_resource type="Resource" uid="uid://b7h406hwv0y76" path="res://resources/items/pickaxe.tres" id="14_4iqdj"]
 
 [sub_resource type="Resource" id="Resource_i3jls"]
 script = ExtResource("4_3brx8")
@@ -50,7 +51,7 @@ metadata/_custom_type_script = "uid://dktqal1ji0w0"
 
 [sub_resource type="Resource" id="Resource_12m6o"]
 script = ExtResource("10_imhwh")
-npc_id = "fake_princess_npc"
+npc_id = "f20_fake_princess_npc"
 npc_name = "公主"
 frames = ExtResource("9_vfbou")
 behavior = SubResource("Resource_xq0hc")
@@ -71,7 +72,7 @@ tile_set = ExtResource("2_2eq8m")
 [node name="Entities" type="Node2D" parent="." unique_id=1047835971]
 z_index = 2
 
-[node name="FakePrincessNpc" parent="Entities" unique_id=774706501 instance=ExtResource("3_tfvdy")]
+[node name="F20FakePrincessNpc" parent="Entities" unique_id=774706501 instance=ExtResource("3_tfvdy")]
 position = Vector2(160, 0)
 data = SubResource("Resource_12m6o")
 
@@ -82,3 +83,7 @@ door_type = 3
 [node name="GreenGem" parent="Entities" unique_id=1365116579 instance=ExtResource("12_4iqdj")]
 position = Vector2(160, 192)
 data = ExtResource("13_84cif")
+
+[node name="Pickaxe" parent="Entities" unique_id=1800448269 instance=ExtResource("12_4iqdj")]
+position = Vector2(96, 0)
+data = ExtResource("14_4iqdj")
