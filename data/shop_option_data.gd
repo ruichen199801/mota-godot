@@ -18,6 +18,7 @@ extends Resource
 @export var blue_keys: int
 @export var red_keys: int
 @export var item: ItemData
+@export var cure_state: bool
 
 
 ## Applies the shop option to the player (stats, keys, gold, or item).
@@ -40,3 +41,5 @@ func apply_option(player_data: PlayerData) -> void:
 		player_data.red_keys += red_keys
 	if item:
 		item.give_to(player_data)
+	if cure_state:
+		player_data.state = PlayerData.State.NORMAL

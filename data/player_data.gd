@@ -202,7 +202,7 @@ func is_weakened() -> bool:
 
 func apply_poison() -> void:
 	if state == State.POISONED:
-		hp -= POISON_DAMAGE
+		hp = maxi(hp - POISON_DAMAGE, 1)
 
 
 func _apply_weaken() -> void:

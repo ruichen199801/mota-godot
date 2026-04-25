@@ -4,6 +4,22 @@
 [ext_resource type="TileSet" uid="uid://di6pm00t0x4tx" path="res://resources/floor_tileset.tres" id="2_pkgiv"]
 [ext_resource type="PackedScene" uid="uid://cbmf85d67vidj" path="res://entities/stair_up_entity.tscn" id="3_x77ur"]
 [ext_resource type="PackedScene" uid="uid://ubv3jnibyiks" path="res://entities/stair_down_entity.tscn" id="4_0ucdn"]
+[ext_resource type="PackedScene" uid="uid://bp13ks4wpt6ea" path="res://entities/door_entity.tscn" id="5_iw4j6"]
+[ext_resource type="PackedScene" uid="uid://d2gnobmc7j4xv" path="res://entities/item_entity.tscn" id="6_n2njg"]
+[ext_resource type="Resource" uid="uid://kl2hba15hg7v" path="res://resources/items/yellow_key.tres" id="7_ggnrl"]
+[ext_resource type="Resource" uid="uid://j0c3lt0bvhrs" path="res://resources/items/red_key.tres" id="8_8pprq"]
+[ext_resource type="Resource" uid="uid://chdfqgd28u6tn" path="res://resources/items/gold.tres" id="9_jsk76"]
+[ext_resource type="Resource" uid="uid://8vwv0rpxhslm" path="res://resources/items/red_gem.tres" id="10_rkfel"]
+[ext_resource type="Resource" uid="uid://b5tvr5hwiubg" path="res://resources/items/blue_gem.tres" id="11_5pxfg"]
+[ext_resource type="Resource" uid="uid://dew2n4qxuoylg" path="res://resources/items/potion.tres" id="12_w238r"]
+[ext_resource type="PackedScene" uid="uid://b678t3khc1li4" path="res://entities/enemy_entity.tscn" id="13_8p61o"]
+[ext_resource type="Resource" uid="uid://rlerasgmv788" path="res://resources/enemies/archmage/archmage.tres" id="14_oi2c2"]
+[ext_resource type="Resource" uid="uid://dqm8qsxccjika" path="res://resources/enemies/red_robed_archmage/red_robed_archmage.tres" id="15_vcp3d"]
+[ext_resource type="Resource" uid="uid://bspc3jh7haujg" path="res://resources/enemies/intermediate_guard/intermediate_guard.tres" id="16_l8qw1"]
+[ext_resource type="Resource" uid="uid://drkyk4j3v0tml" path="res://resources/enemies/spirit_skeleton/spirit_skeleton.tres" id="17_cqh6h"]
+[ext_resource type="Resource" uid="uid://c2xcp7e6qwu88" path="res://resources/enemies/mage_marshal/mage_marshal.tres" id="18_bfclv"]
+[ext_resource type="Resource" uid="uid://dr68ga4l8syi" path="res://resources/enemies/demon_king/demon_king.tres" id="19_kex64"]
+[ext_resource type="Resource" uid="uid://dqn8b5mevldvw" path="res://resources/enemies/spirit_skeleton_soldier/spirit_skeleton_soldier.tres" id="20_dyctn"]
 
 [node name="Base12" type="Node2D" unique_id=1806746235]
 script = ExtResource("1_uljd3")
@@ -41,3 +57,141 @@ position = Vector2(320, 0)
 dest_floor_id = "base_13"
 dest_pos = Vector2i(10, 0)
 is_transport_target = true
+
+[node name="LogicDoor" parent="Entities" unique_id=2056068635 instance=ExtResource("5_iw4j6")]
+position = Vector2(224, 64)
+door_type = 4
+guard_positions = Array[Vector2i]([Vector2i(6, 3), Vector2i(8, 3)])
+
+[node name="BlueDoor" parent="Entities" unique_id=940620959 instance=ExtResource("5_iw4j6")]
+position = Vector2(32, 160)
+door_type = 1
+
+[node name="YellowDoor1" parent="Entities" unique_id=314423598 instance=ExtResource("5_iw4j6")]
+position = Vector2(0, 32)
+
+[node name="YellowDoor2" parent="Entities" unique_id=527732900 instance=ExtResource("5_iw4j6")]
+position = Vector2(96, 160)
+
+[node name="YellowDoor3" parent="Entities" unique_id=2107257927 instance=ExtResource("5_iw4j6")]
+position = Vector2(32, 224)
+
+[node name="YellowDoor4" parent="Entities" unique_id=351259623 instance=ExtResource("5_iw4j6")]
+position = Vector2(96, 224)
+
+[node name="YellowDoor5" parent="Entities" unique_id=1772929900 instance=ExtResource("5_iw4j6")]
+position = Vector2(256, 224)
+
+[node name="YellowDoor6" parent="Entities" unique_id=1414266899 instance=ExtResource("5_iw4j6")]
+position = Vector2(288, 224)
+
+[node name="YellowKey1" parent="Entities" unique_id=1365116579 instance=ExtResource("6_n2njg")]
+position = Vector2(128, 128)
+data = ExtResource("7_ggnrl")
+
+[node name="YellowKey2" parent="Entities" unique_id=872502556 instance=ExtResource("6_n2njg")]
+position = Vector2(224, 192)
+data = ExtResource("7_ggnrl")
+
+[node name="YellowKey3" parent="Entities" unique_id=858229241 instance=ExtResource("6_n2njg")]
+position = Vector2(224, 256)
+data = ExtResource("7_ggnrl")
+
+[node name="RedKey" parent="Entities" unique_id=1083040668 instance=ExtResource("6_n2njg")]
+position = Vector2(32, 0)
+data = ExtResource("8_8pprq")
+
+[node name="Gold" parent="Entities" unique_id=1675308345 instance=ExtResource("6_n2njg")]
+position = Vector2(224, 0)
+data = ExtResource("9_jsk76")
+
+[node name="RedGem" parent="Entities" unique_id=1305826552 instance=ExtResource("6_n2njg")]
+position = Vector2(192, 0)
+data = ExtResource("10_rkfel")
+
+[node name="BlueGem1" parent="Entities" unique_id=1739224079 instance=ExtResource("6_n2njg")]
+position = Vector2(96, 0)
+data = ExtResource("11_5pxfg")
+
+[node name="BlueGem2" parent="Entities" unique_id=753286427 instance=ExtResource("6_n2njg")]
+position = Vector2(256, 0)
+data = ExtResource("11_5pxfg")
+
+[node name="Potion1" parent="Entities" unique_id=213952591 instance=ExtResource("6_n2njg")]
+position = Vector2(128, 64)
+data = ExtResource("12_w238r")
+
+[node name="Potion2" parent="Entities" unique_id=747372606 instance=ExtResource("6_n2njg")]
+position = Vector2(128, 256)
+data = ExtResource("12_w238r")
+
+[node name="Potion3" parent="Entities" unique_id=2102642685 instance=ExtResource("6_n2njg")]
+position = Vector2(192, 192)
+data = ExtResource("12_w238r")
+
+[node name="Potion4" parent="Entities" unique_id=1982474197 instance=ExtResource("6_n2njg")]
+position = Vector2(192, 256)
+data = ExtResource("12_w238r")
+
+[node name="Archmage1" parent="Entities" unique_id=605189716 instance=ExtResource("13_8p61o")]
+data = ExtResource("14_oi2c2")
+
+[node name="Archmage2" parent="Entities" unique_id=1099605937 instance=ExtResource("13_8p61o")]
+position = Vector2(320, 96)
+data = ExtResource("14_oi2c2")
+
+[node name="Archmage3" parent="Entities" unique_id=1498460401 instance=ExtResource("13_8p61o")]
+position = Vector2(64, 320)
+data = ExtResource("14_oi2c2")
+
+[node name="RedRobedArchmage1" parent="Entities" unique_id=2050046260 instance=ExtResource("13_8p61o")]
+position = Vector2(192, 96)
+data = ExtResource("15_vcp3d")
+
+[node name="RedRobedArchmage2" parent="Entities" unique_id=1403645748 instance=ExtResource("13_8p61o")]
+position = Vector2(256, 96)
+data = ExtResource("15_vcp3d")
+
+[node name="IntermediateGuard1" parent="Entities" unique_id=490101946 instance=ExtResource("13_8p61o")]
+position = Vector2(32, 256)
+data = ExtResource("16_l8qw1")
+
+[node name="IntermediateGuard2" parent="Entities" unique_id=124905604 instance=ExtResource("13_8p61o")]
+position = Vector2(96, 256)
+data = ExtResource("16_l8qw1")
+
+[node name="SpiritSkeleton1" parent="Entities" unique_id=1293057369 instance=ExtResource("13_8p61o")]
+position = Vector2(224, 224)
+data = ExtResource("17_cqh6h")
+
+[node name="SpiritSkeleton2" parent="Entities" unique_id=1094396329 instance=ExtResource("13_8p61o")]
+position = Vector2(320, 288)
+data = ExtResource("17_cqh6h")
+
+[node name="SpiritSkeleton3" parent="Entities" unique_id=1637000528 instance=ExtResource("13_8p61o")]
+position = Vector2(288, 320)
+data = ExtResource("17_cqh6h")
+
+[node name="MageMarshal1" parent="Entities" unique_id=1522422583 instance=ExtResource("13_8p61o")]
+position = Vector2(96, 64)
+data = ExtResource("18_bfclv")
+
+[node name="MageMarshal2" parent="Entities" unique_id=1664196412 instance=ExtResource("13_8p61o")]
+position = Vector2(32, 192)
+data = ExtResource("18_bfclv")
+
+[node name="MageMarshal3" parent="Entities" unique_id=1121149678 instance=ExtResource("13_8p61o")]
+position = Vector2(96, 192)
+data = ExtResource("18_bfclv")
+
+[node name="MageMarshal4" parent="Entities" unique_id=1047150523 instance=ExtResource("13_8p61o")]
+position = Vector2(320, 160)
+data = ExtResource("18_bfclv")
+
+[node name="DemonKing" parent="Entities" unique_id=882462918 instance=ExtResource("13_8p61o")]
+position = Vector2(96, 128)
+data = ExtResource("19_kex64")
+
+[node name="SpiritSkeletonSoldier" parent="Entities" unique_id=14485400 instance=ExtResource("13_8p61o")]
+position = Vector2(192, 224)
+data = ExtResource("20_dyctn")

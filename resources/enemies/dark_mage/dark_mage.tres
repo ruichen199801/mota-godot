@@ -19,5 +19,4 @@ gold_drop = 500
 xp_drop = 51
 ignore_def = true
 ability_description = "攻击无视防御力"
-immune_to_divine_sword = true
 metadata/_custom_type_script = "uid://bv4f1jnah1g8o"

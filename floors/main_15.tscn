@@ -87,7 +87,7 @@ metadata/_custom_type_script = "uid://vork0ooj1wrk"
 [sub_resource type="Resource" id="Resource_tplr4"]
 script = ExtResource("15_7fswr")
 label = "红钥匙"
-fixed_cost = 250
+fixed_cost = 500
 red_keys = -1
 metadata/_custom_type_script = "uid://vork0ooj1wrk"
 

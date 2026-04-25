@@ -10,7 +10,14 @@
 [ext_resource type="Script" uid="uid://dktqal1ji0w0" path="res://data/npc_behavior/npc_dialog_behavior.gd" id="8_6xprg"]
 [ext_resource type="SpriteFrames" uid="uid://kcjb76q75tl1" path="res://resources/enemies/demon_king_gledi/demon_king_gledi_frames.tres" id="9_rp75s"]
 [ext_resource type="Script" uid="uid://dn7vsl533x7gh" path="res://data/npc_data.gd" id="10_yephr"]
+[ext_resource type="SpriteFrames" uid="uid://c58cvrjebi8qb" path="res://resources/npcs/princess_frames.tres" id="11_tqj7y"]
 [ext_resource type="PackedScene" uid="uid://d2xyqkcfr7fhh" path="res://entities/portal_entity.tscn" id="11_xn8gl"]
+[ext_resource type="PackedScene" uid="uid://bp13ks4wpt6ea" path="res://entities/door_entity.tscn" id="13_fmv0m"]
+[ext_resource type="PackedScene" uid="uid://d2gnobmc7j4xv" path="res://entities/item_entity.tscn" id="14_y8sow"]
+[ext_resource type="Resource" uid="uid://j0c3lt0bvhrs" path="res://resources/items/red_key.tres" id="15_qmhh3"]
+[ext_resource type="Resource" uid="uid://8vwv0rpxhslm" path="res://resources/items/red_gem.tres" id="16_7lo58"]
+[ext_resource type="Resource" uid="uid://b5tvr5hwiubg" path="res://resources/items/blue_gem.tres" id="17_ah77b"]
+[ext_resource type="Resource" uid="uid://crv72j1mbl8sh" path="res://resources/items/greater_potion.tres" id="18_csenl"]
 
 [sub_resource type="Resource" id="Resource_hs43i"]
 script = ExtResource("4_xn8gl")
@@ -59,6 +66,41 @@ behavior = SubResource("Resource_mvppp")
 preview_enemy = ExtResource("6_im0pc")
 metadata/_custom_type_script = "uid://dn7vsl533x7gh"
 
+[sub_resource type="Resource" id="Resource_a3fbw"]
+script = ExtResource("4_xn8gl")
+speaker = 1
+text = "是公主？"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_8o6gi"]
+script = ExtResource("4_xn8gl")
+text = "你是来救我的吗？
+太好了，我们走吧！
+回国后我一定要爸爸打赏你"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_2hxum"]
+script = ExtResource("4_xn8gl")
+speaker = 1
+text = "是真正的公主！
+太好了！
+我们走吧！"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_ybpcd"]
+script = ExtResource("8_6xprg")
+dialogs = Array[ExtResource("4_xn8gl")]([SubResource("Resource_a3fbw"), SubResource("Resource_8o6gi"), SubResource("Resource_2hxum")])
+metadata/_custom_type_script = "uid://dktqal1ji0w0"
+
+[sub_resource type="Resource" id="Resource_im0pc"]
+script = ExtResource("10_yephr")
+npc_id = "b25_fake_princess_npc"
+npc_name = "公主"
+frames = ExtResource("11_tqj7y")
+behavior = SubResource("Resource_ybpcd")
+divine_sword_targetable = true
+metadata/_custom_type_script = "uid://dn7vsl533x7gh"
+
 [node name="Base25" type="Node2D" unique_id=1806746235]
 script = ExtResource("1_ygk3h")
 
@@ -74,12 +116,64 @@ tile_set = ExtResource("2_3p2ic")
 [node name="Entities" type="Node2D" parent="." unique_id=1047835971]
 z_index = 2
 
-[node name="DemonKingNpc" parent="Entities" unique_id=774706501 instance=ExtResource("3_sy53l")]
-position = Vector2(160, 192)
-data = SubResource("Resource_fmv0m")
-
 [node name="PortalToMota8" parent="Entities" unique_id=298097349 instance=ExtResource("11_xn8gl")]
 position = Vector2(160, 320)
 trigger_direction = Vector2i(0, 1)
 dest_floor_id = "mota_8"
 dest_pos = Vector2i(5, 10)
+
+[node name="DemonKingNpc" parent="Entities" unique_id=774706501 instance=ExtResource("3_sy53l")]
+position = Vector2(160, 192)
+data = SubResource("Resource_fmv0m")
+
+[node name="B25FakePrincessNpc" parent="Entities" unique_id=1894909063 instance=ExtResource("3_sy53l")]
+position = Vector2(160, 288)
+data = SubResource("Resource_im0pc")
+
+[node name="RedDoor1" parent="Entities" unique_id=2056068635 instance=ExtResource("13_fmv0m")]
+position = Vector2(160, 160)
+door_type = 2
+
+[node name="RedDoor2" parent="Entities" unique_id=1935021307 instance=ExtResource("13_fmv0m")]
+position = Vector2(160, 256)
+door_type = 2
+
+[node name="RedKey1" parent="Entities" unique_id=1365116579 instance=ExtResource("14_y8sow")]
+position = Vector2(64, 0)
+data = ExtResource("15_qmhh3")
+
+[node name="RedKey2" parent="Entities" unique_id=1565399069 instance=ExtResource("14_y8sow")]
+position = Vector2(96, 0)
+data = ExtResource("15_qmhh3")
+
+[node name="RedKey3" parent="Entities" unique_id=546588491 instance=ExtResource("14_y8sow")]
+position = Vector2(192, 0)
+data = ExtResource("15_qmhh3")
+
+[node name="RedKey4" parent="Entities" unique_id=255707880 instance=ExtResource("14_y8sow")]
+position = Vector2(224, 0)
+data = ExtResource("15_qmhh3")
+
+[node name="RedKey5" parent="Entities" unique_id=96202693 instance=ExtResource("14_y8sow")]
+position = Vector2(128, 192)
+data = ExtResource("15_qmhh3")
+
+[node name="RedKey6" parent="Entities" unique_id=1047744567 instance=ExtResource("14_y8sow")]
+position = Vector2(192, 192)
+data = ExtResource("15_qmhh3")
+
+[node name="RedGem" parent="Entities" unique_id=775709795 instance=ExtResource("14_y8sow")]
+position = Vector2(192, 128)
+data = ExtResource("16_7lo58")
+
+[node name="BlueGem" parent="Entities" unique_id=1295857669 instance=ExtResource("14_y8sow")]
+position = Vector2(128, 128)
+data = ExtResource("17_ah77b")
+
+[node name="GreaterPotion1" parent="Entities" unique_id=856954219 instance=ExtResource("14_y8sow")]
+position = Vector2(96, 96)
+data = ExtResource("18_csenl")
+
+[node name="GreaterPotion2" parent="Entities" unique_id=623765598 instance=ExtResource("14_y8sow")]
+position = Vector2(224, 96)
+data = ExtResource("18_csenl")

@@ -27,11 +27,9 @@ func _use_anywhere_door(pd: PlayerData) -> void:
 	var target: Vector2i = player.grid_pos + player.facing
 	var entity := FloorManager.get_entity(target)
 	
-	# Can place on: empty ground, lava, or replaceable walls
+	# Can place on lava or replaceable walls
 	var can_place := false
-	if entity == null and FloorManager.is_in_bounds(target):
-		can_place = true
-	elif entity is LavaEntity:
+	if entity is LavaEntity:
 		can_place = true
 	elif entity is WallEntity and entity.replaceable:
 		can_place = true
@@ -59,6 +57,15 @@ func _use_divine_sword_token(pd: PlayerData) -> void:
 		# Replace with green slime
 		var slime_data: EnemyData = preload("res://resources/enemies/green_slime/green_slime.tres")
 		entity.replace_with(slime_data)
+	
+	elif entity is NpcEntity:
+		if not entity.data.divine_sword_targetable:
+			return
+		pd.use_item("divine_sword_token")
+		var slime_data: EnemyData = preload("res://resources/enemies/green_slime/green_slime.tres")
+		var enemy_scene: PackedScene = preload("res://entities/enemy_entity.tscn")
+		var enemy: EnemyEntity = FloorManager.spawn_entity(enemy_scene, target)
+		enemy.data = slime_data
 
 
 func _use_floor_transport(pd: PlayerData) -> void:

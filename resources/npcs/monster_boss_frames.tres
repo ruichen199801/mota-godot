@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://lxe0gqllybyk"]
+
+[ext_resource type="Texture2D" uid="uid://bdn6rtjisau01" path="res://assets/images/monster_boss.png" id="1_h1nux"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_viagh"]
+atlas = ExtResource("1_h1nux")
+region = Rect2(0, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_viagh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]

@@ -4,6 +4,17 @@
 [ext_resource type="TileSet" uid="uid://di6pm00t0x4tx" path="res://resources/floor_tileset.tres" id="2_c4is4"]
 [ext_resource type="PackedScene" uid="uid://cbmf85d67vidj" path="res://entities/stair_up_entity.tscn" id="3_o88qb"]
 [ext_resource type="PackedScene" uid="uid://ubv3jnibyiks" path="res://entities/stair_down_entity.tscn" id="4_2aiex"]
+[ext_resource type="PackedScene" uid="uid://po6tanfhlyd6" path="res://entities/lava_entity.tscn" id="5_2aiex"]
+[ext_resource type="PackedScene" uid="uid://d2gnobmc7j4xv" path="res://entities/item_entity.tscn" id="6_saqqi"]
+[ext_resource type="PackedScene" uid="uid://b678t3khc1li4" path="res://entities/enemy_entity.tscn" id="7_ceq5f"]
+[ext_resource type="Resource" uid="uid://clpmukkfspi0d" path="res://resources/items/cross.tres" id="7_h0rsk"]
+[ext_resource type="Resource" uid="uid://kl2hba15hg7v" path="res://resources/items/yellow_key.tres" id="7_xlj6h"]
+[ext_resource type="Resource" uid="uid://q0ku5rl35o8q" path="res://resources/items/wing_of_leap.tres" id="8_b3llt"]
+[ext_resource type="Resource" uid="uid://rlerasgmv788" path="res://resources/enemies/archmage/archmage.tres" id="8_rudv1"]
+[ext_resource type="Resource" uid="uid://dqm8qsxccjika" path="res://resources/enemies/red_robed_archmage/red_robed_archmage.tres" id="9_qtqn1"]
+[ext_resource type="Resource" uid="uid://dew2n4qxuoylg" path="res://resources/items/potion.tres" id="9_uvf1p"]
+[ext_resource type="Resource" uid="uid://drkyk4j3v0tml" path="res://resources/enemies/spirit_skeleton/spirit_skeleton.tres" id="10_xlj6h"]
+[ext_resource type="Resource" uid="uid://dr68ga4l8syi" path="res://resources/enemies/demon_king/demon_king.tres" id="11_b3llt"]
 
 [node name="Base13" type="Node2D" unique_id=1806746235]
 script = ExtResource("1_pfbxo")
@@ -35,3 +46,203 @@ is_transport_target = true
 position = Vector2(320, 320)
 dest_floor_id = "base_14"
 dest_pos = Vector2i(10, 10)
+
+[node name="Cross" parent="Entities" unique_id=1365116579 instance=ExtResource("6_saqqi")]
+data = ExtResource("7_h0rsk")
+
+[node name="YellowKey1" parent="Entities" unique_id=1964267943 instance=ExtResource("6_saqqi")]
+position = Vector2(320, 160)
+data = ExtResource("7_xlj6h")
+
+[node name="YellowKey2" parent="Entities" unique_id=957272447 instance=ExtResource("6_saqqi")]
+position = Vector2(320, 192)
+data = ExtResource("7_xlj6h")
+
+[node name="WingOfLeap" parent="Entities" unique_id=2034747482 instance=ExtResource("6_saqqi")]
+position = Vector2(320, 128)
+data = ExtResource("8_b3llt")
+
+[node name="Potion" parent="Entities" unique_id=1042087737 instance=ExtResource("6_saqqi")]
+position = Vector2(320, 224)
+data = ExtResource("9_uvf1p")
+
+[node name="Archmage" parent="Entities" unique_id=605189716 instance=ExtResource("7_ceq5f")]
+position = Vector2(320, 256)
+data = ExtResource("8_rudv1")
+
+[node name="RedRobedArchmage" parent="Entities" unique_id=1987242442 instance=ExtResource("7_ceq5f")]
+position = Vector2(64, 320)
+data = ExtResource("9_qtqn1")
+
+[node name="SpiritSkeleton" parent="Entities" unique_id=283532981 instance=ExtResource("7_ceq5f")]
+position = Vector2(320, 96)
+data = ExtResource("10_xlj6h")
+
+[node name="DemonKing" parent="Entities" unique_id=1291376873 instance=ExtResource("7_ceq5f")]
+position = Vector2(320, 288)
+data = ExtResource("11_b3llt")
+
+[node name="Lava1" parent="Entities" unique_id=650906143 instance=ExtResource("5_2aiex")]
+position = Vector2(32, 0)
+
+[node name="Lava2" parent="Entities" unique_id=704906371 instance=ExtResource("5_2aiex")]
+position = Vector2(64, 0)
+
+[node name="Lava3" parent="Entities" unique_id=855253253 instance=ExtResource("5_2aiex")]
+position = Vector2(96, 0)
+
+[node name="Lava4" parent="Entities" unique_id=1704687169 instance=ExtResource("5_2aiex")]
+position = Vector2(128, 0)
+
+[node name="Lava5" parent="Entities" unique_id=1503434475 instance=ExtResource("5_2aiex")]
+position = Vector2(160, 0)
+
+[node name="Lava6" parent="Entities" unique_id=929261007 instance=ExtResource("5_2aiex")]
+position = Vector2(192, 0)
+
+[node name="Lava7" parent="Entities" unique_id=2058565462 instance=ExtResource("5_2aiex")]
+position = Vector2(224, 0)
+
+[node name="Lava8" parent="Entities" unique_id=1254453983 instance=ExtResource("5_2aiex")]
+position = Vector2(256, 0)
+
+[node name="Lava9" parent="Entities" unique_id=1587613986 instance=ExtResource("5_2aiex")]
+position = Vector2(256, 32)
+
+[node name="Lava10" parent="Entities" unique_id=817311011 instance=ExtResource("5_2aiex")]
+position = Vector2(256, 64)
+
+[node name="Lava11" parent="Entities" unique_id=782306586 instance=ExtResource("5_2aiex")]
+position = Vector2(224, 64)
+
+[node name="Lava12" parent="Entities" unique_id=1509245775 instance=ExtResource("5_2aiex")]
+position = Vector2(192, 64)
+
+[node name="Lava13" parent="Entities" unique_id=212815083 instance=ExtResource("5_2aiex")]
+position = Vector2(160, 64)
+
+[node name="Lava14" parent="Entities" unique_id=4211197 instance=ExtResource("5_2aiex")]
+position = Vector2(128, 64)
+
+[node name="Lava15" parent="Entities" unique_id=350318769 instance=ExtResource("5_2aiex")]
+position = Vector2(96, 64)
+
+[node name="Lava16" parent="Entities" unique_id=2035540974 instance=ExtResource("5_2aiex")]
+position = Vector2(64, 64)
+
+[node name="Lava17" parent="Entities" unique_id=1191953153 instance=ExtResource("5_2aiex")]
+position = Vector2(32, 64)
+
+[node name="Lava18" parent="Entities" unique_id=1820573220 instance=ExtResource("5_2aiex")]
+position = Vector2(0, 64)
+
+[node name="Lava19" parent="Entities" unique_id=557523793 instance=ExtResource("5_2aiex")]
+position = Vector2(0, 96)
+
+[node name="Lava20" parent="Entities" unique_id=2096462311 instance=ExtResource("5_2aiex")]
+position = Vector2(0, 128)
+
+[node name="Lava21" parent="Entities" unique_id=1626545233 instance=ExtResource("5_2aiex")]
+position = Vector2(32, 128)
+
+[node name="Lava22" parent="Entities" unique_id=651913825 instance=ExtResource("5_2aiex")]
+position = Vector2(64, 128)
+
+[node name="Lava23" parent="Entities" unique_id=1374021498 instance=ExtResource("5_2aiex")]
+position = Vector2(96, 128)
+
+[node name="Lava24" parent="Entities" unique_id=1209763495 instance=ExtResource("5_2aiex")]
+position = Vector2(128, 128)
+
+[node name="Lava25" parent="Entities" unique_id=1511162550 instance=ExtResource("5_2aiex")]
+position = Vector2(160, 128)
+
+[node name="Lava26" parent="Entities" unique_id=54197903 instance=ExtResource("5_2aiex")]
+position = Vector2(192, 128)
+
+[node name="Lava27" parent="Entities" unique_id=1135024508 instance=ExtResource("5_2aiex")]
+position = Vector2(224, 128)
+
+[node name="Lava28" parent="Entities" unique_id=994229385 instance=ExtResource("5_2aiex")]
+position = Vector2(256, 128)
+
+[node name="Lava29" parent="Entities" unique_id=947422086 instance=ExtResource("5_2aiex")]
+position = Vector2(256, 160)
+
+[node name="Lava30" parent="Entities" unique_id=80874779 instance=ExtResource("5_2aiex")]
+position = Vector2(256, 192)
+
+[node name="Lava31" parent="Entities" unique_id=1937599929 instance=ExtResource("5_2aiex")]
+position = Vector2(224, 192)
+
+[node name="Lava32" parent="Entities" unique_id=1472604948 instance=ExtResource("5_2aiex")]
+position = Vector2(192, 192)
+
+[node name="Lava33" parent="Entities" unique_id=1394793611 instance=ExtResource("5_2aiex")]
+position = Vector2(160, 192)
+
+[node name="Lava34" parent="Entities" unique_id=622741837 instance=ExtResource("5_2aiex")]
+position = Vector2(128, 192)
+
+[node name="Lava35" parent="Entities" unique_id=926216284 instance=ExtResource("5_2aiex")]
+position = Vector2(96, 192)
+
+[node name="Lava36" parent="Entities" unique_id=1512233013 instance=ExtResource("5_2aiex")]
+position = Vector2(64, 192)
+
+[node name="Lava37" parent="Entities" unique_id=1710566796 instance=ExtResource("5_2aiex")]
+position = Vector2(32, 192)
+
+[node name="Lava38" parent="Entities" unique_id=295141895 instance=ExtResource("5_2aiex")]
+position = Vector2(0, 192)
+
+[node name="Lava39" parent="Entities" unique_id=1423510749 instance=ExtResource("5_2aiex")]
+position = Vector2(0, 224)
+
+[node name="Lava40" parent="Entities" unique_id=1526988233 instance=ExtResource("5_2aiex")]
+position = Vector2(0, 256)
+
+[node name="Lava41" parent="Entities" unique_id=508817405 instance=ExtResource("5_2aiex")]
+position = Vector2(32, 256)
+
+[node name="Lava42" parent="Entities" unique_id=700877580 instance=ExtResource("5_2aiex")]
+position = Vector2(64, 256)
+
+[node name="Lava43" parent="Entities" unique_id=2099688637 instance=ExtResource("5_2aiex")]
+position = Vector2(96, 256)
+
+[node name="Lava44" parent="Entities" unique_id=1940075410 instance=ExtResource("5_2aiex")]
+position = Vector2(128, 256)
+
+[node name="Lava45" parent="Entities" unique_id=719579244 instance=ExtResource("5_2aiex")]
+position = Vector2(160, 256)
+
+[node name="Lava46" parent="Entities" unique_id=260312123 instance=ExtResource("5_2aiex")]
+position = Vector2(192, 256)
+
+[node name="Lava47" parent="Entities" unique_id=357871141 instance=ExtResource("5_2aiex")]
+position = Vector2(224, 256)
+
+[node name="Lava48" parent="Entities" unique_id=953880357 instance=ExtResource("5_2aiex")]
+position = Vector2(256, 256)
+
+[node name="Lava49" parent="Entities" unique_id=81368444 instance=ExtResource("5_2aiex")]
+position = Vector2(256, 288)
+
+[node name="Lava50" parent="Entities" unique_id=763481460 instance=ExtResource("5_2aiex")]
+position = Vector2(256, 320)
+
+[node name="Lava51" parent="Entities" unique_id=1351646448 instance=ExtResource("5_2aiex")]
+position = Vector2(224, 320)
+
+[node name="Lava52" parent="Entities" unique_id=1147924157 instance=ExtResource("5_2aiex")]
+position = Vector2(192, 320)
+
+[node name="Lava53" parent="Entities" unique_id=192360896 instance=ExtResource("5_2aiex")]
+position = Vector2(160, 320)
+
+[node name="Lava54" parent="Entities" unique_id=714646740 instance=ExtResource("5_2aiex")]
+position = Vector2(128, 320)
+
+[node name="Lava55" parent="Entities" unique_id=1155823834 instance=ExtResource("5_2aiex")]
+position = Vector2(96, 320)

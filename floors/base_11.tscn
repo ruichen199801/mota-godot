@@ -4,6 +4,71 @@
 [ext_resource type="TileSet" uid="uid://di6pm00t0x4tx" path="res://resources/floor_tileset.tres" id="2_d6jlo"]
 [ext_resource type="PackedScene" uid="uid://cbmf85d67vidj" path="res://entities/stair_up_entity.tscn" id="3_li1x7"]
 [ext_resource type="PackedScene" uid="uid://ubv3jnibyiks" path="res://entities/stair_down_entity.tscn" id="4_rjq2b"]
+[ext_resource type="PackedScene" uid="uid://bp13ks4wpt6ea" path="res://entities/door_entity.tscn" id="5_l2nal"]
+[ext_resource type="PackedScene" uid="uid://cv12hwq0yxdal" path="res://entities/npc_entity.tscn" id="5_qkj7i"]
+[ext_resource type="PackedScene" uid="uid://d2gnobmc7j4xv" path="res://entities/item_entity.tscn" id="6_so3rd"]
+[ext_resource type="Script" uid="uid://nlow5r0mr3bq" path="res://data/npc_dialog_data.gd" id="6_uhsgb"]
+[ext_resource type="Resource" uid="uid://kl2hba15hg7v" path="res://resources/items/yellow_key.tres" id="7_h442l"]
+[ext_resource type="Script" uid="uid://bru2snxxyg2v4" path="res://data/npc_action/npc_post_action.gd" id="7_k6jwy"]
+[ext_resource type="Resource" uid="uid://cgffc8s7urdnd" path="res://resources/items/blue_key.tres" id="8_eja0y"]
+[ext_resource type="Script" uid="uid://dktqal1ji0w0" path="res://data/npc_behavior/npc_dialog_behavior.gd" id="8_g705l"]
+[ext_resource type="SpriteFrames" uid="uid://sbv076eg1003" path="res://resources/npcs/oldman_frames.tres" id="9_80rso"]
+[ext_resource type="Resource" uid="uid://8vwv0rpxhslm" path="res://resources/items/red_gem.tres" id="9_bvnwg"]
+[ext_resource type="Resource" uid="uid://b5tvr5hwiubg" path="res://resources/items/blue_gem.tres" id="10_eap5r"]
+[ext_resource type="Script" uid="uid://dn7vsl533x7gh" path="res://data/npc_data.gd" id="10_m7g2y"]
+[ext_resource type="Resource" uid="uid://dew2n4qxuoylg" path="res://resources/items/potion.tres" id="11_qkj7i"]
+[ext_resource type="SpriteFrames" uid="uid://0a8itglro6ui" path="res://resources/npcs/merchant_frames.tres" id="11_uhsgb"]
+[ext_resource type="Resource" uid="uid://d46fpmp66mlp" path="res://resources/items/fire_wine.tres" id="12_uhsgb"]
+[ext_resource type="Resource" uid="uid://3gcce6ftuade" path="res://resources/items/antidote.tres" id="13_k6jwy"]
+[ext_resource type="PackedScene" uid="uid://b678t3khc1li4" path="res://entities/enemy_entity.tscn" id="14_g705l"]
+[ext_resource type="Resource" uid="uid://dr68ga4l8syi" path="res://resources/enemies/demon_king/demon_king.tres" id="15_80rso"]
+[ext_resource type="Resource" uid="uid://c2xcp7e6qwu88" path="res://resources/enemies/mage_marshal/mage_marshal.tres" id="16_m7g2y"]
+[ext_resource type="Resource" uid="uid://rlerasgmv788" path="res://resources/enemies/archmage/archmage.tres" id="17_ti5b3"]
+[ext_resource type="Resource" uid="uid://dqm8qsxccjika" path="res://resources/enemies/red_robed_archmage/red_robed_archmage.tres" id="18_xuals"]
+[ext_resource type="Resource" uid="uid://bspc3jh7haujg" path="res://resources/enemies/intermediate_guard/intermediate_guard.tres" id="19_di5mx"]
+[ext_resource type="Resource" uid="uid://drkyk4j3v0tml" path="res://resources/enemies/spirit_skeleton/spirit_skeleton.tres" id="20_kfv8u"]
+[ext_resource type="Resource" uid="uid://dqn8b5mevldvw" path="res://resources/enemies/spirit_skeleton_soldier/spirit_skeleton_soldier.tres" id="21_cf1x4"]
+
+[sub_resource type="Resource" id="Resource_8o6gi"]
+script = ExtResource("6_uhsgb")
+text = "每一个章只能安装一个适合的增幅器，而他们均各自拥有一种潜在能力，要使出来就要看你够不够运了"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_2hxum"]
+script = ExtResource("8_g705l")
+dialogs = Array[ExtResource("6_uhsgb")]([SubResource("Resource_8o6gi")])
+metadata/_custom_type_script = "uid://dktqal1ji0w0"
+
+[sub_resource type="Resource" id="Resource_ti5b3"]
+script = ExtResource("10_m7g2y")
+npc_id = "emblem_upgrade_hint_oldman"
+npc_name = "老人"
+frames = ExtResource("9_80rso")
+behavior = SubResource("Resource_2hxum")
+metadata/_custom_type_script = "uid://dn7vsl533x7gh"
+
+[sub_resource type="Resource" id="Resource_harco"]
+script = ExtResource("6_uhsgb")
+text = "你发现与一些防御力超高的怪物战斗时，完全伤不了它们吗？这与攻击临界值有关，"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_c72c3"]
+script = ExtResource("6_uhsgb")
+text = "当它们的防御比你的攻击力高，而且高出的数值大于你的攻击临界值，你就伤不了它们，请留意"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_a3fbw"]
+script = ExtResource("8_g705l")
+dialogs = Array[ExtResource("6_uhsgb")]([SubResource("Resource_harco"), SubResource("Resource_c72c3")])
+metadata/_custom_type_script = "uid://dktqal1ji0w0"
+
+[sub_resource type="Resource" id="Resource_k6jwy"]
+script = ExtResource("10_m7g2y")
+npc_id = "atk_crit_hint_merchant"
+npc_name = "商人"
+frames = ExtResource("11_uhsgb")
+behavior = SubResource("Resource_a3fbw")
+metadata/_custom_type_script = "uid://dn7vsl533x7gh"
 
 [node name="Base11" type="Node2D" unique_id=1806746235]
 script = ExtResource("1_xvg81")
@@ -35,3 +100,178 @@ position = Vector2(192, 320)
 dest_floor_id = "base_12"
 dest_pos = Vector2i(6, 10)
 is_transport_target = true
+
+[node name="EmblemUpgradeHintOldman" parent="Entities" unique_id=774706501 instance=ExtResource("5_qkj7i")]
+position = Vector2(96, 0)
+data = SubResource("Resource_ti5b3")
+
+[node name="AtkCritHintMerchant" parent="Entities" unique_id=800038447 instance=ExtResource("5_qkj7i")]
+position = Vector2(0, 96)
+data = SubResource("Resource_k6jwy")
+
+[node name="LogicDoor" parent="Entities" unique_id=2056068635 instance=ExtResource("5_l2nal")]
+position = Vector2(288, 96)
+door_type = 4
+guard_positions = Array[Vector2i]([Vector2i(8, 4), Vector2i(10, 4)])
+
+[node name="YellowDoor1" parent="Entities" unique_id=153958487 instance=ExtResource("5_l2nal")]
+position = Vector2(160, 192)
+
+[node name="YellowDoor2" parent="Entities" unique_id=957206251 instance=ExtResource("5_l2nal")]
+position = Vector2(160, 224)
+
+[node name="YellowDoor3" parent="Entities" unique_id=1328098465 instance=ExtResource("5_l2nal")]
+position = Vector2(288, 224)
+
+[node name="YellowDoor4" parent="Entities" unique_id=1521941935 instance=ExtResource("5_l2nal")]
+position = Vector2(320, 224)
+
+[node name="YellowDoor5" parent="Entities" unique_id=1104568144 instance=ExtResource("5_l2nal")]
+position = Vector2(320, 256)
+
+[node name="BlueDoor1" parent="Entities" unique_id=1636314779 instance=ExtResource("5_l2nal")]
+position = Vector2(32, 128)
+door_type = 1
+
+[node name="BlueDoor2" parent="Entities" unique_id=842346484 instance=ExtResource("5_l2nal")]
+position = Vector2(0, 288)
+door_type = 1
+
+[node name="YellowKey1" parent="Entities" unique_id=1365116579 instance=ExtResource("6_so3rd")]
+data = ExtResource("7_h442l")
+
+[node name="YellowKey2" parent="Entities" unique_id=801589210 instance=ExtResource("6_so3rd")]
+position = Vector2(32, 0)
+data = ExtResource("7_h442l")
+
+[node name="YellowKey3" parent="Entities" unique_id=1940545729 instance=ExtResource("6_so3rd")]
+position = Vector2(0, 32)
+data = ExtResource("7_h442l")
+
+[node name="YellowKey4" parent="Entities" unique_id=370833891 instance=ExtResource("6_so3rd")]
+position = Vector2(32, 32)
+data = ExtResource("7_h442l")
+
+[node name="YellowKey5" parent="Entities" unique_id=1033818741 instance=ExtResource("6_so3rd")]
+position = Vector2(96, 224)
+data = ExtResource("7_h442l")
+
+[node name="YellowKey6" parent="Entities" unique_id=1797926622 instance=ExtResource("6_so3rd")]
+position = Vector2(224, 224)
+data = ExtResource("7_h442l")
+
+[node name="BlueKey" parent="Entities" unique_id=1596743862 instance=ExtResource("6_so3rd")]
+position = Vector2(320, 32)
+data = ExtResource("8_eja0y")
+
+[node name="RedGem1" parent="Entities" unique_id=2060344684 instance=ExtResource("6_so3rd")]
+position = Vector2(224, 0)
+data = ExtResource("9_bvnwg")
+
+[node name="RedGem2" parent="Entities" unique_id=32344917 instance=ExtResource("6_so3rd")]
+position = Vector2(256, 0)
+data = ExtResource("9_bvnwg")
+
+[node name="BlueGem1" parent="Entities" unique_id=1775619421 instance=ExtResource("6_so3rd")]
+position = Vector2(288, 0)
+data = ExtResource("10_eap5r")
+
+[node name="BlueGem2" parent="Entities" unique_id=1932911963 instance=ExtResource("6_so3rd")]
+position = Vector2(320, 0)
+data = ExtResource("10_eap5r")
+
+[node name="Potion1" parent="Entities" unique_id=1468080604 instance=ExtResource("6_so3rd")]
+position = Vector2(224, 32)
+data = ExtResource("11_qkj7i")
+
+[node name="Potion2" parent="Entities" unique_id=1505417766 instance=ExtResource("6_so3rd")]
+position = Vector2(256, 32)
+data = ExtResource("11_qkj7i")
+
+[node name="Potion3" parent="Entities" unique_id=1095182002 instance=ExtResource("6_so3rd")]
+position = Vector2(288, 32)
+data = ExtResource("11_qkj7i")
+
+[node name="FireWine" parent="Entities" unique_id=1402031875 instance=ExtResource("6_so3rd")]
+position = Vector2(224, 64)
+data = ExtResource("12_uhsgb")
+
+[node name="Antidote" parent="Entities" unique_id=1122754524 instance=ExtResource("6_so3rd")]
+position = Vector2(96, 96)
+data = ExtResource("13_k6jwy")
+
+[node name="DemonKing1" parent="Entities" unique_id=605189716 instance=ExtResource("14_g705l")]
+position = Vector2(256, 128)
+data = ExtResource("15_80rso")
+
+[node name="DemonKing2" parent="Entities" unique_id=980222561 instance=ExtResource("14_g705l")]
+position = Vector2(320, 128)
+data = ExtResource("15_80rso")
+
+[node name="MageMarshal1" parent="Entities" unique_id=415849075 instance=ExtResource("14_g705l")]
+position = Vector2(64, 160)
+data = ExtResource("16_m7g2y")
+
+[node name="MageMarshal2" parent="Entities" unique_id=4630342 instance=ExtResource("14_g705l")]
+position = Vector2(32, 192)
+data = ExtResource("16_m7g2y")
+
+[node name="MageMarshal3" parent="Entities" unique_id=1640963903 instance=ExtResource("14_g705l")]
+position = Vector2(32, 224)
+data = ExtResource("16_m7g2y")
+
+[node name="MageMarshal4" parent="Entities" unique_id=1602592987 instance=ExtResource("14_g705l")]
+position = Vector2(288, 192)
+data = ExtResource("16_m7g2y")
+
+[node name="MageMarshal5" parent="Entities" unique_id=1623895038 instance=ExtResource("14_g705l")]
+position = Vector2(320, 288)
+data = ExtResource("16_m7g2y")
+
+[node name="Archmage1" parent="Entities" unique_id=1349003274 instance=ExtResource("14_g705l")]
+position = Vector2(0, 320)
+data = ExtResource("17_ti5b3")
+
+[node name="Archmage2" parent="Entities" unique_id=641319099 instance=ExtResource("14_g705l")]
+position = Vector2(64, 320)
+data = ExtResource("17_ti5b3")
+
+[node name="Archmage3" parent="Entities" unique_id=210194225 instance=ExtResource("14_g705l")]
+position = Vector2(256, 320)
+data = ExtResource("17_ti5b3")
+
+[node name="Archmage4" parent="Entities" unique_id=1612118224 instance=ExtResource("14_g705l")]
+position = Vector2(160, 32)
+data = ExtResource("17_ti5b3")
+
+[node name="Archmage5" parent="Entities" unique_id=1907364536 instance=ExtResource("14_g705l")]
+position = Vector2(160, 64)
+data = ExtResource("17_ti5b3")
+
+[node name="RedRobedArchmage1" parent="Entities" unique_id=2092711962 instance=ExtResource("14_g705l")]
+position = Vector2(32, 64)
+data = ExtResource("18_xuals")
+
+[node name="RedRobedArchmage2" parent="Entities" unique_id=1430736661 instance=ExtResource("14_g705l")]
+position = Vector2(64, 96)
+data = ExtResource("18_xuals")
+
+[node name="IntermediateGuard1" parent="Entities" unique_id=2137588441 instance=ExtResource("14_g705l")]
+position = Vector2(128, 160)
+data = ExtResource("19_di5mx")
+
+[node name="IntermediateGuard2" parent="Entities" unique_id=2018034868 instance=ExtResource("14_g705l")]
+position = Vector2(192, 160)
+data = ExtResource("19_di5mx")
+
+[node name="SpiritSkeleton" parent="Entities" unique_id=1015157112 instance=ExtResource("14_g705l")]
+position = Vector2(160, 256)
+data = ExtResource("20_kfv8u")
+
+[node name="SpiritSkeletonSoldier1" parent="Entities" unique_id=332448582 instance=ExtResource("14_g705l")]
+position = Vector2(128, 256)
+data = ExtResource("21_cf1x4")
+
+[node name="SpiritSkeletonSoldier2" parent="Entities" unique_id=764322192 instance=ExtResource("14_g705l")]
+position = Vector2(192, 256)
+data = ExtResource("21_cf1x4")
