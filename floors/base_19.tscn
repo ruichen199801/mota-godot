@@ -4,6 +4,46 @@
 [ext_resource type="TileSet" uid="uid://di6pm00t0x4tx" path="res://resources/floor_tileset.tres" id="2_m738n"]
 [ext_resource type="PackedScene" uid="uid://cbmf85d67vidj" path="res://entities/stair_up_entity.tscn" id="3_igs5c"]
 [ext_resource type="PackedScene" uid="uid://ubv3jnibyiks" path="res://entities/stair_down_entity.tscn" id="4_g4wjw"]
+[ext_resource type="PackedScene" uid="uid://po6tanfhlyd6" path="res://entities/lava_entity.tscn" id="5_2qpjg"]
+[ext_resource type="PackedScene" uid="uid://cv12hwq0yxdal" path="res://entities/npc_entity.tscn" id="5_dm68m"]
+[ext_resource type="Script" uid="uid://nlow5r0mr3bq" path="res://data/npc_dialog_data.gd" id="6_0m1ww"]
+[ext_resource type="PackedScene" uid="uid://d2gnobmc7j4xv" path="res://entities/item_entity.tscn" id="6_wwmaq"]
+[ext_resource type="Script" uid="uid://bru2snxxyg2v4" path="res://data/npc_action/npc_post_action.gd" id="7_1fjh0"]
+[ext_resource type="Resource" uid="uid://kl2hba15hg7v" path="res://resources/items/yellow_key.tres" id="7_5aa1l"]
+[ext_resource type="Script" uid="uid://dktqal1ji0w0" path="res://data/npc_behavior/npc_dialog_behavior.gd" id="8_ogawj"]
+[ext_resource type="Resource" uid="uid://cgffc8s7urdnd" path="res://resources/items/blue_key.tres" id="8_vv4s2"]
+[ext_resource type="Resource" uid="uid://j0c3lt0bvhrs" path="res://resources/items/red_key.tres" id="9_4i1yj"]
+[ext_resource type="SpriteFrames" uid="uid://sbv076eg1003" path="res://resources/npcs/oldman_frames.tres" id="9_kcbig"]
+[ext_resource type="Resource" uid="uid://chdfqgd28u6tn" path="res://resources/items/gold.tres" id="10_105j8"]
+[ext_resource type="Script" uid="uid://dn7vsl533x7gh" path="res://data/npc_data.gd" id="10_bqsgq"]
+[ext_resource type="Resource" uid="uid://8vwv0rpxhslm" path="res://resources/items/red_gem.tres" id="11_ke6ms"]
+[ext_resource type="Resource" uid="uid://b5tvr5hwiubg" path="res://resources/items/blue_gem.tres" id="12_n7h4l"]
+[ext_resource type="Resource" uid="uid://dew2n4qxuoylg" path="res://resources/items/potion.tres" id="13_khj4t"]
+[ext_resource type="Resource" uid="uid://crv72j1mbl8sh" path="res://resources/items/greater_potion.tres" id="14_gybyh"]
+[ext_resource type="PackedScene" uid="uid://b678t3khc1li4" path="res://entities/enemy_entity.tscn" id="15_ke6ms"]
+[ext_resource type="Resource" uid="uid://dqm8qsxccjika" path="res://resources/enemies/red_robed_archmage/red_robed_archmage.tres" id="16_n7h4l"]
+[ext_resource type="Resource" uid="uid://btjtn5abvuis1" path="res://resources/enemies/advanced_guard/advanced_guard.tres" id="17_khj4t"]
+[ext_resource type="Resource" uid="uid://3f7h4cjt5eqc" path="res://resources/enemies/mercury_man/mercury_man.tres" id="18_gybyh"]
+[ext_resource type="Resource" uid="uid://dnakl8frw6e6r" path="res://resources/enemies/royal_guard_knight/royal_guard_knight.tres" id="19_dabix"]
+[ext_resource type="Resource" uid="uid://c85pbjg16tf51" path="res://resources/enemies/sword_king/sword_king.tres" id="20_8sgfq"]
+
+[sub_resource type="Resource" id="Resource_c72c3"]
+script = ExtResource("6_0m1ww")
+text = "这层往后开始会陆续出现一些有状态攻击能力的怪物，骷髅会使你衰弱，蝙蝠和丧尸会使你中毒"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_a3fbw"]
+script = ExtResource("8_ogawj")
+dialogs = Array[ExtResource("6_0m1ww")]([SubResource("Resource_c72c3")])
+metadata/_custom_type_script = "uid://dktqal1ji0w0"
+
+[sub_resource type="Resource" id="Resource_0cfa6"]
+script = ExtResource("10_bqsgq")
+npc_id = "poison_weaken_hint_oldman"
+npc_name = "老人"
+frames = ExtResource("9_kcbig")
+behavior = SubResource("Resource_a3fbw")
+metadata/_custom_type_script = "uid://dn7vsl533x7gh"
 
 [node name="Base19" type="Node2D" unique_id=1806746235]
 script = ExtResource("1_pwval")
@@ -45,3 +85,173 @@ is_transport_target = true
 position = Vector2(224, 0)
 dest_floor_id = "base_20"
 dest_pos = Vector2i(7, 0)
+
+[node name="PoisonWeakenHintOldman" parent="Entities" unique_id=774706501 instance=ExtResource("5_dm68m")]
+position = Vector2(224, 320)
+data = SubResource("Resource_0cfa6")
+
+[node name="Lava1" parent="Entities" unique_id=650906143 instance=ExtResource("5_2qpjg")]
+
+[node name="Lava2" parent="Entities" unique_id=1491445890 instance=ExtResource("5_2qpjg")]
+position = Vector2(32, 32)
+
+[node name="Lava3" parent="Entities" unique_id=573834049 instance=ExtResource("5_2qpjg")]
+position = Vector2(32, 96)
+
+[node name="Lava4" parent="Entities" unique_id=1534039938 instance=ExtResource("5_2qpjg")]
+position = Vector2(128, 32)
+
+[node name="Lava5" parent="Entities" unique_id=2012459547 instance=ExtResource("5_2qpjg")]
+position = Vector2(160, 96)
+
+[node name="Lava6" parent="Entities" unique_id=1828495278 instance=ExtResource("5_2qpjg")]
+position = Vector2(64, 160)
+
+[node name="Lava7" parent="Entities" unique_id=941476667 instance=ExtResource("5_2qpjg")]
+position = Vector2(0, 224)
+
+[node name="Lava8" parent="Entities" unique_id=1259261185 instance=ExtResource("5_2qpjg")]
+position = Vector2(64, 288)
+
+[node name="Lava9" parent="Entities" unique_id=9014020 instance=ExtResource("5_2qpjg")]
+position = Vector2(288, 0)
+
+[node name="Lava10" parent="Entities" unique_id=352797818 instance=ExtResource("5_2qpjg")]
+position = Vector2(288, 32)
+
+[node name="Lava11" parent="Entities" unique_id=50445747 instance=ExtResource("5_2qpjg")]
+position = Vector2(256, 192)
+
+[node name="Lava12" parent="Entities" unique_id=103766598 instance=ExtResource("5_2qpjg")]
+position = Vector2(288, 192)
+
+[node name="Lava13" parent="Entities" unique_id=1965945106 instance=ExtResource("5_2qpjg")]
+position = Vector2(256, 256)
+
+[node name="YellowKey1" parent="Entities" unique_id=1365116579 instance=ExtResource("6_wwmaq")]
+position = Vector2(32, 0)
+data = ExtResource("7_5aa1l")
+
+[node name="YellowKey2" parent="Entities" unique_id=375626632 instance=ExtResource("6_wwmaq")]
+position = Vector2(64, 32)
+data = ExtResource("7_5aa1l")
+
+[node name="BlueKey" parent="Entities" unique_id=59630432 instance=ExtResource("6_wwmaq")]
+position = Vector2(288, 64)
+data = ExtResource("8_vv4s2")
+
+[node name="RedKey" parent="Entities" unique_id=440882172 instance=ExtResource("6_wwmaq")]
+position = Vector2(64, 0)
+data = ExtResource("9_4i1yj")
+
+[node name="Gold" parent="Entities" unique_id=1702508192 instance=ExtResource("6_wwmaq")]
+position = Vector2(128, 224)
+data = ExtResource("10_105j8")
+
+[node name="RedGem1" parent="Entities" unique_id=68439887 instance=ExtResource("6_wwmaq")]
+position = Vector2(0, 320)
+data = ExtResource("11_ke6ms")
+
+[node name="RedGem2" parent="Entities" unique_id=1627029243 instance=ExtResource("6_wwmaq")]
+position = Vector2(128, 288)
+data = ExtResource("11_ke6ms")
+
+[node name="BlueGem1" parent="Entities" unique_id=1063268149 instance=ExtResource("6_wwmaq")]
+position = Vector2(0, 288)
+data = ExtResource("12_n7h4l")
+
+[node name="BlueGem2" parent="Entities" unique_id=257725384 instance=ExtResource("6_wwmaq")]
+position = Vector2(128, 320)
+data = ExtResource("12_n7h4l")
+
+[node name="Potion1" parent="Entities" unique_id=1989596673 instance=ExtResource("6_wwmaq")]
+position = Vector2(0, 160)
+data = ExtResource("13_khj4t")
+
+[node name="Potion2" parent="Entities" unique_id=1409990402 instance=ExtResource("6_wwmaq")]
+position = Vector2(160, 0)
+data = ExtResource("13_khj4t")
+
+[node name="Potion3" parent="Entities" unique_id=672477685 instance=ExtResource("6_wwmaq")]
+position = Vector2(288, 160)
+data = ExtResource("13_khj4t")
+
+[node name="GreaterPotion" parent="Entities" unique_id=1519257067 instance=ExtResource("6_wwmaq")]
+position = Vector2(288, 96)
+data = ExtResource("14_gybyh")
+
+[node name="RedRobedArchmage1" parent="Entities" unique_id=605189716 instance=ExtResource("15_ke6ms")]
+position = Vector2(128, 96)
+data = ExtResource("16_n7h4l")
+
+[node name="RedRobedArchmage2" parent="Entities" unique_id=906816532 instance=ExtResource("15_ke6ms")]
+position = Vector2(128, 160)
+data = ExtResource("16_n7h4l")
+
+[node name="RedRobedArchmage3" parent="Entities" unique_id=145942497 instance=ExtResource("15_ke6ms")]
+position = Vector2(224, 96)
+data = ExtResource("16_n7h4l")
+
+[node name="AdvancedGuard1" parent="Entities" unique_id=364683725 instance=ExtResource("15_ke6ms")]
+position = Vector2(320, 32)
+data = ExtResource("17_khj4t")
+
+[node name="AdvancedGuard2" parent="Entities" unique_id=1104657841 instance=ExtResource("15_ke6ms")]
+position = Vector2(320, 96)
+data = ExtResource("17_khj4t")
+
+[node name="MercuryMan1" parent="Entities" unique_id=247976714 instance=ExtResource("15_ke6ms")]
+position = Vector2(32, 64)
+data = ExtResource("18_gybyh")
+
+[node name="MercuryMan2" parent="Entities" unique_id=272853830 instance=ExtResource("15_ke6ms")]
+position = Vector2(64, 224)
+data = ExtResource("18_gybyh")
+
+[node name="MercuryMan3" parent="Entities" unique_id=139277092 instance=ExtResource("15_ke6ms")]
+position = Vector2(96, 256)
+data = ExtResource("18_gybyh")
+
+[node name="MercuryMan4" parent="Entities" unique_id=1893328458 instance=ExtResource("15_ke6ms")]
+position = Vector2(128, 128)
+data = ExtResource("18_gybyh")
+
+[node name="MercuryMan5" parent="Entities" unique_id=1652109338 instance=ExtResource("15_ke6ms")]
+position = Vector2(192, 160)
+data = ExtResource("18_gybyh")
+
+[node name="MercuryMan6" parent="Entities" unique_id=1644577310 instance=ExtResource("15_ke6ms")]
+position = Vector2(224, 192)
+data = ExtResource("18_gybyh")
+
+[node name="MercuryMan7" parent="Entities" unique_id=7934850 instance=ExtResource("15_ke6ms")]
+position = Vector2(224, 64)
+data = ExtResource("18_gybyh")
+
+[node name="MercuryMan8" parent="Entities" unique_id=1066988974 instance=ExtResource("15_ke6ms")]
+position = Vector2(224, 32)
+data = ExtResource("18_gybyh")
+
+[node name="RoyalGuardKnight1" parent="Entities" unique_id=235075966 instance=ExtResource("15_ke6ms")]
+position = Vector2(192, 256)
+data = ExtResource("19_dabix")
+
+[node name="RoyalGuardKnight2" parent="Entities" unique_id=727513739 instance=ExtResource("15_ke6ms")]
+position = Vector2(224, 256)
+data = ExtResource("19_dabix")
+
+[node name="RoyalGuardKnight3" parent="Entities" unique_id=259109519 instance=ExtResource("15_ke6ms")]
+position = Vector2(192, 288)
+data = ExtResource("19_dabix")
+
+[node name="SwordKing1" parent="Entities" unique_id=1229694921 instance=ExtResource("15_ke6ms")]
+position = Vector2(0, 32)
+data = ExtResource("20_8sgfq")
+
+[node name="SwordKing2" parent="Entities" unique_id=627145014 instance=ExtResource("15_ke6ms")]
+position = Vector2(64, 96)
+data = ExtResource("20_8sgfq")
+
+[node name="SwordKing3" parent="Entities" unique_id=1391573454 instance=ExtResource("15_ke6ms")]
+position = Vector2(96, 224)
+data = ExtResource("20_8sgfq")

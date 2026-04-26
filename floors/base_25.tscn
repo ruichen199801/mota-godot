@@ -21,13 +21,16 @@
 
 [sub_resource type="Resource" id="Resource_hs43i"]
 script = ExtResource("4_xn8gl")
-text = "看来你的运气挺不错，竟然能到达这里... 不过这里是你的终点了"
+text = "看来你的运气挺不错
+竟然能到达这里... 
+不过这里是你的终点了"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_j66wf"]
 script = ExtResource("4_xn8gl")
 speaker = 1
-text = "这里当然是终点！因为我会击败你并救走公主！！"
+text = "这里当然是终点！
+因为我会击败你并救走公主！！"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_i3jls"]
@@ -38,12 +41,14 @@ metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 [sub_resource type="Resource" id="Resource_f0nfx"]
 script = ExtResource("4_xn8gl")
 speaker = 1
-text = "除了击败你外，我还要明白什么？"
+text = "除了击败你外，
+我还要明白什么？"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_pp5lq"]
 script = ExtResource("4_xn8gl")
-text = "算了，一决雌雄吧"
+text = "算了
+一决雌雄吧"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_ddk45"]

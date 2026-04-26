@@ -21,13 +21,15 @@
 [sub_resource type="Resource" id="Resource_rlp4g"]
 script = ExtResource("7_xhppm")
 speaker = 1
-text = "我拿到了！力量真的增加了不少！
+text = "我拿到了！
+力量真的增加了不少！
 谢谢你！"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_qlms4"]
 script = ExtResource("7_xhppm")
-text = "不用谢~ 等你救回了公主后再谢~
+text = "不用谢~ 
+等你救回了公主后再谢~
 那么，加油吧！"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
@@ -81,7 +83,8 @@ metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 [sub_resource type="Resource" id="Resource_jwfs7"]
 script = ExtResource("7_xhppm")
 speaker = 1
-text = "是吗？那怎么办？"
+text = "是吗？
+那怎么办？"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_2xuio"]

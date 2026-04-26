@@ -38,7 +38,8 @@
 [sub_resource type="Resource" id="Resource_8148f"]
 script = ExtResource("7_74xru")
 speaker = 1
-text = "老伯，请你看看这个"
+text = "老伯，
+请你看看这个"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_ed3ec"]
@@ -84,7 +85,8 @@ metadata/_custom_type_script = "uid://dgvxfb2vjrka"
 [sub_resource type="Resource" id="Resource_lso71"]
 script = ExtResource("7_74xru")
 speaker = 1
-text = "老伯，请你看看这个"
+text = "老伯，
+请你看看这个"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_82hrc"]
@@ -129,7 +131,8 @@ metadata/_custom_type_script = "uid://dgvxfb2vjrka"
 [sub_resource type="Resource" id="Resource_0umoi"]
 script = ExtResource("7_74xru")
 speaker = 1
-text = "老伯，请你看看这个"
+text = "老伯，
+请你看看这个"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_542m7"]
@@ -194,7 +197,9 @@ metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 [sub_resource type="Resource" id="Resource_cvhj2"]
 script = ExtResource("7_74xru")
 speaker = 1
-text = "啊！我有东西给你鉴定，你等我一下！"
+text = "啊！
+我有东西给你鉴定
+你等我一下！"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_tplr4"]
@@ -204,7 +209,8 @@ metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_71hkq"]
 script = ExtResource("7_74xru")
-text = "怎样？不是有东西要鉴定吗？"
+text = "怎样？
+不是有东西要鉴定吗？"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_ykbyl"]

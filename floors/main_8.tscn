@@ -35,7 +35,8 @@
 
 [sub_resource type="Resource" id="Resource_wtmfe"]
 script = ExtResource("6_3j00y")
-text = "你真了不起，竟然能来到这层！
+text = "你真了不起
+竟然能来到这层！
 这个给你吧"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 

@@ -5,5 +5,6 @@
 [resource]
 script = ExtResource("1_5e81v")
 speaker = 1
-text = "就是这里了... 攻进去！！"
+text = "就是这里了... 
+攻进去！！"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"

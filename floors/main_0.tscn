@@ -59,7 +59,9 @@ metadata/_custom_type_script = "uid://ddt5j1qcfsosb"
 
 [sub_resource type="Resource" id="Resource_8n2sy"]
 script = ExtResource("7_t7i0h")
-text = "又是挑战者吗？希望你能够活着回去，嘻嘻嘻嘻..."
+text = "又是挑战者吗？
+希望你能够活着回去，
+嘻嘻嘻嘻..."
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
 [sub_resource type="Resource" id="Resource_e5eto"]
