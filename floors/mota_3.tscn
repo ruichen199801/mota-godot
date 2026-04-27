@@ -11,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://j0c3lt0bvhrs" path="res://resources/items/red_key.tres" id="9_7m13b"]
 [ext_resource type="PackedScene" uid="uid://b678t3khc1li4" path="res://entities/enemy_entity.tscn" id="10_2v35g"]
 [ext_resource type="Resource" uid="uid://b5tvr5hwiubg" path="res://resources/items/blue_gem.tres" id="10_5mwgt"]
+[ext_resource type="Resource" uid="uid://8vwv0rpxhslm" path="res://resources/items/red_gem.tres" id="10_dl07c"]
 [ext_resource type="Resource" uid="uid://b6a8ij3no162s" path="res://resources/enemies/bat/bat.tres" id="11_f0j0r"]
 [ext_resource type="Resource" uid="uid://dew2n4qxuoylg" path="res://resources/items/potion.tres" id="11_sh00s"]
 [ext_resource type="Resource" uid="uid://bf0jksikbblts" path="res://resources/enemies/giant_bat/giant_bat.tres" id="12_p8fcs"]
@@ -93,10 +94,10 @@ data = ExtResource("8_dl07c")
 position = Vector2(288, 320)
 data = ExtResource("9_7m13b")
 
-[node name="BlueGem1" parent="Entities" unique_id=56302512 instance=ExtResource("6_5mwgt")]
-data = ExtResource("10_5mwgt")
+[node name="RedGem" parent="Entities" unique_id=1876152377 instance=ExtResource("6_5mwgt")]
+data = ExtResource("10_dl07c")
 
-[node name="BlueGem2" parent="Entities" unique_id=1830044444 instance=ExtResource("6_5mwgt")]
+[node name="BlueGem" parent="Entities" unique_id=1830044444 instance=ExtResource("6_5mwgt")]
 position = Vector2(320, 0)
 data = ExtResource("10_5mwgt")
 

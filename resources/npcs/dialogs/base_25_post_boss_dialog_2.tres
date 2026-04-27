@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="NpcDialogData" format=3 uid="uid://dpqpsqp1c3phm"]
+
+[ext_resource type="Script" uid="uid://nlow5r0mr3bq" path="res://data/npc_dialog_data.gd" id="1_owjhb"]
+
+[resource]
+script = ExtResource("1_owjhb")
+text = "....！！
+我竟然会输给你们这些人类！！"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"

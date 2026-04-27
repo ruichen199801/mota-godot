@@ -175,6 +175,9 @@ position = Vector2(192, 256)
 [node name="YellowDoor4" parent="Entities" unique_id=1548441627 instance=ExtResource("24_dfc5l")]
 position = Vector2(256, 320)
 
+[node name="YellowDoor5" parent="Entities" unique_id=2134836171 instance=ExtResource("24_dfc5l")]
+position = Vector2(160, 224)
+
 [node name="BlueDoor1" parent="Entities" unique_id=924553426 instance=ExtResource("24_dfc5l")]
 position = Vector2(128, 128)
 door_type = 1

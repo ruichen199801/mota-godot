@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="NpcDialogData" format=3 uid="uid://iuihumsntwuo"]
+
+[ext_resource type="Script" uid="uid://nlow5r0mr3bq" path="res://data/npc_dialog_data.gd" id="1_6qdhy"]
+
+[resource]
+script = ExtResource("1_6qdhy")
+text = "真正的公主在这座塔的最底部，有本事就来救她吧！"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"

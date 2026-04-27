@@ -219,16 +219,16 @@ data = ExtResource("15_sdten")
 position = Vector2(288, 96)
 data = ExtResource("15_sdten")
 
-[node name="GreaterPotion1" parent="Entities" unique_id=1069024982 instance=ExtResource("5_23fb1")]
-position = Vector2(32, 160)
-data = ExtResource("16_4grkd")
-
-[node name="GreaterPotion2" parent="Entities" unique_id=404416277 instance=ExtResource("5_23fb1")]
+[node name="Potion5" parent="Entities" unique_id=204697797 instance=ExtResource("5_23fb1")]
 position = Vector2(128, 256)
-data = ExtResource("16_4grkd")
+data = ExtResource("15_sdten")
 
-[node name="GreaterPotion3" parent="Entities" unique_id=1329954681 instance=ExtResource("5_23fb1")]
+[node name="Potion6" parent="Entities" unique_id=2033930003 instance=ExtResource("5_23fb1")]
 position = Vector2(192, 256)
+data = ExtResource("15_sdten")
+
+[node name="GreaterPotion" parent="Entities" unique_id=1069024982 instance=ExtResource("5_23fb1")]
+position = Vector2(32, 160)
 data = ExtResource("16_4grkd")
 
 [node name="Archmage" parent="Entities" unique_id=605189716 instance=ExtResource("17_3gno4")]

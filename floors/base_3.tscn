@@ -114,11 +114,15 @@ position = Vector2(0, 192)
 data = ExtResource("12_rdljg")
 
 [node name="RedBat2" parent="Entities" unique_id=658084061 instance=ExtResource("11_6nw8g")]
-position = Vector2(256, 320)
+position = Vector2(288, 320)
+data = ExtResource("12_rdljg")
+
+[node name="RedBat3" parent="Entities" unique_id=1158525237 instance=ExtResource("11_6nw8g")]
+position = Vector2(160, 128)
 data = ExtResource("12_rdljg")
 
 [node name="AdvancedMage1" parent="Entities" unique_id=1087761262 instance=ExtResource("11_6nw8g")]
-position = Vector2(32, 288)
+position = Vector2(64, 288)
 data = ExtResource("13_gvqh2")
 
 [node name="AdvancedMage2" parent="Entities" unique_id=402700288 instance=ExtResource("11_6nw8g")]
@@ -131,10 +135,6 @@ data = ExtResource("14_bxqxb")
 
 [node name="DualWieldSwordsman2" parent="Entities" unique_id=2093962669 instance=ExtResource("11_6nw8g")]
 position = Vector2(192, 320)
-data = ExtResource("14_bxqxb")
-
-[node name="DualWieldSwordsman3" parent="Entities" unique_id=283091842 instance=ExtResource("11_6nw8g")]
-position = Vector2(160, 128)
 data = ExtResource("14_bxqxb")
 
 [node name="MageLeader1" parent="Entities" unique_id=942818626 instance=ExtResource("11_6nw8g")]

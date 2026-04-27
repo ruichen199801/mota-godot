@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="NpcDialogData" format=3 uid="uid://c21p6m2ew3847"]
+
+[ext_resource type="Script" uid="uid://nlow5r0mr3bq" path="res://data/npc_dialog_data.gd" id="1_qscdn"]
+
+[resource]
+script = ExtResource("1_qscdn")
+speaker = 1
+text = "只怪你的演技太差了！
+快说吧！
+真正的公主在哪里！"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"

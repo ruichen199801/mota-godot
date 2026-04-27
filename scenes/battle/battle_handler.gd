@@ -66,9 +66,13 @@ func _on_battle_requested(enemy_entity: EnemyEntity, player_data: PlayerData) ->
 			_apply_battle_result(result)
 			await battle_ui.play_game_over()
 			get_tree().quit()
+			# TODO: Go back to start screen
 	
 	battle_ui.retreat_pressed.disconnect(_on_retreat_pressed)
 	EventBus.battle_finished.emit()
+	
+	if result == BattleResult.WIN:
+		EventBus.enemy_defeated.emit(_enemy_data)
 
 
 func _apply_magic_amulet() -> void:
@@ -109,7 +113,7 @@ func _run_battle() -> BattleResult:
 			else:
 				var anim_name := _get_hit_anim_name(player_result.crit, _player_data.hit_frames)
 				await battle_ui.play_hit(true, _player_data.hit_frames, anim_name)
-			print(_format_log("player", player_result))
+			print(_format_log("勇者", player_result))
 
 			if _enemy_hp <= 0:
 				return BattleResult.WIN

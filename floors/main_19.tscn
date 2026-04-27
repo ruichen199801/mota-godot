@@ -118,7 +118,7 @@ dest_pos = Vector2i(4, 10)
 [node name="StairUp2" parent="Entities" unique_id=2098172229 instance=ExtResource("3_i0bd0")]
 position = Vector2(192, 320)
 dest_floor_id = "main_20"
-dest_pos = Vector2i(4, 10)
+dest_pos = Vector2i(6, 10)
 is_transport_target = true
 
 [node name="StairDown1" parent="Entities" unique_id=294517991 instance=ExtResource("4_siau0")]

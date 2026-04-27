@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="NpcData" format=3 uid="uid://daqkia340ky8j"]
+
+[ext_resource type="Script" uid="uid://nlow5r0mr3bq" path="res://data/npc_dialog_data.gd" id="1_8us5w"]
+[ext_resource type="Script" uid="uid://bru2snxxyg2v4" path="res://data/npc_action/npc_post_action.gd" id="2_0j3pf"]
+[ext_resource type="Resource" uid="uid://cb47vhdjso0e" path="res://resources/enemies/self/self.tres" id="3_fc44i"]
+[ext_resource type="Script" uid="uid://b0lno0g37mqqa" path="res://data/npc_action/npc_spawn_enemy_action.gd" id="4_a088f"]
+[ext_resource type="Script" uid="uid://dktqal1ji0w0" path="res://data/npc_behavior/npc_dialog_behavior.gd" id="5_77ydx"]
+[ext_resource type="SpriteFrames" uid="uid://b0w0ml08mwhh4" path="res://resources/enemies/self/self_frames.tres" id="6_bgh77"]
+[ext_resource type="Script" uid="uid://dn7vsl533x7gh" path="res://data/npc_data.gd" id="7_3i30e"]
+
+[sub_resource type="Resource" id="Resource_omilv"]
+script = ExtResource("1_8us5w")
+speaker = 1
+text = "你是......是我？！"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_2jhpy"]
+script = ExtResource("1_8us5w")
+text = "要使用章...必须要有强大的精神力...所以你要先打败你自己来释放精神力！来吧！！"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"
+
+[sub_resource type="Resource" id="Resource_j66wf"]
+script = ExtResource("4_a088f")
+enemy_data = ExtResource("3_fc44i")
+metadata/_custom_type_script = "uid://b0lno0g37mqqa"
+
+[sub_resource type="Resource" id="Resource_mvppp"]
+script = ExtResource("5_77ydx")
+dialogs = Array[ExtResource("1_8us5w")]([SubResource("Resource_omilv"), SubResource("Resource_2jhpy")])
+post_actions = Array[ExtResource("2_0j3pf")]([SubResource("Resource_j66wf")])
+metadata/_custom_type_script = "uid://dktqal1ji0w0"
+
+[resource]
+script = ExtResource("7_3i30e")
+npc_id = "self_npc"
+npc_name = "???"
+frames = ExtResource("6_bgh77")
+behavior = SubResource("Resource_mvppp")
+metadata/_custom_type_script = "uid://dn7vsl533x7gh"

@@ -236,5 +236,5 @@ position = Vector2(64, 256)
 data = ExtResource("23_srfis")
 
 [node name="Skeleton" parent="Entities" unique_id=1436599612 instance=ExtResource("19_6qpit")]
-position = Vector2(288, 256)
+position = Vector2(288, 192)
 data = ExtResource("24_drh0q")

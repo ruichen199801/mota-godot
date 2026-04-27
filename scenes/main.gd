@@ -5,6 +5,7 @@ extends Node2D
 @onready var move_resolver: Node = $MoveResolver
 @onready var active_item_handler: Node = $ActiveItemHandler
 @onready var battle_handler: Node = $BattleHandler
+@onready var floor_event_handler: Node = $FloorEventHandler
 @onready var hud: Control = $UILayer/HUD
 @onready var shop_ui: ShopUI = $UILayer/ShopUI
 @onready var battle_ui: BattleUI = $UILayer/BattleUI
@@ -38,11 +39,11 @@ func _ready() -> void:
 
 
 func _show_intro_dialog() -> void:
+	if FloorManager.current_floor_id != "main_0":
+		return
 	player.is_busy = true
-	await get_tree().create_timer(0.8).timeout
-	var dialogs: Array = [
-		preload("res://resources/npcs/intro_dialog.tres")
-	]
+	await get_tree().create_timer(1.0).timeout
+	var dialogs: Array = [preload("res://resources/npcs/dialogs/main_0_intro_dialog.tres")]
 	EventBus.npc_dialog_opened.emit("", null, dialogs)
 	await EventBus.npc_dialog_closed
 	player.is_busy = false
@@ -113,6 +114,7 @@ func _place_on_floor(floor_id: String, spawn_pos: Vector2i) -> void:
 ## Handles floor change triggered by entities (stair) via move resolver.
 func _on_floor_change(floor_id: String, spawn_pos: Vector2i) -> void:
 	await _transition_to_floor(floor_id, spawn_pos)
+	await floor_event_handler.on_floor_arrived(floor_id)
 	EventBus.floor_change_completed.emit()
 
 
@@ -129,6 +131,7 @@ func _on_floor_transport_selected(floor_id: String, spawn_pos: Vector2i) -> void
 	
 func _on_floor_transport_closed() -> void:
 	player.is_busy = false
+	
 	
 # --- UI handlers ---
 

@@ -147,6 +147,10 @@ data = ExtResource("18_tms0t")
 position = Vector2(320, 192)
 data = ExtResource("18_tms0t")
 
-[node name="Zombie" parent="Entities" unique_id=1321652574 instance=ExtResource("12_jm4rb")]
+[node name="Zombie1" parent="Entities" unique_id=1321652574 instance=ExtResource("12_jm4rb")]
 position = Vector2(128, 320)
+data = ExtResource("19_ldv0t")
+
+[node name="Zombie2" parent="Entities" unique_id=1800941261 instance=ExtResource("12_jm4rb")]
+position = Vector2(320, 224)
 data = ExtResource("19_ldv0t")

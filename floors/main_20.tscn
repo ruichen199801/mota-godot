@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cv12hwq0yxdal" path="res://entities/npc_entity.tscn" id="3_tfvdy"]
 [ext_resource type="Script" uid="uid://nlow5r0mr3bq" path="res://data/npc_dialog_data.gd" id="4_3brx8"]
 [ext_resource type="Script" uid="uid://bru2snxxyg2v4" path="res://data/npc_action/npc_post_action.gd" id="5_44gpc"]
+[ext_resource type="Script" uid="uid://cc5tqp0mpuq27" path="res://data/npc_action/npc_spawn_wall_action.gd" id="6_4iqdj"]
 [ext_resource type="Resource" uid="uid://bef7or4cc5pbn" path="res://resources/enemies/fake_princess/fake_princess.tres" id="6_rdq47"]
 [ext_resource type="Script" uid="uid://b0lno0g37mqqa" path="res://data/npc_action/npc_spawn_enemy_action.gd" id="7_4iqdj"]
 [ext_resource type="Script" uid="uid://dktqal1ji0w0" path="res://data/npc_behavior/npc_dialog_behavior.gd" id="8_84cif"]
@@ -13,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://bp13ks4wpt6ea" path="res://entities/door_entity.tscn" id="11_rdq47"]
 [ext_resource type="PackedScene" uid="uid://d2gnobmc7j4xv" path="res://entities/item_entity.tscn" id="12_4iqdj"]
 [ext_resource type="Resource" uid="uid://cypiw8wv1q82x" path="res://resources/items/green_gem.tres" id="13_84cif"]
-[ext_resource type="Resource" uid="uid://b7h406hwv0y76" path="res://resources/items/pickaxe.tres" id="14_4iqdj"]
 
 [sub_resource type="Resource" id="Resource_i3jls"]
 script = ExtResource("4_3brx8")
@@ -39,6 +39,12 @@ text = "哈哈哈哈哈哈哈哈哈
 受死吧！！！（男声）"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
+[sub_resource type="Resource" id="Resource_84cif"]
+script = ExtResource("6_4iqdj")
+pos = Vector2i(5, 3)
+atlas_coords = Vector2i(3, 0)
+metadata/_custom_type_script = "uid://cc5tqp0mpuq27"
+
 [sub_resource type="Resource" id="Resource_7x1ca"]
 script = ExtResource("7_4iqdj")
 enemy_data = ExtResource("6_rdq47")
@@ -47,7 +53,7 @@ metadata/_custom_type_script = "uid://b0lno0g37mqqa"
 [sub_resource type="Resource" id="Resource_xq0hc"]
 script = ExtResource("8_84cif")
 dialogs = Array[ExtResource("4_3brx8")]([SubResource("Resource_i3jls"), SubResource("Resource_f0nfx"), SubResource("Resource_pp5lq"), SubResource("Resource_aeghn")])
-post_actions = Array[ExtResource("5_44gpc")]([SubResource("Resource_7x1ca")])
+post_actions = Array[ExtResource("5_44gpc")]([SubResource("Resource_84cif"), SubResource("Resource_7x1ca")])
 metadata/_custom_type_script = "uid://dktqal1ji0w0"
 
 [sub_resource type="Resource" id="Resource_12m6o"]
@@ -67,7 +73,7 @@ tile_set = ExtResource("2_2eq8m")
 
 [node name="Walls" type="TileMapLayer" parent="." unique_id=1108185961]
 z_index = 1
-tile_map_data = PackedByteArray("AAAEAAAAAAADAAAAAAAEAAEAAAADAAAAAAAEAAIAAAADAAAAAAAGAAAAAAADAAAAAAAGAAEAAAADAAAAAAAGAAIAAAADAAAAAAAAAAoAAAAAAAMAAAABAAoAAAAAAAMAAAACAAoAAAAAAAMAAAADAAoAAAAAAAMAAAAHAAoAAAAAAAMAAAAIAAoAAAAAAAMAAAAJAAoAAAAAAAMAAAAKAAoAAAAAAAMAAAAFAAoAAAAAAAMAAAABAAcAAAAAAAMAAAABAAgAAAAAAAMAAAACAAgAAAAAAAMAAAADAAgAAAAAAAMAAAAEAAgAAAAAAAMAAAAFAAgAAAAAAAMAAAAGAAgAAAAAAAMAAAAHAAgAAAAAAAMAAAAIAAgAAAAAAAMAAAAJAAgAAAAAAAMAAAAJAAcAAAAAAAMAAAAIAAcAAAAAAAMAAAAHAAcAAAAAAAMAAAAGAAcAAAAAAAMAAAAFAAcAAAAAAAMAAAAEAAcAAAAAAAMAAAADAAcAAAAAAAMAAAACAAcAAAAAAAMAAAAAAAUAAAABAAIAAAABAAUAAAABAAIAAAACAAUAAAABAAIAAAADAAUAAAABAAIAAAAEAAUAAAABAAIAAAAGAAUAAAABAAIAAAAHAAUAAAABAAIAAAAIAAUAAAABAAIAAAAJAAUAAAABAAIAAAAKAAUAAAABAAIAAAABAAQAAAABAAIAAAADAAQAAAABAAIAAAACAAMAAAABAAIAAAAHAAQAAAABAAIAAAAJAAQAAAABAAIAAAAIAAMAAAABAAIAAAACAAQAAAAAAAMAAAAIAAQAAAAAAAMAAAA=")
+tile_map_data = PackedByteArray("AAAEAAAAAAADAAAAAAAEAAEAAAADAAAAAAAEAAIAAAADAAAAAAAGAAAAAAADAAAAAAAGAAEAAAADAAAAAAAGAAIAAAADAAAAAAAAAAoAAAAAAAMAAAABAAoAAAAAAAMAAAACAAoAAAAAAAMAAAADAAoAAAAAAAMAAAAHAAoAAAAAAAMAAAAIAAoAAAAAAAMAAAAJAAoAAAAAAAMAAAAKAAoAAAAAAAMAAAABAAcAAAAAAAMAAAABAAgAAAAAAAMAAAACAAgAAAAAAAMAAAADAAgAAAAAAAMAAAAEAAgAAAAAAAMAAAAFAAgAAAAAAAMAAAAGAAgAAAAAAAMAAAAHAAgAAAAAAAMAAAAIAAgAAAAAAAMAAAAJAAgAAAAAAAMAAAAJAAcAAAAAAAMAAAAIAAcAAAAAAAMAAAAHAAcAAAAAAAMAAAAGAAcAAAAAAAMAAAAFAAcAAAAAAAMAAAAEAAcAAAAAAAMAAAADAAcAAAAAAAMAAAACAAcAAAAAAAMAAAAAAAUAAAABAAIAAAABAAUAAAABAAIAAAACAAUAAAABAAIAAAADAAUAAAABAAIAAAAEAAUAAAABAAIAAAAGAAUAAAABAAIAAAAHAAUAAAABAAIAAAAIAAUAAAABAAIAAAAJAAUAAAABAAIAAAAKAAUAAAABAAIAAAABAAQAAAABAAIAAAADAAQAAAABAAIAAAACAAMAAAABAAIAAAAHAAQAAAABAAIAAAAJAAQAAAABAAIAAAAIAAMAAAABAAIAAAACAAQAAAAAAAMAAAAIAAQAAAAAAAMAAAAFAAoAAAADAAAAAAA=")
 tile_set = ExtResource("2_2eq8m")
 
 [node name="Entities" type="Node2D" parent="." unique_id=1047835971]
@@ -84,7 +90,3 @@ door_type = 3
 [node name="GreenGem" parent="Entities" unique_id=1365116579 instance=ExtResource("12_4iqdj")]
 position = Vector2(160, 192)
 data = ExtResource("13_84cif")
-
-[node name="Pickaxe" parent="Entities" unique_id=1800448269 instance=ExtResource("12_4iqdj")]
-position = Vector2(96, 0)
-data = ExtResource("14_4iqdj")

@@ -21,6 +21,7 @@ func on_block(_player_data: PlayerData) -> void:
 	EventBus.shop_opened.emit(self)
 	await EventBus.shop_closed
 
+
 # --- Purchase logic ---
 
 func get_option_cost(option: ShopOptionData) -> int:

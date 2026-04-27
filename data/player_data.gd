@@ -108,6 +108,7 @@ var _weaken_debuffs := {
 		def_crit = v
 		emit_changed()
 
+
 # --- Emblems ---
 
 enum EmblemType { NONE, HERO, SAGE, OVERLORD }
@@ -121,6 +122,7 @@ var emblem_level: int = 0:
 	set(v):
 		emblem_level = v
 		emit_changed()
+
 
 # --- Inventory ---
 
@@ -185,6 +187,7 @@ func get_item_uses(item_id: String) -> int:
 	if item_id in inventory:
 		return inventory[item_id].uses
 	return 0
+
 
 # --- Helpers ---
 

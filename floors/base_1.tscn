@@ -66,7 +66,7 @@ z_index = 2
 [node name="StairUp" parent="Entities" unique_id=1587493218 instance=ExtResource("3_kgc7r")]
 position = Vector2(32, 32)
 dest_floor_id = "main_0"
-dest_pos = Vector2i(1, 2)
+dest_pos = Vector2i(1, 1)
 
 [node name="StairDown" parent="Entities" unique_id=2057480134 instance=ExtResource("4_tqcet")]
 position = Vector2(320, 320)

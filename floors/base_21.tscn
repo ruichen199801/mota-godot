@@ -167,11 +167,11 @@ position = Vector2(256, 320)
 data = ExtResource("14_yobis")
 
 [node name="MercuryMan1" parent="Entities" unique_id=1805930895 instance=ExtResource("12_5btoc")]
-position = Vector2(192, 0)
+position = Vector2(224, 0)
 data = ExtResource("15_bopso")
 
 [node name="MercuryMan2" parent="Entities" unique_id=1821275815 instance=ExtResource("12_5btoc")]
-position = Vector2(256, 0)
+position = Vector2(288, 0)
 data = ExtResource("15_bopso")
 
 [node name="MercuryMan3" parent="Entities" unique_id=1779663615 instance=ExtResource("12_5btoc")]
@@ -203,7 +203,7 @@ position = Vector2(0, 288)
 data = ExtResource("17_4rk2x")
 
 [node name="SwordKing1" parent="Entities" unique_id=2027127704 instance=ExtResource("12_5btoc")]
-position = Vector2(224, 0)
+position = Vector2(256, 0)
 data = ExtResource("18_hlwwy")
 
 [node name="SwordKing2" parent="Entities" unique_id=1380726796 instance=ExtResource("12_5btoc")]

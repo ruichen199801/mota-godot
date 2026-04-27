@@ -83,7 +83,7 @@ metadata/_custom_type_script = "uid://bgvrtb78qik1k"
 [sub_resource type="Resource" id="Resource_mbf2s"]
 script = ExtResource("14_2d3mq")
 floor_id = "main_0"
-pos = Vector2i(1, 2)
+pos = Vector2i(1, 1)
 stair_dest_floor = "base_1"
 stair_dest_pos = Vector2i(1, 1)
 metadata/_custom_type_script = "uid://chum8njyixr2l"

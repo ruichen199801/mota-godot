@@ -68,11 +68,11 @@ position = Vector2(224, 192)
 position = Vector2(224, 224)
 
 [node name="BlueDoor1" parent="Entities" unique_id=1396833130 instance=ExtResource("5_6371l")]
-position = Vector2(320, 192)
+position = Vector2(320, 224)
 door_type = 1
 
 [node name="BlueDoor2" parent="Entities" unique_id=513449420 instance=ExtResource("5_6371l")]
-position = Vector2(320, 224)
+position = Vector2(320, 256)
 door_type = 1
 
 [node name="RedDoor1" parent="Entities" unique_id=558631414 instance=ExtResource("5_6371l")]
@@ -188,7 +188,7 @@ position = Vector2(256, 288)
 data = ExtResource("25_rv6wr")
 
 [node name="Knight3" parent="Entities" unique_id=1764854195 instance=ExtResource("14_0vy7f")]
-position = Vector2(320, 160)
+position = Vector2(320, 192)
 data = ExtResource("25_rv6wr")
 
 [node name="StoneGolem" parent="Entities" unique_id=1132965782 instance=ExtResource("14_0vy7f")]

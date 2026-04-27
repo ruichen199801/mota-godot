@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="NpcDialogData" format=3 uid="uid://bts6cp1mrywih"]
+
+[ext_resource type="Script" uid="uid://nlow5r0mr3bq" path="res://data/npc_dialog_data.gd" id="1_tl4ty"]
+
+[resource]
+script = ExtResource("1_tl4ty")
+speaker = 1
+text = "又是假的！
+可恶"
+metadata/_custom_type_script = "uid://nlow5r0mr3bq"

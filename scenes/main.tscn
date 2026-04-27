@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b8q5gbuqf4x6h" path="res://scenes/hud/hud.tscn" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://scaneo5pci73" path="res://scenes/item/active_item_handler.gd" id="5_tefeu"]
 [ext_resource type="Script" uid="uid://yonuk010w3yg" path="res://scenes/battle/battle_handler.gd" id="6_85g3d"]
+[ext_resource type="Script" uid="uid://byyh8vsbelsew" path="res://scenes/floor_event_handler.gd" id="7_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://cgubgbm1kf8mj" path="res://scenes/shop/shop_ui.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://0t6sx8oyodxo" path="res://scenes/battle/battle_ui.tscn" id="8_tipki"]
 [ext_resource type="PackedScene" uid="uid://drl2e0cqgdes5" path="res://scenes/item/item_pickup_ui.tscn" id="10_choun"]
@@ -48,6 +49,9 @@ script = ExtResource("5_tefeu")
 
 [node name="BattleHandler" type="Node" parent="." unique_id=1163920371]
 script = ExtResource("6_85g3d")
+
+[node name="FloorEventHandler" type="Node" parent="." unique_id=1141294339]
+script = ExtResource("7_jbj1t")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1432553056]
 position = Vector2(288, 208)

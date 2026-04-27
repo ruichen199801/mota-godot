@@ -11,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://bsnuhn75qr0pd" path="res://resources/enemies/red_slime/red_slime.tres" id="6_dg2fb"]
 [ext_resource type="Script" uid="uid://bru2snxxyg2v4" path="res://data/npc_action/npc_post_action.gd" id="6_x8x70"]
 [ext_resource type="Script" uid="uid://dktqal1ji0w0" path="res://data/npc_behavior/npc_dialog_behavior.gd" id="7_3ilyv"]
+[ext_resource type="Script" uid="uid://cwmocmmdkaa41" path="res://data/npc_action/npc_good_ending_action.gd" id="7_rqfgu"]
 [ext_resource type="Resource" uid="uid://c6xjwvf370bjb" path="res://resources/enemies/black_slime/black_slime.tres" id="7_wq2ap"]
 [ext_resource type="SpriteFrames" uid="uid://c58cvrjebi8qb" path="res://resources/npcs/princess_frames.tres" id="8_6gw3s"]
 [ext_resource type="Resource" uid="uid://j84j2hjdrmb4" path="res://resources/enemies/slime_king/slime_king.tres" id="8_fyfc0"]
@@ -45,9 +46,15 @@ text = "看来一切都结束了......
 还是先逃出这里吧"
 metadata/_custom_type_script = "uid://nlow5r0mr3bq"
 
+[sub_resource type="Resource" id="Resource_x8x70"]
+script = ExtResource("7_rqfgu")
+delay_sec = 3.0
+metadata/_custom_type_script = "uid://cwmocmmdkaa41"
+
 [sub_resource type="Resource" id="Resource_aoq1u"]
 script = ExtResource("7_3ilyv")
 dialogs = Array[ExtResource("5_rqfgu")]([SubResource("Resource_a3fbw"), SubResource("Resource_8o6gi"), SubResource("Resource_2hxum"), SubResource("Resource_ybpcd")])
+post_actions = Array[ExtResource("6_x8x70")]([SubResource("Resource_x8x70")])
 metadata/_custom_type_script = "uid://dktqal1ji0w0"
 
 [sub_resource type="Resource" id="Resource_51tcg"]

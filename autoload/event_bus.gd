@@ -25,7 +25,8 @@ signal shop_closed
 
 # Battle events
 signal battle_requested(enemy_entity: EnemyEntity, player_data: PlayerData)
-signal battle_finished
+signal battle_finished # can be fired from all battle results
+signal enemy_defeated(enemy_data: EnemyData) # WIN result only
 
 # NPC events
 signal npc_dialog_opened(npc_name: String, npc_frames: SpriteFrames, dialogs: Array)
