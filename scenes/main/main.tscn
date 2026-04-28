@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://b3stdisbq408"]
 
-[ext_resource type="Script" uid="uid://bl1se8eyduf57" path="res://scenes/main.gd" id="1_0wfyh"]
+[ext_resource type="Script" uid="uid://bl1se8eyduf57" path="res://scenes/main/main.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://7m4ndyvaa54y" path="res://scenes/player/player.tscn" id="2_sugp2"]
 [ext_resource type="Texture2D" uid="uid://6nb215onucv5" path="res://assets/images/wall.png" id="2_tbgi4"]
 [ext_resource type="Script" uid="uid://2nh3ua1ddiv4" path="res://scenes/player/move_resolver.gd" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://b8q5gbuqf4x6h" path="res://scenes/hud/hud.tscn" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://scaneo5pci73" path="res://scenes/item/active_item_handler.gd" id="5_tefeu"]
 [ext_resource type="Script" uid="uid://yonuk010w3yg" path="res://scenes/battle/battle_handler.gd" id="6_85g3d"]
-[ext_resource type="Script" uid="uid://byyh8vsbelsew" path="res://scenes/floor_event_handler.gd" id="7_jbj1t"]
+[ext_resource type="Script" uid="uid://byyh8vsbelsew" path="res://scenes/main/floor_event_handler.gd" id="7_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://cgubgbm1kf8mj" path="res://scenes/shop/shop_ui.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://0t6sx8oyodxo" path="res://scenes/battle/battle_ui.tscn" id="8_tipki"]
 [ext_resource type="PackedScene" uid="uid://drl2e0cqgdes5" path="res://scenes/item/item_pickup_ui.tscn" id="10_choun"]
@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://7kkre86bhigy" path="res://scenes/floor_transition/floor_transition_ui.tscn" id="13_trceg"]
 [ext_resource type="PackedScene" uid="uid://b8up43uopofen" path="res://scenes/npc/npc_dialog_ui.tscn" id="14_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://i6f86iic0p0i" path="res://scenes/npc/npc_merchant_ui.tscn" id="15_jkv2x"]
-[ext_resource type="PackedScene" uid="uid://cbdc53fry160k" path="res://scenes/anywhere_door/anywhere_door_ui.tscn" id="17_muem4"]
+[ext_resource type="PackedScene" uid="uid://cbdc53fry160k" path="res://scenes/item/item_confirm_ui.tscn" id="17_muem4"]
 
 [node name="Main" type="Node2D" unique_id=1276187132]
 script = ExtResource("1_0wfyh")
@@ -93,7 +93,7 @@ metadata/_edit_lock_ = true
 visible = false
 metadata/_edit_lock_ = true
 
-[node name="AnywhereDoorUI" parent="UILayer" unique_id=1262120589 instance=ExtResource("17_muem4")]
+[node name="ItemConfirmUI" parent="UILayer" unique_id=1262120589 instance=ExtResource("17_muem4")]
 visible = false
 offset_left = -48.0
 offset_top = -48.0

@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://cbdc53fry160k"]
 
 [ext_resource type="Theme" uid="uid://bocaa5wajr1kd" path="res://resources/base_theme.tres" id="1_k13f8"]
-[ext_resource type="Script" uid="uid://d077mkr4gompv" path="res://scenes/anywhere_door/anywhere_door_ui.gd" id="1_ycm1f"]
+[ext_resource type="Script" uid="uid://d077mkr4gompv" path="res://scenes/item/item_confirm_ui.gd" id="1_ycm1f"]
 [ext_resource type="Texture2D" uid="uid://bw2505uv4eaqv" path="res://assets/images/ground.png" id="3_rswhb"]
 [ext_resource type="Script" uid="uid://dhbdyi3h08ong" path="res://scenes/common/flash_label.gd" id="4_davth"]
 [ext_resource type="Texture2D" uid="uid://d1gvt5u5ht6xr" path="res://assets/images/door_yellow.png" id="4_k4d46"]
 [ext_resource type="Texture2D" uid="uid://cvcp6vylusams" path="res://assets/images/arrow.png" id="5_k4d46"]
 
-[node name="AnywhereDoorUI" type="Control" unique_id=1262120589]
+[node name="ItemConfirmUI" type="Control" unique_id=1262120589]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -54,7 +54,8 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
 
-[node name="DoorIcon" type="TextureRect" parent="PanelContainer/MarginContainer/MainHBox/IconBorder" unique_id=2104813836]
+[node name="ItemIcon" type="TextureRect" parent="PanelContainer/MarginContainer/MainHBox/IconBorder" unique_id=2104813836]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 mouse_filter = 2
@@ -73,6 +74,7 @@ layout_mode = 2
 mouse_filter = 2
 
 [node name="NameLabel" type="Label" parent="PanelContainer/MarginContainer/MainHBox/RightColumn/TopRow" unique_id=989278020]
+unique_name_in_owner = true
 texture_filter = 2
 layout_mode = 2
 text = "随意门 X"

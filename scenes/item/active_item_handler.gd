@@ -29,18 +29,15 @@ func _use_anywhere_door(pd: PlayerData) -> void:
 	var entity := FloorManager.get_entity(target)
 	
 	# Can place on lava or replaceable walls
-	var can_place := false
-	if entity is LavaEntity:
-		can_place = true
-	elif entity is WallEntity and entity.replaceable:
-		can_place = true
-		
+	var can_place: bool = (entity is LavaEntity) or (entity is WallEntity and entity.replaceable)
 	if not can_place:
 		return
+		
+	var item_data: ItemData = pd.get_item_data("anywhere_door")
 	
 	player.is_busy = true
-	EventBus.anywhere_door_ui_requested.emit(uses)
-	var confirmed: bool = await EventBus.anywhere_door_ui_closed
+	EventBus.item_confirm_ui_requested.emit(item_data.item_name, uses, item_data.icon)
+	var confirmed: bool = await EventBus.item_confirm_ui_closed
 	
 	if confirmed:
 		pd.use_item("anywhere_door")
@@ -52,28 +49,36 @@ func _use_anywhere_door(pd: PlayerData) -> void:
 	
 
 func _use_divine_sword_token(pd: PlayerData) -> void:
-	if not pd.has_item("divine_sword_token") or pd.get_item_uses("divine_sword_token") <= 0:
+	var uses := pd.get_item_uses("divine_sword_token")
+	if not pd.has_item("divine_sword_token") or uses <= 0:
 		return
 	
 	var target: Vector2i = player.grid_pos + player.facing
 	var entity := FloorManager.get_entity(target)
 	
-	if entity is EnemyEntity:
-		if entity.data.immune_to_divine_sword:
-			return
-		pd.use_item("divine_sword_token")
-		# Replace with green slime
-		var slime_data: EnemyData = preload("res://resources/enemies/green_slime/green_slime.tres")
-		entity.replace_with(slime_data)
+	var is_valid_enemy: bool = entity is EnemyEntity and not entity.data.immune_to_divine_sword
+	var is_valid_npc: bool = entity is NpcEntity and entity.data.divine_sword_targetable
+	if not is_valid_enemy and not is_valid_npc:
+		return
 	
-	elif entity is NpcEntity:
-		if not entity.data.divine_sword_targetable:
-			return
+	var item_data: ItemData = pd.get_item_data("divine_sword_token")
+	
+	player.is_busy = true
+	EventBus.item_confirm_ui_requested.emit(item_data.item_name, uses, item_data.icon)
+	var confirmed: bool = await EventBus.item_confirm_ui_closed
+	
+	if confirmed:
 		pd.use_item("divine_sword_token")
 		var slime_data: EnemyData = preload("res://resources/enemies/green_slime/green_slime.tres")
-		var enemy_scene: PackedScene = preload("res://entities/enemy_entity.tscn")
-		var enemy: EnemyEntity = FloorManager.spawn_entity(enemy_scene, target)
-		enemy.data = slime_data
+		
+		if is_valid_enemy:
+			entity.replace_with(slime_data)
+		elif is_valid_npc:
+			var enemy_scene: PackedScene = preload("res://entities/enemy_entity.tscn")
+			var enemy: EnemyEntity = FloorManager.spawn_entity(enemy_scene, target)
+			enemy.data = slime_data
+			
+	player.is_busy = false
 
 
 func _use_floor_transport(pd: PlayerData) -> void:

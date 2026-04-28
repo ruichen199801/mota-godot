@@ -19,8 +19,8 @@ signal mind_mirror_closed
 signal item_pickup_show(item_data: ItemData)
 signal item_pickup_dismissed
 
-signal anywhere_door_ui_requested(uses: int)
-signal anywhere_door_ui_closed(confirmed: bool)
+signal item_confirm_ui_requested(item_name: String, uses: int, icon: Texture2D)
+signal item_confirm_ui_closed(confirmed: bool)
 
 # Shop events
 signal shop_opened(shop_entity: ShopEntity)
