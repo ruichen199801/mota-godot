@@ -21,7 +21,8 @@ func _input(event: InputEvent) -> void:
 	
 
 func _use_anywhere_door(pd: PlayerData) -> void:
-	if not pd.has_item("anywhere_door") or pd.get_item_uses("anywhere_door") <= 0:
+	var uses := pd.get_item_uses("anywhere_door")
+	if not pd.has_item("anywhere_door") or uses <= 0:
 		return
 	
 	var target: Vector2i = player.grid_pos + player.facing
@@ -33,15 +34,22 @@ func _use_anywhere_door(pd: PlayerData) -> void:
 		can_place = true
 	elif entity is WallEntity and entity.replaceable:
 		can_place = true
+		
+	if not can_place:
+		return
 	
-	if can_place:
+	player.is_busy = true
+	EventBus.anywhere_door_ui_requested.emit(uses)
+	var confirmed: bool = await EventBus.anywhere_door_ui_closed
+	
+	if confirmed:
 		pd.use_item("anywhere_door")
-
-		# Place yellow door
 		var door_scene: PackedScene = preload("res://entities/door_entity.tscn")
 		var door: DoorEntity = FloorManager.spawn_entity(door_scene, target)
 		door.door_type = DoorEntity.DoorType.YELLOW
-		
+	
+	player.is_busy = false
+	
 
 func _use_divine_sword_token(pd: PlayerData) -> void:
 	if not pd.has_item("divine_sword_token") or pd.get_item_uses("divine_sword_token") <= 0:

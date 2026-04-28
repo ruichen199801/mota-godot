@@ -19,6 +19,9 @@ signal mind_mirror_closed
 signal item_pickup_show(item_data: ItemData)
 signal item_pickup_dismissed
 
+signal anywhere_door_ui_requested(uses: int)
+signal anywhere_door_ui_closed(confirmed: bool)
+
 # Shop events
 signal shop_opened(shop_entity: ShopEntity)
 signal shop_closed
