@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Mota"
-run/main_scene="uid://b3stdisbq408"
+run/main_scene="uid://ryjhqtrlvo5s"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="uid://bxw5pcooyj2k8"
 

@@ -1,0 +1,187 @@
+[gd_scene format=3 uid="uid://ryjhqtrlvo5s"]
+
+[ext_resource type="Theme" uid="uid://bocaa5wajr1kd" path="res://resources/base_theme.tres" id="1_d6x3v"]
+[ext_resource type="Script" uid="uid://bc0w375miegyc" path="res://scenes/title_screen/title_screen.gd" id="2_cxcmr"]
+[ext_resource type="Texture2D" uid="uid://bw2505uv4eaqv" path="res://assets/images/ground.png" id="2_ri6bm"]
+[ext_resource type="FontFile" uid="uid://dm1lrh1p7e6yb" path="res://assets/fonts/HuangYinQi-Regular.ttf" id="3_5uxxq"]
+[ext_resource type="Texture2D" uid="uid://6nb215onucv5" path="res://assets/images/wall.png" id="3_j12ko"]
+[ext_resource type="FontFile" uid="uid://bik83xmmci3dh" path="res://assets/fonts/OpenSansCondensed-ExtraBold.ttf" id="4_5uxxq"]
+[ext_resource type="Shader" uid="uid://sdatfr24c55y" path="res://scenes/title_screen/title_screen.gdshader" id="4_yegqs"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j12ko"]
+shader = ExtResource("4_yegqs")
+shader_parameter/radius = 0.7
+shader_parameter/softness = 0.8
+shader_parameter/dark_color = Color(0, 0, 0, 0.85)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cxcmr"]
+
+[node name="TitleScreen" type="Control" unique_id=426597447]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_d6x3v")
+script = ExtResource("2_cxcmr")
+
+[node name="TitleBackground" type="TextureRect" parent="." unique_id=1932476543]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_j12ko")
+stretch_mode = 1
+
+[node name="VignetteOverlay" type="ColorRect" parent="." unique_id=1585218500]
+material = SubResource("ShaderMaterial_j12ko")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TitleRow" type="HBoxContainer" parent="." unique_id=1958614100]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 20.0
+offset_top = 10.0
+offset_right = 396.0
+offset_bottom = 136.0
+size_flags_horizontal = 0
+mouse_filter = 2
+theme_override_constants/separation = 20
+metadata/_edit_lock_ = true
+
+[node name="TitleLabel" type="Label" parent="TitleRow" unique_id=1685805464]
+texture_filter = 2
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5uxxq")
+theme_override_font_sizes/font_size = 110
+text = "魔塔"
+
+[node name="VersionLabelMargin" type="MarginContainer" parent="TitleRow" unique_id=383414907]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_bottom = 18
+
+[node name="VersionLabel" type="Label" parent="TitleRow/VersionLabelMargin" unique_id=165196062]
+unique_name_in_owner = true
+texture_filter = 2
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("4_5uxxq")
+theme_override_font_sizes/font_size = 20
+text = "Ver 1.1 Remake"
+
+[node name="ButtonsMargin" type="MarginContainer" parent="." unique_id=414788498]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 10.0
+offset_right = 556.0
+offset_bottom = 406.0
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 160
+theme_override_constants/margin_right = 50
+
+[node name="ButtonsVBox" type="VBoxContainer" parent="ButtonsMargin" unique_id=545830830]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 36
+
+[node name="StartButtonRow" type="HBoxContainer" parent="ButtonsMargin/ButtonsVBox" unique_id=1089234571]
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+
+[node name="StartButtonContainer" type="PanelContainer" parent="ButtonsMargin/ButtonsVBox/StartButtonRow" unique_id=1799029227]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_cxcmr")
+
+[node name="ButtonBackground" type="TextureRect" parent="ButtonsMargin/ButtonsVBox/StartButtonRow/StartButtonContainer" unique_id=860605715]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_ri6bm")
+stretch_mode = 1
+
+[node name="StartButton" type="Button" parent="ButtonsMargin/ButtonsVBox/StartButtonRow/StartButtonContainer" unique_id=1490974485]
+unique_name_in_owner = true
+texture_filter = 2
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 24
+text = "开始游戏"
+
+[node name="InfoButtonRow" type="HBoxContainer" parent="ButtonsMargin/ButtonsVBox" unique_id=345513391]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+
+[node name="InfoButtonContainer" type="PanelContainer" parent="ButtonsMargin/ButtonsVBox/InfoButtonRow" unique_id=880833094]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_cxcmr")
+
+[node name="ButtonBackground" type="TextureRect" parent="ButtonsMargin/ButtonsVBox/InfoButtonRow/InfoButtonContainer" unique_id=293087579]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_ri6bm")
+stretch_mode = 1
+
+[node name="InfoButton" type="Button" parent="ButtonsMargin/ButtonsVBox/InfoButtonRow/InfoButtonContainer" unique_id=114549503]
+unique_name_in_owner = true
+texture_filter = 2
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 24
+text = "游戏说明"
+
+[node name="EnemiesButtonRow" type="HBoxContainer" parent="ButtonsMargin/ButtonsVBox" unique_id=1259565919]
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 2
+
+[node name="EnemiesButtonContainer" type="PanelContainer" parent="ButtonsMargin/ButtonsVBox/EnemiesButtonRow" unique_id=1345735289]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_cxcmr")
+
+[node name="ButtonBackground" type="TextureRect" parent="ButtonsMargin/ButtonsVBox/EnemiesButtonRow/EnemiesButtonContainer" unique_id=1271498947]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_ri6bm")
+stretch_mode = 1
+
+[node name="EnemiesButton" type="Button" parent="ButtonsMargin/ButtonsVBox/EnemiesButtonRow/EnemiesButtonContainer" unique_id=836298513]
+unique_name_in_owner = true
+texture_filter = 2
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 24
+text = "关于怪物"
+
+[node name="FadeRect" type="ColorRect" parent="." unique_id=1364748260]
+unique_name_in_owner = true
+visible = false
+z_index = 10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

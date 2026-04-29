@@ -7,9 +7,9 @@
 [sub_resource type="Resource" id="Resource_e0s15"]
 script = ExtResource("1_e3iwk")
 level = 1
-hp = 250
-atk = 3
-def = 3
+hp = 400
+atk = 5
+def = 5
 metadata/_custom_type_script = "uid://6cgvhhds7l2r"
 
 [resource]
