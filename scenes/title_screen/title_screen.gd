@@ -7,9 +7,10 @@ extends Control
 @onready var enemies_button: Button = %EnemiesButton
 @onready var fade_rect: ColorRect = %FadeRect
 
-const FADE_DURATION := 0.8
 const MAIN_SCENE_PATH := "res://scenes/main/main.tscn"
+const ABOUT_ENEMIES_SCENE_PATH := "res://scenes/title_screen/about_enemies.tscn"
 
+const FADE_DURATION := 0.8
 const TITLE_SLIDE_OFFSET := 80.0
 const TITLE_SLIDE_DURATION := 1.0
 const VERSION_SLIDE_OFFSET := 40.0
@@ -55,6 +56,11 @@ func _on_start_button_pressed() -> void:
 	tween.tween_property(fade_rect, "modulate:a", 1.0, FADE_DURATION)
 	await tween.finished
 
+	## We load scenes manually here and free the current scene at last call, such that the main scene 
+	## loads behind while current scene is still visible to mask the loading delay.
+	## Otherwise, there will be a grey flash after the fade out when main scene is still loading.
+	## For lightweight scenes that load fast enough, we can simply use change_scene_to_file, 
+	## which frees current scene first then loads new scene.
 	var main_scene: PackedScene = load(MAIN_SCENE_PATH)
 	var main_instance := main_scene.instantiate()
 	var root := get_tree().root
@@ -68,4 +74,4 @@ func _on_info_button_pressed() -> void:
 
 
 func _on_enemies_button_pressed() -> void:
-	pass
+	get_tree().change_scene_to_file(ABOUT_ENEMIES_SCENE_PATH)

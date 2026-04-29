@@ -6,7 +6,7 @@
 [ext_resource type="FontFile" uid="uid://dm1lrh1p7e6yb" path="res://assets/fonts/HuangYinQi-Regular.ttf" id="3_5uxxq"]
 [ext_resource type="Texture2D" uid="uid://6nb215onucv5" path="res://assets/images/wall.png" id="3_j12ko"]
 [ext_resource type="FontFile" uid="uid://bik83xmmci3dh" path="res://assets/fonts/OpenSansCondensed-ExtraBold.ttf" id="4_5uxxq"]
-[ext_resource type="Shader" uid="uid://sdatfr24c55y" path="res://scenes/title_screen/title_screen.gdshader" id="4_yegqs"]
+[ext_resource type="Shader" uid="uid://sdatfr24c55y" path="res://scenes/title_screen/vignette.gdshader" id="4_yegqs"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j12ko"]
 shader = ExtResource("4_yegqs")

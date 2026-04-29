@@ -1,0 +1,436 @@
+[gd_scene format=3 uid="uid://cspuc20rt70w5"]
+
+[ext_resource type="Theme" uid="uid://bocaa5wajr1kd" path="res://resources/base_theme.tres" id="1_f1vnw"]
+[ext_resource type="Texture2D" uid="uid://6nb215onucv5" path="res://assets/images/wall.png" id="2_7tt7i"]
+[ext_resource type="Script" uid="uid://cv0tyge5fok43" path="res://scenes/title_screen/about_enemies.gd" id="2_ni7pk"]
+[ext_resource type="Shader" uid="uid://sdatfr24c55y" path="res://scenes/title_screen/vignette.gdshader" id="3_tf3fm"]
+[ext_resource type="SpriteFrames" uid="uid://b1meyxl1aebru" path="res://resources/enemies/mage/mage_frames.tres" id="4_7tt7i"]
+[ext_resource type="SpriteFrames" uid="uid://dig4xp87tqvq2" path="res://resources/enemies/zombie/zombie_frames.tres" id="5_tf3fm"]
+[ext_resource type="SpriteFrames" uid="uid://tv34plh1wjmg" path="res://resources/enemies/dual_wield_swordsman/dual_wield_swordsman_frames.tres" id="6_dcfix"]
+[ext_resource type="SpriteFrames" uid="uid://h10htff2p8xe" path="res://resources/enemies/knight/knight_frames.tres" id="6_vvihe"]
+[ext_resource type="SpriteFrames" uid="uid://dak2t0ixdedmk" path="res://resources/enemies/skeleton/skeleton_frames.tres" id="7_pbohy"]
+[ext_resource type="SpriteFrames" uid="uid://c47w3ncpod6na" path="res://resources/enemies/slime_man/slime_man_frames.tres" id="8_pbohy"]
+[ext_resource type="SpriteFrames" uid="uid://jjf64ygb3hkq" path="res://resources/enemies/spirit_skeleton/spirit_skeleton_frames.tres" id="10_ni6tq"]
+[ext_resource type="SpriteFrames" uid="uid://dxfcpnnrg4mbg" path="res://resources/enemies/mage_leader/mage_leader_frames.tres" id="11_mvbju"]
+[ext_resource type="FontFile" uid="uid://4pytytm3a17g" path="res://assets/fonts/FZWeiBei-Regular.ttf" id="13_ni7pk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dcfix"]
+shader = ExtResource("3_tf3fm")
+shader_parameter/radius = 0.7
+shader_parameter/softness = 0.8
+shader_parameter/dark_color = Color(0, 0, 0, 0.85)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1vnw"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tf3fm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ni7pk"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(1.353256, 1.353256, 1.353256, 1)
+corner_radius_top_left = 36
+corner_radius_top_right = 36
+corner_radius_bottom_right = 36
+corner_radius_bottom_left = 36
+
+[node name="AboutEnemies" type="Control" unique_id=806064145]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_f1vnw")
+script = ExtResource("2_ni7pk")
+
+[node name="TitleBackground" type="TextureRect" parent="." unique_id=645896208]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_7tt7i")
+stretch_mode = 1
+
+[node name="VignetteOverlay" type="ColorRect" parent="." unique_id=166662259]
+material = SubResource("ShaderMaterial_dcfix")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ContentMargin" type="MarginContainer" parent="." unique_id=1713878069]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBox" type="VBoxContainer" parent="ContentMargin" unique_id=338393974]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 16
+
+[node name="TitleLabel" type="Label" parent="ContentMargin/VBox" unique_id=897253824]
+texture_filter = 2
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "怪物的特殊能力："
+
+[node name="ListBorder" type="PanelContainer" parent="ContentMargin/VBox" unique_id=1629524560]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f1vnw")
+
+[node name="ListMargin" type="MarginContainer" parent="ContentMargin/VBox/ListBorder" unique_id=677236262]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ListVBox" type="VBoxContainer" parent="ContentMargin/VBox/ListBorder/ListMargin" unique_id=464450551]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 16
+
+[node name="DescriptionLabel" type="Label" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox" unique_id=1260755879]
+texture_filter = 2
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "游戏中，会有各式各样的怪物出现，
+不同的怪物会拥有独特的能力！这里先做一个简短的介绍："
+
+[node name="EnemyColumns" type="HBoxContainer" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox" unique_id=339586556]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 20
+
+[node name="LeftColumn" type="VBoxContainer" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns" unique_id=896162708]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 16
+
+[node name="EnemyEntry1" type="HBoxContainer" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/LeftColumn" unique_id=682660861]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="AvatarBorder" type="PanelContainer" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/LeftColumn/EnemyEntry1" unique_id=1954987079]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_tf3fm")
+
+[node name="Avatar" type="AnimatedSprite2D" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/LeftColumn/EnemyEntry1/AvatarBorder" unique_id=2008957940]
+sprite_frames = ExtResource("4_7tt7i")
+animation = &"idle"
+autoplay = "idle"
+centered = false
+
+[node name="InfoVBox" type="VBoxContainer" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/LeftColumn/EnemyEntry1" unique_id=1842740048]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="NameLabel" type="Label" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/LeftColumn/EnemyEntry1/InfoVBox" unique_id=193624271]
+texture_filter = 2
+layout_mode = 2
+text = "魔法师系："
+
+[node name="AbilityLabel" type="Label" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/LeftColumn/EnemyEntry1/InfoVBox" unique_id=725421832]
+texture_filter = 2
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "其攻击的伤害无视主角的防御力"
+autowrap_mode = 3
+
+[node name="EnemyEntry2" type="HBoxContainer" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/LeftColumn" unique_id=1607073875]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="AvatarBorder" type="PanelContainer" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/LeftColumn/EnemyEntry2" unique_id=544798415]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_tf3fm")
+
+[node name="Avatar" type="AnimatedSprite2D" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/LeftColumn/EnemyEntry2/AvatarBorder" unique_id=1166992879]
+sprite_frames = ExtResource("6_dcfix")
+animation = &"idle"
+autoplay = "idle"
+centered = false
+
+[node name="InfoVBox" type="VBoxContainer" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/LeftColumn/EnemyEntry2" unique_id=802914981]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="NameLabel" type="Label" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/LeftColumn/EnemyEntry2/InfoVBox" unique_id=622429215]
+texture_filter = 2
+layout_mode = 2
+text = "双手剑兵："
+
+[node name="AbilityLabel" type="Label" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/LeftColumn/EnemyEntry2/InfoVBox" unique_id=1060356334]
+texture_filter = 2
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "他能一回合做出多次攻击。另外还有部分怪物拥有此项能力！"
+autowrap_mode = 3
+
+[node name="EnemyEntry3" type="HBoxContainer" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/LeftColumn" unique_id=1093072948]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="AvatarBorder" type="PanelContainer" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/LeftColumn/EnemyEntry3" unique_id=1713878294]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_tf3fm")
+
+[node name="Avatar" type="AnimatedSprite2D" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/LeftColumn/EnemyEntry3/AvatarBorder" unique_id=1731238872]
+sprite_frames = ExtResource("6_vvihe")
+animation = &"idle"
+autoplay = "idle"
+centered = false
+
+[node name="InfoVBox" type="VBoxContainer" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/LeftColumn/EnemyEntry3" unique_id=149196851]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="NameLabel" type="Label" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/LeftColumn/EnemyEntry3/InfoVBox" unique_id=676356098]
+texture_filter = 2
+layout_mode = 2
+text = "骑士系："
+
+[node name="AbilityLabel" type="Label" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/LeftColumn/EnemyEntry3/InfoVBox" unique_id=556812911]
+texture_filter = 2
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "他的攻击较易命中要害"
+autowrap_mode = 3
+
+[node name="EnemyEntry4" type="HBoxContainer" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/LeftColumn" unique_id=1742306324]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="AvatarBorder" type="PanelContainer" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/LeftColumn/EnemyEntry4" unique_id=243290662]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_tf3fm")
+
+[node name="Avatar" type="AnimatedSprite2D" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/LeftColumn/EnemyEntry4/AvatarBorder" unique_id=1025765789]
+sprite_frames = ExtResource("7_pbohy")
+animation = &"idle"
+autoplay = "idle"
+centered = false
+
+[node name="InfoVBox" type="VBoxContainer" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/LeftColumn/EnemyEntry4" unique_id=1820313418]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="NameLabel" type="Label" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/LeftColumn/EnemyEntry4/InfoVBox" unique_id=696890757]
+texture_filter = 2
+layout_mode = 2
+text = "骷髅系："
+
+[node name="AbilityLabel" type="Label" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/LeftColumn/EnemyEntry4/InfoVBox" unique_id=1497707080]
+texture_filter = 2
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "高等级的骷髅能使出令人衰弱的攻击 (衰弱状态=攻防回避下降)"
+autowrap_mode = 3
+
+[node name="EnemyEntry5" type="HBoxContainer" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/LeftColumn" unique_id=1845528271]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="AvatarBorder" type="PanelContainer" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/LeftColumn/EnemyEntry5" unique_id=937796166]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_tf3fm")
+
+[node name="Avatar" type="AnimatedSprite2D" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/LeftColumn/EnemyEntry5/AvatarBorder" unique_id=1726602023]
+sprite_frames = ExtResource("8_pbohy")
+animation = &"idle"
+autoplay = "idle"
+centered = false
+
+[node name="InfoVBox" type="VBoxContainer" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/LeftColumn/EnemyEntry5" unique_id=1378867846]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="NameLabel" type="Label" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/LeftColumn/EnemyEntry5/InfoVBox" unique_id=968799769]
+texture_filter = 2
+layout_mode = 2
+text = "史莱姆人："
+
+[node name="AbilityLabel" type="Label" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/LeftColumn/EnemyEntry5/InfoVBox" unique_id=2929720]
+texture_filter = 2
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "他的回避力相当高"
+autowrap_mode = 3
+
+[node name="RightColumn" type="VBoxContainer" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns" unique_id=714475544]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 16
+
+[node name="EnemyEntry6" type="HBoxContainer" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/RightColumn" unique_id=810095009]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="AvatarBorder" type="PanelContainer" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/RightColumn/EnemyEntry6" unique_id=1590924291]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_tf3fm")
+
+[node name="Avatar" type="AnimatedSprite2D" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/RightColumn/EnemyEntry6/AvatarBorder" unique_id=1677669770]
+sprite_frames = ExtResource("5_tf3fm")
+animation = &"idle"
+autoplay = "idle"
+centered = false
+
+[node name="InfoVBox" type="VBoxContainer" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/RightColumn/EnemyEntry6" unique_id=414359993]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="NameLabel" type="Label" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/RightColumn/EnemyEntry6/InfoVBox" unique_id=25217468]
+texture_filter = 2
+layout_mode = 2
+text = "丧尸系："
+
+[node name="AbilityLabel" type="Label" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/RightColumn/EnemyEntry6/InfoVBox" unique_id=558998250]
+texture_filter = 2
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "高等级的丧尸能使出令人中毒的攻击 (中毒状态=每走一步会损耗HP，但不会致命)"
+autowrap_mode = 3
+
+[node name="EnemyEntry7" type="HBoxContainer" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/RightColumn" unique_id=1106870182]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="AvatarBorder" type="PanelContainer" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/RightColumn/EnemyEntry7" unique_id=648093000]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_tf3fm")
+
+[node name="Avatar" type="AnimatedSprite2D" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/RightColumn/EnemyEntry7/AvatarBorder" unique_id=1430201079]
+sprite_frames = ExtResource("10_ni6tq")
+animation = &"idle"
+autoplay = "idle"
+centered = false
+
+[node name="InfoVBox" type="VBoxContainer" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/RightColumn/EnemyEntry7" unique_id=1243928682]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="NameLabel" type="Label" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/RightColumn/EnemyEntry7/InfoVBox" unique_id=640194909]
+texture_filter = 2
+layout_mode = 2
+text = "骷髅战士系："
+
+[node name="AbilityLabel" type="Label" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/RightColumn/EnemyEntry7/InfoVBox" unique_id=1720453414]
+texture_filter = 2
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "拥有不死身...??!!"
+autowrap_mode = 3
+
+[node name="EnemyEntry8" type="HBoxContainer" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/RightColumn" unique_id=2015946951]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="AvatarBorder" type="PanelContainer" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/RightColumn/EnemyEntry8" unique_id=680634161]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_tf3fm")
+
+[node name="Avatar" type="AnimatedSprite2D" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/RightColumn/EnemyEntry8/AvatarBorder" unique_id=1058034514]
+sprite_frames = ExtResource("11_mvbju")
+animation = &"idle"
+autoplay = "idle"
+centered = false
+
+[node name="InfoVBox" type="VBoxContainer" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/RightColumn/EnemyEntry8" unique_id=788377214]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="NameLabel" type="Label" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/RightColumn/EnemyEntry8/InfoVBox" unique_id=1715646526]
+texture_filter = 2
+layout_mode = 2
+text = "魔王系："
+
+[node name="AbilityLabel" type="Label" parent="ContentMargin/VBox/ListBorder/ListMargin/ListVBox/EnemyColumns/RightColumn/EnemyEntry8/InfoVBox" unique_id=1648436257]
+texture_filter = 2
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "强！"
+autowrap_mode = 3
+
+[node name="BackRow" type="HBoxContainer" parent="." unique_id=2061050720]
+layout_mode = 0
+offset_left = 401.0
+offset_top = 342.0
+offset_right = 537.0
+offset_bottom = 382.0
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="BackCircle" type="Panel" parent="BackRow" unique_id=958181872]
+texture_filter = 2
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ni7pk")
+
+[node name="BackButton" type="Button" parent="BackRow" unique_id=915591372]
+unique_name_in_owner = true
+texture_filter = 2
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("13_ni7pk")
+theme_override_font_sizes/font_size = 22
+text = "回主菜单"
